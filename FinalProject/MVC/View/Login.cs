@@ -16,5 +16,13 @@ namespace FinalProject.MVC.View
         {
             InitializeComponent();
         }
+
+        private void lnklbl_reset_pass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ResetPassword obj = new ResetPassword();
+            this.Hide();
+            obj.Show();
+            
+        }
     }
 }
