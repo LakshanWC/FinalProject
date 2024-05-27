@@ -38,23 +38,32 @@ namespace FinalProject.MVC.View
                     CResetPassword rePass = new CResetPassword();
                     Boolean mycheck = rePass.requestExist(username);
 
-                    if (mycheck == true)
-                    {
+                    if (mycheck == true) {
                         MessageBox.Show("Request already exists. Please wait until the manager accepts your request.",
-                            "Request exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            
+                        "Request exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_username.Clear();
+                        txt_new_password.Clear();
+                        txt_re_password.Clear();
                     }
-                    else { 
+                    else
+                    {
                         Boolean checkPass = rePass.resetPassword(username, newPass);
 
                         if (checkPass == true)
                         {
                             MessageBox.Show("Password Reset Request send seccsessfuly ", "Success", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
+                            this.Close();
+                            Login obj = new Login();
+                            obj.Show();
 
                         }
                         else MessageBox.Show("UserName does not exist", "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt_username.Clear();
+                        txt_new_password.Clear();
+                        txt_re_password.Clear();
                     }
+                                         
                 }
                 else
                 {

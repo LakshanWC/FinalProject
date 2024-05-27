@@ -11,12 +11,13 @@ namespace FinalProject.MVC.Model
 {
     public class MResetPassword
     {
-        MDBConnection myConnection = new MDBConnection();
+  
 
         public bool resetPassword(string username, string password)
         {
-            using (SqlConnection con = myConnection.openConnection())
-            {
+            MDBConnection myConnection = new MDBConnection();
+            SqlConnection con = myConnection.openConnection();
+            
                 string userQuery = "SELECT COUNT(*) FROM employee WHERE Eusername = @username;";
                 SqlCommand cmd = new SqlCommand(userQuery, con);
                 cmd.Parameters.AddWithValue("@username", username);
@@ -33,6 +34,7 @@ namespace FinalProject.MVC.Model
                     mycmd.Parameters.AddWithValue("@newpassword", password);
 
                     mycmd.ExecuteNonQuery();
+                    
 
                     return true;
                 }
@@ -40,21 +42,23 @@ namespace FinalProject.MVC.Model
                 {
                     return false;
                 }
-            }
+            
         }
         public bool requestExist(string username)
         {
-            using (SqlConnection con = myConnection.openConnection())
+            MDBConnection myConn = new MDBConnection();
+            using (SqlConnection con = myConn.openConnection())
             {
                 string userQuery = "SELECT COUNT(*) FROM userRequest WHERE requestedUser = @Eusername AND PasswordReset = 0;";
-                SqlCommand cmd = new SqlCommand(userQuery, con);
-                cmd.Parameters.AddWithValue("@Eusername", username);
+                using (SqlCommand cmd = new SqlCommand(userQuery, con))
+                {
+                    cmd.Parameters.AddWithValue("@Eusername", username);
 
-                int count = (int)cmd.ExecuteScalar();
-                if (count == 1) return true;
-                else return false;
+                    int count = (int)cmd.ExecuteScalar();
+                    if( count == 1) return true;
+                    else return false;
+                }
             }
         }
-
     }
 }
