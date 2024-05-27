@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVC\Control\CResetPassword.cs" />
+    <Compile Include="MVC\Model\MDBConnection.cs" />
+    <Compile Include="MVC\Model\MResetPassword.cs" />
     <Compile Include="MVC\View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVC\Control\" />
-    <Folder Include="MVC\Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

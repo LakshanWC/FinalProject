@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.MVC.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,13 +33,33 @@ namespace FinalProject.MVC.View
             {
                 if (txt_new_password.Text == txt_re_password.Text)
                 {
-                    MessageBox.Show("Password reset request been send");
+                    string username = txt_username.Text;
+                    string newPass = txt_new_password.Text;
+                    CResetPassword rePass = new CResetPassword();
+                    Boolean mycheck = rePass.requestExist(username);
 
+                    if (mycheck == true)
+                    {
+                        MessageBox.Show("Request already exists. Please wait until the manager accepts your request.",
+                            "Request exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            
+                    }
+                    else { 
+                        Boolean checkPass = rePass.resetPassword(username, newPass);
 
+                        if (checkPass == true)
+                        {
+                            MessageBox.Show("Password Reset Request send seccsessfuly ", "Success", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                        }
+                        else MessageBox.Show("UserName does not exist", "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Password & Retype Password must be the same", "Password Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Password & Retype Password must be the same", "Password Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
             }
             else
