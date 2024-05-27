@@ -13,6 +13,8 @@ namespace FinalProject.MVC.View
 {
     public partial class ResetPassword : Form
     {
+        Login objLog = new Login();
+
         public ResetPassword()
         {
             InitializeComponent();
@@ -53,9 +55,9 @@ namespace FinalProject.MVC.View
                         {
                             MessageBox.Show("Password Reset Request send seccsessfuly ", "Success", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
-                            this.Close();
-                            Login obj = new Login();
-                            obj.Show();
+                            this.Hide();                         
+                            objLog.Show();
+                            
 
                         }
                         else MessageBox.Show("UserName does not exist", "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,6 +101,12 @@ namespace FinalProject.MVC.View
             {
                 txt_re_password.UseSystemPasswordChar = true ;
             }
+        }
+
+        private void btn_go_to_login_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            objLog.Show();
         }
     }
 }

@@ -31,19 +31,21 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_userName = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
             this.lnklbl_reset_pass = new System.Windows.Forms.LinkLabel();
+            this.chk_view = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(164, 324);
+            this.btn_login.Location = new System.Drawing.Point(155, 325);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(79, 23);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // label1
             // 
@@ -63,19 +65,20 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Password :";
             // 
-            // textBox1
+            // txt_userName
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 228);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_userName.Location = new System.Drawing.Point(129, 228);
+            this.txt_userName.Name = "txt_userName";
+            this.txt_userName.Size = new System.Drawing.Size(129, 20);
+            this.txt_userName.TabIndex = 4;
             // 
-            // textBox2
+            // txt_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 280);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 20);
-            this.textBox2.TabIndex = 5;
+            this.txt_Password.Location = new System.Drawing.Point(129, 280);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(129, 20);
+            this.txt_Password.TabIndex = 5;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // lnklbl_reset_pass
             // 
@@ -88,14 +91,26 @@
             this.lnklbl_reset_pass.Text = "forgot your passowrd ? Click to reset !";
             this.lnklbl_reset_pass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklbl_reset_pass_LinkClicked);
             // 
+            // chk_view
+            // 
+            this.chk_view.AutoSize = true;
+            this.chk_view.Location = new System.Drawing.Point(264, 282);
+            this.chk_view.Name = "chk_view";
+            this.chk_view.Size = new System.Drawing.Size(48, 17);
+            this.chk_view.TabIndex = 7;
+            this.chk_view.Text = "view";
+            this.chk_view.UseVisualStyleBackColor = true;
+            this.chk_view.CheckedChanged += new System.EventHandler(this.chk_view_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 408);
+            this.Controls.Add(this.chk_view);
             this.Controls.Add(this.lnklbl_reset_pass);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_userName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_login);
@@ -111,8 +126,9 @@
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_userName;
+        private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.LinkLabel lnklbl_reset_pass;
+        private System.Windows.Forms.CheckBox chk_view;
     }
 }

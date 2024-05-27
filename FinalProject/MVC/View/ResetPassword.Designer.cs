@@ -38,6 +38,7 @@
             this.btn_pass_request = new System.Windows.Forms.Button();
             this.chk_view_new_pass = new System.Windows.Forms.CheckBox();
             this.chk_view_re_pass = new System.Windows.Forms.CheckBox();
+            this.btn_go_to_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +93,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(125, 323);
+            this.btn_clear.Location = new System.Drawing.Point(40, 323);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 23);
             this.btn_clear.TabIndex = 6;
@@ -132,11 +133,22 @@
             this.chk_view_re_pass.UseVisualStyleBackColor = true;
             this.chk_view_re_pass.CheckedChanged += new System.EventHandler(this.chk_view_re_pass_CheckedChanged);
             // 
+            // btn_go_to_login
+            // 
+            this.btn_go_to_login.Location = new System.Drawing.Point(134, 323);
+            this.btn_go_to_login.Name = "btn_go_to_login";
+            this.btn_go_to_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_go_to_login.TabIndex = 10;
+            this.btn_go_to_login.Text = "Go To Login";
+            this.btn_go_to_login.UseVisualStyleBackColor = true;
+            this.btn_go_to_login.Click += new System.EventHandler(this.btn_go_to_login_Click);
+            // 
             // ResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 386);
+            this.Controls.Add(this.btn_go_to_login);
             this.Controls.Add(this.chk_view_re_pass);
             this.Controls.Add(this.chk_view_new_pass);
             this.Controls.Add(this.btn_pass_request);
@@ -166,5 +178,6 @@
         private System.Windows.Forms.Button btn_pass_request;
         private System.Windows.Forms.CheckBox chk_view_new_pass;
         private System.Windows.Forms.CheckBox chk_view_re_pass;
+        private System.Windows.Forms.Button btn_go_to_login;
     }
 }
