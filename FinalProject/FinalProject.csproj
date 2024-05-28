@@ -47,10 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVC\Control\CLogin.cs" />
+    <Compile Include="MVC\Control\CManagerHome_All.cs" />
     <Compile Include="MVC\Control\CResetPassword.cs" />
+    <Compile Include="MVC\Model\ManagerHome_All.cs" />
     <Compile Include="MVC\Model\MDBConnection.cs" />
     <Compile Include="MVC\Model\MLogin.cs" />
     <Compile Include="MVC\Model\MResetPassword.cs" />
+    <Compile Include="MVC\TostMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVC\TostMessage.Designer.cs">
+      <DependentUpon>TostMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVC\View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MVC\TostMessage.resx">
+      <DependentUpon>TostMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC\View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
