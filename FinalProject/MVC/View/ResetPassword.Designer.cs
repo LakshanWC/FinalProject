@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResetPassword));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,23 +114,27 @@
             // 
             // chk_view_new_pass
             // 
+            this.chk_view_new_pass.Appearance = System.Windows.Forms.Appearance.Button;
             this.chk_view_new_pass.AutoSize = true;
-            this.chk_view_new_pass.Location = new System.Drawing.Point(271, 199);
+            this.chk_view_new_pass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chk_view_new_pass.BackgroundImage")));
+            this.chk_view_new_pass.Location = new System.Drawing.Point(282, 193);
+            this.chk_view_new_pass.MinimumSize = new System.Drawing.Size(25, 25);
             this.chk_view_new_pass.Name = "chk_view_new_pass";
-            this.chk_view_new_pass.Size = new System.Drawing.Size(48, 17);
+            this.chk_view_new_pass.Size = new System.Drawing.Size(25, 25);
             this.chk_view_new_pass.TabIndex = 8;
-            this.chk_view_new_pass.Text = "view";
             this.chk_view_new_pass.UseVisualStyleBackColor = true;
             this.chk_view_new_pass.CheckedChanged += new System.EventHandler(this.chk_view_new_pass_CheckedChanged);
             // 
             // chk_view_re_pass
             // 
+            this.chk_view_re_pass.Appearance = System.Windows.Forms.Appearance.Button;
             this.chk_view_re_pass.AutoSize = true;
-            this.chk_view_re_pass.Location = new System.Drawing.Point(268, 263);
+            this.chk_view_re_pass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chk_view_re_pass.BackgroundImage")));
+            this.chk_view_re_pass.Location = new System.Drawing.Point(280, 258);
+            this.chk_view_re_pass.MinimumSize = new System.Drawing.Size(25, 25);
             this.chk_view_re_pass.Name = "chk_view_re_pass";
-            this.chk_view_re_pass.Size = new System.Drawing.Size(48, 17);
+            this.chk_view_re_pass.Size = new System.Drawing.Size(25, 25);
             this.chk_view_re_pass.TabIndex = 9;
-            this.chk_view_re_pass.Text = "view";
             this.chk_view_re_pass.UseVisualStyleBackColor = true;
             this.chk_view_re_pass.CheckedChanged += new System.EventHandler(this.chk_view_re_pass_CheckedChanged);
             // 

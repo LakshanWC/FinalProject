@@ -13,6 +13,9 @@ namespace FinalProject.MVC.View
 {
     public partial class ResetPassword : Form
     {
+       private Image eyeClose = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeClose.jpg");
+       private Image eyeOpen = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeOpen.jpg");
+
         Login objLog = new Login();
 
         public ResetPassword()
@@ -83,10 +86,12 @@ namespace FinalProject.MVC.View
         {
             if (chk_view_new_pass.Checked)
             {
+                chk_view_new_pass.BackgroundImage=eyeClose;
                 txt_new_password.UseSystemPasswordChar = false;
             }
             else
             {
+                chk_view_new_pass.BackgroundImage =eyeOpen;
                 txt_new_password.UseSystemPasswordChar = true;
             }
         }
@@ -95,10 +100,12 @@ namespace FinalProject.MVC.View
         {
             if (chk_view_re_pass.Checked)
             {
+                chk_view_re_pass.BackgroundImage=eyeClose;
                 txt_re_password.UseSystemPasswordChar = false;
             }
             else
             {
+                chk_view_re_pass.BackgroundImage =eyeOpen;
                 txt_re_password.UseSystemPasswordChar = true ;
             }
         }

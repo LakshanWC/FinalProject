@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace FinalProject.MVC.View
         {
             InitializeComponent();
         }
+        private Image eyeClose = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeClose.jpg");
+        private Image eyeOpen = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeOpen.jpg");
 
         private void lnklbl_reset_pass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -81,17 +84,16 @@ namespace FinalProject.MVC.View
             }
         }
 
-      /*  private void rbtn_view_CheckedChanged(object sender, EventArgs e)
-        {
-          
-        }*/
-
         private void chk_view_CheckedChanged(object sender, EventArgs e)
-        {
+        {          
             if (chk_view.Checked) {
+                chk_view.BackgroundImage = eyeClose;
                 txt_Password.UseSystemPasswordChar = false;
             }
-            else txt_Password.UseSystemPasswordChar = true;
-        }
+            else {
+                chk_view.BackgroundImage = eyeOpen;
+               txt_Password.UseSystemPasswordChar = true;
+            }
+        }    
     }
 }

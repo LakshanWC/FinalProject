@@ -142,4 +142,11 @@ VALUES
     ('e001', 'Test Employee', 'NIC987654321', 'Test Employee Address', '1995-05-15', 987654321, 'testemp', '1234', 0);
 
 delete from userRequest;
-select * from userRequest;
+select * from attendance;
+
+ALTER TABLE employee
+ALTER COLUMN Etype INT; -- Change the data type of Etype to INT
+
+update employee set Etype = 2  where Eid = 'e001';
+
+

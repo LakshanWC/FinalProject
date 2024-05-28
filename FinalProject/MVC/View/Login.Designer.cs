@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,12 +94,14 @@
             // 
             // chk_view
             // 
+            this.chk_view.Appearance = System.Windows.Forms.Appearance.Button;
             this.chk_view.AutoSize = true;
-            this.chk_view.Location = new System.Drawing.Point(264, 282);
+            this.chk_view.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chk_view.BackgroundImage")));
+            this.chk_view.Location = new System.Drawing.Point(268, 277);
+            this.chk_view.MinimumSize = new System.Drawing.Size(26, 25);
             this.chk_view.Name = "chk_view";
-            this.chk_view.Size = new System.Drawing.Size(48, 17);
+            this.chk_view.Size = new System.Drawing.Size(26, 25);
             this.chk_view.TabIndex = 7;
-            this.chk_view.Text = "view";
             this.chk_view.UseVisualStyleBackColor = true;
             this.chk_view.CheckedChanged += new System.EventHandler(this.chk_view_CheckedChanged);
             // 
