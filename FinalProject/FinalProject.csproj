@@ -57,6 +57,12 @@
     <Compile Include="MVC\View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MVC\View\ManagerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVC\View\ManagerHome.Designer.cs">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVC\View\ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MVC\View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\View\ManagerHome.resx">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC\View\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>

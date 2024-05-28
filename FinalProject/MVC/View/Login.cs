@@ -47,7 +47,10 @@ namespace FinalProject.MVC.View
                         break;
                     case 2:
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("manager GUI");
+                        ManagerHome mHObj = new ManagerHome();
+                        this.Hide();  
+                        mHObj.Show();
+                       // MessageBox.Show("manager GUI");
                         break;
                     case 3:
                         mylogin.markAttendant(userName);

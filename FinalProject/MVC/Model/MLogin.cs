@@ -87,12 +87,15 @@ namespace FinalProject.MVC.Model
                                 if (count == 0)
                                 {
                                     // Employee has not been marked present today, so mark attendance
-                                    string markAttendant = "INSERT INTO attendance (Eno, todays) VALUES (@Eno, @todaysDate);";
+                                    string markAttendant = "INSERT INTO attendance (Eno, todays ,loginTime) VALUES (@Eno, @todaysDate, @loginTime);";
                                     using (SqlCommand comm = new SqlCommand(markAttendant, con))
                                     {
+                                        DateTime now = DateTime.Now;
+                                        TimeSpan loginTime = new TimeSpan(now.Hour, now.Minute, now.Second);
+
                                         comm.Parameters.AddWithValue("@Eno", employeeId);
                                         comm.Parameters.AddWithValue("@todaysDate", DateTime.Now);
-
+                                        comm.Parameters.AddWithValue("@loginTime", loginTime);                                        
                                         comm.ExecuteNonQuery();
                                     }
                                 }
