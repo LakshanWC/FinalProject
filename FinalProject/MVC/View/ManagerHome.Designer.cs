@@ -97,6 +97,7 @@
             this.passwordResetRequestsToolStripMenuItem.Name = "passwordResetRequestsToolStripMenuItem";
             this.passwordResetRequestsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.passwordResetRequestsToolStripMenuItem.Text = "Password reset requests";
+            this.passwordResetRequestsToolStripMenuItem.Click += new System.EventHandler(this.passwordResetRequestsToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 

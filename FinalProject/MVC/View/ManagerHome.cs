@@ -35,5 +35,12 @@ namespace FinalProject.MVC.View
 
             }
         }
+
+        private void passwordResetRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PasswordRequest passRequestObj = new PasswordRequest();
+            this.Hide();
+            passRequestObj.Show();
+        }
     }
 }
