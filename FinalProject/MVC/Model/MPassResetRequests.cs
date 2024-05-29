@@ -17,7 +17,7 @@ namespace FinalProject.MVC.Model
             {
                 SqlConnection con = myConnection.openConnection();
 
-                string getPassQuery = "SELECT * FROM userRequest;";
+                string getPassQuery = "SELECT URid,PasswordReset,requestedUser FROM userRequest;";
                 SqlCommand comm = new SqlCommand(getPassQuery, con);
 
                 SqlDataAdapter dap = new SqlDataAdapter(comm);

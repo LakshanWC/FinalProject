@@ -70,6 +70,7 @@
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
             this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
+            this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
             // addFoodItemToolStripMenuItem
             // 
@@ -111,13 +112,14 @@
             // removeEmployeeToolStripMenuItem
             // 
             this.removeEmployeeToolStripMenuItem.Name = "removeEmployeeToolStripMenuItem";
-            this.removeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.removeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeEmployeeToolStripMenuItem.Text = "Remove Employee";
+            this.removeEmployeeToolStripMenuItem.Click += new System.EventHandler(this.removeEmployeeToolStripMenuItem_Click);
             // 
             // removeFoodItemToolStripMenuItem
             // 
             this.removeFoodItemToolStripMenuItem.Name = "removeFoodItemToolStripMenuItem";
-            this.removeFoodItemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.removeFoodItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeFoodItemToolStripMenuItem.Text = "Remove Food Item";
             // 
             // label1

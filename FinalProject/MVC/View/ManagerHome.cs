@@ -42,5 +42,19 @@ namespace FinalProject.MVC.View
             this.Hide();
             passRequestObj.Show();
         }
+
+        private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEmployee addEmployee = new AddEmployee();
+            this.Hide();
+            addEmployee.Show(); 
+        }
+
+        private void removeEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveEmployee removeEmployee = new RemoveEmployee(); 
+            this.Hide();
+            removeEmployee.Show();
+        }
     }
 }

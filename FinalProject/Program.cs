@@ -17,7 +17,8 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            Application.Run(new PasswordRequest());
         }
     }
 }
