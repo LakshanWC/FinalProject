@@ -19,10 +19,10 @@ namespace FinalProject.MVC
             InitializeComponent();
         }
 
-        private Image icon_info = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\info_icon.jpg");
-        private Image icon_error = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\error_icon.jpg");
-        private Image icon_warrning = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\info_icon.jpg");
-        private Image icon_question = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\question_icon.jpg");
+        private Image icon_successs = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\success_icon.jpeg");
+        private Image icon_info = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\info_icon.jpeg");
+        private Image icon_error = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\error_icon.jpeg");
+        private Image icon_question = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Tost_Message_icons\\question_icon.jpeg");
 
 
         public TostMessage (string message,string title,int color,int icon)
@@ -39,7 +39,7 @@ namespace FinalProject.MVC
                     tost_color.BackColor = Color.Red;
                     break;
                 case 3:
-                    tost_color.BackColor = Color.Yellow;
+                    tost_color.BackColor = Color.Green;
                     break;
                 default:
                     tost_color.BackColor= Color.Blue;
@@ -54,7 +54,7 @@ namespace FinalProject.MVC
                     tost_icon.BackgroundImage= icon_error;
                     break;
                 case 3:
-                    tost_icon.BackgroundImage = icon_warrning;
+                    tost_icon.BackgroundImage = icon_successs;
                     break;
                 default :
                     tost_icon.BackgroundImage = icon_question;
