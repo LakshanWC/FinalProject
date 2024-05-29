@@ -19,7 +19,7 @@ namespace FinalProject.MVC.Model
             SqlConnection con = myConnection.openConnection();
 
             // Check for employee login
-            string empLoginQuery = "SELECT ISNULL(Etype, 0) FROM employee WHERE Eusername = @username AND EPassword = @password;";
+            string empLoginQuery = "SELECT ISNULL(Etype, 0) FROM employee WHERE Eusername = @username AND EPassword = @password AND accountStatus = 1;";
             SqlCommand cmd = new SqlCommand(empLoginQuery, con);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);

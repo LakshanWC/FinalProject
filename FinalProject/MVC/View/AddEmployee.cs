@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.MVC.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,14 @@ namespace FinalProject.MVC.View
             ManagerHome mhome = new ManagerHome();
             this.Hide();
             mhome.Show();
+        }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+            CAddEmployee cAddEmployee = new CAddEmployee();
+            string newEid = cAddEmployee.getNewEid();
+
+            txt_eno.Text = newEid;
         }
     }
 }

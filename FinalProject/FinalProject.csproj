@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVC\Control\CAddEmployee.cs" />
     <Compile Include="MVC\Control\CLogin.cs" />
     <Compile Include="MVC\Control\CManagerHome_All.cs" />
     <Compile Include="MVC\Control\CPassResetRequests.cs" />
     <Compile Include="MVC\Control\CResetPassword.cs" />
+    <Compile Include="MVC\Model\MAddEmployee.cs" />
     <Compile Include="MVC\Model\ManagerHome_All.cs" />
     <Compile Include="MVC\Model\MDBConnection.cs" />
     <Compile Include="MVC\Model\MLogin.cs" />

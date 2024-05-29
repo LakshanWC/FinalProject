@@ -87,6 +87,11 @@ namespace FinalProject.MVC
             timer.Start();
         }
 
+        private void btn_toast_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Close the form when the timer ticks (after 10 seconds)

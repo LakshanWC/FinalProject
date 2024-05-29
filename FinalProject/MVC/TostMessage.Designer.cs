@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TostMessage));
             this.tost_color = new System.Windows.Forms.Panel();
             this.tost_icon = new System.Windows.Forms.PictureBox();
             this.tost_title = new System.Windows.Forms.Label();
             this.tost_message = new System.Windows.Forms.Label();
+            this.btn_toast_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tost_icon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +71,24 @@
             this.tost_message.TabIndex = 3;
             this.tost_message.Text = "label1";
             // 
+            // btn_toast_close
+            // 
+            this.btn_toast_close.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_toast_close.BackgroundImage")));
+            this.btn_toast_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_toast_close.FlatAppearance.BorderSize = 0;
+            this.btn_toast_close.Location = new System.Drawing.Point(296, 3);
+            this.btn_toast_close.Name = "btn_toast_close";
+            this.btn_toast_close.Size = new System.Drawing.Size(21, 21);
+            this.btn_toast_close.TabIndex = 4;
+            this.btn_toast_close.UseVisualStyleBackColor = true;
+            this.btn_toast_close.Click += new System.EventHandler(this.btn_toast_close_Click);
+            // 
             // TostMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 76);
+            this.Controls.Add(this.btn_toast_close);
             this.Controls.Add(this.tost_message);
             this.Controls.Add(this.tost_title);
             this.Controls.Add(this.tost_icon);
@@ -94,5 +109,6 @@
         private System.Windows.Forms.PictureBox tost_icon;
         private System.Windows.Forms.Label tost_title;
         private System.Windows.Forms.Label tost_message;
+        private System.Windows.Forms.Button btn_toast_close;
     }
 }
