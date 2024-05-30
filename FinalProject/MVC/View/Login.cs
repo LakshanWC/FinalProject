@@ -83,7 +83,7 @@ namespace FinalProject.MVC.View
             }
             else
             {
-                MessageBox.Show("Wrong Login Credentials ", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Login Credentials Can Not Be Empty", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
