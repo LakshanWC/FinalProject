@@ -21,5 +21,9 @@ namespace FinalProject.MVC.Control
            return mAddEmployee.addEmployee( Eid, Ename, Enic, Eaddress, Edob,
                Etel, Eusername, Epassword, OtHours, salary, Etype);
         }
+        public string randomPasswordGen(string name)
+        {
+            return mAddEmployee.randomPasswordGenerator(name);
+        }
     }
 }

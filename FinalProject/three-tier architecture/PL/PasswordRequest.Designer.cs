@@ -34,6 +34,7 @@
             this.chbx_check_all = new System.Windows.Forms.CheckBox();
             this.btn_enable = new System.Windows.Forms.Button();
             this.btn_return_home = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pass_requests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +46,8 @@
             this.dgv_pass_requests.Size = new System.Drawing.Size(339, 258);
             this.dgv_pass_requests.TabIndex = 0;
             this.dgv_pass_requests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pass_requests_CellContentClick);
+            this.dgv_pass_requests.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pass_requests_CellValueChanged);
+            this.dgv_pass_requests.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgv_pass_requests_CurrentCellDirtyStateChanged);
             // 
             // label1
             // 
@@ -76,16 +79,17 @@
             // 
             // btn_enable
             // 
-            this.btn_enable.Location = new System.Drawing.Point(270, 393);
+            this.btn_enable.Location = new System.Drawing.Point(266, 393);
             this.btn_enable.Name = "btn_enable";
             this.btn_enable.Size = new System.Drawing.Size(75, 23);
             this.btn_enable.TabIndex = 4;
             this.btn_enable.Text = "Enable";
             this.btn_enable.UseVisualStyleBackColor = true;
+            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
             // 
             // btn_return_home
             // 
-            this.btn_return_home.Location = new System.Drawing.Point(136, 393);
+            this.btn_return_home.Location = new System.Drawing.Point(30, 393);
             this.btn_return_home.Name = "btn_return_home";
             this.btn_return_home.Size = new System.Drawing.Size(90, 23);
             this.btn_return_home.TabIndex = 5;
@@ -93,11 +97,22 @@
             this.btn_return_home.UseVisualStyleBackColor = true;
             this.btn_return_home.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(146, 393);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(90, 23);
+            this.btn_refresh.TabIndex = 6;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
             // PasswordRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 450);
+            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_return_home);
             this.Controls.Add(this.btn_enable);
             this.Controls.Add(this.chbx_check_all);
@@ -114,12 +129,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_pass_requests;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_no_of_checked_box;
         private System.Windows.Forms.CheckBox chbx_check_all;
         private System.Windows.Forms.Button btn_enable;
         private System.Windows.Forms.Button btn_return_home;
+        private System.Windows.Forms.DataGridView dgv_pass_requests;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }

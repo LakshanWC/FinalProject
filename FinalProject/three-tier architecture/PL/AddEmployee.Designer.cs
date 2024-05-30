@@ -47,17 +47,16 @@
             this.gb_login_details = new System.Windows.Forms.GroupBox();
             this.nud_ot_hours = new System.Windows.Forms.NumericUpDown();
             this.gb_employee_details = new System.Windows.Forms.GroupBox();
+            this.cmb_employee_type = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.dtp_date_of_birth = new System.Windows.Forms.DateTimePicker();
             this.txt_eno = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_generate_pass = new System.Windows.Forms.Button();
             this.btn_return_home = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nud_salary = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmb_employee_type = new System.Windows.Forms.ComboBox();
             this.gb_login_details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_ot_hours)).BeginInit();
             this.gb_employee_details.SuspendLayout();
@@ -251,6 +250,30 @@
             this.gb_employee_details.TabStop = false;
             this.gb_employee_details.Text = "Employee Details";
             // 
+            // cmb_employee_type
+            // 
+            this.cmb_employee_type.FormattingEnabled = true;
+            this.cmb_employee_type.Items.AddRange(new object[] {
+            "Select Type ...",
+            "Manager",
+            "Chef",
+            "Cashier",
+            "Delivery",
+            "Sales & Finance"});
+            this.cmb_employee_type.Location = new System.Drawing.Point(127, 81);
+            this.cmb_employee_type.Name = "cmb_employee_type";
+            this.cmb_employee_type.Size = new System.Drawing.Size(121, 21);
+            this.cmb_employee_type.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Employee Type :";
+            // 
             // dtp_date_of_birth
             // 
             this.dtp_date_of_birth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -276,23 +299,15 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Eno :";
             // 
-            // button3
+            // btn_generate_pass
             // 
-            this.button3.Location = new System.Drawing.Point(570, 324);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 30);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Generate Password";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(410, 324);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 30);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Generate User Name";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_generate_pass.Location = new System.Drawing.Point(410, 324);
+            this.btn_generate_pass.Name = "btn_generate_pass";
+            this.btn_generate_pass.Size = new System.Drawing.Size(271, 30);
+            this.btn_generate_pass.TabIndex = 20;
+            this.btn_generate_pass.Text = "Generate Password";
+            this.btn_generate_pass.UseVisualStyleBackColor = true;
+            this.btn_generate_pass.Click += new System.EventHandler(this.btn_generate_pass_Click);
             // 
             // btn_return_home
             // 
@@ -339,30 +354,6 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Salary :";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(23, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Employee Type :";
-            // 
-            // cmb_employee_type
-            // 
-            this.cmb_employee_type.FormattingEnabled = true;
-            this.cmb_employee_type.Items.AddRange(new object[] {
-            "Select Type ...",
-            "Manager",
-            "Chef",
-            "Cashier",
-            "Delivery",
-            "Sales & Finance"});
-            this.cmb_employee_type.Location = new System.Drawing.Point(127, 81);
-            this.cmb_employee_type.Name = "cmb_employee_type";
-            this.cmb_employee_type.Size = new System.Drawing.Size(121, 21);
-            this.cmb_employee_type.TabIndex = 27;
-            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,8 +361,7 @@
             this.ClientSize = new System.Drawing.Size(705, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_return_home);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_generate_pass);
             this.Controls.Add(this.gb_employee_details);
             this.Controls.Add(this.gb_login_details);
             this.Controls.Add(this.btn_clear);
@@ -412,8 +402,7 @@
         private System.Windows.Forms.GroupBox gb_login_details;
         private System.Windows.Forms.NumericUpDown nud_ot_hours;
         private System.Windows.Forms.GroupBox gb_employee_details;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_generate_pass;
         private System.Windows.Forms.Button btn_return_home;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_eno;

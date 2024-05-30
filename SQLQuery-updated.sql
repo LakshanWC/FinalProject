@@ -11,7 +11,11 @@ CREATE TABLE employee (
 );
 
 alter table employee
-add salary int;
+alter column salary NUMERIC(10, 2);
+
+alter table employee
+alter column OtHours NUMERIC(10, 2);
+
 
 CREATE TABLE attendance (
     Eno VARCHAR(20),
@@ -145,11 +149,11 @@ VALUES
     ('e001', 'Test Employee', 'NIC987654321', 'Test Employee Address', '1995-05-15', 987654321, 'testemp', '1234', 0);
 
 delete from userRequest;
-select * from item;
+select * from employee;
 
 ALTER TABLE item
 add itemImageNo INT; -- Change the data type of Etype to INT
 
-update employee set Etype = 2  where Eid = 'e001';
+update employee set Etype = 1  where Eid = 'a001';
 
 

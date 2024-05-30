@@ -35,6 +35,7 @@ namespace FinalProject.MVC.View
             string newEid = cAddEmployee.getNewEid();
 
             txt_eno.Text = newEid;
+            txt_user_name.Text = newEid;
 
             cmb_employee_type.SelectedIndex = 0;
         }
@@ -142,6 +143,24 @@ namespace FinalProject.MVC.View
             if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+      //  private void btn_generate_username_Click(object sender, EventArgs e)
+      //  {
+          
+       // }
+
+        private void btn_generate_pass_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_name.Text))
+            {
+                MessageBox.Show("Please provide a name","error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CAddEmployee cAddEmp = new CAddEmployee();
+                txt_password.Text = cAddEmp.randomPasswordGen(txt_name.Text);
             }
         }
     }

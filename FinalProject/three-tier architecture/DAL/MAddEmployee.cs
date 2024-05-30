@@ -4,7 +4,9 @@ using System.Data.SqlClient;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FinalProject.MVC.Model
 {
@@ -52,6 +54,70 @@ namespace FinalProject.MVC.Model
             com.ExecuteNonQuery();
 
             return true;
+        }
+        private char specialCharGen(int charNo)
+        {
+            switch (charNo)
+            {
+                case 1:
+                    return '!';
+                    break;
+                case 2:
+                    return '@';
+                    break;
+                case 3:
+                    return '#';
+                    break;
+                case 4:
+                    return '$';
+                    break;
+                case 5:
+                    return '%';
+                    break;
+                case 6:
+                    return '&';
+                    break ;
+                case 7:
+                    return '/';
+                    break; 
+                case 8:
+                    return '~';
+                    break;
+                case 9:
+                    return '(';
+                    break;
+                case 10:
+                    return ']';
+                    break;
+                default:
+                    return '*';
+                    break;
+            }
+        }
+
+        public string randomPasswordGenerator(string name)
+        {
+            MAddEmployee mEmp = new MAddEmployee();
+
+            Random randomNo = new Random();
+            int letterCount = name.Length;
+
+            int firstNo = randomNo.Next(1, 10);
+            char specialCharOne = mEmp.specialCharGen(randomNo.Next(1, 11));
+            char specialCharTwo = specialCharGen(randomNo.Next(1, 11));
+            int positionOne = randomNo.Next(0, letterCount);
+            int positionTwo;
+
+            do
+            {
+                positionTwo = randomNo.Next(0, letterCount); 
+            } while (positionTwo == positionOne); // Ensure positionTwo is different from positionOne
+
+            // Insert special characters at random positions in the name string
+            string passwordString = name.Substring(0, positionOne) + specialCharOne + name.Substring(positionOne);
+            passwordString = passwordString.Substring(0, positionTwo) + specialCharTwo + passwordString.Substring(positionTwo);
+
+            return passwordString;
         }
     }
 }

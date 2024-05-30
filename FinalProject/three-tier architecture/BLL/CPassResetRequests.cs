@@ -15,5 +15,11 @@ namespace FinalProject.MVC.Control
             MPassResetRequests passRequestObj = new MPassResetRequests();
             return passRequestObj.getPassRequests();
         }
+
+        public int updateSelectedRows(List<int> selectedRowIds)
+        {
+            MPassResetRequests myRequest = new MPassResetRequests();
+            return myRequest.updateSelectedRows(selectedRowIds);
+        }
     }
 }

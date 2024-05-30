@@ -56,5 +56,12 @@ namespace FinalProject.MVC.View
             this.Hide();
             removeEmployee.Show();
         }
+
+        private void addFoodItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddItem newFood = new AddItem();
+            this.Hide();
+            newFood.Show();
+        }
     }
 }
