@@ -10,6 +10,9 @@ CREATE TABLE employee (
     OtHours INT
 );
 
+alter table employee
+add salary int;
+
 CREATE TABLE attendance (
     Eno VARCHAR(20),
     todays DATE,
@@ -142,10 +145,10 @@ VALUES
     ('e001', 'Test Employee', 'NIC987654321', 'Test Employee Address', '1995-05-15', 987654321, 'testemp', '1234', 0);
 
 delete from userRequest;
-select * from attendance;
+select * from item;
 
-ALTER TABLE employee
-ALTER COLUMN Etype INT; -- Change the data type of Etype to INT
+ALTER TABLE item
+add itemImageNo INT; -- Change the data type of Etype to INT
 
 update employee set Etype = 2  where Eid = 'e001';
 
