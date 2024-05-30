@@ -45,9 +45,9 @@ namespace FinalProject.MVC.View
 
         private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee();
+            AddEmployee newEmp = new AddEmployee();
             this.Hide();
-            addEmployee.Show(); 
+            newEmp.Show();
         }
 
         private void removeEmployeeToolStripMenuItem_Click(object sender, EventArgs e)

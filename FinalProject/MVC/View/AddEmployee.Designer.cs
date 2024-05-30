@@ -54,8 +54,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btn_return_home = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.nud_salary = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmb_employee_type = new System.Windows.Forms.ComboBox();
             this.gb_login_details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_ot_hours)).BeginInit();
             this.gb_employee_details.SuspendLayout();
@@ -86,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 99);
+            this.label1.Location = new System.Drawing.Point(21, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 2;
@@ -95,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 149);
+            this.label2.Location = new System.Drawing.Point(21, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 3;
@@ -104,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 300);
+            this.label3.Location = new System.Drawing.Point(21, 300);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
@@ -113,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 199);
+            this.label4.Location = new System.Drawing.Point(20, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 5;
@@ -122,7 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 250);
+            this.label5.Location = new System.Drawing.Point(20, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 6;
@@ -130,14 +132,14 @@
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(127, 92);
+            this.txt_name.Location = new System.Drawing.Point(127, 123);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(116, 20);
             this.txt_name.TabIndex = 7;
             // 
             // txt_nic_no
             // 
-            this.txt_nic_no.Location = new System.Drawing.Point(126, 142);
+            this.txt_nic_no.Location = new System.Drawing.Point(126, 161);
             this.txt_nic_no.Name = "txt_nic_no";
             this.txt_nic_no.Size = new System.Drawing.Size(117, 20);
             this.txt_nic_no.TabIndex = 8;
@@ -152,10 +154,12 @@
             // 
             // txt_tel_no
             // 
-            this.txt_tel_no.Location = new System.Drawing.Point(126, 243);
+            this.txt_tel_no.Location = new System.Drawing.Point(126, 251);
             this.txt_tel_no.Name = "txt_tel_no";
             this.txt_tel_no.Size = new System.Drawing.Size(116, 20);
             this.txt_tel_no.TabIndex = 11;
+            this.txt_tel_no.TextChanged += new System.EventHandler(this.txt_tel_no_TextChanged);
+            this.txt_tel_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tel_no_KeyPress);
             // 
             // label6
             // 
@@ -213,6 +217,12 @@
             // 
             // nud_ot_hours
             // 
+            this.nud_ot_hours.DecimalPlaces = 2;
+            this.nud_ot_hours.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            131072});
             this.nud_ot_hours.Location = new System.Drawing.Point(104, 83);
             this.nud_ot_hours.Name = "nud_ot_hours";
             this.nud_ot_hours.Size = new System.Drawing.Size(79, 20);
@@ -220,6 +230,8 @@
             // 
             // gb_employee_details
             // 
+            this.gb_employee_details.Controls.Add(this.cmb_employee_type);
+            this.gb_employee_details.Controls.Add(this.label11);
             this.gb_employee_details.Controls.Add(this.dtp_date_of_birth);
             this.gb_employee_details.Controls.Add(this.txt_eno);
             this.gb_employee_details.Controls.Add(this.label9);
@@ -242,7 +254,7 @@
             // dtp_date_of_birth
             // 
             this.dtp_date_of_birth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_date_of_birth.Location = new System.Drawing.Point(125, 191);
+            this.dtp_date_of_birth.Location = new System.Drawing.Point(125, 207);
             this.dtp_date_of_birth.Name = "dtp_date_of_birth";
             this.dtp_date_of_birth.Size = new System.Drawing.Size(116, 20);
             this.dtp_date_of_birth.TabIndex = 25;
@@ -258,7 +270,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 48);
+            this.label9.Location = new System.Drawing.Point(23, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 23;
@@ -305,6 +317,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Salary Details";
             // 
+            // nud_salary
+            // 
+            this.nud_salary.DecimalPlaces = 2;
+            this.nud_salary.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            131072});
+            this.nud_salary.Location = new System.Drawing.Point(104, 32);
+            this.nud_salary.Name = "nud_salary";
+            this.nud_salary.Size = new System.Drawing.Size(100, 20);
+            this.nud_salary.TabIndex = 21;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -314,17 +339,29 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Salary :";
             // 
-            // nud_salary
+            // label11
             // 
-            this.nud_salary.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nud_salary.Location = new System.Drawing.Point(104, 32);
-            this.nud_salary.Name = "nud_salary";
-            this.nud_salary.Size = new System.Drawing.Size(100, 20);
-            this.nud_salary.TabIndex = 21;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Employee Type :";
+            // 
+            // cmb_employee_type
+            // 
+            this.cmb_employee_type.FormattingEnabled = true;
+            this.cmb_employee_type.Items.AddRange(new object[] {
+            "Select Type ...",
+            "Manager",
+            "Chef",
+            "Cashier",
+            "Delivery",
+            "Sales & Finance"});
+            this.cmb_employee_type.Location = new System.Drawing.Point(127, 81);
+            this.cmb_employee_type.Name = "cmb_employee_type";
+            this.cmb_employee_type.Size = new System.Drawing.Size(121, 21);
+            this.cmb_employee_type.TabIndex = 27;
             // 
             // AddEmployee
             // 
@@ -384,5 +421,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nud_salary;
+        private System.Windows.Forms.ComboBox cmb_employee_type;
+        private System.Windows.Forms.Label label11;
     }
 }

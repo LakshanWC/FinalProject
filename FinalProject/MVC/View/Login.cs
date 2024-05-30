@@ -43,7 +43,7 @@ namespace FinalProject.MVC.View
                 {
                     case 1:
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("emp GUI");
+                        MessageBox.Show("welcome admin");
                         break;
                     case 2:
                         mylogin.markAttendant(userName);
@@ -71,9 +71,6 @@ namespace FinalProject.MVC.View
                     case 7:
                         mylogin.markAttendant(userName);
                         MessageBox.Show("customer GUI");
-                        break;
-                    case 8:
-                        MessageBox.Show("welcome admin");
                         break;
                     default:
                         MessageBox.Show("User Does not Exist", "User not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
