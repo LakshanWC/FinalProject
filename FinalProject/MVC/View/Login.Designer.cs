@@ -36,6 +36,8 @@
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.lnklbl_reset_pass = new System.Windows.Forms.LinkLabel();
             this.chk_view = new System.Windows.Forms.CheckBox();
+            this.pb_logo_icon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo_icon)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_login
@@ -105,11 +107,21 @@
             this.chk_view.UseVisualStyleBackColor = true;
             this.chk_view.CheckedChanged += new System.EventHandler(this.chk_view_CheckedChanged);
             // 
+            // pb_logo_icon
+            // 
+            this.pb_logo_icon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_logo_icon.BackgroundImage")));
+            this.pb_logo_icon.Location = new System.Drawing.Point(44, 23);
+            this.pb_logo_icon.Name = "pb_logo_icon";
+            this.pb_logo_icon.Size = new System.Drawing.Size(229, 169);
+            this.pb_logo_icon.TabIndex = 8;
+            this.pb_logo_icon.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 408);
+            this.Controls.Add(this.pb_logo_icon);
             this.Controls.Add(this.chk_view);
             this.Controls.Add(this.lnklbl_reset_pass);
             this.Controls.Add(this.txt_Password);
@@ -119,6 +131,7 @@
             this.Controls.Add(this.btn_login);
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo_icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +146,6 @@
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.LinkLabel lnklbl_reset_pass;
         private System.Windows.Forms.CheckBox chk_view;
+        private System.Windows.Forms.PictureBox pb_logo_icon;
     }
 }
