@@ -94,7 +94,7 @@ namespace FinalProject.MVC
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Close the form when the timer ticks (after 10 seconds)
+            // Close the form after timer ticks 10 seconds
             Close();
         }
     }

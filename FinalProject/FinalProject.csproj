@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,99 +52,150 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="three-tier architecture\BLL\CAddEmployee.cs" />
-    <Compile Include="three-tier architecture\BLL\CLogin.cs" />
-    <Compile Include="three-tier architecture\BLL\CManagerHome_All.cs" />
-    <Compile Include="three-tier architecture\BLL\CPassResetRequests.cs" />
-    <Compile Include="three-tier architecture\BLL\CResetPassword.cs" />
-    <Compile Include="three-tier architecture\DAL\MAddEmployee.cs" />
-    <Compile Include="three-tier architecture\DAL\ManagerHome_All.cs" />
-    <Compile Include="three-tier architecture\DAL\MDBConnection.cs" />
-    <Compile Include="three-tier architecture\DAL\MLogin.cs" />
-    <Compile Include="three-tier architecture\DAL\MPassResetRequests.cs" />
-    <Compile Include="three-tier architecture\DAL\MResetPassword.cs" />
+    <Compile Include="three-tier architecture\BLL\BAddEmployee.cs" />
+    <Compile Include="three-tier architecture\BLL\BGeneralReports.cs" />
+    <Compile Include="three-tier architecture\BLL\BLogin.cs" />
+    <Compile Include="three-tier architecture\BLL\BManagerHome_All.cs" />
+    <Compile Include="three-tier architecture\BLL\BPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\BLL\BRemoveEmployee.cs" />
+    <Compile Include="three-tier architecture\BLL\BResetPassword.cs" />
+    <Compile Include="three-tier architecture\DAL\DAddEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\DGeneralReports.cs" />
+    <Compile Include="three-tier architecture\DAL\DManagerHome_All.cs" />
+    <Compile Include="three-tier architecture\DAL\DMDBConnection.cs" />
+    <Compile Include="three-tier architecture\DAL\DLogin.cs" />
+    <Compile Include="three-tier architecture\DAL\DPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\DAL\DRemoveEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\DResetPassword.cs" />
+    <Compile Include="three-tier architecture\DAL\DUpdateEmployee.cs" />
+    <Compile Include="three-tier architecture\PL\AttendentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\CustomerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\CustomerHome.Designer.cs">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Event.Designer.cs">
+      <DependentUpon>Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\GeneralReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\GeneralReports.Designer.cs">
+      <DependentUpon>GeneralReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\UpdateEmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\UpdateEmployeeDetails.Designer.cs">
+      <DependentUpon>UpdateEmployeeDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\TostMessage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="three-tier architecture\TostMessage.Designer.cs">
       <DependentUpon>TostMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\AddEmployee.cs">
+    <Compile Include="three-tier architecture\PL\PAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\AddEmployee.Designer.cs">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PAddEmployee.Designer.cs">
+      <DependentUpon>PAddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\AddItem.cs">
+    <Compile Include="three-tier architecture\PL\PAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\AddItem.Designer.cs">
-      <DependentUpon>AddItem.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PAddItem.Designer.cs">
+      <DependentUpon>PAddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\CasheirHome.cs">
+    <Compile Include="three-tier architecture\PL\PCasheirHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\CasheirHome.Designer.cs">
-      <DependentUpon>CasheirHome.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PCasheirHome.Designer.cs">
+      <DependentUpon>PCasheirHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Login.cs">
+    <Compile Include="three-tier architecture\PL\PLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PLogin.Designer.cs">
+      <DependentUpon>PLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\ManagerHome.cs">
+    <Compile Include="three-tier architecture\PL\PManagerHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\ManagerHome.Designer.cs">
-      <DependentUpon>ManagerHome.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PManagerHome.Designer.cs">
+      <DependentUpon>PManagerHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\PasswordRequest.cs">
+    <Compile Include="three-tier architecture\PL\PPasswordRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\PasswordRequest.Designer.cs">
-      <DependentUpon>PasswordRequest.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PPasswordRequest.Designer.cs">
+      <DependentUpon>PPasswordRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\RemoveEmployee.cs">
+    <Compile Include="three-tier architecture\PL\PRemoveEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\RemoveEmployee.Designer.cs">
-      <DependentUpon>RemoveEmployee.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PRemoveEmployee.Designer.cs">
+      <DependentUpon>PRemoveEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\ResetPassword.cs">
+    <Compile Include="three-tier architecture\PL\PResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\ResetPassword.Designer.cs">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\PResetPassword.Designer.cs">
+      <DependentUpon>PResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="three-tier architecture\PL\AttendentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AttendentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\CustomerHome.resx">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Event.resx">
+      <DependentUpon>Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\GeneralReports.resx">
+      <DependentUpon>GeneralReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\UpdateEmployeeDetails.resx">
+      <DependentUpon>UpdateEmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\TostMessage.resx">
       <DependentUpon>TostMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\AddEmployee.resx">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PAddEmployee.resx">
+      <DependentUpon>PAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\AddItem.resx">
-      <DependentUpon>AddItem.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PAddItem.resx">
+      <DependentUpon>PAddItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\CasheirHome.resx">
-      <DependentUpon>CasheirHome.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PCasheirHome.resx">
+      <DependentUpon>PCasheirHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PLogin.resx">
+      <DependentUpon>PLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\ManagerHome.resx">
-      <DependentUpon>ManagerHome.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PManagerHome.resx">
+      <DependentUpon>PManagerHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\PasswordRequest.resx">
-      <DependentUpon>PasswordRequest.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PPasswordRequest.resx">
+      <DependentUpon>PPasswordRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\RemoveEmployee.resx">
-      <DependentUpon>RemoveEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PRemoveEmployee.resx">
+      <DependentUpon>PRemoveEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\ResetPassword.resx">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\PResetPassword.resx">
+      <DependentUpon>PResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -162,6 +219,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

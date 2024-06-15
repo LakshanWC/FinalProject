@@ -151,6 +151,10 @@ VALUES
 delete from userRequest;
 select * from employee;
 
+UPDATE userRequest SET PasswordReset = 1 WHERE URid = @ID
+
+select * from userRequest;
+
 ALTER TABLE item
 add itemImageNo INT; -- Change the data type of Etype to INT
 

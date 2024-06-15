@@ -1,4 +1,5 @@
 ﻿using FinalProject.MVC.View;
+using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,8 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-           // Application.Run(new PasswordRequest());
+            Application.Run(new PLogin());
+           // Application.Run(new CustomerHome());
         }
     }
 }
