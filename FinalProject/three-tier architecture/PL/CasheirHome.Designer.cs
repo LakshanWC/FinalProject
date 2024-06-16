@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.MVC.View
 {
-    partial class PCasheirHome
+    partial class CasheirHome
     {
         /// <summary>
         /// Required designer variable.

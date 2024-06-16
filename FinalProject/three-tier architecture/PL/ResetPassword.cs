@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PResetPassword : Form
+    public partial class ResetPassword : Form
     {
        private Image eyeClose = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeClose.jpg");
        private Image eyeOpen = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeOpen.jpg");
 
-        PLogin objLog = new PLogin();
+        Login objLog = new Login();
 
-        public PResetPassword()
+        public ResetPassword()
         {
             InitializeComponent();
         }

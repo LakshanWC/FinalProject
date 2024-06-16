@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PAddEmployee : Form
+    public partial class AddEmployee : Form
     {
-        public PAddEmployee()
+        public AddEmployee()
         {
             InitializeComponent();
         }
@@ -85,7 +85,7 @@ namespace FinalProject.MVC.View
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            PAddEmployee addNewEmp = new PAddEmployee();
+            AddEmployee addNewEmp = new AddEmployee();
             Control.BAddEmployee caddEmp = new Control.BAddEmployee();
 
             int selectedValue = -1;

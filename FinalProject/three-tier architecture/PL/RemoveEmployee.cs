@@ -15,12 +15,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PRemoveEmployee : Form
+    public partial class RemoveEmployee : Form
     {
         private Image eyeClose = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeClose.jpg");
         private Image eyeOpen = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\eyeOpen.jpg");
 
-        public PRemoveEmployee()
+        public RemoveEmployee()
         {
             InitializeComponent();
         }

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PLogin : Form
+    public partial class Login : Form
     {
-        public PLogin()
+        public Login()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace FinalProject.MVC.View
 
         private void lnklbl_reset_pass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PResetPassword obj = new PResetPassword();
+            ResetPassword obj = new ResetPassword();
             this.Hide();
             obj.Show();
             
@@ -94,6 +94,12 @@ namespace FinalProject.MVC.View
                 chk_view.BackgroundImage = eyeOpen;
                txt_Password.UseSystemPasswordChar = true;
             }
-        }    
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Login log =  new Login();
+            log.FormBorderStyle = FormBorderStyle.Fixed3D;
+        }
     }
 }

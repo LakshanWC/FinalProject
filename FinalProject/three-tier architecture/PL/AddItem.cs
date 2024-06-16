@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PAddItem : Form
+    public partial class AddItem : Form
     {
-        public PAddItem()
+        public AddItem()
         {
             InitializeComponent();
         }

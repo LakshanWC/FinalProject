@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.MVC.View
 {
-    partial class PRemoveEmployee
+    partial class RemoveEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRemoveEmployee));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoveEmployee));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtp_DOB = new System.Windows.Forms.DateTimePicker();
             this.txt_eno = new System.Windows.Forms.TextBox();

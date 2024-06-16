@@ -46,8 +46,8 @@
             this.nud_pass_reset_requests = new System.Windows.Forms.NumericUpDown();
             this.dgv_quick_details = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_get_pass_requests = new System.Windows.Forms.Button();
             this.btn_get_attendends = new System.Windows.Forms.Button();
+            this.btn_get_pass_requests = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_pass_reset_requests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_quick_details)).BeginInit();
@@ -200,16 +200,6 @@
             this.groupBox1.Text = "Quick Buttons";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btn_get_pass_requests
-            // 
-            this.btn_get_pass_requests.Location = new System.Drawing.Point(27, 45);
-            this.btn_get_pass_requests.Name = "btn_get_pass_requests";
-            this.btn_get_pass_requests.Size = new System.Drawing.Size(181, 23);
-            this.btn_get_pass_requests.TabIndex = 0;
-            this.btn_get_pass_requests.Text = "View Password Reset Requests";
-            this.btn_get_pass_requests.UseVisualStyleBackColor = true;
-            this.btn_get_pass_requests.Click += new System.EventHandler(this.btn_get_pass_requests_Click);
-            // 
             // btn_get_attendends
             // 
             this.btn_get_attendends.Location = new System.Drawing.Point(27, 95);
@@ -219,6 +209,16 @@
             this.btn_get_attendends.Text = "View Attendends";
             this.btn_get_attendends.UseVisualStyleBackColor = true;
             this.btn_get_attendends.Click += new System.EventHandler(this.btn_get_attendends_Click);
+            // 
+            // btn_get_pass_requests
+            // 
+            this.btn_get_pass_requests.Location = new System.Drawing.Point(27, 45);
+            this.btn_get_pass_requests.Name = "btn_get_pass_requests";
+            this.btn_get_pass_requests.Size = new System.Drawing.Size(181, 23);
+            this.btn_get_pass_requests.TabIndex = 0;
+            this.btn_get_pass_requests.Text = "View Password Reset Requests";
+            this.btn_get_pass_requests.UseVisualStyleBackColor = true;
+            this.btn_get_pass_requests.Click += new System.EventHandler(this.btn_get_pass_requests_Click);
             // 
             // PManagerHome
             // 

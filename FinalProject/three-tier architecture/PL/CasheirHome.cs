@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PCasheirHome : Form
+    public partial class CasheirHome : Form
     {
-        public PCasheirHome()
+        public CasheirHome()
         {
             InitializeComponent();
         }

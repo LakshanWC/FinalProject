@@ -40,28 +40,28 @@ namespace FinalProject.MVC.View
 
         private void passwordResetRequestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PPasswordRequest passRequestObj = new PPasswordRequest();
+            PasswordRequest passRequestObj = new PasswordRequest();
             this.Hide();
             passRequestObj.Show();
         }
 
         private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PAddEmployee newEmp = new PAddEmployee();
+            AddEmployee newEmp = new AddEmployee();
             this.Hide();
             newEmp.Show();
         }
 
         private void removeEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PRemoveEmployee removeEmployee = new PRemoveEmployee(); 
+            RemoveEmployee removeEmployee = new RemoveEmployee(); 
             this.Hide();
             removeEmployee.Show();
         }
 
         private void addFoodItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PAddItem newFood = new PAddItem();
+            AddItem newFood = new AddItem();
             this.Hide();
             newFood.Show();
         }

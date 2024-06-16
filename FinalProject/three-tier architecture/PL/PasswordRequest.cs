@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace FinalProject.MVC.View
 {
-    public partial class PPasswordRequest : Form
+    public partial class PasswordRequest : Form
     {
-        public PPasswordRequest()
+        public PasswordRequest()
         {
             InitializeComponent();
         }
@@ -196,7 +196,7 @@ namespace FinalProject.MVC.View
 
         private void InitializeForm()
         {
-            PPasswordRequest myReq = new PPasswordRequest();
+            PasswordRequest myReq = new PasswordRequest();
             myReq.PasswordRequest_Load(null, EventArgs.Empty);
         }
 

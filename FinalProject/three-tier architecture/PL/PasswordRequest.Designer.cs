@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.MVC.View
 {
-    partial class PPasswordRequest
+    partial class PasswordRequest
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.MVC.View
 {
-    partial class PAddEmployee
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
