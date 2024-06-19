@@ -20,6 +20,7 @@ namespace FinalProject
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new PLogin());
             Application.Run(new NewManagerHome());
+          
         }
     }
 }

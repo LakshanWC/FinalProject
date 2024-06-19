@@ -96,6 +96,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TostMessage";
             this.Text = "TostMessage";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.TostMessage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tost_icon)).EndInit();
             this.ResumeLayout(false);

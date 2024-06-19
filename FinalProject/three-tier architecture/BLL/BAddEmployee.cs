@@ -9,7 +9,7 @@ namespace FinalProject.MVC.Control
 {
     public class BAddEmployee
     {
-        BAddEmployee mAddEmployee = new BAddEmployee();
+        DAddEmployee mAddEmployee = new DAddEmployee();
 
         public string getNewEid()
         {          
@@ -23,7 +23,7 @@ namespace FinalProject.MVC.Control
         }
         public string randomPasswordGen(string name)
         {
-            return mAddEmployee.randomPasswordGen(name);
+            return mAddEmployee.randomPasswordGenerator(name);
         }
     }
 }

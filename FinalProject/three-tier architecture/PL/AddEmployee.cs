@@ -1,4 +1,5 @@
 ﻿using FinalProject.MVC.Control;
+using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace FinalProject.MVC.View
 {
     public partial class AddEmployee : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         public AddEmployee()
         {
             InitializeComponent();
@@ -38,12 +42,12 @@ namespace FinalProject.MVC.View
             txt_user_name.Text = newEid;
 
             cmb_employee_type.SelectedIndex = 0;
+
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
             cmb_employee_type.SelectedIndex = 0;
-            txt_eno.Clear();
             txt_name.Clear();
             txt_nic_no.Clear();
             txt_address.Clear();
@@ -162,6 +166,39 @@ namespace FinalProject.MVC.View
                 Control.BAddEmployee cAddEmp = new Control.BAddEmployee();
                 txt_password.Text = cAddEmp.randomPasswordGen(txt_name.Text);
             }
+        }
+
+        private void AddEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("addEmployee");
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -74,11 +74,18 @@
     <Compile Include="three-tier architecture\DAL\DRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\DUpdateEmployee.cs" />
+    <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AttendentReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\back up form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\back up form.Designer.cs">
+      <DependentUpon>back up form.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\CustomerHome.cs">
       <SubType>Form</SubType>
@@ -169,6 +176,9 @@
     <EmbeddedResource Include="three-tier architecture\PL\AttendentReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AttendentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\back up form.resx">
+      <DependentUpon>back up form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\CustomerHome.resx">
       <DependentUpon>CustomerHome.cs</DependentUpon>

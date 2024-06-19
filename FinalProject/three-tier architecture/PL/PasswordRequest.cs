@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC.Control;
 using FinalProject.MVC.Model;
+using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace FinalProject.MVC.View
 {
     public partial class PasswordRequest : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         public PasswordRequest()
         {
             InitializeComponent();
@@ -200,6 +204,39 @@ namespace FinalProject.MVC.View
             myReq.PasswordRequest_Load(null, EventArgs.Empty);
         }
 
+        private void PasswordRequest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("passRequest");
+            Console.WriteLine("triggered");
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
     }
 }
 
