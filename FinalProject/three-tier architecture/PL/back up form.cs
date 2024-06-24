@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.three_tier_architecture.PL.Sales_Finance;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace FinalProject.three_tier_architecture.PL
         public back_up_form()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewManagerHome man =  new NewManagerHome();
+            this.Hide();
+            man.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SalesAndFinance sl = new SalesAndFinance();
+            this.Hide();
+            sl.Show();
+
+
         }
     }
 }

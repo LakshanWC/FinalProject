@@ -1,6 +1,6 @@
-﻿namespace FinalProject.three_tier_architecture.PL
+﻿namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 {
-    partial class NewManagerHome
+    partial class SalesAndFinance
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewManagerHome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesAndFinance));
+            this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
+            this.lbl_user_details = new System.Windows.Forms.Label();
+            this.lbl_userName = new System.Windows.Forms.Label();
+            this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_add_menu_item = new System.Windows.Forms.Button();
@@ -36,16 +40,12 @@
             this.pnl_nav = new System.Windows.Forms.Panel();
             this.btn_add_employee = new System.Windows.Forms.Button();
             this.btn_enable_password = new System.Windows.Forms.Button();
-            this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
-            this.lbl_user_details = new System.Windows.Forms.Label();
-            this.lbl_userName = new System.Windows.Forms.Label();
-            this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tlp_dash_board = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_total_earning = new System.Windows.Forms.Label();
@@ -78,9 +78,9 @@
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
+            this.pnl_side_panle.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tlp_dash_board.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,108 +94,6 @@
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnl_side_panle
-            // 
-            this.pnl_side_panle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pnl_side_panle.Controls.Add(this.btn_logout);
-            this.pnl_side_panle.Controls.Add(this.btn_add_menu_item);
-            this.pnl_side_panle.Controls.Add(this.panel7);
-            this.pnl_side_panle.Controls.Add(this.pnl_nav);
-            this.pnl_side_panle.Controls.Add(this.btn_add_employee);
-            this.pnl_side_panle.Controls.Add(this.btn_enable_password);
-            this.pnl_side_panle.Controls.Add(this.pnl_userdetails_panle);
-            this.pnl_side_panle.Controls.Add(this.btn_home);
-            this.pnl_side_panle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_side_panle.Location = new System.Drawing.Point(0, 24);
-            this.pnl_side_panle.Name = "pnl_side_panle";
-            this.pnl_side_panle.Size = new System.Drawing.Size(184, 492);
-            this.pnl_side_panle.TabIndex = 0;
-            this.pnl_side_panle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_side_panle_Paint);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_logout.FlatAppearance.BorderSize = 0;
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(0, 443);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(184, 49);
-            this.btn_logout.TabIndex = 5;
-            this.btn_logout.Text = "Logout";
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click_1);
-            // 
-            // btn_add_menu_item
-            // 
-            this.btn_add_menu_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_add_menu_item.FlatAppearance.BorderSize = 0;
-            this.btn_add_menu_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_menu_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_menu_item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_add_menu_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_menu_item.Location = new System.Drawing.Point(10, 322);
-            this.btn_add_menu_item.Name = "btn_add_menu_item";
-            this.btn_add_menu_item.Size = new System.Drawing.Size(172, 49);
-            this.btn_add_menu_item.TabIndex = 4;
-            this.btn_add_menu_item.Text = "Add Menu Item";
-            this.btn_add_menu_item.UseVisualStyleBackColor = false;
-            this.btn_add_menu_item.Click += new System.EventHandler(this.btn_add_menu_item_Click);
-            this.btn_add_menu_item.Leave += new System.EventHandler(this.btn_add_menu_item_Leave);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel7.Location = new System.Drawing.Point(8, 139);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(170, 3);
-            this.panel7.TabIndex = 2;
-            // 
-            // pnl_nav
-            // 
-            this.pnl_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pnl_nav.Location = new System.Drawing.Point(3, 148);
-            this.pnl_nav.Name = "pnl_nav";
-            this.pnl_nav.Size = new System.Drawing.Size(5, 100);
-            this.pnl_nav.TabIndex = 1;
-            // 
-            // btn_add_employee
-            // 
-            this.btn_add_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_add_employee.FlatAppearance.BorderSize = 0;
-            this.btn_add_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_add_employee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_employee.Location = new System.Drawing.Point(10, 263);
-            this.btn_add_employee.Name = "btn_add_employee";
-            this.btn_add_employee.Size = new System.Drawing.Size(172, 49);
-            this.btn_add_employee.TabIndex = 3;
-            this.btn_add_employee.Text = "Add Employee";
-            this.btn_add_employee.UseVisualStyleBackColor = false;
-            this.btn_add_employee.Click += new System.EventHandler(this.btn_add_employee_Click);
-            this.btn_add_employee.Leave += new System.EventHandler(this.btn_add_employee_Leave);
-            // 
-            // btn_enable_password
-            // 
-            this.btn_enable_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_enable_password.FlatAppearance.BorderSize = 0;
-            this.btn_enable_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_enable_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enable_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_enable_password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_enable_password.Location = new System.Drawing.Point(10, 205);
-            this.btn_enable_password.Name = "btn_enable_password";
-            this.btn_enable_password.Size = new System.Drawing.Size(172, 49);
-            this.btn_enable_password.TabIndex = 2;
-            this.btn_enable_password.Text = "Enable passwords";
-            this.btn_enable_password.UseVisualStyleBackColor = false;
-            this.btn_enable_password.Click += new System.EventHandler(this.btn_enable_password_Click);
-            this.btn_enable_password.Leave += new System.EventHandler(this.btn_enable_password_Leave);
             // 
             // pnl_userdetails_panle
             // 
@@ -239,6 +137,100 @@
             this.pb_user_icon.TabIndex = 0;
             this.pb_user_icon.TabStop = false;
             // 
+            // pnl_side_panle
+            // 
+            this.pnl_side_panle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnl_side_panle.Controls.Add(this.btn_logout);
+            this.pnl_side_panle.Controls.Add(this.btn_add_menu_item);
+            this.pnl_side_panle.Controls.Add(this.panel7);
+            this.pnl_side_panle.Controls.Add(this.pnl_nav);
+            this.pnl_side_panle.Controls.Add(this.btn_add_employee);
+            this.pnl_side_panle.Controls.Add(this.btn_enable_password);
+            this.pnl_side_panle.Controls.Add(this.pnl_userdetails_panle);
+            this.pnl_side_panle.Controls.Add(this.btn_home);
+            this.pnl_side_panle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_side_panle.Location = new System.Drawing.Point(0, 24);
+            this.pnl_side_panle.Name = "pnl_side_panle";
+            this.pnl_side_panle.Size = new System.Drawing.Size(184, 473);
+            this.pnl_side_panle.TabIndex = 10;
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.Location = new System.Drawing.Point(0, 424);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(184, 49);
+            this.btn_logout.TabIndex = 5;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            // 
+            // btn_add_menu_item
+            // 
+            this.btn_add_menu_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_add_menu_item.FlatAppearance.BorderSize = 0;
+            this.btn_add_menu_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_menu_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_menu_item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_add_menu_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add_menu_item.Location = new System.Drawing.Point(10, 322);
+            this.btn_add_menu_item.Name = "btn_add_menu_item";
+            this.btn_add_menu_item.Size = new System.Drawing.Size(172, 49);
+            this.btn_add_menu_item.TabIndex = 4;
+            this.btn_add_menu_item.Text = "Add Menu Item";
+            this.btn_add_menu_item.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel7.Location = new System.Drawing.Point(8, 139);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(170, 3);
+            this.panel7.TabIndex = 2;
+            // 
+            // pnl_nav
+            // 
+            this.pnl_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pnl_nav.Location = new System.Drawing.Point(3, 148);
+            this.pnl_nav.Name = "pnl_nav";
+            this.pnl_nav.Size = new System.Drawing.Size(5, 100);
+            this.pnl_nav.TabIndex = 1;
+            // 
+            // btn_add_employee
+            // 
+            this.btn_add_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_add_employee.FlatAppearance.BorderSize = 0;
+            this.btn_add_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_add_employee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add_employee.Location = new System.Drawing.Point(10, 263);
+            this.btn_add_employee.Name = "btn_add_employee";
+            this.btn_add_employee.Size = new System.Drawing.Size(172, 49);
+            this.btn_add_employee.TabIndex = 3;
+            this.btn_add_employee.Text = "Add Employee";
+            this.btn_add_employee.UseVisualStyleBackColor = false;
+            // 
+            // btn_enable_password
+            // 
+            this.btn_enable_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_enable_password.FlatAppearance.BorderSize = 0;
+            this.btn_enable_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_enable_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enable_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_enable_password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_enable_password.Location = new System.Drawing.Point(10, 205);
+            this.btn_enable_password.Name = "btn_enable_password";
+            this.btn_enable_password.Size = new System.Drawing.Size(172, 49);
+            this.btn_enable_password.TabIndex = 2;
+            this.btn_enable_password.Text = "Enable passwords";
+            this.btn_enable_password.UseVisualStyleBackColor = false;
+            // 
             // btn_home
             // 
             this.btn_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -254,23 +246,6 @@
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = false;
-            this.btn_home.Click += new System.EventHandler(this.btn_dashboard_Click);
-            this.btn_home.Leave += new System.EventHandler(this.btn_dashboard_Leave);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem,
-            this.addToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.reportsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(907, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // viewToolStripMenuItem
             // 
@@ -300,6 +275,21 @@
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.addToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.reportsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // tlp_dash_board
             // 
             this.tlp_dash_board.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -309,7 +299,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 309F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -317,17 +307,17 @@
             this.tlp_dash_board.Controls.Add(this.panel4, 2, 3);
             this.tlp_dash_board.Controls.Add(this.panel8, 1, 1);
             this.tlp_dash_board.Controls.Add(this.panel3, 0, 1);
-            this.tlp_dash_board.Location = new System.Drawing.Point(198, 33);
+            this.tlp_dash_board.Location = new System.Drawing.Point(195, 32);
             this.tlp_dash_board.Name = "tlp_dash_board";
             this.tlp_dash_board.RowCount = 4;
-            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.44898F));
-            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.55102F));
-            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.99228F));
+            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.00772F));
+            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlp_dash_board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp_dash_board.Size = new System.Drawing.Size(694, 474);
-            this.tlp_dash_board.TabIndex = 9;
+            this.tlp_dash_board.Size = new System.Drawing.Size(695, 458);
+            this.tlp_dash_board.TabIndex = 12;
             // 
             // panel1
             // 
@@ -340,7 +330,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(388, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 193);
+            this.panel1.Size = new System.Drawing.Size(304, 204);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -360,7 +350,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(25, 165);
+            this.label3.Location = new System.Drawing.Point(25, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 15);
             this.label3.TabIndex = 1;
@@ -381,9 +371,9 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(166, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(167, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 99);
+            this.pictureBox1.Size = new System.Drawing.Size(93, 110);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -397,7 +387,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(379, 193);
+            this.panel6.Size = new System.Drawing.Size(379, 204);
             this.panel6.TabIndex = 25;
             // 
             // label12
@@ -406,7 +396,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label12.Location = new System.Drawing.Point(25, 165);
+            this.label12.Location = new System.Drawing.Point(25, 176);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 15);
             this.label12.TabIndex = 1;
@@ -431,9 +421,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(388, 202);
+            this.panel5.Location = new System.Drawing.Point(388, 213);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(303, 70);
+            this.panel5.Size = new System.Drawing.Size(304, 53);
             this.panel5.TabIndex = 28;
             // 
             // label5
@@ -441,7 +431,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(184, 14);
+            this.label5.Location = new System.Drawing.Point(184, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 15);
             this.label5.TabIndex = 2;
@@ -453,7 +443,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label10.Location = new System.Drawing.Point(40, 46);
+            this.label10.Location = new System.Drawing.Point(41, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 15);
             this.label10.TabIndex = 1;
@@ -464,7 +454,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(7, 10);
+            this.label11.Location = new System.Drawing.Point(7, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 21);
             this.label11.TabIndex = 0;
@@ -480,9 +470,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(388, 278);
+            this.panel2.Location = new System.Drawing.Point(388, 272);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 120);
+            this.panel2.Size = new System.Drawing.Size(304, 119);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -548,9 +538,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(388, 404);
+            this.panel4.Location = new System.Drawing.Point(388, 397);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(303, 67);
+            this.panel4.Size = new System.Drawing.Size(304, 58);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -568,7 +558,7 @@
             this.lbl_no_of_pass_reset.AutoSize = true;
             this.lbl_no_of_pass_reset.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_no_of_pass_reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.lbl_no_of_pass_reset.Location = new System.Drawing.Point(208, 15);
+            this.lbl_no_of_pass_reset.Location = new System.Drawing.Point(187, 15);
             this.lbl_no_of_pass_reset.Name = "lbl_no_of_pass_reset";
             this.lbl_no_of_pass_reset.Size = new System.Drawing.Size(13, 15);
             this.lbl_no_of_pass_reset.TabIndex = 2;
@@ -579,7 +569,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label8.Location = new System.Drawing.Point(18, 40);
+            this.label8.Location = new System.Drawing.Point(18, 36);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 15);
             this.label8.TabIndex = 1;
@@ -592,9 +582,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(13, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(184, 21);
+            this.label9.Size = new System.Drawing.Size(147, 21);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Password reset requests :";
+            this.label9.Text = "Inventory requests :";
             // 
             // panel8
             // 
@@ -604,10 +594,10 @@
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.label15);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(185, 202);
+            this.panel8.Location = new System.Drawing.Point(185, 213);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(197, 269);
+            this.panel8.Size = new System.Drawing.Size(197, 242);
             this.panel8.TabIndex = 31;
             // 
             // cpb_cutomer_satisfaction
@@ -621,7 +611,7 @@
             this.cpb_cutomer_satisfaction.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.cpb_cutomer_satisfaction.InnerMargin = 2;
             this.cpb_cutomer_satisfaction.InnerWidth = -1;
-            this.cpb_cutomer_satisfaction.Location = new System.Drawing.Point(28, 66);
+            this.cpb_cutomer_satisfaction.Location = new System.Drawing.Point(28, 53);
             this.cpb_cutomer_satisfaction.MarqueeAnimationSpeed = 2000;
             this.cpb_cutomer_satisfaction.Name = "cpb_cutomer_satisfaction";
             this.cpb_cutomer_satisfaction.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -661,7 +651,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label15.Location = new System.Drawing.Point(40, 229);
+            this.label15.Location = new System.Drawing.Point(40, 202);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 15);
             this.label15.TabIndex = 1;
@@ -675,10 +665,10 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 202);
+            this.panel3.Location = new System.Drawing.Point(3, 213);
             this.panel3.Name = "panel3";
             this.tlp_dash_board.SetRowSpan(this.panel3, 3);
-            this.panel3.Size = new System.Drawing.Size(176, 269);
+            this.panel3.Size = new System.Drawing.Size(176, 242);
             this.panel3.TabIndex = 32;
             // 
             // cpb_stock_prisentage
@@ -692,7 +682,7 @@
             this.cpb_stock_prisentage.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.cpb_stock_prisentage.InnerMargin = 2;
             this.cpb_stock_prisentage.InnerWidth = -1;
-            this.cpb_stock_prisentage.Location = new System.Drawing.Point(18, 66);
+            this.cpb_stock_prisentage.Location = new System.Drawing.Point(18, 53);
             this.cpb_stock_prisentage.MarqueeAnimationSpeed = 2000;
             this.cpb_stock_prisentage.Name = "cpb_stock_prisentage";
             this.cpb_stock_prisentage.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -732,33 +722,27 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(30, 229);
+            this.label2.Location = new System.Drawing.Point(30, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Details of last 28 days";
             // 
-            // NewManagerHome
+            // SalesAndFinance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.ClientSize = new System.Drawing.Size(907, 516);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(897, 497);
             this.Controls.Add(this.tlp_dash_board);
             this.Controls.Add(this.pnl_side_panle);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.IsMdiContainer = true;
-            this.Name = "NewManagerHome";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewManagerHome";
-            this.Load += new System.EventHandler(this.NewManagerHome_Load);
-            this.pnl_side_panle.ResumeLayout(false);
+            this.Name = "SalesAndFinance";
+            this.Text = "SalesAndFinance";
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).EndInit();
+            this.pnl_side_panle.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tlp_dash_board.ResumeLayout(false);
@@ -786,21 +770,36 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnl_side_panle;
         private System.Windows.Forms.Panel pnl_userdetails_panle;
-        private System.Windows.Forms.PictureBox pb_user_icon;
-        private System.Windows.Forms.Button btn_add_employee;
-        private System.Windows.Forms.Button btn_enable_password;
-        private System.Windows.Forms.Panel pnl_nav;
-        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Label lbl_user_details;
         private System.Windows.Forms.Label lbl_userName;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pb_user_icon;
+        private System.Windows.Forms.Panel pnl_side_panle;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_add_menu_item;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnl_nav;
+        private System.Windows.Forms.Button btn_add_employee;
+        private System.Windows.Forms.Button btn_enable_password;
+        private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TableLayoutPanel tlp_dash_board;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_total_earning;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_event_status;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -820,21 +819,5 @@
         private CircularProgressBar.CircularProgressBar cpb_stock_prisentage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_total_earning;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
     }
 }

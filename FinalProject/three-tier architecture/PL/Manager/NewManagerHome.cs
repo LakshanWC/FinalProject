@@ -84,9 +84,6 @@ namespace FinalProject.three_tier_architecture.PL
         private void NewManagerHome_Load(object sender, EventArgs e)
         {
             btn_home.PerformClick();
-            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
-            this.Location = workingArea.Location;
-            this.Size = workingArea.Size;  
             myInit();
         }
 
