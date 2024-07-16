@@ -93,17 +93,59 @@
     <Compile Include="three-tier architecture\PL\CustomerHome.Designer.cs">
       <DependentUpon>CustomerHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Customerr\Menu.cs">
+    <Compile Include="three-tier architecture\PL\Customerr\AssistantRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Customerr\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\Customerr\AssistantRequest.Designer.cs">
+      <DependentUpon>AssistantRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\CustomerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\CustomerHome.Designer.cs">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\CustomerReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\CustomerReview.Designer.cs">
+      <DependentUpon>CustomerReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\FoodMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\FoodMenu.Designer.cs">
+      <DependentUpon>FoodMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\IssueLoyaltyCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\IssueLoyaltyCard.Designer.cs">
+      <DependentUpon>IssueLoyaltyCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderCustomize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderCustomize.Designer.cs">
+      <DependentUpon>OrderCustomize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderFood.Designer.cs">
+      <DependentUpon>OrderFood.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\RegisterForLoyaltyCard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\RegisterForLoyaltyCard.Designer.cs">
       <DependentUpon>RegisterForLoyaltyCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\Review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\Review.Designer.cs">
+      <DependentUpon>Review.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\Event.cs">
       <SubType>Form</SubType>
@@ -165,12 +207,6 @@
     <Compile Include="three-tier architecture\PL\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\PManagerHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="three-tier architecture\PL\PManagerHome.Designer.cs">
-      <DependentUpon>PManagerHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="three-tier architecture\PL\Manager\PasswordRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +237,32 @@
     <EmbeddedResource Include="three-tier architecture\PL\CustomerHome.resx">
       <DependentUpon>CustomerHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Customerr\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\AssistantRequest.resx">
+      <DependentUpon>AssistantRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\CustomerHome.resx">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\CustomerReview.resx">
+      <DependentUpon>CustomerReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\FoodMenu.resx">
+      <DependentUpon>FoodMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\IssueLoyaltyCard.resx">
+      <DependentUpon>IssueLoyaltyCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\OrderCustomize.resx">
+      <DependentUpon>OrderCustomize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\OrderFood.resx">
+      <DependentUpon>OrderFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\RegisterForLoyaltyCard.resx">
       <DependentUpon>RegisterForLoyaltyCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\Review.resx">
+      <DependentUpon>Review.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\Event.resx">
       <DependentUpon>Event.cs</DependentUpon>
@@ -236,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\PManagerHome.resx">
-      <DependentUpon>PManagerHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\PasswordRequest.resx">
       <DependentUpon>PasswordRequest.cs</DependentUpon>

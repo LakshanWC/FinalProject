@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProject.three_tier_architecture.PL.Customerr
 {
-    public partial class Menu : Form
+    public partial class CustomerHome : Form
     {
-        public Menu()
+        public CustomerHome()
         {
             InitializeComponent();
         }
