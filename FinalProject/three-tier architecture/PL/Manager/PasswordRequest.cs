@@ -64,7 +64,7 @@ namespace FinalProject.MVC.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PManagerHome managerHome = new PManagerHome();
+            NewManagerHome managerHome = new NewManagerHome();
             this.Hide();
             managerHome.Show();
         }

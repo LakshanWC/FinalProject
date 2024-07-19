@@ -254,6 +254,7 @@
             this.ClientSize = new System.Drawing.Size(980, 496);
             this.Controls.Add(this.pnl_side_panle);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.Name = "CustomerHome";
             this.Text = "CustomerHome";
             this.pnl_side_panle.ResumeLayout(false);

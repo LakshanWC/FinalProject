@@ -1,4 +1,5 @@
 ﻿using FinalProject.MVC.Control;
+using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace FinalProject.MVC.View
                         break;
                     case 2:
                         mylogin.markAttendant(userName);
-                        PManagerHome mHObj = new PManagerHome();
+                        NewManagerHome mHObj = new NewManagerHome();
                         this.Hide();  
                         mHObj.Show();
                        // MessageBox.Show("manager GUI");

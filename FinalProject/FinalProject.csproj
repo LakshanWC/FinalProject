@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="three-tier architecture\BLL\BAddItem.cs" />
     <Compile Include="three-tier architecture\BLL\BAddEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\BGeneralReports.cs" />
     <Compile Include="three-tier architecture\BLL\BLogin.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="three-tier architecture\BLL\BPassResetRequests.cs" />
     <Compile Include="three-tier architecture\BLL\BRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\BResetPassword.cs" />
+    <Compile Include="three-tier architecture\DAL\DAddItem.cs" />
     <Compile Include="three-tier architecture\DAL\DAddEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\DGeneralReports.cs" />
     <Compile Include="three-tier architecture\DAL\DManagerHome_All.cs" />
@@ -86,6 +88,18 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\back up form.Designer.cs">
       <DependentUpon>back up form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.Designer.cs">
+      <DependentUpon>ReceivedOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\UpdateInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\UpdateInventory.Designer.cs">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\CustomerHome.cs">
       <SubType>Form</SubType>
@@ -141,11 +155,23 @@
     <Compile Include="three-tier architecture\PL\Customerr\RegisterForLoyaltyCard.Designer.cs">
       <DependentUpon>RegisterForLoyaltyCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\Review.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\Review.Designer.cs">
       <DependentUpon>Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\TrackDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\TrackDelivery.Designer.cs">
+      <DependentUpon>TrackDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\Event.cs">
       <SubType>Form</SubType>
@@ -164,6 +190,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\NewManagerHome.Designer.cs">
       <DependentUpon>NewManagerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Manager\RemoveMenuItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Manager\RemoveMenuItem.Designer.cs">
+      <DependentUpon>RemoveMenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.cs">
       <SubType>Form</SubType>
@@ -234,6 +266,12 @@
     <EmbeddedResource Include="three-tier architecture\PL\back up form.resx">
       <DependentUpon>back up form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Chef\ReceivedOrder.resx">
+      <DependentUpon>ReceivedOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Chef\UpdateInventory.resx">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\CustomerHome.resx">
       <DependentUpon>CustomerHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,8 +299,14 @@
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\RegisterForLoyaltyCard.resx">
       <DependentUpon>RegisterForLoyaltyCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\Review.resx">
       <DependentUpon>Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\TrackDelivery.resx">
+      <DependentUpon>TrackDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\Event.resx">
       <DependentUpon>Event.cs</DependentUpon>
@@ -272,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\NewManagerHome.resx">
       <DependentUpon>NewManagerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Manager\RemoveMenuItem.resx">
+      <DependentUpon>RemoveMenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.resx">
       <DependentUpon>UpdateEmployeeDetails.cs</DependentUpon>
@@ -329,6 +376,10 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="three-tier architecture\PL\Cashier\" />
+    <Folder Include="three-tier architecture\PL\Delivery Team\" />
+    <Folder Include="three-tier architecture\PL\Supplier\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

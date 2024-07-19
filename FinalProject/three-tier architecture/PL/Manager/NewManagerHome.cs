@@ -215,5 +215,11 @@ namespace FinalProject.three_tier_architecture.PL
         {
             btn_add_menu_item.BackColor = Color.FromArgb(42, 42, 42);
         }
+
+        private void addMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddItem item = new AddItem();
+            item.MdiParent = this;
+        }
     }
 }

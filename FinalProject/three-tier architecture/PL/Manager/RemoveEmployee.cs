@@ -1,4 +1,5 @@
 ﻿using FinalProject.three_tier_architecture.BLL;
+using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace FinalProject.MVC.View
 
         private void btn_return_home_Click(object sender, EventArgs e)
         {
-            PManagerHome mHome = new PManagerHome();
+            NewManagerHome mHome = new NewManagerHome();
             this.Hide();
             mHome.Show();
         }

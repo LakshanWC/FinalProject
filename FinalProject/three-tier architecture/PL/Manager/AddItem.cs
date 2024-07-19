@@ -1,4 +1,5 @@
 ﻿using FinalProject.three_tier_architecture;
+using FinalProject.three_tier_architecture.BLL;
 using FinalProject.three_tier_architecture.PL;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,17 @@ namespace FinalProject.MVC.View
         private Point startPoint = new Point(0, 0);
         private ItemImage foodIcon = new ItemImage();
         private Image icon;
-        private int count = 0;
+        private int imageNo = 0;
+     
+
+        //data from the ui
+        private int itemId ;
+        private string itemName;
+        private double itemPrice;
+        private int itemType;
+        private int itemCalories;
+        private string itemDescription;
+
 
         public AddItem()
         {
@@ -46,15 +57,34 @@ namespace FinalProject.MVC.View
 
         private void txt_add_item_Click(object sender, EventArgs e)
         {
+            //set values
+            itemId = Convert.ToInt32(txt_item_id.Text);
+            itemName = txt_item_name.Text;
+            itemCalories = Convert.ToInt32(txt_calories.Text);
+            itemType = cmb_item_type.SelectedIndex;
+            itemPrice = Convert.ToDouble(txt_item_price.Text);
+            itemDescription = txt_item_description.Text;
+
             if (!string.IsNullOrEmpty(txt_item_description.Text) && !string.IsNullOrEmpty(txt_item_name.Text)
                 && !string.IsNullOrEmpty(txt_item_id.Text) && !string.IsNullOrEmpty(txt_item_price.Text))
             {
 
+                BAddItem addItem = new BAddItem();
+                int status = addItem.addItem(itemName, itemPrice, itemType, itemCalories, itemDescription, imageNo);
 
+                if (status == 1) {
+                    TostMessage messageSucses = new TostMessage("Item Successfully added", "Successful", 3, 3);
+                    messageSucses.Show();
+                }
+                else if (status == 0) {
+                    TostMessage messageFail = new TostMessage("Item adding failed", "Failed", 1, 1);
+                    messageFail.Show();
 
-
-
-
+                }
+                else {
+                    TostMessage messageError = new TostMessage("Unexpected Error Occurred", "Unexpected Error", 2, 2);
+                    messageError.Show();
+                }
 
             }
             
@@ -91,27 +121,30 @@ namespace FinalProject.MVC.View
 
         private void AddItem_Load(object sender, EventArgs e)
         {
-            icon = foodIcon.getItemImage(count);
+            icon = foodIcon.getItemImage(imageNo);
             pb_item_image.Image = icon;
             cmb_item_type.SelectedIndex = 0;
+
+            txt_item_id.Text = "1";
+
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
         {
-            if (count >=9) 
+            if (imageNo >=9) 
             {
-                count = 0;
-                icon = foodIcon.getItemImage(count);
+                imageNo = 0;
+                icon = foodIcon.getItemImage(imageNo);
                 pb_item_image.Image = icon;
                 cmb_item_type.SelectedIndex = 0;  
             }
             else
             {
-                count++;
-                icon = foodIcon.getItemImage(count);
+                imageNo++;
+                icon = foodIcon.getItemImage(imageNo);
                 pb_item_image.Image = icon;
 
-                if (count >= 7 && count <= 9)
+                if (imageNo >= 7 && imageNo <= 9)
                 {
                     cmb_item_type.SelectedIndex = 1;
                 }
@@ -121,24 +154,33 @@ namespace FinalProject.MVC.View
 
         private void btn_backward_Click(object sender, EventArgs e)
         {
-            if (count <= 0)
+            if (imageNo <= 0)
             {
-                icon = foodIcon.getItemImage(count);
+                icon = foodIcon.getItemImage(imageNo);
                 pb_item_image.Image = icon;
-                count = 0;
+                imageNo = 0;
                 cmb_item_type.SelectedIndex= 0 ;
             }
             else
             {
-                count--;
-                icon = foodIcon.getItemImage(count);
+                imageNo--;
+                icon = foodIcon.getItemImage(imageNo);
                 pb_item_image.Image = icon;
 
-                if (count >= 0 && count <= 6)
+                if (imageNo >= 0 && imageNo <= 6)
                 {
                     cmb_item_type.SelectedIndex = 0;
                 }
             }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            //Clear data from ui
+            txt_item_name.Clear();
+            txt_calories.Clear();
+            txt_item_price.Clear();
+            txt_item_description.Clear();
         }
     }
 }

@@ -173,6 +173,7 @@
             this.btn_clear.TabIndex = 13;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // txt_item_description
             // 

@@ -26,7 +26,7 @@ namespace FinalProject.MVC.View
         private void btn_return_home_Click(object sender, EventArgs e)
         {
 
-            PManagerHome mhome = new PManagerHome();
+            NewManagerHome mhome = new NewManagerHome();
             this.Hide();
             mhome.Show();
         }

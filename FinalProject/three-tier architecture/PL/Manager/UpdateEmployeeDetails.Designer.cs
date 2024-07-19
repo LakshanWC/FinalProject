@@ -61,20 +61,26 @@
             this.txt_tel_no = new System.Windows.Forms.TextBox();
             this.rbtn_enable = new System.Windows.Forms.RadioButton();
             this.rbtn_diable = new System.Windows.Forms.RadioButton();
+            this.pnl_title = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_salary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_ot_hours)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.pnl_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox3.Controls.Add(this.nud_salary);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.nud_ot_hours);
-            this.groupBox3.Location = new System.Drawing.Point(388, 22);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.groupBox3.Location = new System.Drawing.Point(388, 49);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(274, 115);
             this.groupBox3.TabIndex = 40;
@@ -83,6 +89,8 @@
             // 
             // nud_salary
             // 
+            this.nud_salary.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nud_salary.ForeColor = System.Drawing.SystemColors.Info;
             this.nud_salary.Increment = new decimal(new int[] {
             100,
             0,
@@ -96,6 +104,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label10.Location = new System.Drawing.Point(23, 39);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
@@ -105,6 +114,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label11.Location = new System.Drawing.Point(23, 83);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 13);
@@ -113,6 +123,8 @@
             // 
             // nud_ot_hours
             // 
+            this.nud_ot_hours.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nud_ot_hours.ForeColor = System.Drawing.SystemColors.Info;
             this.nud_ot_hours.Location = new System.Drawing.Point(104, 83);
             this.nud_ot_hours.Name = "nud_ot_hours";
             this.nud_ot_hours.Size = new System.Drawing.Size(79, 20);
@@ -120,46 +132,64 @@
             // 
             // btn_return_home
             // 
-            this.btn_return_home.Location = new System.Drawing.Point(398, 398);
+            this.btn_return_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_return_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_return_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_return_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_return_home.Location = new System.Drawing.Point(371, 425);
             this.btn_return_home.Name = "btn_return_home";
-            this.btn_return_home.Size = new System.Drawing.Size(90, 37);
+            this.btn_return_home.Size = new System.Drawing.Size(117, 37);
             this.btn_return_home.TabIndex = 39;
             this.btn_return_home.Text = "Return to Home";
-            this.btn_return_home.UseVisualStyleBackColor = true;
+            this.btn_return_home.UseVisualStyleBackColor = false;
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(602, 398);
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_update.Location = new System.Drawing.Point(602, 425);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 37);
             this.btn_update.TabIndex = 38;
             this.btn_update.Text = "Update";
-            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(503, 398);
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_clear.Location = new System.Drawing.Point(503, 425);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 37);
             this.btn_clear.TabIndex = 37;
             this.btn_clear.Text = "Clear";
-            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(607, 280);
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_search.Location = new System.Drawing.Point(607, 307);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
             this.btn_search.TabIndex = 36;
             this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // txt_search_eno
             // 
-            this.txt_search_eno.Location = new System.Drawing.Point(483, 282);
+            this.txt_search_eno.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_search_eno.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_search_eno.Location = new System.Drawing.Point(483, 309);
             this.txt_search_eno.Name = "txt_search_eno";
             this.txt_search_eno.Size = new System.Drawing.Size(102, 20);
             this.txt_search_eno.TabIndex = 35;
@@ -167,7 +197,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(368, 285);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label9.Location = new System.Drawing.Point(368, 312);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 13);
             this.label9.TabIndex = 34;
@@ -175,12 +206,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox1.Controls.Add(this.chk_view);
             this.groupBox1.Controls.Add(this.txt_user_name);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txt_password);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(388, 143);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.groupBox1.Location = new System.Drawing.Point(388, 170);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 121);
             this.groupBox1.TabIndex = 33;
@@ -202,6 +235,8 @@
             // 
             // txt_user_name
             // 
+            this.txt_user_name.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_user_name.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_user_name.Location = new System.Drawing.Point(109, 35);
             this.txt_user_name.Name = "txt_user_name";
             this.txt_user_name.Size = new System.Drawing.Size(100, 20);
@@ -210,6 +245,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label6.Location = new System.Drawing.Point(37, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
@@ -218,6 +254,8 @@
             // 
             // txt_password
             // 
+            this.txt_password.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_password.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_password.Location = new System.Drawing.Point(109, 77);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 20);
@@ -227,6 +265,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label7.Location = new System.Drawing.Point(37, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
@@ -235,6 +274,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox2.Controls.Add(this.dtp_DOB);
             this.groupBox2.Controls.Add(this.txt_eno);
             this.groupBox2.Controls.Add(this.label8);
@@ -247,7 +287,8 @@
             this.groupBox2.Controls.Add(this.txt_name);
             this.groupBox2.Controls.Add(this.txt_address);
             this.groupBox2.Controls.Add(this.txt_tel_no);
-            this.groupBox2.Location = new System.Drawing.Point(12, 22);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.groupBox2.Location = new System.Drawing.Point(12, 49);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(339, 416);
             this.groupBox2.TabIndex = 32;
@@ -265,6 +306,8 @@
             // 
             // txt_eno
             // 
+            this.txt_eno.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_eno.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_eno.Location = new System.Drawing.Point(127, 31);
             this.txt_eno.Name = "txt_eno";
             this.txt_eno.ReadOnly = true;
@@ -274,6 +317,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label8.Location = new System.Drawing.Point(36, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
@@ -282,6 +326,8 @@
             // 
             // txt_nic_no
             // 
+            this.txt_nic_no.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_nic_no.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_nic_no.Location = new System.Drawing.Point(126, 121);
             this.txt_nic_no.Name = "txt_nic_no";
             this.txt_nic_no.Size = new System.Drawing.Size(117, 20);
@@ -290,6 +336,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label1.Location = new System.Drawing.Point(34, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
@@ -299,6 +346,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label2.Location = new System.Drawing.Point(34, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
@@ -308,6 +356,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label3.Location = new System.Drawing.Point(34, 284);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
@@ -317,6 +366,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label4.Location = new System.Drawing.Point(33, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
@@ -326,6 +376,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label5.Location = new System.Drawing.Point(33, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
@@ -334,6 +385,8 @@
             // 
             // txt_name
             // 
+            this.txt_name.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_name.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_name.Location = new System.Drawing.Point(127, 76);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(116, 20);
@@ -341,6 +394,8 @@
             // 
             // txt_address
             // 
+            this.txt_address.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_address.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_address.Location = new System.Drawing.Point(125, 284);
             this.txt_address.Multiline = true;
             this.txt_address.Name = "txt_address";
@@ -349,6 +404,8 @@
             // 
             // txt_tel_no
             // 
+            this.txt_tel_no.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_tel_no.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_tel_no.Location = new System.Drawing.Point(126, 222);
             this.txt_tel_no.Name = "txt_tel_no";
             this.txt_tel_no.Size = new System.Drawing.Size(116, 20);
@@ -357,7 +414,8 @@
             // rbtn_enable
             // 
             this.rbtn_enable.AutoSize = true;
-            this.rbtn_enable.Location = new System.Drawing.Point(449, 338);
+            this.rbtn_enable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.rbtn_enable.Location = new System.Drawing.Point(449, 365);
             this.rbtn_enable.Name = "rbtn_enable";
             this.rbtn_enable.Size = new System.Drawing.Size(101, 17);
             this.rbtn_enable.TabIndex = 42;
@@ -368,7 +426,8 @@
             // rbtn_diable
             // 
             this.rbtn_diable.AutoSize = true;
-            this.rbtn_diable.Location = new System.Drawing.Point(573, 338);
+            this.rbtn_diable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.rbtn_diable.Location = new System.Drawing.Point(573, 365);
             this.rbtn_diable.Name = "rbtn_diable";
             this.rbtn_diable.Size = new System.Drawing.Size(103, 17);
             this.rbtn_diable.TabIndex = 43;
@@ -376,11 +435,46 @@
             this.rbtn_diable.Text = "Disable Account";
             this.rbtn_diable.UseVisualStyleBackColor = true;
             // 
+            // pnl_title
+            // 
+            this.pnl_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.pnl_title.Controls.Add(this.btn_close);
+            this.pnl_title.Controls.Add(this.label12);
+            this.pnl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_title.Location = new System.Drawing.Point(0, 0);
+            this.pnl_title.Name = "pnl_title";
+            this.pnl_title.Size = new System.Drawing.Size(695, 34);
+            this.pnl_title.TabIndex = 53;
+            // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
+            this.btn_close.Location = new System.Drawing.Point(659, 6);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(23, 23);
+            this.btn_close.TabIndex = 43;
+            this.btn_close.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label12.Location = new System.Drawing.Point(12, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(120, 15);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Update Employee";
+            // 
             // UpdateEmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClientSize = new System.Drawing.Size(695, 484);
+            this.Controls.Add(this.pnl_title);
             this.Controls.Add(this.rbtn_diable);
             this.Controls.Add(this.rbtn_enable);
             this.Controls.Add(this.groupBox3);
@@ -392,6 +486,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateEmployeeDetails";
             this.Text = "UpdateEmployeeDetails";
             this.groupBox3.ResumeLayout(false);
@@ -402,6 +498,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.pnl_title.ResumeLayout(false);
+            this.pnl_title.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +538,8 @@
         private System.Windows.Forms.TextBox txt_tel_no;
         private System.Windows.Forms.RadioButton rbtn_enable;
         private System.Windows.Forms.RadioButton rbtn_diable;
+        private System.Windows.Forms.Panel pnl_title;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Label label12;
     }
 }
