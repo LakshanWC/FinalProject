@@ -31,6 +31,7 @@ namespace FinalProject.three_tier_architecture.DAL
                     cmd.Parameters.AddWithValue("@itemCalories", itemCalories);
 
                     int count = cmd.ExecuteNonQuery();
+                    connection.closeConnection();
 
                     if (count > 0) { return 1; }
                     else { return 0; }

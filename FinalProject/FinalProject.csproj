@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="three-tier architecture\BLL\BAddItem.cs" />
     <Compile Include="three-tier architecture\BLL\BAddEmployee.cs" />
+    <Compile Include="three-tier architecture\BLL\BEvent.cs" />
     <Compile Include="three-tier architecture\BLL\BGeneralReports.cs" />
     <Compile Include="three-tier architecture\BLL\BLogin.cs" />
     <Compile Include="three-tier architecture\BLL\BManagerHome_All.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="three-tier architecture\BLL\BResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\DAddItem.cs" />
     <Compile Include="three-tier architecture\DAL\DAddEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\DEvent.cs" />
     <Compile Include="three-tier architecture\DAL\DGeneralReports.cs" />
     <Compile Include="three-tier architecture\DAL\DManagerHome_All.cs" />
     <Compile Include="three-tier architecture\DAL\DMDBConnection.cs" />
