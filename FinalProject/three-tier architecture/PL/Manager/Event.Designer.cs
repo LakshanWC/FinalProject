@@ -43,7 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_event_type = new System.Windows.Forms.ComboBox();
             this.cmb_event_status = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_organizer_name = new System.Windows.Forms.TextBox();
             this.txt_event_description = new System.Windows.Forms.TextBox();
             this.dtp_start_date = new System.Windows.Forms.DateTimePicker();
             this.dtp_start_time = new System.Windows.Forms.DateTimePicker();
@@ -82,6 +82,7 @@
             this.txt_event_no.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_event_no.Location = new System.Drawing.Point(129, 37);
             this.txt_event_no.Name = "txt_event_no";
+            this.txt_event_no.ReadOnly = true;
             this.txt_event_no.Size = new System.Drawing.Size(100, 20);
             this.txt_event_no.TabIndex = 1;
             // 
@@ -192,25 +193,15 @@
             this.cmb_event_type.Items.AddRange(new object[] {
             "..Select...",
             "Live Music Performances",
-            "",
             "Chef’s Table Events",
-            "",
             "Themed Dinner Nights",
-            "",
             "Brunch Events",
-            "",
             "Trivia Nights",
-            "",
             "Game Nights",
-            "",
             "Holiday Celebrations",
-            "",
             "Cultural Festivals",
-            "",
             "Seasonal Celebrations",
-            "",
             "Birthday Events",
-            "",
             "Custom"});
             this.cmb_event_type.Location = new System.Drawing.Point(129, 150);
             this.cmb_event_type.Name = "cmb_event_type";
@@ -232,14 +223,14 @@
             this.cmb_event_status.Size = new System.Drawing.Size(121, 21);
             this.cmb_event_status.TabIndex = 13;
             // 
-            // textBox1
+            // txt_organizer_name
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(129, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 14;
+            this.txt_organizer_name.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_organizer_name.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_organizer_name.Location = new System.Drawing.Point(129, 108);
+            this.txt_organizer_name.Name = "txt_organizer_name";
+            this.txt_organizer_name.Size = new System.Drawing.Size(174, 20);
+            this.txt_organizer_name.TabIndex = 14;
             // 
             // txt_event_description
             // 
@@ -268,6 +259,7 @@
             this.dtp_start_time.Name = "dtp_start_time";
             this.dtp_start_time.Size = new System.Drawing.Size(100, 20);
             this.dtp_start_time.TabIndex = 17;
+            this.dtp_start_time.Value = new System.DateTime(2024, 7, 20, 12, 27, 0, 0);
             // 
             // dtp_end_date
             // 
@@ -308,7 +300,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox2.Controls.Add(this.lbl_word_count);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txt_organizer_name);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_event_description);
             this.groupBox2.Controls.Add(this.txt_event_no);
@@ -383,6 +375,7 @@
             this.btn_clear.TabIndex = 25;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_add_event
             // 
@@ -489,7 +482,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmb_event_type;
         private System.Windows.Forms.ComboBox cmb_event_status;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_organizer_name;
         private System.Windows.Forms.TextBox txt_event_description;
         private System.Windows.Forms.DateTimePicker dtp_start_date;
         private System.Windows.Forms.DateTimePicker dtp_start_time;

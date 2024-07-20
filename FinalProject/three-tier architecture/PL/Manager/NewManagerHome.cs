@@ -50,8 +50,6 @@ namespace FinalProject.three_tier_architecture.PL
 
             if (noOfRequests > 0)
             {
-                // MessageBox.Show("Password Reset Requests Available. Please check and accept them in order" +
-                //    " to enable the new passwords.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 TostMessage myTost = new TostMessage("Password Reset Requests Available. " +
                     "Please check and accept them", "Notification", 1, 1);
@@ -132,7 +130,7 @@ namespace FinalProject.three_tier_architecture.PL
             btn_enable_password.BackColor = Color.FromArgb(30, 30, 30);
             PasswordRequest request = new PasswordRequest();
 
-            if (!opendChildForms.Contains("passRequest"))
+            if (!opendChildForms.Contains("passRequest") && opendChildForms.Count <= 2)
             {
                 this.tlp_dash_board.Visible = false;
                 
@@ -155,7 +153,7 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Left =  btn_add_employee.Left;
             btn_add_employee.BackColor = Color.FromArgb(30, 30, 30);
 
-            if (!opendChildForms.Contains("addEmployee"))
+            if (!opendChildForms.Contains("addEmployee") && opendChildForms.Count <= 2)
             {
                 this.tlp_dash_board.Visible = false;
                 AddEmployee emp = new AddEmployee();
@@ -177,7 +175,7 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Left =  btn_add_menu_item.Left;
             btn_add_menu_item.BackColor = Color.FromArgb(30, 30, 30);
 
-            if (!opendChildForms.Contains("addItem"))
+            if (!opendChildForms.Contains("addItem") && opendChildForms.Count <= 2)
             {
                 this.tlp_dash_board.Visible = false;
                 AddItem itme = new AddItem();
@@ -218,8 +216,36 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void addMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddItem item = new AddItem();
-            item.MdiParent = this;
+            if (!opendChildForms.Contains("addItem") && opendChildForms.Count <= 2)
+            {
+                this.tlp_dash_board.Visible = false;
+                AddItem itme = new AddItem();
+                itme.MdiParent = this;
+                itme.Show();
+
+                opendChildForms.Add("addItem");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!opendChildForms.Contains("Event") && opendChildForms.Count <= 2)
+            {
+                this.tlp_dash_board.Visible = false;
+                Event addEvent = new Event();
+                addEvent.MdiParent = this;
+                addEvent.Show();
+
+                opendChildForms.Add("Event");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
         }
     }
 }

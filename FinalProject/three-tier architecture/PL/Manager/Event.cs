@@ -12,6 +12,19 @@ namespace FinalProject.three_tier_architecture.PL
 {
     public partial class Event : Form
     {
+        //set variables for ui
+
+        string eventName;
+        string eventOrganizer;
+        int eventType;
+        int eventStatus;
+        string eventDescription;
+        string startDate;
+        string endDate;
+        string startTime;
+        string endTime;
+
+
         public Event()
         {
             InitializeComponent();
@@ -39,6 +52,20 @@ namespace FinalProject.three_tier_architecture.PL
         private void btn_add_event_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txt_event_title.Clear();
+            txt_organizer_name.Clear();
+            cmb_event_type.SelectedIndex = 0;
+            cmb_event_status.SelectedIndex = 0;
+            txt_event_description.Clear();
+
+            dtp_start_date.Value = DateTime.Now;
+            dtp_end_date.Value = DateTime.Now;
+            dtp_start_time.Value = DateTime.Now;
+            dtp_end_time.Value = DateTime.Now;
         }
     }
 }

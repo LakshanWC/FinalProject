@@ -33,14 +33,14 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_update_status = new System.Windows.Forms.Button();
             this.cmb_Order_status = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmb_selected_item = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_selected_item = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_order = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_update_status = new System.Windows.Forms.Button();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,6 +92,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(597, 425);
             this.panel1.TabIndex = 66;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_update_status
+            // 
+            this.btn_update_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_update_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_update_status.Location = new System.Drawing.Point(311, 372);
+            this.btn_update_status.Name = "btn_update_status";
+            this.btn_update_status.Size = new System.Drawing.Size(105, 29);
+            this.btn_update_status.TabIndex = 69;
+            this.btn_update_status.Text = "Update Status";
+            this.btn_update_status.UseVisualStyleBackColor = false;
             // 
             // cmb_Order_status
             // 
@@ -102,6 +116,24 @@
             this.cmb_Order_status.Name = "cmb_Order_status";
             this.cmb_Order_status.Size = new System.Drawing.Size(121, 21);
             this.cmb_Order_status.TabIndex = 66;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(566, 279);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // cmb_selected_item
+            // 
+            this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_selected_item.FormattingEnabled = true;
+            this.cmb_selected_item.Location = new System.Drawing.Point(148, 329);
+            this.cmb_selected_item.Name = "cmb_selected_item";
+            this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
+            this.cmb_selected_item.TabIndex = 60;
             // 
             // label3
             // 
@@ -122,24 +154,6 @@
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 61;
             this.label1.Text = "Select Order :";
-            // 
-            // cmb_selected_item
-            // 
-            this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_selected_item.FormattingEnabled = true;
-            this.cmb_selected_item.Location = new System.Drawing.Point(148, 329);
-            this.cmb_selected_item.Name = "cmb_selected_item";
-            this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
-            this.cmb_selected_item.TabIndex = 60;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(566, 279);
-            this.dataGridView1.TabIndex = 0;
             // 
             // btn_order
             // 
@@ -168,19 +182,6 @@
             this.button1.TabIndex = 68;
             this.button1.Text = "Normal Orders";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btn_update_status
-            // 
-            this.btn_update_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_update_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_update_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_update_status.Location = new System.Drawing.Point(311, 372);
-            this.btn_update_status.Name = "btn_update_status";
-            this.btn_update_status.Size = new System.Drawing.Size(105, 29);
-            this.btn_update_status.TabIndex = 69;
-            this.btn_update_status.Text = "Update Status";
-            this.btn_update_status.UseVisualStyleBackColor = false;
             // 
             // ReceivedOrder
             // 

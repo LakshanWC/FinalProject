@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FinalProject.three_tier_architecture.PL.Chef
+namespace FinalProject.three_tier_architecture.PL.Supplier
 {
-    public partial class ReceivedOrder : Form
+    public partial class StockOrderRequest : Form
     {
-        public ReceivedOrder()
+        public StockOrderRequest()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
