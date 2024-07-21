@@ -37,11 +37,32 @@ namespace FinalProject.three_tier_architecture.DAL
                     else { return 0; }
                 }
             } catch (SqlException e){
-                MessageBox.Show(e.Message);
                 Console.WriteLine(e.Message);
                 return -1;
 
             }
         }
+        public int getItemId()
+        {
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    string sqlQuery = "SELECT COUNT(*) FROM items;";
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        int results = (int)cmd.ExecuteScalar();
+                        return results + 1;
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+
     }
 }

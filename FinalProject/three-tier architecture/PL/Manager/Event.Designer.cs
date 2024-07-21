@@ -53,7 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_word_count = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmb_event_no = new System.Windows.Forms.ComboBox();
+            this.cmb_search_event = new System.Windows.Forms.ComboBox();
             this.btn_search_event = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_add_event = new System.Windows.Forms.Button();
@@ -61,6 +61,9 @@
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_load_all_events = new System.Windows.Forms.Button();
+            this.cb_laod_event_by_id = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnl_title.SuspendLayout();
@@ -340,15 +343,15 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Search Event :";
             // 
-            // cmb_event_no
+            // cmb_search_event
             // 
-            this.cmb_event_no.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmb_event_no.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_event_no.FormattingEnabled = true;
-            this.cmb_event_no.Location = new System.Drawing.Point(516, 260);
-            this.cmb_event_no.Name = "cmb_event_no";
-            this.cmb_event_no.Size = new System.Drawing.Size(121, 21);
-            this.cmb_event_no.TabIndex = 23;
+            this.cmb_search_event.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmb_search_event.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_search_event.FormattingEnabled = true;
+            this.cmb_search_event.Location = new System.Drawing.Point(516, 260);
+            this.cmb_search_event.Name = "cmb_search_event";
+            this.cmb_search_event.Size = new System.Drawing.Size(121, 21);
+            this.cmb_search_event.TabIndex = 23;
             // 
             // btn_search_event
             // 
@@ -362,6 +365,7 @@
             this.btn_search_event.TabIndex = 24;
             this.btn_search_event.Text = "Search";
             this.btn_search_event.UseVisualStyleBackColor = false;
+            this.btn_search_event.Click += new System.EventHandler(this.btn_search_event_Click);
             // 
             // btn_clear
             // 
@@ -369,7 +373,7 @@
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_clear.Location = new System.Drawing.Point(399, 356);
+            this.btn_clear.Location = new System.Drawing.Point(400, 386);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(86, 37);
             this.btn_clear.TabIndex = 25;
@@ -383,7 +387,7 @@
             this.btn_add_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_event.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_event.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_add_event.Location = new System.Drawing.Point(636, 356);
+            this.btn_add_event.Location = new System.Drawing.Point(637, 386);
             this.btn_add_event.Name = "btn_add_event";
             this.btn_add_event.Size = new System.Drawing.Size(88, 37);
             this.btn_add_event.TabIndex = 26;
@@ -397,12 +401,13 @@
             this.btn_update_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update_event.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update_event.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_update_event.Location = new System.Drawing.Point(516, 356);
+            this.btn_update_event.Location = new System.Drawing.Point(517, 386);
             this.btn_update_event.Name = "btn_update_event";
             this.btn_update_event.Size = new System.Drawing.Size(102, 37);
             this.btn_update_event.TabIndex = 27;
             this.btn_update_event.Text = "Update Event";
             this.btn_update_event.UseVisualStyleBackColor = false;
+            this.btn_update_event.Click += new System.EventHandler(this.btn_update_event_Click);
             // 
             // pnl_title
             // 
@@ -441,18 +446,57 @@
             this.label12.TabIndex = 42;
             this.label12.Text = "Event";
             // 
+            // btn_load_all_events
+            // 
+            this.btn_load_all_events.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_load_all_events.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_load_all_events.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_load_all_events.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_load_all_events.Location = new System.Drawing.Point(603, 317);
+            this.btn_load_all_events.Name = "btn_load_all_events";
+            this.btn_load_all_events.Size = new System.Drawing.Size(121, 37);
+            this.btn_load_all_events.TabIndex = 55;
+            this.btn_load_all_events.Text = "Load All Events";
+            this.btn_load_all_events.UseVisualStyleBackColor = false;
+            this.btn_load_all_events.Click += new System.EventHandler(this.btn_load_all_events_Click);
+            // 
+            // cb_laod_event_by_id
+            // 
+            this.cb_laod_event_by_id.AutoSize = true;
+            this.cb_laod_event_by_id.Enabled = false;
+            this.cb_laod_event_by_id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cb_laod_event_by_id.Location = new System.Drawing.Point(410, 328);
+            this.cb_laod_event_by_id.Name = "cb_laod_event_by_id";
+            this.cb_laod_event_by_id.Size = new System.Drawing.Size(15, 14);
+            this.cb_laod_event_by_id.TabIndex = 56;
+            this.cb_laod_event_by_id.UseVisualStyleBackColor = true;
+            this.cb_laod_event_by_id.CheckedChanged += new System.EventHandler(this.cb_laod_event_by_id_CheckedChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label13.Location = new System.Drawing.Point(431, 329);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 13);
+            this.label13.TabIndex = 57;
+            this.label13.Text = "Load Events By Id";
+            // 
             // Event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(737, 454);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cb_laod_event_by_id);
+            this.Controls.Add(this.btn_load_all_events);
             this.Controls.Add(this.pnl_title);
             this.Controls.Add(this.btn_update_event);
             this.Controls.Add(this.btn_add_event);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_search_event);
-            this.Controls.Add(this.cmb_event_no);
+            this.Controls.Add(this.cmb_search_event);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -497,7 +541,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbl_word_count;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmb_event_no;
+        private System.Windows.Forms.ComboBox cmb_search_event;
         private System.Windows.Forms.Button btn_search_event;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_add_event;
@@ -505,5 +549,8 @@
         private System.Windows.Forms.Panel pnl_title;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_load_all_events;
+        private System.Windows.Forms.CheckBox cb_laod_event_by_id;
+        private System.Windows.Forms.Label label13;
     }
 }

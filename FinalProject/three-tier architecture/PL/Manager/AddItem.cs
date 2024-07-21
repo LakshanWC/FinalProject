@@ -125,7 +125,8 @@ namespace FinalProject.MVC.View
             pb_item_image.Image = icon;
             cmb_item_type.SelectedIndex = 0;
 
-            txt_item_id.Text = "1";
+            BAddItem itemId = new BAddItem();
+            txt_item_id.Text = Convert.ToString("0"+itemId.getItemId());
 
         }
 

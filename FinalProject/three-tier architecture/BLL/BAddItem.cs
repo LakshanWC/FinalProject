@@ -14,6 +14,11 @@ namespace FinalProject.three_tier_architecture.BLL
             DAddItem addNewItem = new DAddItem();
             return addNewItem.addItem(itemName, itemPrice, itemType, itemCalories, itemDescription,imageNo);
         }
+        public int getItemId() 
+        {
+            DAddItem itemId = new DAddItem();
+            return itemId.getItemId();
+        }
     }
 
 }
