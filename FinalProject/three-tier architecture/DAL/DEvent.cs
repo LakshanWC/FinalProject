@@ -58,27 +58,39 @@ namespace FinalProject.three_tier_architecture.DAL
             }
 
         }
-        public int getEventId()
+        public int GetNextEventId()
         {
+            string sqlQuery = "SELECT TOP 1 Eid FROM event ORDER BY Eid DESC;";
+            int nextEid = -1;
+
             try
             {
                 using (SqlConnection con = connection.openConnection())
                 {
-                    string sqlQuery = "SELECT COUNT(*) FROM event;";
                     using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
                     {
-                        int results = (int)cmd.ExecuteScalar();
-                        return results + 1;
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null && int.TryParse(result.ToString(), out int lastEid))
+                        {
+                            nextEid = lastEid + 1;
+                        }
+                        else
+                        {
+                            // If no rows exist, start with an initial value
+                            nextEid = 1; // Or any initial value you want
+                        }
                     }
                 }
             }
             catch (SqlException e)
             {
-                MessageBox.Show(e.Message);
                 Console.WriteLine(e.Message);
-                return -1;
             }
+
+            return nextEid;
         }
+
 
         public DataSet getEventNames(bool isloadById)
         {
@@ -206,5 +218,88 @@ namespace FinalProject.three_tier_architecture.DAL
             }
         }
 
+        public DataSet getEventDetails(string eventBy, bool byPrimeryKey)
+        {
+            string sqlQuery;
+            DataSet results = new DataSet();
+
+            if (byPrimeryKey)
+            {
+                sqlQuery = "SELECT * FROM event WHERE Eid = @eid;";
+            }
+            else
+            {
+                sqlQuery = "SELECT * FROM event WHERE Ename = @ename;";
+            }
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    if (byPrimeryKey)
+                    {
+                        int converted = Convert.ToInt32(eventBy);
+                        cmd.Parameters.AddWithValue("@eid", converted);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ename", eventBy);
+                    }
+
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(results);
+
+                    return results;
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+
+        public bool deleteEvent(string eventBy, bool byPrimeryKey) 
+        {
+            string sqlQuery;
+
+            if (byPrimeryKey)
+            {
+                sqlQuery = "DELETE FROM event WHERE Eid = @eid;";
+            }
+            else
+            {
+                sqlQuery = "DELETE FROM event WHERE Ename = @ename;";
+            }
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    if (byPrimeryKey)
+                    {
+                        int conveted = Convert.ToInt32(eventBy);
+                        cmd.Parameters.AddWithValue("@eid", conveted);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ename", eventBy);
+                    }
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0; ;
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+        }
     }
 }

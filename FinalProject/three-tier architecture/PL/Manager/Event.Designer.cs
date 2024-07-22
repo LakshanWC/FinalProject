@@ -64,6 +64,7 @@
             this.btn_load_all_events = new System.Windows.Forms.Button();
             this.cb_laod_event_by_id = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.btn_delete_event = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnl_title.SuspendLayout();
@@ -373,7 +374,7 @@
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_clear.Location = new System.Drawing.Point(400, 386);
+            this.btn_clear.Location = new System.Drawing.Point(637, 316);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(86, 37);
             this.btn_clear.TabIndex = 25;
@@ -452,9 +453,9 @@
             this.btn_load_all_events.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_load_all_events.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_load_all_events.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_load_all_events.Location = new System.Drawing.Point(603, 317);
+            this.btn_load_all_events.Location = new System.Drawing.Point(517, 316);
             this.btn_load_all_events.Name = "btn_load_all_events";
-            this.btn_load_all_events.Size = new System.Drawing.Size(121, 37);
+            this.btn_load_all_events.Size = new System.Drawing.Size(108, 39);
             this.btn_load_all_events.TabIndex = 55;
             this.btn_load_all_events.Text = "Load All Events";
             this.btn_load_all_events.UseVisualStyleBackColor = false;
@@ -465,7 +466,7 @@
             this.cb_laod_event_by_id.AutoSize = true;
             this.cb_laod_event_by_id.Enabled = false;
             this.cb_laod_event_by_id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cb_laod_event_by_id.Location = new System.Drawing.Point(410, 328);
+            this.cb_laod_event_by_id.Location = new System.Drawing.Point(385, 328);
             this.cb_laod_event_by_id.Name = "cb_laod_event_by_id";
             this.cb_laod_event_by_id.Size = new System.Drawing.Size(15, 14);
             this.cb_laod_event_by_id.TabIndex = 56;
@@ -476,11 +477,25 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label13.Location = new System.Drawing.Point(431, 329);
+            this.label13.Location = new System.Drawing.Point(406, 329);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 13);
             this.label13.TabIndex = 57;
             this.label13.Text = "Load Events By Id";
+            // 
+            // btn_delete_event
+            // 
+            this.btn_delete_event.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_delete_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete_event.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete_event.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_delete_event.Location = new System.Drawing.Point(409, 386);
+            this.btn_delete_event.Name = "btn_delete_event";
+            this.btn_delete_event.Size = new System.Drawing.Size(91, 37);
+            this.btn_delete_event.TabIndex = 58;
+            this.btn_delete_event.Text = "Delete Event";
+            this.btn_delete_event.UseVisualStyleBackColor = false;
+            this.btn_delete_event.Click += new System.EventHandler(this.btn_delete_event_Click);
             // 
             // Event
             // 
@@ -488,6 +503,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(737, 454);
+            this.Controls.Add(this.btn_delete_event);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cb_laod_event_by_id);
             this.Controls.Add(this.btn_load_all_events);
@@ -552,5 +568,6 @@
         private System.Windows.Forms.Button btn_load_all_events;
         private System.Windows.Forms.CheckBox cb_laod_event_by_id;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btn_delete_event;
     }
 }

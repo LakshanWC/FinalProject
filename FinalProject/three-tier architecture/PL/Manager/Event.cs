@@ -56,48 +56,61 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void btn_add_event_Click(object sender, EventArgs e)
         {
-            eventName = txt_event_title.Text;
-            eventOrganizer = txt_organizer_name.Text;
-            eventType = cmb_event_type.SelectedIndex;
-            eventStatus = cmb_event_status.SelectedIndex;
-            eventDescription = txt_event_description.Text;
-
-            //take just the date
-            startDate = dtp_start_date.Value.ToString("yyyy-MM-dd");
-            endDate = dtp_end_date.Value.ToString("yyyy-MM-dd");
-
-            //take just the time
-            startTime = dtp_start_time.Value.ToString("HH:mm:ss");
-            endTime = dtp_end_time.Value.ToString("HH:mm:ss");
-
-            if (!string.IsNullOrEmpty(txt_event_title.Text) && !string.IsNullOrEmpty(txt_organizer_name.Text)
-                && !string.IsNullOrEmpty(txt_event_description.Text) && cmb_event_type.SelectedIndex != 0
-                && dtp_end_time.Value != dtp_start_time.Value)
+            if (cmb_search_event.SelectedItem != null && txt_event_no.Text == cmb_search_event.SelectedItem.ToString())
             {
-
-                BEvent newEvent = new BEvent();
-               int status = newEvent.addNewEvent(eventName, eventOrganizer, eventType, eventStatus
-                ,eventDescription, startDate, endDate, startTime, endTime);
-
-                if (status ==1) {
-                    clearUi();
-                    TostMessage messageSucses = new TostMessage("Event Successfully added", "Successful", 3, 3);
-                    messageSucses.Show();
-                }
-                else if (status == 0) {
-                    clearUi();
-                    TostMessage messageFail = new TostMessage("Event adding failed", "Failed", 1, 1);
-                    messageFail.Show();
-                }
-                else if(status ==-1) {
-                    clearUi();
-                    TostMessage messageError = new TostMessage("Unexpected Error Occurred", "Unexpected Error", 2, 2);
-                    messageError.Show();
-                }
-
+                MessageBox.Show("Event already exists. Please click 'Update' instead.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else { 
-                MessageBox.Show("All fields must be filed","Warrning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+            else
+            {
+                eventName = txt_event_title.Text;
+                eventOrganizer = txt_organizer_name.Text;
+                eventType = cmb_event_type.SelectedIndex;
+                eventStatus = cmb_event_status.SelectedIndex;
+                eventDescription = txt_event_description.Text;
+
+                //take just the date
+                startDate = dtp_start_date.Value.ToString("yyyy-MM-dd");
+                endDate = dtp_end_date.Value.ToString("yyyy-MM-dd");
+
+                //take just the time
+                startTime = dtp_start_time.Value.ToString("HH:mm:ss");
+                endTime = dtp_end_time.Value.ToString("HH:mm:ss");
+
+                if (!string.IsNullOrEmpty(txt_event_title.Text) && !string.IsNullOrEmpty(txt_organizer_name.Text)
+                    && !string.IsNullOrEmpty(txt_event_description.Text) && cmb_event_type.SelectedIndex != 0
+                    && dtp_end_time.Value != dtp_start_time.Value)
+                {
+
+                    BEvent newEvent = new BEvent();
+                    int status = newEvent.addNewEvent(eventName, eventOrganizer, eventType, eventStatus
+                     , eventDescription, startDate, endDate, startTime, endTime);
+
+                    if (status ==1)
+                    {
+                        clearUi();
+                        TostMessage messageSucses = new TostMessage("Event Successfully added", "Successful", 3, 3);
+                        messageSucses.Show();
+                    }
+                    else if (status == 0)
+                    {
+                        clearUi();
+                        TostMessage messageFail = new TostMessage("Event adding failed", "Failed", 1, 1);
+                        messageFail.Show();
+                    }
+                    else if (status ==-1)
+                    {
+                        clearUi();
+                        TostMessage messageError = new TostMessage("Unexpected Error Occurred", "Unexpected Error", 2, 2);
+                        messageError.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("All fields must be filed", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -127,7 +140,7 @@ namespace FinalProject.three_tier_architecture.PL
             cb_laod_event_by_id.Enabled = false;
 
             BEvent eventId = new BEvent();
-            txt_event_no.Text = Convert.ToString("0"+eventId.getEventId());
+            txt_event_no.Text = Convert.ToString(eventId.getEventId());
 
             DataSet todaysEvent = eventId.getEventNames(loadEventById);
 
@@ -260,7 +273,17 @@ namespace FinalProject.three_tier_architecture.PL
             eventType = cmb_event_type.SelectedIndex;
             eventStatus = cmb_event_status.SelectedIndex;
             eventDescription = txt_event_description.Text;
-            int eventId = Convert.ToInt32(cmb_search_event.SelectedItem.ToString());
+            int eventId;
+
+            if (cb_laod_event_by_id.Checked == false)
+            {
+                eventId = Convert.ToInt32(txt_event_no.Text);
+            }
+            else 
+            {
+                eventId = Convert.ToInt32(cmb_search_event.SelectedItem);
+            }
+            
 
             //take just the date
             startDate = dtp_start_date.Value.ToString("yyyy-MM-dd");
@@ -307,7 +330,92 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void btn_search_event_Click(object sender, EventArgs e)
         {
+            string eventBy;
+            DataSet eventDetails;
+            BEvent details = new BEvent();
+            bool byPrimeryKey = false;
 
+            if (cb_laod_event_by_id.Checked)
+            {
+                eventBy = cmb_search_event.SelectedItem.ToString();
+                byPrimeryKey = true;
+            }
+            else 
+            {
+                eventBy = cmb_search_event.SelectedItem.ToString();
+                byPrimeryKey = false;
+            }
+
+            eventDetails  = details.getEventDetails(eventBy, byPrimeryKey);
+            if (eventDetails == null)
+            {
+                TostMessage messageFail = new TostMessage("Event not found!", "Failed", 1, 1);
+                messageFail.Show();
+            }
+            else 
+            {
+                foreach (DataRow row in eventDetails.Tables[0].Rows)
+                {
+                    txt_event_no.Text = (row["Eid"].ToString());
+                    txt_event_title.Text =(row["Ename"].ToString());
+                    txt_organizer_name.Text = (row["Eorganizer"].ToString());
+                    cmb_event_type.SelectedIndex = Convert.ToInt32(row["Etype"]);
+                    cmb_event_status.SelectedIndex = Convert.ToInt32(row["Estatus"]);
+                    txt_event_description.Text = (row["Edescription"].ToString());
+
+                    dtp_start_date.Value = Convert.ToDateTime(row["EstartDate"]);
+                    dtp_start_time.Value = DateTime.Parse(row["EstartTime"].ToString());
+
+                    dtp_end_date.Value = Convert.ToDateTime(row["EendDate"]);
+                    dtp_start_time.Value = DateTime.Parse(row["EendTime"].ToString());
+
+                }
+
+                TostMessage messageSucses = new TostMessage("Event Successfully loaded", "Successful", 3, 3);
+                messageSucses.Show();
+
+            }
+        }
+
+        private void btn_delete_event_Click(object sender, EventArgs e)
+        {
+            string eventBy;
+            bool byPrimeryKey = false;
+
+            if (!string.IsNullOrEmpty(txt_event_title.Text) && !string.IsNullOrEmpty(txt_organizer_name.Text)
+            && !string.IsNullOrEmpty(txt_event_description.Text) && cmb_event_type.SelectedIndex != 0
+            && dtp_end_time.Value != dtp_start_time.Value)
+            {
+
+                if (cb_laod_event_by_id.Checked)
+                {
+                    eventBy = cmb_search_event.SelectedItem.ToString();
+                    byPrimeryKey = true;
+                }
+                else
+                {
+                    eventBy = cmb_search_event.SelectedItem.ToString();
+                    byPrimeryKey = false;
+                }
+
+                BEvent deleteEvent = new BEvent();
+                bool isDone = deleteEvent.deleteEvent(eventBy, byPrimeryKey);
+                if (isDone)
+                {
+                    clearUi();
+                    TostMessage messageSucses = new TostMessage("Event Successfully deleted", "Successful", 3, 3);
+                    messageSucses.Show();
+                }
+                else
+                {
+                    TostMessage messageFail = new TostMessage("Event deleting failed", "Failed", 1, 1);
+                    messageFail.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filed", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -23,25 +23,38 @@ namespace FinalProject.three_tier_architecture.BLL
             , string eventDescription, string startDate, string endDate, string startTime, string endTime)
         {
             DEvent newEvent = new DEvent();
-            return newEvent.updateEvent(eventId ,eventName, eventOrganizer, eventType, eventStatus
+            return newEvent.updateEvent(eventId, eventName, eventOrganizer, eventType, eventStatus
             , eventDescription, startDate, endDate, startTime, endTime);
         }
 
         public int getEventId()
         {
             DEvent eventId = new DEvent();
-            return eventId.getEventId();
+            return eventId.GetNextEventId();
         }
 
-        public DataSet getEventNames(bool isloadById) 
+        public DataSet getEventNames(bool isloadById)
         {
             DEvent dEvent = new DEvent();
             return dEvent.getEventNames(isloadById);
         }
-        public DataSet getAllEvents(bool isloadById) 
+        public DataSet getAllEvents(bool isloadById)
         {
             DEvent allEvent = new DEvent();
             return allEvent.getAllEvents(isloadById);
         }
-    }   
+
+        public DataSet getEventDetails(string eventBy, bool byPrimeryKey)
+        {
+            DEvent eventData = new DEvent();
+            return eventData.getEventDetails(eventBy, byPrimeryKey);
+        }
+
+        public bool deleteEvent(string eventBy, bool byPrimeryKey)
+        {
+            DEvent eventDelete = new DEvent();
+            return eventDelete.deleteEvent(eventBy, byPrimeryKey);
+
+        }
+    }
 }
