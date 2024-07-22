@@ -196,6 +196,7 @@
             this.Name = "IssueLoyaltyCard";
             this.Text = "IssueLoyaltyCard";
             this.Load += new System.EventHandler(this.IssueLoyaltyCard_Load);
+            this.TextChanged += new System.EventHandler(this.IssueLoyaltyCard_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pb_card_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_title.ResumeLayout(false);

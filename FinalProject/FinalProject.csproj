@@ -65,6 +65,7 @@
     <Compile Include="three-tier architecture\BLL\BLogin.cs" />
     <Compile Include="three-tier architecture\BLL\BManagerHome_All.cs" />
     <Compile Include="three-tier architecture\BLL\BPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\BLL\BRegisterForLoyaltyCard.cs" />
     <Compile Include="three-tier architecture\BLL\BRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\BResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\DAddItem.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="three-tier architecture\DAL\DMDBConnection.cs" />
     <Compile Include="three-tier architecture\DAL\DLogin.cs" />
     <Compile Include="three-tier architecture\DAL\DPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\DAL\DRegisterForLoyaltyCard.cs" />
     <Compile Include="three-tier architecture\DAL\DRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\DUpdateEmployee.cs" />

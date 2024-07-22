@@ -26,5 +26,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         {
 
         }
+
+        private void IssueLoyaltyCard_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
