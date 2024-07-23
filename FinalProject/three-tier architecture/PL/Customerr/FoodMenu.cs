@@ -17,6 +17,8 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private DataSet menuData;
         ItemImage getImage = new ItemImage();
         BFoodMenu menu = new BFoodMenu();
+        private List<string> selectedItems = new List<string>();
+        private string itemId;
         private Image iconOne ;
         private int btnPressedCount = 0;
 
@@ -67,17 +69,19 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void cb_select_item_one_CheckedChanged(object sender, EventArgs e)
         {
-            if(cb_select_item_one.Checked)
+            if (cb_select_item_one.Checked)
             {
                 nud_item_one_quantity.Minimum = 1;
                 nud_item_one_quantity.Enabled = true;
                 nud_item_one_quantity.Value = 1;
+                AddSelectedItem(itemId);
             }
-            if (cb_select_item_one.Checked == false) 
+            else
             {
                 nud_item_one_quantity.Minimum = 0;
                 nud_item_one_quantity.Value = 0;
                 nud_item_one_quantity.Enabled = false;
+                RemoveSelectedItem(itemId);
             }
 
         }
@@ -115,6 +119,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
                 // Display data for valid btnPressedCount
                 DataRow row = table.Rows[btnPressedCount];
+                itemId = row["itemID"].ToString();
+
+
                 txt_item_name_one.Text = row["itemName"].ToString();
                 txt_item_price_one.Text = row["itemPrice"].ToString();
                 txt_item_cal_one.Text = row["itemCalories"].ToString();
@@ -123,12 +130,32 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 iconOne = getImage.getItemImage(Convert.ToInt32(row["itemImageNo"]));
                 pb_item_one.Image = iconOne;
 
+                // Update checkbox state
+                cb_select_item_one.CheckedChanged -= cb_select_item_one_CheckedChanged; // Temporarily remove event handler
+                cb_select_item_one.Checked = selectedItems.Contains(itemId);
+                cb_select_item_one.CheckedChanged += cb_select_item_one_CheckedChanged; // Re-add event handler
+
             }
             else
             {
                 // if no tables in the DataSet
                 TostMessage msg = new TostMessage("No Item found!", "Faild", 2, 2);
                 msg.Show();
+            }
+        }
+
+        private void AddSelectedItem(string itemId)
+        {
+            if (!selectedItems.Contains(itemId))
+            {
+                selectedItems.Add(itemId);
+            }
+        }
+        private void RemoveSelectedItem(string itemId)
+        {
+            if (selectedItems.Contains(itemId))
+            {
+                selectedItems.Remove(itemId);
             }
         }
 
@@ -171,7 +198,14 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            NewManagerHome.opendChildForms.Remove("FoodMenu");
             this.Close();
         }
+
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -279,6 +279,7 @@
             this.btn_order.TabIndex = 60;
             this.btn_order.Text = "Order";
             this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // label11
             // 

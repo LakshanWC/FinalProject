@@ -77,6 +77,7 @@
             this.btn_register.TabIndex = 17;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // chk_view
             // 
@@ -89,6 +90,7 @@
             this.chk_view.Size = new System.Drawing.Size(26, 25);
             this.chk_view.TabIndex = 16;
             this.chk_view.UseVisualStyleBackColor = true;
+            this.chk_view.CheckedChanged += new System.EventHandler(this.chk_view_CheckedChanged_1);
             // 
             // lnklbl_reset_pass
             // 
@@ -145,6 +147,7 @@
             this.btn_login.TabIndex = 10;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click_1);
             // 
             // Login
             // 
@@ -155,6 +158,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

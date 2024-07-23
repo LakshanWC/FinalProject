@@ -37,12 +37,13 @@
             this.btn_menu = new System.Windows.Forms.Button();
             this.btn_order = new System.Windows.Forms.Button();
             this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
-            this.lbl_user_details = new System.Windows.Forms.Label();
+            this.lbl_user_id = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,6 +131,7 @@
             this.btn_menu.TabIndex = 3;
             this.btn_menu.Text = "Menu";
             this.btn_menu.UseVisualStyleBackColor = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // btn_order
             // 
@@ -148,7 +150,7 @@
             // 
             // pnl_userdetails_panle
             // 
-            this.pnl_userdetails_panle.Controls.Add(this.lbl_user_details);
+            this.pnl_userdetails_panle.Controls.Add(this.lbl_user_id);
             this.pnl_userdetails_panle.Controls.Add(this.lbl_userName);
             this.pnl_userdetails_panle.Controls.Add(this.pb_user_icon);
             this.pnl_userdetails_panle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,15 +159,15 @@
             this.pnl_userdetails_panle.Size = new System.Drawing.Size(184, 140);
             this.pnl_userdetails_panle.TabIndex = 1;
             // 
-            // lbl_user_details
+            // lbl_user_id
             // 
-            this.lbl_user_details.AutoSize = true;
-            this.lbl_user_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_user_details.Location = new System.Drawing.Point(61, 108);
-            this.lbl_user_details.Name = "lbl_user_details";
-            this.lbl_user_details.Size = new System.Drawing.Size(62, 13);
-            this.lbl_user_details.TabIndex = 2;
-            this.lbl_user_details.Text = "user Details";
+            this.lbl_user_id.AutoSize = true;
+            this.lbl_user_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_user_id.Location = new System.Drawing.Point(69, 108);
+            this.lbl_user_id.Name = "lbl_user_id";
+            this.lbl_user_id.Size = new System.Drawing.Size(38, 13);
+            this.lbl_user_id.TabIndex = 2;
+            this.lbl_user_id.Text = "user id";
             // 
             // lbl_userName
             // 
@@ -221,10 +223,18 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.menuToolStripMenuItem.Text = "Menu";
             // 
             // addToolStripMenuItem
             // 
@@ -257,6 +267,7 @@
             this.IsMdiContainer = true;
             this.Name = "CustomerHome";
             this.Text = "CustomerHome";
+            this.Load += new System.EventHandler(this.CustomerHome_Load);
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
@@ -277,7 +288,7 @@
         private System.Windows.Forms.Button btn_menu;
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Panel pnl_userdetails_panle;
-        private System.Windows.Forms.Label lbl_user_details;
+        private System.Windows.Forms.Label lbl_user_id;
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
@@ -286,5 +297,6 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC.Control;
 using FinalProject.three_tier_architecture.PL;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,13 @@ namespace FinalProject.MVC.View
             
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Login log =  new Login();
+            log.FormBorderStyle = FormBorderStyle.Fixed3D;
+        }
+
+        private void btn_login_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txt_userName.Text) && !string.IsNullOrEmpty(txt_Password.Text))
             {
@@ -48,10 +55,10 @@ namespace FinalProject.MVC.View
                         break;
                     case 2:
                         mylogin.markAttendant(userName);
-                        NewManagerHome mHObj = new NewManagerHome();
-                        this.Hide();  
-                        mHObj.Show();
-                       // MessageBox.Show("manager GUI");
+                        NewManagerHome mHome = new NewManagerHome();
+                        this.Hide();
+                        mHome.Show();
+                        // MessageBox.Show("manager GUI");
                         break;
                     case 3:
                         mylogin.markAttendant(userName);
@@ -71,7 +78,10 @@ namespace FinalProject.MVC.View
                         break;
                     case 7:
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("customer GUI");
+                        CustomerHome cusHome = new CustomerHome();
+                        cusHome.setUserName(userName);
+                        this.Hide();
+                        cusHome.Show();
                         break;
                     default:
                         MessageBox.Show("User Does not Exist", "User not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -85,22 +95,23 @@ namespace FinalProject.MVC.View
             }
         }
 
-        private void chk_view_CheckedChanged(object sender, EventArgs e)
-        {          
-            if (chk_view.Checked) {
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chk_view_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chk_view.Checked)
+            {
                 chk_view.BackgroundImage = eyeClose;
                 txt_Password.UseSystemPasswordChar = false;
             }
-            else {
+            else
+            {
                 chk_view.BackgroundImage = eyeOpen;
-               txt_Password.UseSystemPasswordChar = true;
+                txt_Password.UseSystemPasswordChar = true;
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            Login log =  new Login();
-            log.FormBorderStyle = FormBorderStyle.Fixed3D;
         }
     }
 }

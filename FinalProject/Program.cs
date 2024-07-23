@@ -19,7 +19,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new PLogin());
+            //Application.Run(new Login());
             Application.Run(new FoodMenu());
           
         }
