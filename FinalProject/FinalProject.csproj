@@ -58,28 +58,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="three-tier architecture\BLL\BAddItem.cs" />
-    <Compile Include="three-tier architecture\BLL\BAddEmployee.cs" />
-    <Compile Include="three-tier architecture\BLL\BEvent.cs" />
+    <Compile Include="three-tier architecture\BLL\Customer\BFoodMenu.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BAddItem.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BAddEmployee.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BEvent.cs" />
     <Compile Include="three-tier architecture\BLL\BGeneralReports.cs" />
     <Compile Include="three-tier architecture\BLL\BLogin.cs" />
-    <Compile Include="three-tier architecture\BLL\BManagerHome_All.cs" />
-    <Compile Include="three-tier architecture\BLL\BPassResetRequests.cs" />
-    <Compile Include="three-tier architecture\BLL\BRegisterForLoyaltyCard.cs" />
-    <Compile Include="three-tier architecture\BLL\BRemoveEmployee.cs" />
-    <Compile Include="three-tier architecture\BLL\BResetPassword.cs" />
-    <Compile Include="three-tier architecture\DAL\DAddItem.cs" />
-    <Compile Include="three-tier architecture\DAL\DAddEmployee.cs" />
-    <Compile Include="three-tier architecture\DAL\DEvent.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BManagerHome_All.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\BLL\Customer\BRegisterForLoyaltyCard.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BRemoveEmployee.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BResetPassword.cs" />
+    <Compile Include="three-tier architecture\DAL\Customer\DFoodMenu.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DAddItem.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DAddEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DEvent.cs" />
     <Compile Include="three-tier architecture\DAL\DGeneralReports.cs" />
-    <Compile Include="three-tier architecture\DAL\DManagerHome_All.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DManagerHome_All.cs" />
     <Compile Include="three-tier architecture\DAL\DMDBConnection.cs" />
     <Compile Include="three-tier architecture\DAL\DLogin.cs" />
-    <Compile Include="three-tier architecture\DAL\DPassResetRequests.cs" />
-    <Compile Include="three-tier architecture\DAL\DRegisterForLoyaltyCard.cs" />
-    <Compile Include="three-tier architecture\DAL\DRemoveEmployee.cs" />
-    <Compile Include="three-tier architecture\DAL\DResetPassword.cs" />
-    <Compile Include="three-tier architecture\DAL\DUpdateEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DPassResetRequests.cs" />
+    <Compile Include="three-tier architecture\DAL\Customer\DRegisterForLoyaltyCard.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DRemoveEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DResetPassword.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
