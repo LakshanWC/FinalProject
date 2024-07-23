@@ -75,15 +75,18 @@ namespace FinalProject.MVC.View
                 if (status == 1) {
                     TostMessage messageSucses = new TostMessage("Item Successfully added", "Successful", 3, 3);
                     messageSucses.Show();
+                    clearUi();
                 }
                 else if (status == 0) {
                     TostMessage messageFail = new TostMessage("Item adding failed", "Failed", 1, 1);
                     messageFail.Show();
+                    clearUi();
 
                 }
                 else {
                     TostMessage messageError = new TostMessage("Unexpected Error Occurred", "Unexpected Error", 2, 2);
                     messageError.Show();
+                    clearUi();
                 }
 
             }
@@ -176,6 +179,10 @@ namespace FinalProject.MVC.View
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
+        {
+            clearUi();
+        }
+        private void clearUi() 
         {
             //Clear data from ui
             txt_item_name.Clear();
