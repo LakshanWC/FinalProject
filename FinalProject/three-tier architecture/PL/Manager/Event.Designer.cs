@@ -333,6 +333,7 @@
             this.lbl_word_count.Size = new System.Drawing.Size(36, 13);
             this.lbl_word_count.TabIndex = 16;
             this.lbl_word_count.Text = "0/500";
+            this.lbl_word_count.Click += new System.EventHandler(this.lbl_word_count_Click);
             // 
             // label11
             // 

@@ -47,6 +47,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -233,11 +234,14 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addReivewToolStripMenuItem});
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
@@ -256,6 +260,13 @@
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // addReivewToolStripMenuItem
+            // 
+            this.addReivewToolStripMenuItem.Name = "addReivewToolStripMenuItem";
+            this.addReivewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addReivewToolStripMenuItem.Text = "Add Reivew";
+            this.addReivewToolStripMenuItem.Click += new System.EventHandler(this.addReivewToolStripMenuItem_Click);
             // 
             // CustomerHome
             // 
@@ -298,5 +309,6 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addReivewToolStripMenuItem;
     }
 }

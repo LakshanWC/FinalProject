@@ -417,5 +417,10 @@ namespace FinalProject.three_tier_architecture.PL
                 MessageBox.Show("All fields must be filed", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void lbl_word_count_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

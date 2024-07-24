@@ -20,7 +20,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private DataSet menuData;
         ItemImage getImage = new ItemImage();
         BFoodMenu menu = new BFoodMenu();
-        private List<string> selectedItems = new List<string>();
+        private static List<string> selectedItems = new List<string>();
 
         private string itemId;
         private Image iconOne;
@@ -198,7 +198,17 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            OrderFood order = new OrderFood();
 
+            if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                
+                NewManagerHome.opendChildForms.Add("OrderFood");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
         }
 
         private void nud_item_one_quantity_ValueChanged(object sender, EventArgs e)
@@ -235,15 +245,23 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
             if (!NewManagerHome.opendChildForms.Contains("showReview") && NewManagerHome.opendChildForms.Count <= 2)
             {
-                //this.tlp_dash_board.Visible = false;
+                CustomerHome customerHome = this.MdiParent as CustomerHome;
 
-                showReview.MdiParent = this;
-                showReview.Show();
-                NewManagerHome.opendChildForms.Add("Reivew");
+                if (customerHome != null)
+                {
+                    showReview.MdiParent = customerHome;
+                    showReview.Show();
+
+                    NewManagerHome.opendChildForms.Add("Review");
+                }
+                else
+                {
+                    MessageBox.Show("MDI Parent is not set correctly.");
+                }
             }
             else
             {
-                MessageBox.Show("instens already exisit");
+                MessageBox.Show("Instance already exists");
             }
         }
 
