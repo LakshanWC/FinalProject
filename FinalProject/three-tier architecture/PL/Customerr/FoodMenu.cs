@@ -199,15 +199,35 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void btn_order_Click(object sender, EventArgs e)
         {
             OrderFood order = new OrderFood();
+            int count = selectedItems.Count;
 
-            if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
+            if (count == 0)
             {
-                
-                NewManagerHome.opendChildForms.Add("OrderFood");
+                MessageBox.Show("Please Select any Item First ","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("instens already exisit");
+                if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
+                {
+                    CustomerHome customerHome = this.MdiParent as CustomerHome;
+
+                    if (customerHome != null)
+                    {
+                        order.MdiParent = customerHome;
+                        order.setSelectedItemsToCB(selectedItems);
+                        order.Show();
+
+                        NewManagerHome.opendChildForms.Add("OrderFood");
+                    }
+                    else
+                    {
+                        MessageBox.Show("MDI Parent is not set correctly.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("instens already exisit");
+                }
             }
         }
 

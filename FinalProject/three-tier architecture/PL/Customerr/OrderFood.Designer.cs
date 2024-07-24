@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderFood));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_order_id = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_review_score_one = new System.Windows.Forms.TextBox();
+            this.txt_review_score = new System.Windows.Forms.TextBox();
             this.cmb_selected_item = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_item_cal_one = new System.Windows.Forms.TextBox();
+            this.txt_item_cal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_item_price_one = new System.Windows.Forms.TextBox();
+            this.txt_item_price = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_item_no_one = new System.Windows.Forms.TextBox();
+            this.txt_item_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pb_item_one = new System.Windows.Forms.PictureBox();
+            this.pb_item_image = new System.Windows.Forms.PictureBox();
             this.btn_order = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,10 +65,8 @@
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_order_id = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_item_image)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_item_quantity)).BeginInit();
             this.pnl_title.SuspendLayout();
@@ -78,20 +78,41 @@
             this.panel1.Controls.Add(this.txt_order_id);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txt_review_score_one);
+            this.panel1.Controls.Add(this.txt_review_score);
             this.panel1.Controls.Add(this.cmb_selected_item);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txt_item_cal_one);
+            this.panel1.Controls.Add(this.txt_item_cal);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txt_item_price_one);
+            this.panel1.Controls.Add(this.txt_item_price);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_item_no_one);
+            this.panel1.Controls.Add(this.txt_item_name);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pb_item_one);
+            this.panel1.Controls.Add(this.pb_item_image);
             this.panel1.Location = new System.Drawing.Point(12, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(341, 408);
             this.panel1.TabIndex = 21;
+            // 
+            // txt_order_id
+            // 
+            this.txt_order_id.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_order_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_order_id.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_order_id.Location = new System.Drawing.Point(159, 190);
+            this.txt_order_id.Name = "txt_order_id";
+            this.txt_order_id.ReadOnly = true;
+            this.txt_order_id.Size = new System.Drawing.Size(121, 20);
+            this.txt_order_id.TabIndex = 79;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label15.Location = new System.Drawing.Point(46, 197);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 13);
+            this.label15.TabIndex = 78;
+            this.label15.Text = "Order Id :";
             // 
             // label4
             // 
@@ -103,16 +124,16 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Selected Items :";
             // 
-            // txt_review_score_one
+            // txt_review_score
             // 
-            this.txt_review_score_one.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_review_score_one.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_review_score_one.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_review_score_one.Location = new System.Drawing.Point(159, 376);
-            this.txt_review_score_one.Name = "txt_review_score_one";
-            this.txt_review_score_one.ReadOnly = true;
-            this.txt_review_score_one.Size = new System.Drawing.Size(102, 20);
-            this.txt_review_score_one.TabIndex = 27;
+            this.txt_review_score.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_review_score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_review_score.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_review_score.Location = new System.Drawing.Point(159, 376);
+            this.txt_review_score.Name = "txt_review_score";
+            this.txt_review_score.ReadOnly = true;
+            this.txt_review_score.Size = new System.Drawing.Size(102, 20);
+            this.txt_review_score.TabIndex = 27;
             // 
             // cmb_selected_item
             // 
@@ -123,6 +144,7 @@
             this.cmb_selected_item.Name = "cmb_selected_item";
             this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
             this.cmb_selected_item.TabIndex = 61;
+            this.cmb_selected_item.SelectedIndexChanged += new System.EventHandler(this.cmb_selected_item_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -134,16 +156,16 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Review score :";
             // 
-            // txt_item_cal_one
+            // txt_item_cal
             // 
-            this.txt_item_cal_one.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_item_cal_one.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_item_cal_one.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_item_cal_one.Location = new System.Drawing.Point(159, 339);
-            this.txt_item_cal_one.Name = "txt_item_cal_one";
-            this.txt_item_cal_one.ReadOnly = true;
-            this.txt_item_cal_one.Size = new System.Drawing.Size(102, 20);
-            this.txt_item_cal_one.TabIndex = 25;
+            this.txt_item_cal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_item_cal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_item_cal.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_item_cal.Location = new System.Drawing.Point(159, 339);
+            this.txt_item_cal.Name = "txt_item_cal";
+            this.txt_item_cal.ReadOnly = true;
+            this.txt_item_cal.Size = new System.Drawing.Size(102, 20);
+            this.txt_item_cal.TabIndex = 25;
             // 
             // label3
             // 
@@ -155,16 +177,16 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Calories :";
             // 
-            // txt_item_price_one
+            // txt_item_price
             // 
-            this.txt_item_price_one.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_item_price_one.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_item_price_one.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_item_price_one.Location = new System.Drawing.Point(159, 303);
-            this.txt_item_price_one.Name = "txt_item_price_one";
-            this.txt_item_price_one.ReadOnly = true;
-            this.txt_item_price_one.Size = new System.Drawing.Size(102, 20);
-            this.txt_item_price_one.TabIndex = 23;
+            this.txt_item_price.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_item_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_item_price.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_item_price.Location = new System.Drawing.Point(159, 303);
+            this.txt_item_price.Name = "txt_item_price";
+            this.txt_item_price.ReadOnly = true;
+            this.txt_item_price.Size = new System.Drawing.Size(102, 20);
+            this.txt_item_price.TabIndex = 23;
             // 
             // label2
             // 
@@ -176,16 +198,16 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Item price :";
             // 
-            // txt_item_no_one
+            // txt_item_name
             // 
-            this.txt_item_no_one.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_item_no_one.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_item_no_one.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_item_no_one.Location = new System.Drawing.Point(159, 266);
-            this.txt_item_no_one.Name = "txt_item_no_one";
-            this.txt_item_no_one.ReadOnly = true;
-            this.txt_item_no_one.Size = new System.Drawing.Size(102, 20);
-            this.txt_item_no_one.TabIndex = 20;
+            this.txt_item_name.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_item_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_item_name.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_item_name.Location = new System.Drawing.Point(159, 266);
+            this.txt_item_name.Name = "txt_item_name";
+            this.txt_item_name.ReadOnly = true;
+            this.txt_item_name.Size = new System.Drawing.Size(102, 20);
+            this.txt_item_name.TabIndex = 20;
             // 
             // label1
             // 
@@ -193,17 +215,18 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label1.Location = new System.Drawing.Point(54, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Item No :";
+            this.label1.Text = "Item Name :";
             // 
-            // pb_item_one
+            // pb_item_image
             // 
-            this.pb_item_one.Location = new System.Drawing.Point(30, 16);
-            this.pb_item_one.Name = "pb_item_one";
-            this.pb_item_one.Size = new System.Drawing.Size(272, 161);
-            this.pb_item_one.TabIndex = 18;
-            this.pb_item_one.TabStop = false;
+            this.pb_item_image.Location = new System.Drawing.Point(30, 16);
+            this.pb_item_image.Name = "pb_item_image";
+            this.pb_item_image.Size = new System.Drawing.Size(272, 161);
+            this.pb_item_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_item_image.TabIndex = 18;
+            this.pb_item_image.TabStop = false;
             // 
             // btn_order
             // 
@@ -460,27 +483,6 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Order Food";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label15.Location = new System.Drawing.Point(46, 197);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 13);
-            this.label15.TabIndex = 78;
-            this.label15.Text = "Order Id :";
-            // 
-            // txt_order_id
-            // 
-            this.txt_order_id.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_order_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_order_id.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_order_id.Location = new System.Drawing.Point(159, 190);
-            this.txt_order_id.Name = "txt_order_id";
-            this.txt_order_id.ReadOnly = true;
-            this.txt_order_id.Size = new System.Drawing.Size(121, 20);
-            this.txt_order_id.TabIndex = 79;
-            // 
             // OrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,7 +500,7 @@
             this.Load += new System.EventHandler(this.OrderFood_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_item_image)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_item_quantity)).EndInit();
@@ -511,17 +513,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txt_item_cal_one;
+        private System.Windows.Forms.TextBox txt_item_cal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_item_price_one;
+        private System.Windows.Forms.TextBox txt_item_price;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pb_item_one;
-        private System.Windows.Forms.TextBox txt_review_score_one;
+        private System.Windows.Forms.PictureBox pb_item_image;
+        private System.Windows.Forms.TextBox txt_review_score;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_selected_item;
-        private System.Windows.Forms.TextBox txt_item_no_one;
+        private System.Windows.Forms.TextBox txt_item_name;
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
