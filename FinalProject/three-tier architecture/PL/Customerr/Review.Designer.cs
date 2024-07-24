@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Review));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_no = new System.Windows.Forms.Button();
-            this.btn_yes = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.no_of_people = new System.Windows.Forms.Label();
-            this.lbl_no_of_found_helpfull = new System.Windows.Forms.Label();
             this.nud_review_score = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_no_of_letters = new System.Windows.Forms.Label();
@@ -58,12 +52,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btn_no);
-            this.panel1.Controls.Add(this.btn_yes);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.no_of_people);
-            this.panel1.Controls.Add(this.lbl_no_of_found_helpfull);
             this.panel1.Controls.Add(this.nud_review_score);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbl_no_of_letters);
@@ -75,76 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 329);
             this.panel1.TabIndex = 62;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(360, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "/";
-            // 
-            // btn_no
-            // 
-            this.btn_no.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_no.FlatAppearance.BorderSize = 0;
-            this.btn_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_no.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_no.Location = new System.Drawing.Point(373, 288);
-            this.btn_no.Name = "btn_no";
-            this.btn_no.Size = new System.Drawing.Size(39, 22);
-            this.btn_no.TabIndex = 70;
-            this.btn_no.Text = "No";
-            this.btn_no.UseVisualStyleBackColor = false;
-            this.btn_no.Click += new System.EventHandler(this.btn_no_Click);
-            // 
-            // btn_yes
-            // 
-            this.btn_yes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_yes.FlatAppearance.BorderSize = 0;
-            this.btn_yes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_yes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_yes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_yes.Location = new System.Drawing.Point(315, 288);
-            this.btn_yes.Name = "btn_yes";
-            this.btn_yes.Size = new System.Drawing.Size(39, 22);
-            this.btn_yes.TabIndex = 66;
-            this.btn_yes.Text = "Yes";
-            this.btn_yes.UseVisualStyleBackColor = false;
-            this.btn_yes.Click += new System.EventHandler(this.btn_yes_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(211, 293);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "found this help full :";
-            // 
-            // no_of_people
-            // 
-            this.no_of_people.AutoSize = true;
-            this.no_of_people.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.no_of_people.Location = new System.Drawing.Point(164, 293);
-            this.no_of_people.Name = "no_of_people";
-            this.no_of_people.Size = new System.Drawing.Size(13, 13);
-            this.no_of_people.TabIndex = 68;
-            this.no_of_people.Text = "0";
-            // 
-            // lbl_no_of_found_helpfull
-            // 
-            this.lbl_no_of_found_helpfull.AutoSize = true;
-            this.lbl_no_of_found_helpfull.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_no_of_found_helpfull.Location = new System.Drawing.Point(13, 293);
-            this.lbl_no_of_found_helpfull.Name = "lbl_no_of_found_helpfull";
-            this.lbl_no_of_found_helpfull.Size = new System.Drawing.Size(134, 13);
-            this.lbl_no_of_found_helpfull.TabIndex = 67;
-            this.lbl_no_of_found_helpfull.Text = "People found this help full :";
             // 
             // nud_review_score
             // 
@@ -276,6 +194,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(479, 34);
             this.pnl_title.TabIndex = 65;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -287,6 +208,10 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            this.btn_close.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseDown);
+            this.btn_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseMove);
+            this.btn_close.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseUp);
             // 
             // label6
             // 
@@ -354,17 +279,11 @@
         private System.Windows.Forms.TextBox txt_description;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_selected_item;
-        private System.Windows.Forms.Label no_of_people;
-        private System.Windows.Forms.Label lbl_no_of_found_helpfull;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_priveous;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnl_title;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_no;
-        private System.Windows.Forms.Button btn_yes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_review_count;
     }

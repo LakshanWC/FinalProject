@@ -105,5 +105,29 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
             }
             return rows;
         }
+
+        public int getReviewPoint(string rid,int points)
+        {
+            string sqlQuery = "UPDATE review SET WHERE Rid = @rid;";
+            int rows = 0;
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+
+                    cmd.Parameters.AddWithValue("@rid", rid);
+
+                    rows = (int)cmd.ExecuteScalar();
+                    connection.closeConnection();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+            return rows;
+        }
     }
 }

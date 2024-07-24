@@ -14,9 +14,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 {
     public partial class Review : Form
     {
-        private int count = 0;
-        private int btnYesPressed = 0;
-        private int btnNoPressed = 0;
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private int btnPressedCount = 0;
         private string itemId;
         private string itemName;
@@ -28,25 +28,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_yes_Click(object sender, EventArgs e)
         {
-            if (btnYesPressed == 0)
-            {
-                count++;
-                no_of_people.Text = count.ToString();
-            }
-            else
-            {
-                
-            }
         }
 
         private void btn_no_Click(object sender, EventArgs e)
         {
-            if(count > 0 && btnNoPressed == 0)
-            {
-                count--;
-                no_of_people.Text = count.ToString();
-            }
-            
         }
         private void setReviewCount(string name)
         {
@@ -141,7 +126,6 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                     DataRow row = table.Rows[btnPressCount];
 
                     nud_review_score.Value = Convert.ToInt32(row["Rrate"]);
-                    no_of_people.Text = row["Rpoint"].ToString();
                     txt_description.Text = row["RComment"].ToString();
                 }
             }
@@ -160,6 +144,47 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void btn_priveous_Click(object sender, EventArgs e)
         {
             btnPressedCount --;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("Reivew");
+            this.Close();
+        }
+
+        private void btn_close_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void btn_close_MouseMove(object sender, MouseEventArgs e)
+        { 
+        }
+
+        private void btn_close_MouseUp(object sender, MouseEventArgs e)
+        { 
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }
