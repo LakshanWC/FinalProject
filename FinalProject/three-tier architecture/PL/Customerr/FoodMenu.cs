@@ -14,12 +14,16 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 {
     public partial class FoodMenu : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private DataSet menuData;
         ItemImage getImage = new ItemImage();
         BFoodMenu menu = new BFoodMenu();
         private List<string> selectedItems = new List<string>();
+
         private string itemId;
-        private Image iconOne ;
+        private Image iconOne;
         private int btnPressedCount = 0;
 
         public FoodMenu()
@@ -71,16 +75,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         {
             if (cb_select_item_one.Checked)
             {
-                nud_item_one_quantity.Minimum = 1;
-                nud_item_one_quantity.Enabled = true;
-                nud_item_one_quantity.Value = 1;
                 AddSelectedItem(itemId);
             }
             else
             {
-                nud_item_one_quantity.Minimum = 0;
-                nud_item_one_quantity.Value = 0;
-                nud_item_one_quantity.Enabled = false;
                 RemoveSelectedItem(itemId);
             }
 
@@ -92,10 +90,6 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            nud_item_one_quantity.Minimum = 0;
-            nud_item_one_quantity.Value = 0;
-            nud_item_one_quantity.Enabled =false;
-
             DisplayMenuItems(menu, ref btnPressedCount);
             lbl_page_no.Text = Convert.ToString(btnPressedCount+1 +"/"+getRowCount(menu));
         }
@@ -207,5 +201,52 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         }
 
+        private void nud_item_one_quantity_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void btn_view_review_one_Click(object sender, EventArgs e)
+        {
+            Review showReview = new Review();
+
+            if (!NewManagerHome.opendChildForms.Contains("showReview") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                //this.tlp_dash_board.Visible = false;
+
+                showReview.MdiParent = this;
+                showReview.Show();
+                NewManagerHome.opendChildForms.Add("Reivew");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        public string getItemId(){ return itemId;}
     }
 }

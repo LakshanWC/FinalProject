@@ -228,13 +228,13 @@
             // cmb_selected_item
             // 
             this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_selected_item.Enabled = false;
             this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
             this.cmb_selected_item.FormattingEnabled = true;
             this.cmb_selected_item.Location = new System.Drawing.Point(126, 15);
             this.cmb_selected_item.Name = "cmb_selected_item";
             this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
             this.cmb_selected_item.TabIndex = 60;
+            this.cmb_selected_item.SelectedIndexChanged += new System.EventHandler(this.cmb_selected_item_SelectedIndexChanged);
             // 
             // btn_next
             // 
@@ -249,6 +249,7 @@
             this.btn_next.TabIndex = 63;
             this.btn_next.Text = "Next ";
             this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
             // btn_priveous
             // 
@@ -263,6 +264,7 @@
             this.btn_priveous.TabIndex = 64;
             this.btn_priveous.Text = "Previous";
             this.btn_priveous.UseVisualStyleBackColor = false;
+            this.btn_priveous.Click += new System.EventHandler(this.btn_priveous_Click);
             // 
             // pnl_title
             // 
@@ -293,9 +295,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 15);
+            this.label6.Size = new System.Drawing.Size(53, 15);
             this.label6.TabIndex = 42;
-            this.label6.Text = "Add Employee";
+            this.label6.Text = "Review";
             // 
             // label7
             // 
@@ -332,6 +334,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Review";
             this.Text = "Review";
+            this.Load += new System.EventHandler(this.Review_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_review_score)).EndInit();

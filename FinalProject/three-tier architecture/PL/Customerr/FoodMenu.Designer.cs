@@ -49,12 +49,9 @@
             this.btn_order = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_page_no = new System.Windows.Forms.Label();
-            this.nud_item_one_quantity = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).BeginInit();
             this.pnl_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_item_one_quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -198,6 +195,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(517, 34);
             this.pnl_title.TabIndex = 52;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -265,6 +265,7 @@
             this.btn_view_review_one.TabIndex = 56;
             this.btn_view_review_one.Text = "View Reviews";
             this.btn_view_review_one.UseVisualStyleBackColor = false;
+            this.btn_view_review_one.Click += new System.EventHandler(this.btn_view_review_one_Click);
             // 
             // btn_order
             // 
@@ -285,7 +286,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label11.Location = new System.Drawing.Point(425, 266);
+            this.label11.Location = new System.Drawing.Point(431, 231);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 13);
             this.label11.TabIndex = 62;
@@ -295,33 +296,11 @@
             // 
             this.lbl_page_no.AutoSize = true;
             this.lbl_page_no.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_page_no.Location = new System.Drawing.Point(438, 288);
+            this.lbl_page_no.Location = new System.Drawing.Point(444, 253);
             this.lbl_page_no.Name = "lbl_page_no";
             this.lbl_page_no.Size = new System.Drawing.Size(24, 13);
             this.lbl_page_no.TabIndex = 63;
             this.lbl_page_no.Text = "n/a";
-            // 
-            // nud_item_one_quantity
-            // 
-            this.nud_item_one_quantity.Location = new System.Drawing.Point(458, 198);
-            this.nud_item_one_quantity.Name = "nud_item_one_quantity";
-            this.nud_item_one_quantity.Size = new System.Drawing.Size(44, 20);
-            this.nud_item_one_quantity.TabIndex = 64;
-            this.nud_item_one_quantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label10.Location = new System.Drawing.Point(400, 202);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Quantity :";
             // 
             // FoodMenu
             // 
@@ -329,8 +308,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(517, 419);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.nud_item_one_quantity);
             this.Controls.Add(this.lbl_page_no);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btn_order);
@@ -348,7 +325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).EndInit();
             this.pnl_title.ResumeLayout(false);
             this.pnl_title.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_item_one_quantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,7 +351,5 @@
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_page_no;
-        private System.Windows.Forms.NumericUpDown nud_item_one_quantity;
-        private System.Windows.Forms.Label label10;
     }
 }

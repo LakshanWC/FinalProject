@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerHome.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BFoodMenu.cs" />
+    <Compile Include="three-tier architecture\BLL\Customer\BReview.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BAddItem.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BAddEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BEvent.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="three-tier architecture\BLL\Manager\BResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerHome.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DFoodMenu.cs" />
+    <Compile Include="three-tier architecture\DAL\Customer\DReview.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddItem.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DEvent.cs" />
