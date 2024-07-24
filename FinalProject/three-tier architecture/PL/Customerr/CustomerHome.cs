@@ -98,5 +98,21 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void registerForLoyaltyCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterForLoyaltyCard loyaltyCard = new RegisterForLoyaltyCard();
+
+            if (!NewManagerHome.opendChildForms.Contains("RegisterForLoyaltyCard") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                loyaltyCard.MdiParent = this;
+                loyaltyCard.Show();
+                NewManagerHome.opendChildForms.Add("RegisterForLoyaltyCard");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

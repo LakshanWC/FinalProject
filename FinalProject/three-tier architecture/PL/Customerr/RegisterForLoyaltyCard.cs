@@ -48,8 +48,39 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 {
                     TostMessage tostSuccses = new TostMessage("Registration successful", "Success", 3,3);
                     tostSuccses.Show();
-                    clearUi();
+                    //Pass data to other ui
+                    IssueLoyaltyCard.telNo = txt_tel_no.Text;
+                    IssueLoyaltyCard.holderName = txt_card_holder_name.Text;
+                    IssueLoyaltyCard.created = dtp_creat_date.Value;
+
+                    this.Hide();
+
+                    IssueLoyaltyCard card = new IssueLoyaltyCard();
+
+                    if (!NewManagerHome.opendChildForms.Contains("showReview") && NewManagerHome.opendChildForms.Count <= 2)
+                    {
+                        CustomerHome Home = this.MdiParent as CustomerHome;
+                        Home.IsMdiContainer = true;
+
+                        if (Home != null)
+                        {
+                            card.MdiParent = Home;
+                            card.Show();
+
+                            NewManagerHome.opendChildForms.Add("Review");
+                        }
+                        else
+                        {
+                            MessageBox.Show("MDI Parent is not set correctly.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Instance already exists");
+                    }
                 }
+
+
                 else if(results == 2) 
                 {
                     TostMessage tostSuccess = new TostMessage("Card already exists for this number", "Failed", 1, 1);
@@ -83,6 +114,13 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 e.Handled = true;
             }
         }
+        
+        //get TelNo
+        public string getTelNo() { return txt_tel_no.Text; }
+        //get Creat Date
+        public DateTime getCreatDate() { return dtp_creat_date.Value;}
+        //get CardHolder Name
+        public string getCardHolderName() { return txt_card_holder_name.Text; }
 
         private void txt_tel_no_TextChanged(object sender, EventArgs e)
         {
@@ -97,6 +135,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            NewManagerHome.opendChildForms.Remove("RegisterForLoyaltyCard");
             this.Close();
         }
 

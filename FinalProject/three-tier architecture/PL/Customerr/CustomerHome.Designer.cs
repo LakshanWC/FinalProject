@@ -45,9 +45,10 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -241,11 +242,19 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addReivewToolStripMenuItem});
+            this.addReivewToolStripMenuItem,
+            this.registerForLoyaltyCardToolStripMenuItem});
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
+            // 
+            // addReivewToolStripMenuItem
+            // 
+            this.addReivewToolStripMenuItem.Name = "addReivewToolStripMenuItem";
+            this.addReivewToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.addReivewToolStripMenuItem.Text = "Add Reivew";
+            this.addReivewToolStripMenuItem.Click += new System.EventHandler(this.addReivewToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -261,12 +270,12 @@
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // addReivewToolStripMenuItem
+            // registerForLoyaltyCardToolStripMenuItem
             // 
-            this.addReivewToolStripMenuItem.Name = "addReivewToolStripMenuItem";
-            this.addReivewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addReivewToolStripMenuItem.Text = "Add Reivew";
-            this.addReivewToolStripMenuItem.Click += new System.EventHandler(this.addReivewToolStripMenuItem_Click);
+            this.registerForLoyaltyCardToolStripMenuItem.Name = "registerForLoyaltyCardToolStripMenuItem";
+            this.registerForLoyaltyCardToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registerForLoyaltyCardToolStripMenuItem.Text = "Register For Loyalty Card";
+            this.registerForLoyaltyCardToolStripMenuItem.Click += new System.EventHandler(this.registerForLoyaltyCardToolStripMenuItem_Click);
             // 
             // CustomerHome
             // 
@@ -310,5 +319,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addReivewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerForLoyaltyCardToolStripMenuItem;
     }
 }

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueLoyaltyCard));
             this.dtp_creat_date = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_telNo = new System.Windows.Forms.TextBox();
+            this.txt_holder_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,26 +55,27 @@
             this.dtp_creat_date.Size = new System.Drawing.Size(100, 20);
             this.dtp_creat_date.TabIndex = 7;
             // 
-            // textBox3
+            // txt_telNo
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox3.Location = new System.Drawing.Point(141, 300);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txt_telNo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telNo.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_telNo.Location = new System.Drawing.Point(141, 300);
+            this.txt_telNo.Name = "txt_telNo";
+            this.txt_telNo.ReadOnly = true;
+            this.txt_telNo.Size = new System.Drawing.Size(100, 20);
+            this.txt_telNo.TabIndex = 6;
             // 
-            // textBox1
+            // txt_holder_name
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(141, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_holder_name.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_holder_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_holder_name.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_holder_name.Location = new System.Drawing.Point(147, 246);
+            this.txt_holder_name.Name = "txt_holder_name";
+            this.txt_holder_name.ReadOnly = true;
+            this.txt_holder_name.Size = new System.Drawing.Size(100, 20);
+            this.txt_holder_name.TabIndex = 4;
             // 
             // label4
             // 
@@ -100,11 +101,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(74, 251);
+            this.label1.Location = new System.Drawing.Point(68, 250);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Card No :";
+            this.label1.Text = "Holder Name :";
             // 
             // pb_card_icon
             // 
@@ -164,6 +165,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label6
             // 
@@ -187,10 +189,10 @@
             this.Controls.Add(this.dtp_creat_date);
             this.Controls.Add(this.pb_card_icon);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_telNo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_holder_name);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IssueLoyaltyCard";
@@ -208,8 +210,8 @@
 
         #endregion
         private System.Windows.Forms.DateTimePicker dtp_creat_date;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_telNo;
+        private System.Windows.Forms.TextBox txt_holder_name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
