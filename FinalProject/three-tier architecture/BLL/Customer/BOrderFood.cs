@@ -15,5 +15,22 @@ namespace FinalProject.three_tier_architecture.BLL.Customer
             DOrderFood data = new DOrderFood();
             return data.getItemData(itemId);
         }
+
+        public int checkCard(string cardTelNo)
+        {
+            DOrderFood food = new DOrderFood();
+            return food.checkCard(cardTelNo);
+        }
+        public string generateUniqueString()
+        {
+            DOrderFood genId = new DOrderFood();
+            return genId.generateUniqueString();
+        }
+        public bool addOrder(int orderQuantity, DateTime createdDate, int orderStatus, string cNo,
+                   string itemName, string uniqueKey, decimal totPrice)
+        {
+            DOrderFood order = new DOrderFood();
+            return order.addOrder(orderQuantity, createdDate, orderStatus, cNo, itemName, uniqueKey, totPrice);
+        }
     }
 }

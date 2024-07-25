@@ -46,6 +46,9 @@
             this.btn_order = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_calculate_discount = new System.Windows.Forms.Button();
+            this.lbl_discount_ammount = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.rbtn_loyal_no = new System.Windows.Forms.RadioButton();
             this.rbtn_loyal_yes = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -57,10 +60,8 @@
             this.cmb_delivery_option = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_price = new System.Windows.Forms.TextBox();
             this.nud_item_quantity = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
@@ -101,7 +102,7 @@
             this.txt_order_id.Location = new System.Drawing.Point(159, 190);
             this.txt_order_id.Name = "txt_order_id";
             this.txt_order_id.ReadOnly = true;
-            this.txt_order_id.Size = new System.Drawing.Size(121, 20);
+            this.txt_order_id.Size = new System.Drawing.Size(143, 20);
             this.txt_order_id.TabIndex = 79;
             // 
             // label15
@@ -187,6 +188,7 @@
             this.txt_item_price.ReadOnly = true;
             this.txt_item_price.Size = new System.Drawing.Size(102, 20);
             this.txt_item_price.TabIndex = 23;
+            this.txt_item_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -241,6 +243,7 @@
             this.btn_order.TabIndex = 61;
             this.btn_order.Text = "Order";
             this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // button1
             // 
@@ -259,6 +262,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel2.Controls.Add(this.btn_calculate_discount);
+            this.panel2.Controls.Add(this.lbl_discount_ammount);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.rbtn_loyal_no);
             this.panel2.Controls.Add(this.rbtn_loyal_yes);
             this.panel2.Controls.Add(this.label13);
@@ -270,21 +276,53 @@
             this.panel2.Controls.Add(this.cmb_delivery_option);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.txt_price);
             this.panel2.Controls.Add(this.nud_item_quantity);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(370, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 329);
             this.panel2.TabIndex = 62;
             // 
+            // btn_calculate_discount
+            // 
+            this.btn_calculate_discount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_calculate_discount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_calculate_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_calculate_discount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_calculate_discount.Location = new System.Drawing.Point(134, 137);
+            this.btn_calculate_discount.Name = "btn_calculate_discount";
+            this.btn_calculate_discount.Size = new System.Drawing.Size(125, 36);
+            this.btn_calculate_discount.TabIndex = 64;
+            this.btn_calculate_discount.Text = "Calculate Discount";
+            this.btn_calculate_discount.UseVisualStyleBackColor = false;
+            this.btn_calculate_discount.Click += new System.EventHandler(this.btn_calculate_discount_Click);
+            // 
+            // lbl_discount_ammount
+            // 
+            this.lbl_discount_ammount.AutoSize = true;
+            this.lbl_discount_ammount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_discount_ammount.Location = new System.Drawing.Point(139, 256);
+            this.lbl_discount_ammount.Name = "lbl_discount_ammount";
+            this.lbl_discount_ammount.Size = new System.Drawing.Size(19, 13);
+            this.lbl_discount_ammount.TabIndex = 80;
+            this.lbl_discount_ammount.Text = "00";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.Location = new System.Drawing.Point(21, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 79;
+            this.label6.Text = "Discount Amount :";
+            // 
             // rbtn_loyal_no
             // 
             this.rbtn_loyal_no.AutoSize = true;
             this.rbtn_loyal_no.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.rbtn_loyal_no.Location = new System.Drawing.Point(215, 96);
+            this.rbtn_loyal_no.Location = new System.Drawing.Point(215, 73);
             this.rbtn_loyal_no.Name = "rbtn_loyal_no";
             this.rbtn_loyal_no.Size = new System.Drawing.Size(39, 17);
             this.rbtn_loyal_no.TabIndex = 77;
@@ -297,7 +335,7 @@
             // 
             this.rbtn_loyal_yes.AutoSize = true;
             this.rbtn_loyal_yes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.rbtn_loyal_yes.Location = new System.Drawing.Point(143, 96);
+            this.rbtn_loyal_yes.Location = new System.Drawing.Point(143, 73);
             this.rbtn_loyal_yes.Name = "rbtn_loyal_yes";
             this.rbtn_loyal_yes.Size = new System.Drawing.Size(43, 17);
             this.rbtn_loyal_yes.TabIndex = 76;
@@ -310,7 +348,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label13.Location = new System.Drawing.Point(22, 138);
+            this.label13.Location = new System.Drawing.Point(22, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
             this.label13.TabIndex = 75;
@@ -321,16 +359,17 @@
             this.txt_loyal_card_tel_no.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_loyal_card_tel_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_loyal_card_tel_no.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_loyal_card_tel_no.Location = new System.Drawing.Point(138, 132);
+            this.txt_loyal_card_tel_no.Location = new System.Drawing.Point(138, 109);
             this.txt_loyal_card_tel_no.Name = "txt_loyal_card_tel_no";
             this.txt_loyal_card_tel_no.Size = new System.Drawing.Size(121, 20);
             this.txt_loyal_card_tel_no.TabIndex = 74;
+            this.txt_loyal_card_tel_no.TextChanged += new System.EventHandler(this.txt_loyal_card_tel_no_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label12.Location = new System.Drawing.Point(197, 99);
+            this.label12.Location = new System.Drawing.Point(197, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(12, 13);
             this.label12.TabIndex = 73;
@@ -340,7 +379,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label11.Location = new System.Drawing.Point(22, 102);
+            this.label11.Location = new System.Drawing.Point(22, 79);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 13);
             this.label11.TabIndex = 70;
@@ -351,37 +390,47 @@
             this.txt_total_price.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_total_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_total_price.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_total_price.Location = new System.Drawing.Point(138, 287);
+            this.txt_total_price.Location = new System.Drawing.Point(138, 285);
             this.txt_total_price.Name = "txt_total_price";
             this.txt_total_price.ReadOnly = true;
             this.txt_total_price.Size = new System.Drawing.Size(121, 20);
             this.txt_total_price.TabIndex = 69;
+            this.txt_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cmb_payment_method
             // 
             this.cmb_payment_method.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_payment_method.ForeColor = System.Drawing.SystemColors.Info;
             this.cmb_payment_method.FormattingEnabled = true;
-            this.cmb_payment_method.Location = new System.Drawing.Point(138, 252);
+            this.cmb_payment_method.Items.AddRange(new object[] {
+            "--Select--",
+            "On Cash",
+            "Cards Payment"});
+            this.cmb_payment_method.Location = new System.Drawing.Point(138, 219);
             this.cmb_payment_method.Name = "cmb_payment_method";
             this.cmb_payment_method.Size = new System.Drawing.Size(121, 21);
             this.cmb_payment_method.TabIndex = 68;
+            this.cmb_payment_method.SelectedIndexChanged += new System.EventHandler(this.cmb_payment_method_SelectedIndexChanged);
             // 
             // cmb_delivery_option
             // 
             this.cmb_delivery_option.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_delivery_option.ForeColor = System.Drawing.SystemColors.Info;
             this.cmb_delivery_option.FormattingEnabled = true;
-            this.cmb_delivery_option.Location = new System.Drawing.Point(138, 220);
+            this.cmb_delivery_option.Items.AddRange(new object[] {
+            "non",
+            "Standard Delivery"});
+            this.cmb_delivery_option.Location = new System.Drawing.Point(138, 187);
             this.cmb_delivery_option.Name = "cmb_delivery_option";
             this.cmb_delivery_option.Size = new System.Drawing.Size(121, 21);
             this.cmb_delivery_option.TabIndex = 62;
+            this.cmb_delivery_option.SelectedIndexChanged += new System.EventHandler(this.cmb_delivery_option_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label10.Location = new System.Drawing.Point(22, 228);
+            this.label10.Location = new System.Drawing.Point(22, 195);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 13);
             this.label10.TabIndex = 67;
@@ -391,26 +440,20 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label9.Location = new System.Drawing.Point(22, 260);
+            this.label9.Location = new System.Drawing.Point(22, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 13);
             this.label9.TabIndex = 66;
             this.label9.Text = "Payment method :";
             // 
-            // txt_price
-            // 
-            this.txt_price.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_price.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_price.Location = new System.Drawing.Point(138, 53);
-            this.txt_price.Name = "txt_price";
-            this.txt_price.ReadOnly = true;
-            this.txt_price.Size = new System.Drawing.Size(88, 20);
-            this.txt_price.TabIndex = 62;
-            // 
             // nud_item_quantity
             // 
             this.nud_item_quantity.Location = new System.Drawing.Point(138, 19);
+            this.nud_item_quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nud_item_quantity.Name = "nud_item_quantity";
             this.nud_item_quantity.Size = new System.Drawing.Size(88, 20);
             this.nud_item_quantity.TabIndex = 65;
@@ -419,26 +462,17 @@
             0,
             0,
             0});
+            this.nud_item_quantity.ValueChanged += new System.EventHandler(this.nud_item_quantity_ValueChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label8.Location = new System.Drawing.Point(22, 289);
+            this.label8.Location = new System.Drawing.Point(22, 292);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 13);
             this.label8.TabIndex = 64;
             this.label8.Text = "Total Price :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label6.Location = new System.Drawing.Point(22, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Price :";
             // 
             // label5
             // 
@@ -528,7 +562,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nud_item_quantity;
         private System.Windows.Forms.TextBox txt_total_price;
@@ -536,7 +569,6 @@
         private System.Windows.Forms.ComboBox cmb_delivery_option;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -548,5 +580,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_order_id;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_discount_ammount;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_calculate_discount;
     }
 }
