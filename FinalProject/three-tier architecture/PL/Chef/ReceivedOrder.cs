@@ -21,5 +21,10 @@ namespace FinalProject.three_tier_architecture.PL.Chef
         {
 
         }
+
+        private void ReceivedOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

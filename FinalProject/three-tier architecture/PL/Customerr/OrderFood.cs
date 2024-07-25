@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,15 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 {
     public partial class OrderFood : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private double discount;
         private Image itemImage;
         private DateTime createdDate = DateTime.Now;
+
+        private decimal firstPrice = 0;
+        private decimal finalTot = 0;
 
         public OrderFood()
         {
@@ -30,6 +37,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             txt_loyal_card_tel_no.Enabled = false;
             cmb_delivery_option.SelectedIndex = 0;
             cmb_payment_method.SelectedIndex = 0;
+           
 
             BOrderFood genId = new BOrderFood();
             txt_order_id.Text = genId.generateUniqueString();
@@ -56,11 +64,15 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void rbtn_loyal_no_CheckedChanged(object sender, EventArgs e)
         {
+            double itemPrice = Convert.ToDouble(txt_item_price.Text);
+            double quantitiy = (double)nud_item_quantity.Value;
+
             if (rbtn_loyal_no.Checked)
             {
                 txt_loyal_card_tel_no.Enabled=false;
                 cmb_delivery_option.Items.Remove("Express Delivery");
 
+                txt_total_price.Text =  Convert.ToString(itemPrice * quantitiy);
             }
         }
 
@@ -103,7 +115,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             double itemPrice = Convert.ToDouble(txt_item_price.Text);
             double quantitiy = (double)nud_item_quantity.Value;
 
-            if (discount != null)
+            if (discount != null && !string.IsNullOrEmpty(txt_loyal_card_tel_no.Text) && rbtn_loyal_yes.Checked)
             {
                 txt_total_price.Text =  Convert.ToString((itemPrice * quantitiy)-discount);
                 addDiscount();
@@ -200,13 +212,20 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_calculate_discount_Click(object sender, EventArgs e)
         {
-            checkCard();
-            btn_calculate_discount.Enabled = false;
+            if(rbtn_loyal_yes.Checked && !string.IsNullOrEmpty(txt_loyal_card_tel_no.Text))
+            {
+                checkCard();
+                btn_calculate_discount.Enabled = false;
+
+            }
         }
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-            int orderQuntity = Convert.ToInt32(nud_item_quantity.Value);
+            try
+            {
+
+                int orderQuntity = Convert.ToInt32(nud_item_quantity.Value);
             // createdDate has the date
 
             int orderStatus = cmb_delivery_option.SelectedIndex;
@@ -223,38 +242,114 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             string uniqeKey = txt_order_id.Text;
             decimal totPrice = Convert.ToDecimal(txt_total_price.Text);
             
-
-
             if(rbtn_loyal_no.Checked || rbtn_loyal_yes.Checked && cmb_payment_method.SelectedIndex != 0)
             {
                 BOrderFood foodOrder = new BOrderFood();
                 bool isOrdered = foodOrder.addOrder(orderQuntity, createdDate,orderStatus,cNo,itemName,uniqeKey,totPrice);
                 if (isOrdered) 
-                { 
-                    int selectedInt = cmb_selected_item.SelectedIndex;
+                {
+                    
+                        // set all item total
 
-                    cmb_selected_item.Items.RemoveAt(selectedInt);
-                    txt_item_cal.Clear();
-                    txt_item_price.Clear();
-                    txt_item_name.Clear();
+                        firstPrice = Convert.ToDecimal(txt_total_price.Text);
+                        finalTot = firstPrice + finalTot;
+                        txt_all_item_total.Text = (finalTot).ToString("F2");
 
-                    if (cmb_selected_item.Items.Count > 0)
-                    {
-                        cmb_selected_item.SelectedIndex = 0;
-                    }
+                        int selectedInt = cmb_selected_item.SelectedIndex;
 
-                    TostMessage messSucc = new TostMessage("Order Added Successfully","Successful",3,3);
-                    messSucc.Show();
+                        cmb_selected_item.Items.RemoveAt(selectedInt);
+
+
+                        txt_item_cal.Clear();
+                        txt_item_price.Clear();
+                        txt_item_name.Clear();
+
+                        if (cmb_selected_item.Items.Count > 0)
+                        {
+                            cmb_selected_item.SelectedIndex = 0;
+                            nud_item_quantity.Value = 1;
+                        }
+                        if(cmb_selected_item.Items.Count == 0)
+                        {
+                            txt_total_price.Clear();
+                            cmb_selected_item.Items.Clear();
+                            btn_order_customize.Enabled = false;
+                        }
+
+                        TostMessage messSucc = new TostMessage("Order Added Successfully", "Successful", 3, 3);
+                        messSucc.Show();
+
                 }
                 else
                 {
                     TostMessage messFail = new TostMessage("Order Adding Failed","Failed",2,2);
                 }
             }
+                else
+                {
+                MessageBox.Show("Please fill out the details","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There Are No Items Left", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_total_price_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            if (cmb_selected_item.Items.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Some items are not ordered. Exit anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                getClickedButton(result);
+            }
             else
             {
-                MessageBox.Show("Please fill out the details","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                getClickedButton(result);
+
             }
+        }
+
+        //check if the usre wants a bill for the order
+        private void getClickedButton(DialogResult result)
+        {
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("bill--   ~(OvO)~  --bill ");
+            }
+            else if (result == DialogResult.No)
+            {
+                NewManagerHome.opendChildForms.Remove("OrderFood");
+                this.Close();
+            }
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

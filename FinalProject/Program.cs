@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC.View;
 using FinalProject.three_tier_architecture.PL;
+using FinalProject.three_tier_architecture.PL.Chef;
 using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace FinalProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new CustomerHome());
+            Application.Run(new ReceivedOrder());
           
         }
     }

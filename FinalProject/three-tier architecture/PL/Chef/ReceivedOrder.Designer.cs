@@ -196,6 +196,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReceivedOrder";
             this.Text = "ReceivedOrder";
+            this.Load += new System.EventHandler(this.ReceivedOrder_Load);
             this.pnl_title.ResumeLayout(false);
             this.pnl_title.PerformLayout();
             this.panel1.ResumeLayout(false);

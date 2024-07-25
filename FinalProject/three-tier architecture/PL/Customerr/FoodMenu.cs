@@ -207,6 +207,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             }
             else
             {
+                this.Hide();
                 if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
                 {
                     CustomerHome customerHome = this.MdiParent as CustomerHome;
@@ -216,7 +217,6 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                         order.MdiParent = customerHome;
                         order.setSelectedItemsToCB(selectedItems);
                         order.Show();
-
                         NewManagerHome.opendChildForms.Add("OrderFood");
                     }
                     else
