@@ -27,10 +27,22 @@ namespace FinalProject.three_tier_architecture.BLL.Customer
             return genId.generateUniqueString();
         }
         public bool addOrder(int orderQuantity, DateTime createdDate, int orderStatus, string cNo,
-                   string itemName, string uniqueKey, decimal totPrice)
+                   string itemName, string uniqueKey, decimal totPrice, string Tid)
         {
             DOrderFood order = new DOrderFood();
-            return order.addOrder(orderQuantity, createdDate, orderStatus, cNo, itemName, uniqueKey, totPrice);
+            return order.addOrder(orderQuantity, createdDate, orderStatus, cNo, itemName, uniqueKey, totPrice, Tid);
+        }
+
+        public DataSet getAvailableTbls()
+        {
+            DOrderFood tabls = new DOrderFood();
+            return tabls.getAvailableTbls();
+        }
+
+        public string getNoOfSeats(string tblName)
+        {
+            DOrderFood seats = new DOrderFood();
+            return seats.getNoOfSeats(tblName);
         }
     }
 }

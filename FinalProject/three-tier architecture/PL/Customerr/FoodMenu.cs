@@ -216,6 +216,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                     {
                         order.MdiParent = customerHome;
                         order.setSelectedItemsToCB(selectedItems);
+                        selectedItems.Clear();
                         order.Show();
                         NewManagerHome.opendChildForms.Add("OrderFood");
                     }

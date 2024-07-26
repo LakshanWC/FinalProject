@@ -14,9 +14,10 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
         DMDBConnection connection = new DMDBConnection();
 
         /*
-        OrderStatus 0 == ordered
-        OrderStatus 1 == standedDelivery
-        OrderStatus 2 == ExpressDelivery
+        OrderStatus 0 == TakeOut
+        OrderStatus 1 == Dine in
+        OrderStatus 2 == standedDelivery
+        OrderStatus 3 == ExpressDelivery
         */
 
         public DataSet getOrders()

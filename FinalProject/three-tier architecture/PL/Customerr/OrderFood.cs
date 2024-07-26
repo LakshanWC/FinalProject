@@ -37,7 +37,11 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             txt_loyal_card_tel_no.Enabled = false;
             cmb_delivery_option.SelectedIndex = 0;
             cmb_payment_method.SelectedIndex = 0;
-           
+
+            cmb_selected_table.Visible = false;
+            lbl_selected_table.Visible=false;
+            txt_no_of_seats.Enabled = false;
+
 
             BOrderFood genId = new BOrderFood();
             txt_order_id.Text = genId.generateUniqueString();
@@ -169,6 +173,20 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void cmb_delivery_option_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cmb_delivery_option.SelectedIndex == 1)
+            {
+                cmb_selected_table.Visible = true;
+                lbl_selected_table.Visible=true;
+                txt_no_of_seats.Visible=true;
+                setTables();
+            }
+            else
+            {
+                cmb_selected_table.Visible = false;
+                lbl_selected_table.Visible=false;
+                txt_no_of_seats.Visible=false;
+                cmb_selected_table.Items.Clear();
+            }
         }
 
         private void cmb_payment_method_SelectedIndexChanged(object sender, EventArgs e)
@@ -230,6 +248,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
             int orderStatus = cmb_delivery_option.SelectedIndex;
             string cNo;
+            string Tid;
             if (CustomerHome.curruntCusId == null)
             {
                 cNo = "Guest";
@@ -238,6 +257,16 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             {
                 cNo = CustomerHome.curruntCusId;
             }
+
+            if(cmb_selected_table.Visible == true)
+                {
+                    Tid = cmb_selected_table.SelectedItem.ToString();
+                }
+            else
+                {
+                    Tid = "non";
+                }
+
             string itemName = txt_item_name.Text;
             string uniqeKey = txt_order_id.Text;
             decimal totPrice = Convert.ToDecimal(txt_total_price.Text);
@@ -245,7 +274,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             if(rbtn_loyal_no.Checked || rbtn_loyal_yes.Checked && cmb_payment_method.SelectedIndex != 0)
             {
                 BOrderFood foodOrder = new BOrderFood();
-                bool isOrdered = foodOrder.addOrder(orderQuntity, createdDate,orderStatus,cNo,itemName,uniqeKey,totPrice);
+                bool isOrdered = foodOrder.addOrder(orderQuntity, createdDate,orderStatus,cNo,itemName,uniqeKey,totPrice,Tid);
                 if (isOrdered) 
                 {
                     
@@ -304,8 +333,25 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         {
             if (cmb_selected_item.Items.Count > 0)
             {
+                DialogResult rst = new DialogResult();
+
                 DialogResult result = MessageBox.Show("Some items are not ordered. Exit anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                getClickedButton(result);
+                if(result == DialogResult.Yes) 
+                { 
+                    rst = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(rst == DialogResult.Yes)
+                    {
+                        getClickedButton(rst);
+                    }
+                    else
+                    {
+                        getClickedButton(rst);
+                    }
+                }
+                else
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -321,11 +367,30 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("bill--   ~(OvO)~  --bill ");
+                
+                this.Close();
             }
             else if (result == DialogResult.No)
             {
                 NewManagerHome.opendChildForms.Remove("OrderFood");
                 this.Close();
+            }
+        }
+
+        //set free tables
+        private void setTables()
+        {
+            BOrderFood tabls = new BOrderFood();
+            DataSet ds = tabls.getAvailableTbls();
+
+            if(ds != null)
+            {
+                DataTable dt = ds.Tables[0];
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cmb_selected_table.Items.Add(dr["Tid"].ToString());
+                }
             }
         }
 
@@ -350,6 +415,16 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void pnl_title_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void cmb_selected_table_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BOrderFood seats = new BOrderFood();
+
+            string tblName = cmb_selected_table.SelectedItem.ToString();
+            string tblSeats = seats.getNoOfSeats(tblName);
+            txt_no_of_seats.Enabled = true;
+            txt_no_of_seats.Text = " Seats : "+ tblSeats ;
         }
     }
 }

@@ -12,8 +12,9 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
 {
     public class DOrderFood
     {
+        private static bool isTblStatUpdated = false;
         DMDBConnection connection = new DMDBConnection();
-        
+
         public DataSet getItemData(string itemId)
         {
             DataSet itemData = new DataSet();
@@ -21,7 +22,7 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
 
             try
             {
-                using(SqlConnection con = connection.openConnection())
+                using (SqlConnection con = connection.openConnection())
                 {
                     SqlCommand cmd = new SqlCommand(selectQuery, con);
                     cmd.Parameters.AddWithValue("@itemId", itemId);
@@ -70,7 +71,7 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
 
         public bool generateUniqueId(string generatedId)
         {
-            string selectQuery = "SELECT COUNT(*) FROM tblorder WHERE UniqeKey = @generatedId;"; 
+            string selectQuery = "SELECT COUNT(*) FROM tblorder WHERE UniqeKey = @generatedId;";
 
             try
             {
@@ -119,9 +120,9 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
 
             try
             {
-                using(SqlConnection con = connection.openConnection())
+                using (SqlConnection con = connection.openConnection())
                 {
-                    SqlCommand cmd = new SqlCommand( selectQuery, con);
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
                     rowCount = (int)cmd.ExecuteScalar();
                     connection.closeConnection();
                 }
@@ -138,13 +139,13 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
         //add order
 
         public bool addOrder(int orderQuantity, DateTime createdDate, int orderStatus, string cNo,
-                    string itemName, string uniqueKey, decimal totPrice)
+                          string itemName, string uniqueKey, decimal totPrice, string Tid)
         {
             int oid = getOid();
             DMDBConnection connDB = new DMDBConnection();
 
-            string insertQuery = "INSERT INTO tblorder (Oid, Oquantity, Odate, OrderStatus, Cno, ItemName, UniqeKey, Price) " +
-                "VALUES (@Oid, @Oquantity, @Odate, @OrderStatus, @Cno, @ItemName, @UniqeKey, @Price);";
+            string insertQuery = "INSERT INTO tblorder (Oid, Oquantity, Odate, OrderStatus, Cno, ItemName, UniqeKey, Price,Tid) " +
+                                 "VALUES (@Oid, @Oquantity, @Odate, @OrderStatus, @Cno, @ItemName, @UniqeKey, @Price,@Tid);";
 
             try
             {
@@ -159,8 +160,16 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
                     cmd.Parameters.AddWithValue("@ItemName", itemName);
                     cmd.Parameters.AddWithValue("@UniqeKey", uniqueKey);
                     cmd.Parameters.AddWithValue("@Price", totPrice);
+                    cmd.Parameters.AddWithValue("@Tid", Tid);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (!isTblStatUpdated)
+                    {
+                        updateTblStat(Tid);
+                        isTblStatUpdated = true;
+                    }
+
                     return rowsAffected > 0;
                 }
             }
@@ -169,6 +178,86 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
                 Console.WriteLine(e.Message);
                 return false;
             }
+        }
+    
+
+        //update tables table
+        private void updateTblStat(string Tid)
+        {
+            DMDBConnection conne = new DMDBConnection();
+
+            if(Tid == "non")
+            {
+
+            }
+            else
+            {
+                try
+                {
+                    string updatQuery = "UPDATE [Table] SET status = 'Resivered' WHERE Tid =@Tid;";
+                    using(SqlConnection conn = conne.openConnection())
+                    {
+                        SqlCommand cmmd = new SqlCommand(updatQuery, conn);
+                        cmmd.Parameters.AddWithValue("@Tid", Tid);
+                        cmmd.ExecuteNonQuery();
+
+                        conne.closeConnection();
+                    }
+                }catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+
+        public DataSet getAvailableTbls()
+        {
+            string selectQuery = "SELECT Tid FROM [Table] WHERE status = 'free';";
+            DataSet ds = new DataSet();
+
+            try
+            {
+                using(SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(ds);
+
+                    connection.closeConnection();
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            return ds;
+        }
+
+        public string getNoOfSeats(string tblName)
+        {
+            string selectQuery = "SELECT noOfSeats FROM [Table] WHERE Tid =@tblName;";
+            string noOfSeats;
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+                    cmd.Parameters.AddWithValue("@tblName",tblName);
+
+                    noOfSeats = cmd.ExecuteScalar().ToString();
+
+                    connection.closeConnection();
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            return noOfSeats;
         }
     }
 }
