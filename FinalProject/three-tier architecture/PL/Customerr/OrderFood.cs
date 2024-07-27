@@ -1,4 +1,6 @@
-﻿using FinalProject.MVC;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
+using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Customer;
 using System;
 using System.Collections.Generic;
@@ -284,26 +286,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                         finalTot = firstPrice + finalTot;
                         txt_all_item_total.Text = (finalTot).ToString("F2");
 
-                        int selectedInt = cmb_selected_item.SelectedIndex;
-
-                        cmb_selected_item.Items.RemoveAt(selectedInt);
-
-
-                        txt_item_cal.Clear();
-                        txt_item_price.Clear();
-                        txt_item_name.Clear();
-
-                        if (cmb_selected_item.Items.Count > 0)
-                        {
-                            cmb_selected_item.SelectedIndex = 0;
-                            nud_item_quantity.Value = 1;
-                        }
-                        if(cmb_selected_item.Items.Count == 0)
-                        {
-                            txt_total_price.Clear();
-                            cmb_selected_item.Items.Clear();
-                            btn_order_customize.Enabled = false;
-                        }
+                        clearUi();
 
                         TostMessage messSucc = new TostMessage("Order Added Successfully", "Successful", 3, 3);
                         messSucc.Show();
@@ -325,39 +308,75 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             }
         }
 
+        private void clearUi()
+        {
+            int selectedInt = cmb_selected_item.SelectedIndex;
+
+            cmb_selected_item.Items.RemoveAt(selectedInt);
+
+
+            txt_item_cal.Clear();
+            txt_item_price.Clear();
+            txt_item_name.Clear();
+
+            if (cmb_selected_item.Items.Count > 0)
+            {
+                cmb_selected_item.SelectedIndex = 0;
+                nud_item_quantity.Value = 1;
+            }
+            if (cmb_selected_item.Items.Count == 0)
+            {
+                txt_total_price.Clear();
+                cmb_selected_item.Items.Clear();
+                btn_order_customize.Enabled = false;
+            }
+        }
+
         private void txt_total_price_TextChanged(object sender, EventArgs e)
         {
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            if (cmb_selected_item.Items.Count > 0)
-            {
-                DialogResult rst = new DialogResult();
 
-                DialogResult result = MessageBox.Show("Some items are not ordered. Exit anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(result == DialogResult.Yes) 
-                { 
-                    rst = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(rst == DialogResult.Yes)
+            if (NewManagerHome.opendChildForms.Contains("OrderCustomize"))
+            {
+                MessageBox.Show("You can not exit this Ui while OrderCustomize Ui is Open",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+            }
+            else
+            {
+
+                if (cmb_selected_item.Items.Count > 0)
+                {
+                    DialogResult rst = new DialogResult();
+
+                    DialogResult result = MessageBox.Show("Some items are not ordered. Exit anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        getClickedButton(rst);
+                        rst = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (rst == DialogResult.Yes)
+                        {
+                            getClickedButton(rst);
+                        }
+                        else
+                        {
+                            getClickedButton(rst);
+                        }
                     }
                     else
                     {
-                        getClickedButton(rst);
+                        this.Close();
                     }
                 }
                 else
                 {
-                    this.Close();
-                }
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                getClickedButton(result);
+                    DialogResult result = MessageBox.Show("Do you Want a Bill ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    getClickedButton(result);
 
+                }
             }
         }
 
@@ -426,5 +445,58 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             txt_no_of_seats.Enabled = true;
             txt_no_of_seats.Text = " Seats : "+ tblSeats ;
         }
+
+        private void btn_order_customize_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txt_item_name.Text) && !string.IsNullOrEmpty(txt_item_price.Text) 
+                && cmb_selected_item.Items.Count > 0 && cmb_payment_method.SelectedIndex != 0)
+            {
+                //open OrderCustomize Ui
+                orderCustomizeUi();
+
+            }
+            else if(cmb_selected_item.Items.Count == 0)
+            {
+                MessageBox.Show("No Items To Customize !","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(cmb_payment_method.SelectedIndex == 0 && cmb_delivery_option.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please Select delivery methdd & Payment Method !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Please Select an Item First !","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
+        public void orderCustomizeUi()
+        {
+            OrderCustomize customize = new OrderCustomize();
+            customize.passData(txt_order_id.Text, cmb_selected_item.SelectedItem.ToString(),
+                txt_item_name.Text, txt_item_price.Text,itemImage);
+
+
+            if (!NewManagerHome.opendChildForms.Contains("OrderCustomize") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                CustomerHome customerHome = this.MdiParent as CustomerHome;
+
+                if (customerHome != null)
+                {
+                    customize.MdiParent = customerHome;
+                    clearUi();
+                    customize.Show();
+                    NewManagerHome.opendChildForms.Add("OrderCustomize");
+                }
+                else
+                {
+                    MessageBox.Show("MDI Parent is not set correctly.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
     }
 }

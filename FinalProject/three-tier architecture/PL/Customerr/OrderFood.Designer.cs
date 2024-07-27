@@ -46,6 +46,9 @@
             this.btn_order = new System.Windows.Forms.Button();
             this.btn_order_customize = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_no_of_seats = new System.Windows.Forms.TextBox();
+            this.cmb_selected_table = new System.Windows.Forms.ComboBox();
+            this.lbl_selected_table = new System.Windows.Forms.Label();
             this.txt_all_item_total = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_calculate_discount = new System.Windows.Forms.Button();
@@ -68,9 +71,6 @@
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.cmb_selected_table = new System.Windows.Forms.ComboBox();
-            this.lbl_selected_table = new System.Windows.Forms.Label();
-            this.txt_no_of_seats = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_image)).BeginInit();
             this.panel2.SuspendLayout();
@@ -264,6 +264,7 @@
             this.btn_order_customize.TabIndex = 62;
             this.btn_order_customize.Text = "Customize Food Item ";
             this.btn_order_customize.UseVisualStyleBackColor = false;
+            this.btn_order_customize.Click += new System.EventHandler(this.btn_order_customize_Click);
             // 
             // panel2
             // 
@@ -294,6 +295,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 362);
             this.panel2.TabIndex = 62;
+            // 
+            // txt_no_of_seats
+            // 
+            this.txt_no_of_seats.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_no_of_seats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_no_of_seats.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_no_of_seats.Location = new System.Drawing.Point(236, 230);
+            this.txt_no_of_seats.Name = "txt_no_of_seats";
+            this.txt_no_of_seats.ReadOnly = true;
+            this.txt_no_of_seats.Size = new System.Drawing.Size(82, 20);
+            this.txt_no_of_seats.TabIndex = 85;
+            this.txt_no_of_seats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cmb_selected_table
+            // 
+            this.cmb_selected_table.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_selected_table.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_selected_table.FormattingEnabled = true;
+            this.cmb_selected_table.Items.AddRange(new object[] {
+            "--Select--",
+            "On Cash",
+            "Cards Payment"});
+            this.cmb_selected_table.Location = new System.Drawing.Point(138, 229);
+            this.cmb_selected_table.Name = "cmb_selected_table";
+            this.cmb_selected_table.Size = new System.Drawing.Size(88, 21);
+            this.cmb_selected_table.TabIndex = 84;
+            this.cmb_selected_table.SelectedIndexChanged += new System.EventHandler(this.cmb_selected_table_SelectedIndexChanged);
+            // 
+            // lbl_selected_table
+            // 
+            this.lbl_selected_table.AutoSize = true;
+            this.lbl_selected_table.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_selected_table.Location = new System.Drawing.Point(22, 235);
+            this.lbl_selected_table.Name = "lbl_selected_table";
+            this.lbl_selected_table.Size = new System.Drawing.Size(96, 13);
+            this.lbl_selected_table.TabIndex = 83;
+            this.lbl_selected_table.Text = "Selecte Table No :";
             // 
             // txt_all_item_total
             // 
@@ -555,43 +593,6 @@
             this.label14.Size = new System.Drawing.Size(79, 15);
             this.label14.TabIndex = 42;
             this.label14.Text = "Order Food";
-            // 
-            // cmb_selected_table
-            // 
-            this.cmb_selected_table.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_selected_table.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_selected_table.FormattingEnabled = true;
-            this.cmb_selected_table.Items.AddRange(new object[] {
-            "--Select--",
-            "On Cash",
-            "Cards Payment"});
-            this.cmb_selected_table.Location = new System.Drawing.Point(138, 229);
-            this.cmb_selected_table.Name = "cmb_selected_table";
-            this.cmb_selected_table.Size = new System.Drawing.Size(88, 21);
-            this.cmb_selected_table.TabIndex = 84;
-            this.cmb_selected_table.SelectedIndexChanged += new System.EventHandler(this.cmb_selected_table_SelectedIndexChanged);
-            // 
-            // lbl_selected_table
-            // 
-            this.lbl_selected_table.AutoSize = true;
-            this.lbl_selected_table.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_selected_table.Location = new System.Drawing.Point(22, 235);
-            this.lbl_selected_table.Name = "lbl_selected_table";
-            this.lbl_selected_table.Size = new System.Drawing.Size(96, 13);
-            this.lbl_selected_table.TabIndex = 83;
-            this.lbl_selected_table.Text = "Selecte Table No :";
-            // 
-            // txt_no_of_seats
-            // 
-            this.txt_no_of_seats.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_no_of_seats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_no_of_seats.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_no_of_seats.Location = new System.Drawing.Point(236, 230);
-            this.txt_no_of_seats.Name = "txt_no_of_seats";
-            this.txt_no_of_seats.ReadOnly = true;
-            this.txt_no_of_seats.Size = new System.Drawing.Size(82, 20);
-            this.txt_no_of_seats.TabIndex = 85;
-            this.txt_no_of_seats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OrderFood
             // 

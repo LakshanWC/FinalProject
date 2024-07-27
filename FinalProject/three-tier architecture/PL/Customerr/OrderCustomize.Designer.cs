@@ -37,7 +37,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_selected_item = new System.Windows.Forms.ComboBox();
-            this.txt_item_no_one = new System.Windows.Forms.TextBox();
+            this.txt_item_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pb_item_one = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmb_selected_item);
-            this.panel1.Controls.Add(this.txt_item_no_one);
+            this.panel1.Controls.Add(this.txt_item_name);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pb_item_one);
             this.panel1.Controls.Add(this.label14);
@@ -159,16 +159,16 @@
             this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
             this.cmb_selected_item.TabIndex = 61;
             // 
-            // txt_item_no_one
+            // txt_item_name
             // 
-            this.txt_item_no_one.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_item_no_one.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_item_no_one.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_item_no_one.Location = new System.Drawing.Point(146, 289);
-            this.txt_item_no_one.Name = "txt_item_no_one";
-            this.txt_item_no_one.ReadOnly = true;
-            this.txt_item_no_one.Size = new System.Drawing.Size(102, 20);
-            this.txt_item_no_one.TabIndex = 20;
+            this.txt_item_name.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_item_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_item_name.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_item_name.Location = new System.Drawing.Point(146, 289);
+            this.txt_item_name.Name = "txt_item_name";
+            this.txt_item_name.ReadOnly = true;
+            this.txt_item_name.Size = new System.Drawing.Size(102, 20);
+            this.txt_item_name.TabIndex = 20;
             // 
             // label1
             // 
@@ -176,9 +176,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label1.Location = new System.Drawing.Point(34, 291);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Item No :";
+            this.label1.Text = "Item Name :";
             // 
             // pb_item_one
             // 
@@ -416,6 +416,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderCustomize";
             this.Text = "OrderCustomize";
+            this.Load += new System.EventHandler(this.OrderCustomize_Load);
             this.pnl_title.ResumeLayout(false);
             this.pnl_title.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -435,7 +436,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_selected_item;
-        private System.Windows.Forms.TextBox txt_item_no_one;
+        private System.Windows.Forms.TextBox txt_item_name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pb_item_one;
         private System.Windows.Forms.Panel panel2;
