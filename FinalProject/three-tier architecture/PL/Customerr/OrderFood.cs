@@ -13,6 +13,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.SessionState;
 using System.Windows.Forms;
 
 namespace FinalProject.three_tier_architecture.PL.Customerr
@@ -287,7 +288,6 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                         firstPrice = Convert.ToDecimal(txt_total_price.Text);
                         finalTot = firstPrice + finalTot;
                         txt_all_item_total.Text = (finalTot).ToString("F2");
-
                         clearUi();
 
                         TostMessage messSucc = new TostMessage("Order Added Successfully", "Successful", 3, 3);
@@ -370,6 +370,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                     }
                     else
                     {
+                        NewManagerHome.opendChildForms.Remove("OrderFood");
                         this.Close();
                     }
                 }
@@ -388,7 +389,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("bill--   ~(OvO)~  --bill ");
-                
+                NewManagerHome.opendChildForms.Remove("OrderFood");
                 this.Close();
             }
             else if (result == DialogResult.No)
@@ -498,11 +499,6 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             {
                 MessageBox.Show("instens already exisit");
             }
-        }
-
-        public void setNewPrice(decimal customPrice)
-        {
-            //need to impliment
         }
     }
 }

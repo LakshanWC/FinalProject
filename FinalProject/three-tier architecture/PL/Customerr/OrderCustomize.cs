@@ -14,6 +14,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 {
     public partial class OrderCustomize : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private DateTime SpcreatDate;
         private string deliveryOption;
 
@@ -177,38 +180,49 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-            int orderQuantity = Convert.ToInt32(nud_item_quantity.Value);
-            string orderStatus = deliveryOption;
-            string itemName = txt_item_name.Text;
-            string uniqueKey = txt_order_id.Text;
-            decimal totPrice = Convert.ToDecimal(txt_total_price.Text);
-            string extraItem1 = cmb_first_option.SelectedItem.ToString();
-            string extraItem2 = cmb_second_option.SelectedItem.ToString();
-            string extraItem3 = cmb_third_option.SelectedItem.ToString();
-            string SORdetails = txt_description.Text;
-
-            int isOrdered;
-
-            BOrderCustomize orderCustomizeFood = new BOrderCustomize();
-            isOrdered = orderCustomizeFood.addSpecialOrder(orderQuantity,SpcreatDate,orderStatus,itemName
-                ,uniqueKey,totPrice,extraItem1,extraItem2,extraItem3,SORdetails);
-
-            if (isOrdered == 1)
+            if (cmb_selected_item.Items.Count != 0 && !string.IsNullOrEmpty(txt_item_name.Text))
             {
-                TostMessage messSucc = new TostMessage("Order Added Successfully", "Successful", 3,3);
-                messSucc.Show();
-                clearUi();
+
+
+
+                int orderQuantity = Convert.ToInt32(nud_item_quantity.Value);
+                string orderStatus = deliveryOption;
+                string itemName = txt_item_name.Text;
+                string uniqueKey = txt_order_id.Text;
+                decimal totPrice = Convert.ToDecimal(txt_total_price.Text);
+                string extraItem1 = cmb_first_option.SelectedItem.ToString();
+                string extraItem2 = cmb_second_option.SelectedItem.ToString();
+                string extraItem3 = cmb_third_option.SelectedItem.ToString();
+                string SORdetails = txt_description.Text;
+
+                int isOrdered;
+
+                BOrderCustomize orderCustomizeFood = new BOrderCustomize();
+                isOrdered = orderCustomizeFood.addSpecialOrder(orderQuantity, SpcreatDate, orderStatus, itemName
+                    , uniqueKey, totPrice, extraItem1, extraItem2, extraItem3, SORdetails);
+
+                if (isOrdered == 1)
+                {
+                    TostMessage messSucc = new TostMessage("Order Added Successfully", "Successful", 3, 3);
+                    messSucc.Show();
+                    clearUi();
+                }
+                else if (isOrdered == 0)
+                {
+                    TostMessage messError = new TostMessage("Order Adding Faild", "Faild", 1, 1);
+                    messError.Show();
+                }
+                else if (isOrdered == -1)
+                {
+                    TostMessage messException = new TostMessage("Unexpected Error", "Error", 2, 2);
+                    messException.Show();
+                }
             }
-            else if(isOrdered == 0)
+            else
             {
-                TostMessage messError = new TostMessage("Order Adding Faild", "Faild", 1, 1);
-                messError.Show();
+                MessageBox.Show("There Are No Items Left", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(isOrdered == -1) 
-            {
-                TostMessage messException = new TostMessage("Unexpected Error","Error",2,2);
-                messException.Show();
-            }
+            
 
         }
 
@@ -225,9 +239,8 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            OrderFood price = new OrderFood();
-            price.setNewPrice(Convert.ToDecimal(txt_total_price.Text));
-
+            NewManagerHome.opendChildForms.Remove("OrderCustomize");
+            this.Close();
         }
 
         private void nud_item_quantity_ValueChanged(object sender, EventArgs e)
@@ -244,6 +257,28 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             txt_total_price.Text = totalPrice.ToString("F2");
         }
 
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
     }
 }
 
