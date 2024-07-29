@@ -46,19 +46,17 @@
             this.txt_price = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_third_option = new System.Windows.Forms.ComboBox();
             this.txt_total_price = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_second_option = new System.Windows.Forms.ComboBox();
+            this.cmb_first_option = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_description = new System.Windows.Forms.TextBox();
-            this.cmb_delivery_option = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.btn_order = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_clear_all = new System.Windows.Forms.Button();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).BeginInit();
@@ -87,6 +85,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label6
             // 
@@ -185,6 +184,7 @@
             this.pb_item_one.Location = new System.Drawing.Point(29, 21);
             this.pb_item_one.Name = "pb_item_one";
             this.pb_item_one.Size = new System.Drawing.Size(272, 161);
+            this.pb_item_one.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_item_one.TabIndex = 18;
             this.pb_item_one.TabStop = false;
             // 
@@ -201,6 +201,11 @@
             // nud_item_quantity
             // 
             this.nud_item_quantity.Location = new System.Drawing.Point(146, 330);
+            this.nud_item_quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nud_item_quantity.Name = "nud_item_quantity";
             this.nud_item_quantity.Size = new System.Drawing.Size(88, 20);
             this.nud_item_quantity.TabIndex = 65;
@@ -209,6 +214,7 @@
             0,
             0,
             0});
+            this.nud_item_quantity.ValueChanged += new System.EventHandler(this.nud_item_quantity_ValueChanged);
             // 
             // label5
             // 
@@ -230,22 +236,21 @@
             this.txt_price.ReadOnly = true;
             this.txt_price.Size = new System.Drawing.Size(88, 20);
             this.txt_price.TabIndex = 62;
+            this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.cmb_third_option);
             this.panel2.Controls.Add(this.txt_total_price);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmb_second_option);
+            this.panel2.Controls.Add(this.cmb_first_option);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txt_description);
-            this.panel2.Controls.Add(this.cmb_delivery_option);
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Location = new System.Drawing.Point(376, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 363);
@@ -255,52 +260,56 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(28, 322);
+            this.label2.Location = new System.Drawing.Point(28, 291);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 83;
             this.label2.Text = "Total Price :";
             // 
-            // comboBox3
+            // cmb_third_option
             // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox3.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(138, 86);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 83;
+            this.cmb_third_option.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_third_option.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_third_option.FormattingEnabled = true;
+            this.cmb_third_option.Location = new System.Drawing.Point(138, 86);
+            this.cmb_third_option.Name = "cmb_third_option";
+            this.cmb_third_option.Size = new System.Drawing.Size(121, 21);
+            this.cmb_third_option.TabIndex = 83;
+            this.cmb_third_option.SelectedIndexChanged += new System.EventHandler(this.cmb_third_option_SelectedIndexChanged);
             // 
             // txt_total_price
             // 
             this.txt_total_price.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_total_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_total_price.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_total_price.Location = new System.Drawing.Point(138, 315);
+            this.txt_total_price.Location = new System.Drawing.Point(138, 284);
             this.txt_total_price.Name = "txt_total_price";
             this.txt_total_price.ReadOnly = true;
-            this.txt_total_price.Size = new System.Drawing.Size(88, 20);
+            this.txt_total_price.Size = new System.Drawing.Size(121, 20);
             this.txt_total_price.TabIndex = 82;
+            this.txt_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // comboBox2
+            // cmb_second_option
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(138, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 82;
+            this.cmb_second_option.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_second_option.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_second_option.FormattingEnabled = true;
+            this.cmb_second_option.Location = new System.Drawing.Point(138, 53);
+            this.cmb_second_option.Name = "cmb_second_option";
+            this.cmb_second_option.Size = new System.Drawing.Size(121, 21);
+            this.cmb_second_option.TabIndex = 82;
+            this.cmb_second_option.SelectedIndexChanged += new System.EventHandler(this.cmb_second_option_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cmb_first_option
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 81;
+            this.cmb_first_option.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_first_option.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_first_option.FormattingEnabled = true;
+            this.cmb_first_option.Location = new System.Drawing.Point(138, 22);
+            this.cmb_first_option.Name = "cmb_first_option";
+            this.cmb_first_option.Size = new System.Drawing.Size(121, 21);
+            this.cmb_first_option.TabIndex = 81;
+            this.cmb_first_option.SelectedIndexChanged += new System.EventHandler(this.cmb_first_option_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -350,29 +359,8 @@
             this.txt_description.Location = new System.Drawing.Point(138, 127);
             this.txt_description.Multiline = true;
             this.txt_description.Name = "txt_description";
-            this.txt_description.ReadOnly = true;
             this.txt_description.Size = new System.Drawing.Size(231, 130);
             this.txt_description.TabIndex = 76;
-            // 
-            // cmb_delivery_option
-            // 
-            this.cmb_delivery_option.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_delivery_option.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_delivery_option.FormattingEnabled = true;
-            this.cmb_delivery_option.Location = new System.Drawing.Point(138, 273);
-            this.cmb_delivery_option.Name = "cmb_delivery_option";
-            this.cmb_delivery_option.Size = new System.Drawing.Size(121, 21);
-            this.cmb_delivery_option.TabIndex = 62;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label10.Location = new System.Drawing.Point(22, 276);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "Select Delivery :";
             // 
             // btn_order
             // 
@@ -387,20 +375,22 @@
             this.btn_order.TabIndex = 66;
             this.btn_order.Text = "Place special order";
             this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
-            // button1
+            // btn_clear_all
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(527, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Order All";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_clear_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_clear_all.FlatAppearance.BorderSize = 0;
+            this.btn_clear_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear_all.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_clear_all.Location = new System.Drawing.Point(527, 409);
+            this.btn_clear_all.Name = "btn_clear_all";
+            this.btn_clear_all.Size = new System.Drawing.Size(75, 36);
+            this.btn_clear_all.TabIndex = 67;
+            this.btn_clear_all.Text = "Clear All";
+            this.btn_clear_all.UseVisualStyleBackColor = false;
+            this.btn_clear_all.Click += new System.EventHandler(this.btn_clear_all_Click);
             // 
             // OrderCustomize
             // 
@@ -408,7 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(781, 455);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_clear_all);
             this.Controls.Add(this.btn_order);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -440,8 +430,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pb_item_one;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmb_delivery_option;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.NumericUpDown nud_item_quantity;
         private System.Windows.Forms.Label label5;
@@ -452,13 +440,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_description;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmb_third_option;
+        private System.Windows.Forms.ComboBox cmb_second_option;
+        private System.Windows.Forms.ComboBox cmb_first_option;
         private System.Windows.Forms.TextBox txt_order_id;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_total_price;
+        private System.Windows.Forms.Button btn_clear_all;
     }
 }

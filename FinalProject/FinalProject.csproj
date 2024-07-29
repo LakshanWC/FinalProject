@@ -63,6 +63,7 @@
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerReview.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BFoodMenu.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BIssueLoyaltyCard.cs" />
+    <Compile Include="three-tier architecture\BLL\Customer\BOrderCustomize.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BOrderFood.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BReview.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BAddItem.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="three-tier architecture\BLL\Manager\BRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
+    <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerHome.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerReview.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DFoodMenu.cs" />

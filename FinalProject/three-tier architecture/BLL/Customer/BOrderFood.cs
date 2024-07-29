@@ -26,7 +26,7 @@ namespace FinalProject.three_tier_architecture.BLL.Customer
             DOrderFood genId = new DOrderFood();
             return genId.generateUniqueString();
         }
-        public bool addOrder(int orderQuantity, DateTime createdDate, int orderStatus, string cNo,
+        public bool addOrder(int orderQuantity, DateTime createdDate, string orderStatus, string cNo,
                    string itemName, string uniqueKey, decimal totPrice, string Tid)
         {
             DOrderFood order = new DOrderFood();

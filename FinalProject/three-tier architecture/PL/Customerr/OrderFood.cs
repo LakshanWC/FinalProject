@@ -24,6 +24,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private double discount;
         private Image itemImage;
+        private int imageNo;
         private DateTime createdDate = DateTime.Now;
 
         private decimal firstPrice = 0;
@@ -107,6 +108,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 DataRow row = table.Rows[i];
 
                 itemImage = getImage.getItemImage(Convert.ToInt32(row["itemImageNo"]));
+                imageNo = Convert.ToInt32(row["itemImageNo"]);
                 pb_item_image.Image = itemImage;
 
                 txt_item_name.Text = row["itemName"].ToString();
@@ -248,7 +250,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 int orderQuntity = Convert.ToInt32(nud_item_quantity.Value);
             // createdDate has the date
 
-            int orderStatus = cmb_delivery_option.SelectedIndex;
+            string orderStatus = cmb_delivery_option.SelectedItem.ToString();
             string cNo;
             string Tid;
             if (CustomerHome.curruntCusId == null)
@@ -473,7 +475,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         {
             OrderCustomize customize = new OrderCustomize();
             customize.passData(txt_order_id.Text, cmb_selected_item.SelectedItem.ToString(),
-                txt_item_name.Text, txt_item_price.Text,itemImage);
+                txt_item_name.Text, txt_item_price.Text,itemImage,imageNo, createdDate,cmb_delivery_option.SelectedItem.ToString());
 
 
             if (!NewManagerHome.opendChildForms.Contains("OrderCustomize") && NewManagerHome.opendChildForms.Count <= 2)
@@ -498,5 +500,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             }
         }
 
+        public void setNewPrice(decimal customPrice)
+        {
+            //need to impliment
+        }
     }
 }
