@@ -82,6 +82,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_order);
             this.panel1.Controls.Add(this.btn_update_status);
             this.panel1.Controls.Add(this.cmb_Order_status);
             this.panel1.Controls.Add(this.dgv_orders);
@@ -90,7 +92,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(622, 425);
+            this.panel1.Size = new System.Drawing.Size(773, 425);
             this.panel1.TabIndex = 66;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -122,7 +124,7 @@
             this.dgv_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_orders.Location = new System.Drawing.Point(7, 16);
             this.dgv_orders.Name = "dgv_orders";
-            this.dgv_orders.Size = new System.Drawing.Size(604, 280);
+            this.dgv_orders.Size = new System.Drawing.Size(753, 280);
             this.dgv_orders.TabIndex = 0;
             // 
             // cmb_selected_item
@@ -158,30 +160,30 @@
             // btn_order
             // 
             this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_order.FlatAppearance.BorderSize = 0;
             this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_order.Location = new System.Drawing.Point(643, 131);
+            this.btn_order.Location = new System.Drawing.Point(611, 363);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(145, 46);
             this.btn_order.TabIndex = 67;
             this.btn_order.Text = "Special Requests";
             this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(643, 75);
+            this.button1.Location = new System.Drawing.Point(611, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 46);
             this.button1.TabIndex = 68;
             this.button1.Text = "Normal Orders";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReceivedOrder
             // 
@@ -189,8 +191,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(800, 480);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_order);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

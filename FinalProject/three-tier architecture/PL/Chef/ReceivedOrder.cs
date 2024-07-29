@@ -55,5 +55,18 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             }
         }
 
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+            BReceivedOrder specOrder = new BReceivedOrder();
+            DataSet specialOrders = specOrder.getSpecialOrders();
+            loadToDataGrid(specialOrders);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BReceivedOrder order = new BReceivedOrder();
+            DataSet results = order.getOrders();
+            loadToDataGrid(results);
+        }
     }
 }
