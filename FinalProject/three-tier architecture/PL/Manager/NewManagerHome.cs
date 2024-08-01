@@ -12,6 +12,8 @@ using System.Collections;
 using FinalProject.MVC.View;
 using FinalProject.MVC.Control;
 using FinalProject.MVC;
+using FinalProject.three_tier_architecture.PL.Manager;
+using CrystalDecisions.Windows.Forms;
 
 namespace FinalProject.three_tier_architecture.PL
 {
@@ -246,6 +248,20 @@ namespace FinalProject.three_tier_architecture.PL
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void attendentReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReportUi reports = new GenerateReportUi();
+            GenerateReportUi.reportType = 0;
+            reports.Show();
+        }
+
+        private void overAllIncomeReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReportUi reports = new GenerateReportUi();
+            GenerateReportUi.reportType = 1;
+            reports.Show();
         }
     }
 }

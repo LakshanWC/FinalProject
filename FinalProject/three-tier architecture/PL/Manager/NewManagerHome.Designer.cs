@@ -45,8 +45,11 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attendentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.overAllIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_dash_board = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_total_earning = new System.Windows.Forms.Label();
@@ -79,7 +82,6 @@
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -294,9 +296,16 @@
             // addMenuItemToolStripMenuItem
             // 
             this.addMenuItemToolStripMenuItem.Name = "addMenuItemToolStripMenuItem";
-            this.addMenuItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addMenuItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.addMenuItemToolStripMenuItem.Text = "Add Menu Item";
             this.addMenuItemToolStripMenuItem.Click += new System.EventHandler(this.addMenuItemToolStripMenuItem_Click);
+            // 
+            // eventToolStripMenuItem
+            // 
+            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
+            this.eventToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.eventToolStripMenuItem.Text = "Event";
+            this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -307,10 +316,27 @@
             // 
             // reportsToolStripMenuItem
             // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.attendentReportToolStripMenuItem,
+            this.overAllIncomeReportToolStripMenuItem});
             this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // attendentReportToolStripMenuItem
+            // 
+            this.attendentReportToolStripMenuItem.Name = "attendentReportToolStripMenuItem";
+            this.attendentReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.attendentReportToolStripMenuItem.Text = "Attendent Report";
+            this.attendentReportToolStripMenuItem.Click += new System.EventHandler(this.attendentReportToolStripMenuItem_Click);
+            // 
+            // overAllIncomeReportToolStripMenuItem
+            // 
+            this.overAllIncomeReportToolStripMenuItem.Name = "overAllIncomeReportToolStripMenuItem";
+            this.overAllIncomeReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.overAllIncomeReportToolStripMenuItem.Text = "OverAll Income Report";
+            this.overAllIncomeReportToolStripMenuItem.Click += new System.EventHandler(this.overAllIncomeReportToolStripMenuItem_Click);
             // 
             // tlp_dash_board
             // 
@@ -321,7 +347,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 311F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 313F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -350,9 +376,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(385, 3);
+            this.panel1.Location = new System.Drawing.Point(383, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 193);
+            this.panel1.Size = new System.Drawing.Size(308, 193);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -393,7 +419,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(168, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(169, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 99);
             this.pictureBox1.TabIndex = 2;
@@ -409,7 +435,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(376, 193);
+            this.panel6.Size = new System.Drawing.Size(374, 193);
             this.panel6.TabIndex = 25;
             // 
             // label12
@@ -443,9 +469,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(385, 202);
+            this.panel5.Location = new System.Drawing.Point(383, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(306, 70);
+            this.panel5.Size = new System.Drawing.Size(308, 70);
             this.panel5.TabIndex = 28;
             // 
             // label5
@@ -465,7 +491,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label10.Location = new System.Drawing.Point(42, 46);
+            this.label10.Location = new System.Drawing.Point(43, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 15);
             this.label10.TabIndex = 1;
@@ -492,9 +518,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(385, 278);
+            this.panel2.Location = new System.Drawing.Point(383, 278);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(306, 120);
+            this.panel2.Size = new System.Drawing.Size(308, 120);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -560,9 +586,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(385, 404);
+            this.panel4.Location = new System.Drawing.Point(383, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(306, 67);
+            this.panel4.Size = new System.Drawing.Size(308, 67);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -616,10 +642,10 @@
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.label15);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(184, 202);
+            this.panel8.Location = new System.Drawing.Point(183, 202);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(195, 269);
+            this.panel8.Size = new System.Drawing.Size(194, 269);
             this.panel8.TabIndex = 31;
             // 
             // cpb_cutomer_satisfaction
@@ -690,7 +716,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 202);
             this.panel3.Name = "panel3";
             this.tlp_dash_board.SetRowSpan(this.panel3, 3);
-            this.panel3.Size = new System.Drawing.Size(175, 269);
+            this.panel3.Size = new System.Drawing.Size(174, 269);
             this.panel3.TabIndex = 32;
             // 
             // cpb_stock_prisentage
@@ -749,13 +775,6 @@
             this.label2.Size = new System.Drawing.Size(119, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Details of last 28 days";
-            // 
-            // eventToolStripMenuItem
-            // 
-            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eventToolStripMenuItem.Text = "Event";
-            this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // NewManagerHome
             // 
@@ -855,5 +874,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripMenuItem addMenuItemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attendentReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem overAllIncomeReportToolStripMenuItem;
     }
 }
