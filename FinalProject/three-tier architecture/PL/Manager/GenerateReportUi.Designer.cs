@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_current_report = new System.Windows.Forms.TextBox();
-            this.btn_load = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -95,26 +94,12 @@
             this.txt_current_report.Size = new System.Drawing.Size(113, 20);
             this.txt_current_report.TabIndex = 5;
             // 
-            // btn_load
-            // 
-            this.btn_load.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_load.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_load.Location = new System.Drawing.Point(684, 10);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(86, 37);
-            this.btn_load.TabIndex = 26;
-            this.btn_load.Text = "Load";
-            this.btn_load.UseVisualStyleBackColor = false;
-            // 
             // GenerateReportUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(782, 450);
-            this.Controls.Add(this.btn_load);
             this.Controls.Add(this.txt_current_report);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -136,6 +121,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_current_report;
-        private System.Windows.Forms.Button btn_load;
     }
 }
