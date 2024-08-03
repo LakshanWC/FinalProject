@@ -16,5 +16,10 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         {
             InitializeComponent();
         }
+
+        private void addNewStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

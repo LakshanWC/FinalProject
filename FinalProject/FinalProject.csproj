@@ -96,6 +96,7 @@
     <Compile Include="three-tier architecture\DAL\Manager\DRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddNewStock.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
@@ -127,6 +128,12 @@
     <Compile Include="three-tier architecture\PL\Customerr\AssistantRequest.Designer.cs">
       <DependentUpon>AssistantRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\BillReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\CustomerHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +157,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\IssueLoyaltyCard.Designer.cs">
       <DependentUpon>IssueLoyaltyCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\OrderConfirmation.Designer.cs">
+      <DependentUpon>OrderConfirmation.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\OrderCustomize.cs">
       <SubType>Form</SubType>
@@ -228,6 +241,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\GenerateReportUi.Designer.cs">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.Designer.cs">
+      <DependentUpon>AddNewStock.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.cs">
       <SubType>Form</SubType>
@@ -313,6 +332,10 @@
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\AssistantRequest.resx">
       <DependentUpon>AssistantRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\BillReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BillReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\CustomerHome.resx">
       <DependentUpon>CustomerHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\IssueLoyaltyCard.resx">
       <DependentUpon>IssueLoyaltyCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\OrderConfirmation.resx">
+      <DependentUpon>OrderConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\OrderCustomize.resx">
       <DependentUpon>OrderCustomize.cs</DependentUpon>
@@ -364,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\GenerateReportUi.resx">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.resx">
+      <DependentUpon>AddNewStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.resx">
       <DependentUpon>SalesAndFinance.cs</DependentUpon>
