@@ -46,8 +46,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
@@ -213,9 +211,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem,
-            this.addToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -235,7 +231,7 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
@@ -255,20 +251,6 @@
             this.addReivewToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.addReivewToolStripMenuItem.Text = "Add Reivew";
             this.addReivewToolStripMenuItem.Click += new System.EventHandler(this.addReivewToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.updateToolStripMenuItem.Text = "Update";
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // registerForLoyaltyCardToolStripMenuItem
             // 
@@ -315,8 +297,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addReivewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerForLoyaltyCardToolStripMenuItem;

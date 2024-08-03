@@ -101,6 +101,7 @@
             this.lnklbl_reset_pass.TabIndex = 15;
             this.lnklbl_reset_pass.TabStop = true;
             this.lnklbl_reset_pass.Text = "forgot your passowrd ? Click to reset !";
+            this.lnklbl_reset_pass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklbl_reset_pass_LinkClicked_1);
             // 
             // txt_Password
             // 
@@ -127,6 +128,7 @@
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Password :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 

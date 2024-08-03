@@ -113,5 +113,17 @@ namespace FinalProject.MVC.View
                 txt_Password.UseSystemPasswordChar = true;
             }
         }
+
+        private void lnklbl_reset_pass_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ResetPassword obj = new ResetPassword();
+            this.Hide();
+            obj.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 using FinalProject.three_tier_architecture.PL;
 using FinalProject.three_tier_architecture.PL.Chef;
 using FinalProject.three_tier_architecture.PL.Customerr;
+using FinalProject.three_tier_architecture.PL.Manager;
 using FinalProject.three_tier_architecture.PL.Sales_Finance;
 using System;
 using System.Collections.Generic;
