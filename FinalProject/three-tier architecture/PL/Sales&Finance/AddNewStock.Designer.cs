@@ -144,6 +144,7 @@
             this.cmb_stock_names.Name = "cmb_stock_names";
             this.cmb_stock_names.Size = new System.Drawing.Size(121, 21);
             this.cmb_stock_names.TabIndex = 75;
+            this.cmb_stock_names.SelectedIndexChanged += new System.EventHandler(this.cmb_stock_names_SelectedIndexChanged);
             // 
             // nud_quntity
             // 
@@ -196,6 +197,7 @@
             this.btn_update_details.TabIndex = 76;
             this.btn_update_details.Text = "Update Details";
             this.btn_update_details.UseVisualStyleBackColor = false;
+            this.btn_update_details.Click += new System.EventHandler(this.btn_update_details_Click);
             // 
             // btn_add_new_stock
             // 

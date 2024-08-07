@@ -58,7 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="three-tier architecture\BLL\BAddNewStock.cs" />
+    <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BAddNewStock.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BReceivedOrder.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerHome.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerReview.cs" />

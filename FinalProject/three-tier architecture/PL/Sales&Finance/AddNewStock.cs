@@ -14,6 +14,8 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 {
     public partial class AddNewStock : Form
     {
+        private string oldStockName;
+
         public AddNewStock()
         {
             InitializeComponent();
@@ -24,13 +26,14 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             if (!string.IsNullOrEmpty(txt_item_no_one.Text))
             {
                 BAddNewStock stock = new BAddNewStock();
-                int isDone = stock.addnewStock(txt_item_no_one.Text, Convert.ToInt32(nud_quntity.Value));
+                int isDone = stock.addnewStock(txt_item_no_one.Text, Convert.ToInt32(nud_quntity.Value),cmb_status.SelectedItem.ToString());
 
                 if (isDone == 1)
                 {
                     TostMessage messSucc = new TostMessage("Stock Added Successfuly!", "Successful", 3, 3);
                     messSucc.Show();
                     setCmbItems();
+                    clearUi();
                 }
                 else if (isDone == 0)
                 {
@@ -44,7 +47,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
                 }
                 else if (isDone == 2)
                 {
-                    MessageBox.Show("Stock name exists. Select it from the list to change details.", "Warning",
+                    MessageBox.Show("Stock name exists. Select it from the list & click update button to change details.", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -60,6 +63,12 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         {
             setCmbStatus();
             setCmbItems();
+        }
+
+        private void clearUi()
+        {
+            txt_item_no_one.Clear();
+            nud_quntity.Value = 0;
         }
 
         private void setCmbItems()
@@ -100,6 +109,73 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             {
                 //in stock
                 cmb_status.SelectedIndex = 3;
+            }
+        }
+
+        private void cmb_stock_names_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            oldStockName = cmb_stock_names.SelectedItem.ToString();
+
+            if(cmb_stock_names.SelectedIndex >0)
+            {
+                BAddNewStock stock = new BAddNewStock();
+                DataSet stockDetails = stock.getStockDetails(cmb_stock_names.SelectedItem.ToString());
+
+                if (stockDetails != null)
+                {
+
+                    DataTable dt = stockDetails.Tables[0];
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        txt_item_no_one.Text = row["InName"].ToString();
+                        nud_quntity.Value = Convert.ToInt32(row["Inquantity"]);
+                        cmb_stock_names.SelectedItem = row["inStatus"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                clearUi();
+            }
+        }
+
+        private void btn_update_details_Click(object sender, EventArgs e)
+        {
+            if(cmb_status.SelectedIndex >0 && !string.IsNullOrEmpty(txt_item_no_one.Text) && oldStockName !="--Select to search--")
+            {
+                BAddNewStock updatedData = new BAddNewStock();
+                int stat = updatedData.updateStockDetails(txt_item_no_one.Text, Convert.ToInt32(nud_quntity.Value),
+                    cmb_status.SelectedItem.ToString(),oldStockName);
+
+                if (stat > 0)
+                {
+                    TostMessage messSucc = new TostMessage("Stock Updated Successfuly!", "Successful", 3, 3);
+                    messSucc.Show();
+                    clearUi();
+                }
+                else if(stat == 0)
+                {
+                    TostMessage messFaild = new TostMessage("Stock Updating Faild", "Faild", 1, 1);
+                    messFaild.Show();
+                    clearUi();
+                }
+                else
+                {
+                    TostMessage messUnexpected = new TostMessage("Unexpected Error", "Error", 2, 2);
+                    messUnexpected.Show();
+                    clearUi();
+                }
+            }
+            else if(cmb_stock_names.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please Select a valied item name", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Please Fill Out the details before Updating", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

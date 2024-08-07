@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,13 +14,13 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
     {
         DMDBConnection connection = new DMDBConnection();
 
-        public int addnewStock(string stockName, int quantity)
+        public int addnewStock(string stockName, int quantity,string stockStat)
         {
             DMDBConnection connect = new DMDBConnection();
 
             string iId = getId();
             string checkQuery = "SELECT COUNT(*) FROM ingredient WHERE InName = @stockName;";
-            string insertQuery = "INSERT INTO ingredient (Inid, InName, Inquantity) VALUES (@id, @stockName, @quantity);";
+            string insertQuery = "INSERT INTO ingredient (Inid, InName, Inquantity,inStatus) VALUES (@id, @stockName, @quantity,@stockStat);";
 
             try
             {
@@ -40,6 +41,7 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
                     insertCmd.Parameters.AddWithValue("@id", iId);
                     insertCmd.Parameters.AddWithValue("@stockName", stockName);
                     insertCmd.Parameters.AddWithValue("@quantity", quantity);
+                    insertCmd.Parameters.AddWithValue("@stockStat", stockStat);
                     int rowsAffected = insertCmd.ExecuteNonQuery();
                     return rowsAffected;
                 }
@@ -107,6 +109,63 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
 
             return data;
         }
+
+        public DataSet getStockDetails(string stockName)
+        {
+            string selectQuery = "SELECT InName, Inquantity,inStatus FROM ingredient WHERE InName = @stockName;";
+            DataSet results = new DataSet();
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+                    cmd.Parameters.AddWithValue("@stockName", stockName);
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(results);
+
+                    connection.closeConnection();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            
+            return results;
+        }
+
+        public int updateStockDetails(string stockName, int quantity, string stockStat, string oldName)
+        {
+            string updateQuery = "UPDATE ingredient SET InName = @stockName, Inquantity = @quantity, inStatus = @stockStat " +
+                                 "WHERE InName = @oldName;";
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@stockName", stockName);
+                        cmd.Parameters.AddWithValue("@quantity", quantity);
+                        cmd.Parameters.AddWithValue("@stockStat", stockStat);
+                        cmd.Parameters.AddWithValue("@oldName", oldName);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        connection.closeConnection();
+                        return rowsAffected;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine (ex.Message);
+                return -1;
+            }
+        }
+
 
     }
 }
