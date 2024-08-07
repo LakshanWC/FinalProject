@@ -1,6 +1,7 @@
 ﻿using FinalProject.MVC.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,26 +13,42 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
     {
         DMDBConnection connection = new DMDBConnection();
 
-        public int addnewStock(string stockName,int quntity)
+        public int addnewStock(string stockName, int quantity)
         {
+            DMDBConnection connect = new DMDBConnection();
+
             string iId = getId();
-            string insertQuery = "INSERT INTO ingredient (Inid,InName,Inquantity) VALUES (@id,@stockName,@quntity);";
+            string checkQuery = "SELECT COUNT(*) FROM ingredient WHERE InName = @stockName;";
+            string insertQuery = "INSERT INTO ingredient (Inid, InName, Inquantity) VALUES (@id, @stockName, @quantity);";
+
             try
             {
-                using(SqlConnection con = connection.openConnection())
+                using (SqlConnection con = connect.openConnection())
                 {
-                    SqlCommand cmd = new SqlCommand(insertQuery, con);
-                    cmd.Parameters.AddWithValue("@id", iId);
-                    cmd.Parameters.AddWithValue("@stockName", stockName);
-                    cmd.Parameters.AddWithValue("@quntity", quntity);
-                    cmd.ExecuteNonQuery();
+                    // Check if the name exists
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+                    checkCmd.Parameters.AddWithValue("@stockName", stockName);
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        return 2; // name already exists
+                    }
+
+                    // Insert the new stock if it does not exist
+                    SqlCommand insertCmd = new SqlCommand(insertQuery, con);
+                    insertCmd.Parameters.AddWithValue("@id", iId);
+                    insertCmd.Parameters.AddWithValue("@stockName", stockName);
+                    insertCmd.Parameters.AddWithValue("@quantity", quantity);
+                    int rowsAffected = insertCmd.ExecuteNonQuery();
+                    return rowsAffected;
                 }
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
+                return -1;
             }
-            return 1;
         }
 
         public string getId()
@@ -63,10 +80,33 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
             {
                 Console.WriteLine(ex.Message);
             }
-
+            
+            connection.closeConnection();
             return newId;
         }
 
+        public DataSet getStockNames()
+        {
+            string selectQuery = "SELECT InName FROM ingredient";
+            DataSet data = new DataSet();
+
+            try
+            {
+                using(SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(data);
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+
+            return data;
+        }
 
     }
 }

@@ -33,16 +33,16 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_stock_names = new System.Windows.Forms.ComboBox();
             this.nud_quntity = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_item_no_one = new System.Windows.Forms.TextBox();
             this.btn_update_details = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_add_new_stock = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmb_status = new System.Windows.Forms.ComboBox();
             this.pnl_title.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).BeginInit();
@@ -88,7 +88,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.cmb_status);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.comboBox1);
+            this.panel6.Controls.Add(this.cmb_stock_names);
             this.panel6.Controls.Add(this.nud_quntity);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.label3);
@@ -97,6 +97,53 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(318, 173);
             this.panel6.TabIndex = 56;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.Location = new System.Drawing.Point(91, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 78;
+            this.label2.Text = "Status :";
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Items.AddRange(new object[] {
+            "Awaiting Restock",
+            "Out of Stock",
+            "Low Stock",
+            "In Stock"});
+            this.cmb_status.Location = new System.Drawing.Point(146, 142);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(121, 21);
+            this.cmb_status.TabIndex = 77;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.Location = new System.Drawing.Point(22, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 13);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Existing Stock Types  : ";
+            // 
+            // cmb_stock_names
+            // 
+            this.cmb_stock_names.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_stock_names.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_stock_names.FormattingEnabled = true;
+            this.cmb_stock_names.Items.AddRange(new object[] {
+            "-- Select to search --"});
+            this.cmb_stock_names.Location = new System.Drawing.Point(146, 23);
+            this.cmb_stock_names.Name = "cmb_stock_names";
+            this.cmb_stock_names.Size = new System.Drawing.Size(121, 21);
+            this.cmb_stock_names.TabIndex = 75;
             // 
             // nud_quntity
             // 
@@ -133,7 +180,6 @@
             this.txt_item_no_one.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_item_no_one.Location = new System.Drawing.Point(146, 71);
             this.txt_item_no_one.Name = "txt_item_no_one";
-            this.txt_item_no_one.ReadOnly = true;
             this.txt_item_no_one.Size = new System.Drawing.Size(121, 20);
             this.txt_item_no_one.TabIndex = 71;
             // 
@@ -151,26 +197,6 @@
             this.btn_update_details.Text = "Update Details";
             this.btn_update_details.UseVisualStyleBackColor = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(22, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 13);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "Existing Stock Types  : ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(146, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 75;
-            // 
             // btn_add_new_stock
             // 
             this.btn_add_new_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -185,31 +211,6 @@
             this.btn_add_new_stock.Text = "Add new Stock ";
             this.btn_add_new_stock.UseVisualStyleBackColor = false;
             this.btn_add_new_stock.Click += new System.EventHandler(this.btn_add_new_stock_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(91, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 78;
-            this.label2.Text = "Status :";
-            // 
-            // cmb_status
-            // 
-            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_status.FormattingEnabled = true;
-            this.cmb_status.Items.AddRange(new object[] {
-            "Awaiting Restock",
-            "Out of Stock",
-            "Low Stock",
-            "In Stock"});
-            this.cmb_status.Location = new System.Drawing.Point(146, 142);
-            this.cmb_status.Name = "cmb_status";
-            this.cmb_status.Size = new System.Drawing.Size(121, 21);
-            this.cmb_status.TabIndex = 77;
             // 
             // AddNewStock
             // 
@@ -247,7 +248,7 @@
         private System.Windows.Forms.TextBox txt_item_no_one;
         private System.Windows.Forms.Button btn_update_details;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_stock_names;
         private System.Windows.Forms.Button btn_add_new_stock;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_status;
