@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 {
-    partial class AddNewStock
+    partial class AddStock
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewStock));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStock));
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +58,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(515, 34);
             this.pnl_title.TabIndex = 54;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -69,6 +72,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label9
             // 
@@ -77,9 +81,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 15);
+            this.label9.Size = new System.Drawing.Size(70, 15);
             this.label9.TabIndex = 42;
-            this.label9.Text = "Add New Stock";
+            this.label9.Text = "Add Stock";
             // 
             // panel6
             // 
@@ -214,7 +218,7 @@
             this.btn_add_new_stock.UseVisualStyleBackColor = false;
             this.btn_add_new_stock.Click += new System.EventHandler(this.btn_add_new_stock_Click);
             // 
-            // AddNewStock
+            // AddStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -225,7 +229,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pnl_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddNewStock";
+            this.Name = "AddStock";
             this.Text = "AddNewStock";
             this.Load += new System.EventHandler(this.AddNewStock_Load);
             this.pnl_title.ResumeLayout(false);

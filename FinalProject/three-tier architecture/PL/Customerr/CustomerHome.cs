@@ -114,5 +114,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

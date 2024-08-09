@@ -78,6 +78,7 @@
     <Compile Include="three-tier architecture\BLL\Customer\BRegisterForLoyaltyCard.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BResetPassword.cs" />
+    <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerHome.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="three-tier architecture\DAL\Manager\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddNewStock.cs" />
+    <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
@@ -239,11 +241,17 @@
     <Compile Include="three-tier architecture\PL\Manager\GenerateReportUi.Designer.cs">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.cs">
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.Designer.cs">
-      <DependentUpon>AddNewStock.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.Designer.cs">
+      <DependentUpon>RemoveStock.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.cs">
       <SubType>Form</SubType>
@@ -385,8 +393,11 @@
     <EmbeddedResource Include="three-tier architecture\PL\Manager\GenerateReportUi.resx">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddNewStock.resx">
-      <DependentUpon>AddNewStock.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.resx">
+      <DependentUpon>RemoveStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.resx">
       <DependentUpon>SalesAndFinance.cs</DependentUpon>

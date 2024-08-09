@@ -35,18 +35,18 @@
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.btn_add_menu_item = new System.Windows.Forms.Button();
+            this.btn_side_bar_3 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_nav = new System.Windows.Forms.Panel();
-            this.btn_add_employee = new System.Windows.Forms.Button();
-            this.btn_enable_password = new System.Windows.Forms.Button();
+            this.btn_side_bar_2 = new System.Windows.Forms.Button();
+            this.btn_side_bar_1 = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.addNewStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
             this.pnl_side_panle.SuspendLayout();
@@ -99,11 +99,11 @@
             // 
             this.pnl_side_panle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnl_side_panle.Controls.Add(this.btn_logout);
-            this.pnl_side_panle.Controls.Add(this.btn_add_menu_item);
+            this.pnl_side_panle.Controls.Add(this.btn_side_bar_3);
             this.pnl_side_panle.Controls.Add(this.panel7);
             this.pnl_side_panle.Controls.Add(this.pnl_nav);
-            this.pnl_side_panle.Controls.Add(this.btn_add_employee);
-            this.pnl_side_panle.Controls.Add(this.btn_enable_password);
+            this.pnl_side_panle.Controls.Add(this.btn_side_bar_2);
+            this.pnl_side_panle.Controls.Add(this.btn_side_bar_1);
             this.pnl_side_panle.Controls.Add(this.pnl_userdetails_panle);
             this.pnl_side_panle.Controls.Add(this.btn_home);
             this.pnl_side_panle.Dock = System.Windows.Forms.DockStyle.Left;
@@ -128,20 +128,20 @@
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = false;
             // 
-            // btn_add_menu_item
+            // btn_side_bar_3
             // 
-            this.btn_add_menu_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_add_menu_item.FlatAppearance.BorderSize = 0;
-            this.btn_add_menu_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_menu_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_menu_item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_add_menu_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_menu_item.Location = new System.Drawing.Point(10, 322);
-            this.btn_add_menu_item.Name = "btn_add_menu_item";
-            this.btn_add_menu_item.Size = new System.Drawing.Size(172, 49);
-            this.btn_add_menu_item.TabIndex = 4;
-            this.btn_add_menu_item.Text = "Add Menu Item";
-            this.btn_add_menu_item.UseVisualStyleBackColor = false;
+            this.btn_side_bar_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_side_bar_3.FlatAppearance.BorderSize = 0;
+            this.btn_side_bar_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_side_bar_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_side_bar_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_side_bar_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_side_bar_3.Location = new System.Drawing.Point(10, 322);
+            this.btn_side_bar_3.Name = "btn_side_bar_3";
+            this.btn_side_bar_3.Size = new System.Drawing.Size(172, 49);
+            this.btn_side_bar_3.TabIndex = 4;
+            this.btn_side_bar_3.Text = "Add Menu Item";
+            this.btn_side_bar_3.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -159,35 +159,37 @@
             this.pnl_nav.Size = new System.Drawing.Size(5, 100);
             this.pnl_nav.TabIndex = 1;
             // 
-            // btn_add_employee
+            // btn_side_bar_2
             // 
-            this.btn_add_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_add_employee.FlatAppearance.BorderSize = 0;
-            this.btn_add_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_add_employee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_employee.Location = new System.Drawing.Point(10, 263);
-            this.btn_add_employee.Name = "btn_add_employee";
-            this.btn_add_employee.Size = new System.Drawing.Size(172, 49);
-            this.btn_add_employee.TabIndex = 3;
-            this.btn_add_employee.Text = "Add Employee";
-            this.btn_add_employee.UseVisualStyleBackColor = false;
+            this.btn_side_bar_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_side_bar_2.FlatAppearance.BorderSize = 0;
+            this.btn_side_bar_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_side_bar_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_side_bar_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_side_bar_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_side_bar_2.Location = new System.Drawing.Point(10, 263);
+            this.btn_side_bar_2.Name = "btn_side_bar_2";
+            this.btn_side_bar_2.Size = new System.Drawing.Size(172, 49);
+            this.btn_side_bar_2.TabIndex = 3;
+            this.btn_side_bar_2.Text = "Remove Stock";
+            this.btn_side_bar_2.UseVisualStyleBackColor = false;
+            this.btn_side_bar_2.Click += new System.EventHandler(this.btn_side_bar_2_Click);
             // 
-            // btn_enable_password
+            // btn_side_bar_1
             // 
-            this.btn_enable_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_enable_password.FlatAppearance.BorderSize = 0;
-            this.btn_enable_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_enable_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enable_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_enable_password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_enable_password.Location = new System.Drawing.Point(10, 205);
-            this.btn_enable_password.Name = "btn_enable_password";
-            this.btn_enable_password.Size = new System.Drawing.Size(172, 49);
-            this.btn_enable_password.TabIndex = 2;
-            this.btn_enable_password.Text = "Enable passwords";
-            this.btn_enable_password.UseVisualStyleBackColor = false;
+            this.btn_side_bar_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_side_bar_1.FlatAppearance.BorderSize = 0;
+            this.btn_side_bar_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_side_bar_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_side_bar_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_side_bar_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_side_bar_1.Location = new System.Drawing.Point(10, 205);
+            this.btn_side_bar_1.Name = "btn_side_bar_1";
+            this.btn_side_bar_1.Size = new System.Drawing.Size(172, 49);
+            this.btn_side_bar_1.TabIndex = 2;
+            this.btn_side_bar_1.Text = "Add Stock";
+            this.btn_side_bar_1.UseVisualStyleBackColor = false;
+            this.btn_side_bar_1.Click += new System.EventHandler(this.btn_side_bar_1_Click);
             // 
             // btn_home
             // 
@@ -221,6 +223,13 @@
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
             // 
+            // addNewStockToolStripMenuItem
+            // 
+            this.addNewStockToolStripMenuItem.Name = "addNewStockToolStripMenuItem";
+            this.addNewStockToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.addNewStockToolStripMenuItem.Text = "Add New Stock";
+            this.addNewStockToolStripMenuItem.Click += new System.EventHandler(this.addNewStockToolStripMenuItem_Click);
+            // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -250,13 +259,6 @@
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // addNewStockToolStripMenuItem
-            // 
-            this.addNewStockToolStripMenuItem.Name = "addNewStockToolStripMenuItem";
-            this.addNewStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewStockToolStripMenuItem.Text = "Add New Stock";
-            this.addNewStockToolStripMenuItem.Click += new System.EventHandler(this.addNewStockToolStripMenuItem_Click);
-            // 
             // SalesAndFinance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,11 +287,11 @@
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Panel pnl_side_panle;
         private System.Windows.Forms.Button btn_logout;
-        private System.Windows.Forms.Button btn_add_menu_item;
+        private System.Windows.Forms.Button btn_side_bar_3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_nav;
-        private System.Windows.Forms.Button btn_add_employee;
-        private System.Windows.Forms.Button btn_enable_password;
+        private System.Windows.Forms.Button btn_side_bar_2;
+        private System.Windows.Forms.Button btn_side_bar_1;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
