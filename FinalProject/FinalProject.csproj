@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +80,7 @@
     <Compile Include="three-tier architecture\BLL\Manager\BRemoveEmployee.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BResetPassword.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
+    <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerHome.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddNewStock.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
+    <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
@@ -259,6 +262,12 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.Designer.cs">
       <DependentUpon>SalesAndFinance.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.Designer.cs">
+      <DependentUpon>StockUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Supplier\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.resx">
       <DependentUpon>SalesAndFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.resx">
+      <DependentUpon>StockUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Supplier\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
