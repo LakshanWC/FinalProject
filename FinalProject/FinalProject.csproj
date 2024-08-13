@@ -256,11 +256,11 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.Designer.cs">
       <DependentUpon>RemoveStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.cs">
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinanceHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.Designer.cs">
-      <DependentUpon>SalesAndFinance.cs</DependentUpon>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinanceHome.Designer.cs">
+      <DependentUpon>SalesAndFinanceHome.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.cs">
       <SubType>Form</SubType>
@@ -408,8 +408,8 @@
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinance.resx">
-      <DependentUpon>SalesAndFinance.cs</DependentUpon>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\SalesAndFinanceHome.resx">
+      <DependentUpon>SalesAndFinanceHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.resx">
       <DependentUpon>StockUi.cs</DependentUpon>

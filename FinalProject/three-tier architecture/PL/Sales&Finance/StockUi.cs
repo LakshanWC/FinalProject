@@ -15,6 +15,9 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 {
     public partial class StockUi : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         Timer timer = new Timer();
         int progressScore = 0;
 
@@ -150,6 +153,29 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             }
 
             cmb_stock_names.SelectedIndex = 0;
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

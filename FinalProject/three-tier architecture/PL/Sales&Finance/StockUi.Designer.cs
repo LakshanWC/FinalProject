@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockUi));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
@@ -40,13 +41,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_stock_names = new System.Windows.Forms.ComboBox();
             this.btn_enable = new System.Windows.Forms.Button();
-            this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).BeginInit();
+            this.panel3.SuspendLayout();
             this.pnl_title.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,22 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(554, 297);
             this.panel6.TabIndex = 57;
+            // 
+            // ch_stocks
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend3);
+            this.ch_stocks.Location = new System.Drawing.Point(19, 48);
+            this.ch_stocks.Name = "ch_stocks";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.ch_stocks.Series.Add(series3);
+            this.ch_stocks.Size = new System.Drawing.Size(513, 235);
+            this.ch_stocks.TabIndex = 2;
+            this.ch_stocks.Text = "chart1";
             // 
             // label13
             // 
@@ -164,22 +180,6 @@
             this.btn_enable.UseVisualStyleBackColor = false;
             this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
             // 
-            // ch_stocks
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.ch_stocks.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ch_stocks.Legends.Add(legend1);
-            this.ch_stocks.Location = new System.Drawing.Point(19, 48);
-            this.ch_stocks.Name = "ch_stocks";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ch_stocks.Series.Add(series1);
-            this.ch_stocks.Size = new System.Drawing.Size(513, 235);
-            this.ch_stocks.TabIndex = 2;
-            this.ch_stocks.Text = "chart1";
-            // 
             // pnl_title
             // 
             this.pnl_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -190,6 +190,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(778, 34);
             this.pnl_title.TabIndex = 61;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -231,9 +234,9 @@
             this.Load += new System.EventHandler(this.StockUi_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.pnl_title.ResumeLayout(false);
             this.pnl_title.PerformLayout();
             this.ResumeLayout(false);

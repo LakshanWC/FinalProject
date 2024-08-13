@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.PL.Sales_Finance;
+﻿using FinalProject.three_tier_architecture.PL.Customerr;
+using FinalProject.three_tier_architecture.PL.Sales_Finance;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SalesAndFinance sl = new SalesAndFinance();
+            CustomerHome sl = new CustomerHome();
             this.Hide();
             sl.Show();
 
