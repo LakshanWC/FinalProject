@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BAddNewStock.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BReceivedOrder.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerHome.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
+    <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerHome.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DCustomerReview.cs" />

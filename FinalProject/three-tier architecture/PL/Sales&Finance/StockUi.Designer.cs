@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockUi));
             this.panel6 = new System.Windows.Forms.Panel();
             this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_stock_names = new System.Windows.Forms.ComboBox();
-            this.btn_enable = new System.Windows.Forms.Button();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,16 +62,16 @@
             // 
             // ch_stocks
             // 
-            chartArea3.Name = "ChartArea1";
-            this.ch_stocks.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ch_stocks.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend2);
             this.ch_stocks.Location = new System.Drawing.Point(19, 48);
             this.ch_stocks.Name = "ch_stocks";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.ch_stocks.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ch_stocks.Series.Add(series2);
             this.ch_stocks.Size = new System.Drawing.Size(513, 235);
             this.ch_stocks.TabIndex = 2;
             this.ch_stocks.Text = "chart1";
@@ -164,21 +163,7 @@
             this.cmb_stock_names.Name = "cmb_stock_names";
             this.cmb_stock_names.Size = new System.Drawing.Size(166, 21);
             this.cmb_stock_names.TabIndex = 58;
-            // 
-            // btn_enable
-            // 
-            this.btn_enable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_enable.FlatAppearance.BorderSize = 0;
-            this.btn_enable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_enable.Location = new System.Drawing.Point(389, 58);
-            this.btn_enable.Name = "btn_enable";
-            this.btn_enable.Size = new System.Drawing.Size(77, 30);
-            this.btn_enable.TabIndex = 60;
-            this.btn_enable.Text = "View";
-            this.btn_enable.UseVisualStyleBackColor = false;
-            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
+            this.cmb_stock_names.SelectedIndexChanged += new System.EventHandler(this.cmb_stock_names_SelectedIndexChanged);
             // 
             // pnl_title
             // 
@@ -204,6 +189,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label9
             // 
@@ -223,7 +209,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(778, 417);
             this.Controls.Add(this.pnl_title);
-            this.Controls.Add(this.btn_enable);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_stock_names);
             this.Controls.Add(this.panel6);
@@ -253,7 +238,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmb_stock_names;
-        private System.Windows.Forms.Button btn_enable;
         private System.Windows.Forms.DataVisualization.Charting.Chart ch_stocks;
         private System.Windows.Forms.Panel pnl_title;
         private System.Windows.Forms.Button btn_close;

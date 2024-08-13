@@ -29,28 +29,6 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         private void btn_enable_Click(object sender, EventArgs e)
         {
 
-            cpb_stock_prisentage.Value = 0;
-            DStockUi stocks = new DStockUi();
-            double score = stocks.getPresentage(cmb_stock_names.SelectedItem.ToString());
-           
-
-            if (score > 0)
-            {
-                progressScore = (int)score; // Assign progressScore
-                timer.Interval = 10; // Set interval 
-                timer.Tick += new EventHandler(this.Timer_Tick);
-                timer.Start(); // Start timer
-            }
-            else if (score == -1)
-            {
-                // exception
-                cpb_stock_prisentage.Text = "N/A";
-            }
-            else if (score == 0)
-            {
-                // Not found
-                cpb_stock_prisentage.Value = 0;
-            }
         }
 
         private void StockUi_Load(object sender, EventArgs e)
@@ -176,6 +154,39 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         private void pnl_title_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("Stocks");
+            this.Dispose();
+        }
+
+        private void cmb_stock_names_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            cpb_stock_prisentage.Value = 0;
+            DStockUi stocks = new DStockUi();
+            double score = stocks.getPresentage(cmb_stock_names.SelectedItem.ToString());
+
+
+            if (score > 0)
+            {
+                progressScore = (int)score; // Assign progressScore
+                timer.Interval = 10; // Set interval 
+                timer.Tick += new EventHandler(this.Timer_Tick);
+                timer.Start(); // Start timer
+            }
+            else if (score == -1)
+            {
+                // exception
+                cpb_stock_prisentage.Text = "N/A";
+            }
+            else if (score == 0)
+            {
+                // Not found
+                cpb_stock_prisentage.Value = 0;
+            }
         }
     }
 }
