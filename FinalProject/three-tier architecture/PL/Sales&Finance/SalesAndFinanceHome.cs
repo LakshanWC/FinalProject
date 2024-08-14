@@ -48,5 +48,21 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void btn_sideBar_thire_Click(object sender, EventArgs e)
+        {
+            if (!NewManagerHome.opendChildForms.Contains("Contact") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                Contact stock = new Contact();
+                stock.MdiParent = this;
+                stock.Show();
+
+                NewManagerHome.opendChildForms.Add("Contact");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

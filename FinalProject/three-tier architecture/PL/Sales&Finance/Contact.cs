@@ -14,6 +14,9 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 {
     public partial class Contact : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private DateTime requestDate = DateTime.Now;
 
         public Contact()
@@ -91,6 +94,35 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             nud_quntity.Value = 0;
             dtp_deliver_on_date.Value = DateTime.Now;
             txt_requset_description.Clear();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("Contact");
+            this.Close();
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

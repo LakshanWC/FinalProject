@@ -57,6 +57,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(648, 34);
             this.pnl_title.TabIndex = 55;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -68,6 +71,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label9
             // 
