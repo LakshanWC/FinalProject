@@ -49,7 +49,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         {
             if (nud_quntity.Value > 0 && cmb_stock_names.SelectedIndex != 0)
             {
-                string inName = cmb_stock_names.SelectedText.ToString();
+                string inName = cmb_stock_names.SelectedItem.ToString();
                 int reqQuantity = Convert.ToInt32(nud_quntity.Value);
                 string description = txt_requset_description.Text;
                 string requestStatus = "Requested";
