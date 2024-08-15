@@ -33,6 +33,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dtp_deliver_on_date = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_stock_names = new System.Windows.Forms.ComboBox();
@@ -40,8 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_requset_description = new System.Windows.Forms.TextBox();
-            this.dtp_deliver_on_date = new System.Windows.Forms.DateTimePicker();
             this.btn_add_new_stock = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
             this.pnl_title.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).BeginInit();
@@ -88,6 +90,8 @@
             // 
             this.panel6.AutoSize = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.cmb_status);
             this.panel6.Controls.Add(this.dtp_deliver_on_date);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label4);
@@ -101,11 +105,19 @@
             this.panel6.Size = new System.Drawing.Size(480, 355);
             this.panel6.TabIndex = 57;
             // 
+            // dtp_deliver_on_date
+            // 
+            this.dtp_deliver_on_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_deliver_on_date.Location = new System.Drawing.Point(146, 158);
+            this.dtp_deliver_on_date.Name = "dtp_deliver_on_date";
+            this.dtp_deliver_on_date.Size = new System.Drawing.Size(102, 20);
+            this.dtp_deliver_on_date.TabIndex = 79;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(62, 136);
+            this.label2.Location = new System.Drawing.Point(62, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 78;
@@ -154,7 +166,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(37, 182);
+            this.label3.Location = new System.Drawing.Point(37, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 70;
@@ -165,19 +177,11 @@
             this.txt_requset_description.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_requset_description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_requset_description.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_requset_description.Location = new System.Drawing.Point(146, 180);
+            this.txt_requset_description.Location = new System.Drawing.Point(146, 208);
             this.txt_requset_description.Multiline = true;
             this.txt_requset_description.Name = "txt_requset_description";
             this.txt_requset_description.Size = new System.Drawing.Size(279, 128);
             this.txt_requset_description.TabIndex = 71;
-            // 
-            // dtp_deliver_on_date
-            // 
-            this.dtp_deliver_on_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_deliver_on_date.Location = new System.Drawing.Point(146, 130);
-            this.dtp_deliver_on_date.Name = "dtp_deliver_on_date";
-            this.dtp_deliver_on_date.Size = new System.Drawing.Size(102, 20);
-            this.dtp_deliver_on_date.TabIndex = 79;
             // 
             // btn_add_new_stock
             // 
@@ -192,6 +196,30 @@
             this.btn_add_new_stock.Text = "Request ";
             this.btn_add_new_stock.UseVisualStyleBackColor = false;
             this.btn_add_new_stock.Click += new System.EventHandler(this.btn_add_new_stock_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.Location = new System.Drawing.Point(39, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "Payment Terms :\r\n";
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Items.AddRange(new object[] {
+            "Requested",
+            "Cash After Delivery",
+            "Payment Before Delivery"});
+            this.cmb_status.Location = new System.Drawing.Point(146, 116);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(121, 21);
+            this.cmb_status.TabIndex = 80;
             // 
             // Contact
             // 
@@ -231,5 +259,7 @@
         private System.Windows.Forms.TextBox txt_requset_description;
         private System.Windows.Forms.DateTimePicker dtp_deliver_on_date;
         private System.Windows.Forms.Button btn_add_new_stock;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmb_status;
     }
 }

@@ -28,6 +28,8 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
         {
             dtp_deliver_on_date.MinDate = DateTime.Now;
 
+            cmb_status.SelectedIndex = 0;
+
             BContact contact = new BContact();
             DataSet ds = new DataSet();
             ds = contact.getStockNames();
@@ -52,7 +54,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
                 string inName = cmb_stock_names.SelectedItem.ToString();
                 int reqQuantity = Convert.ToInt32(nud_quntity.Value);
                 string description = txt_requset_description.Text;
-                string requestStatus = "Requested";
+                string requestStatus = cmb_status.SelectedItem.ToString();
                 DateTime deliveryOn = dtp_deliver_on_date.Value;
 
                 BContact request = new BContact();
