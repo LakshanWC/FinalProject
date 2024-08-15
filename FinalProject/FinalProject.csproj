@@ -83,6 +83,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BContact.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
+    <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DContact.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
+    <Compile Include="three-tier architecture\DAL\Supplier\DStockOrderRequest.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
@@ -290,6 +292,12 @@
     <Compile Include="three-tier architecture\PL\Supplier\StockOrderRequest.Designer.cs">
       <DependentUpon>StockOrderRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Supplier\SupplierHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Supplier\SupplierHome.Designer.cs">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\TostMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Supplier\StockOrderRequest.resx">
       <DependentUpon>StockOrderRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Supplier\SupplierHome.resx">
+      <DependentUpon>SupplierHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\TostMessage.resx">
       <DependentUpon>TostMessage.cs</DependentUpon>

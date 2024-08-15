@@ -33,15 +33,16 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_requests = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_view_review_one = new System.Windows.Forms.Button();
-            this.cmb_selected_requests = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmb_selected_requests = new System.Windows.Forms.ComboBox();
+            this.btn_view_review_one = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_loadAll = new System.Windows.Forms.CheckBox();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_requests)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,54 +83,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgv_requests);
             this.panel1.Location = new System.Drawing.Point(15, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 286);
             this.panel1.TabIndex = 67;
             // 
-            // dataGridView1
+            // dgv_requests
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(438, 248);
-            this.dataGridView1.TabIndex = 1;
+            this.dgv_requests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_requests.Location = new System.Drawing.Point(17, 17);
+            this.dgv_requests.Name = "dgv_requests";
+            this.dgv_requests.Size = new System.Drawing.Size(438, 248);
+            this.dgv_requests.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel2.Controls.Add(this.cb_loadAll);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.cmb_selected_requests);
             this.panel2.Controls.Add(this.btn_view_review_one);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(490, 98);
+            this.panel2.Location = new System.Drawing.Point(490, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(284, 144);
+            this.panel2.Size = new System.Drawing.Size(284, 286);
             this.panel2.TabIndex = 68;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(19, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Selected Requests :";
-            // 
-            // btn_view_review_one
-            // 
-            this.btn_view_review_one.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_view_review_one.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_view_review_one.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_view_review_one.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_view_review_one.Location = new System.Drawing.Point(146, 82);
-            this.btn_view_review_one.Name = "btn_view_review_one";
-            this.btn_view_review_one.Size = new System.Drawing.Size(120, 36);
-            this.btn_view_review_one.TabIndex = 64;
-            this.btn_view_review_one.Text = "Mark as Deliverd";
-            this.btn_view_review_one.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button1.Location = new System.Drawing.Point(19, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 36);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Mark as Orderd";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // cmb_selected_requests
             // 
@@ -145,18 +137,40 @@
             this.cmb_selected_requests.Size = new System.Drawing.Size(103, 21);
             this.cmb_selected_requests.TabIndex = 65;
             // 
-            // button1
+            // btn_view_review_one
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(19, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 36);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Mark as Orderd";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_view_review_one.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_view_review_one.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_view_review_one.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_view_review_one.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_view_review_one.Location = new System.Drawing.Point(146, 183);
+            this.btn_view_review_one.Name = "btn_view_review_one";
+            this.btn_view_review_one.Size = new System.Drawing.Size(120, 36);
+            this.btn_view_review_one.TabIndex = 64;
+            this.btn_view_review_one.Text = "Mark as Deliverd";
+            this.btn_view_review_one.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.Location = new System.Drawing.Point(19, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Selected Requests :";
+            // 
+            // cb_loadAll
+            // 
+            this.cb_loadAll.AutoSize = true;
+            this.cb_loadAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.cb_loadAll.Location = new System.Drawing.Point(182, 80);
+            this.cb_loadAll.Name = "cb_loadAll";
+            this.cb_loadAll.Size = new System.Drawing.Size(67, 17);
+            this.cb_loadAll.TabIndex = 67;
+            this.cb_loadAll.Text = "Load All ";
+            this.cb_loadAll.UseVisualStyleBackColor = true;
+            this.cb_loadAll.CheckedChanged += new System.EventHandler(this.cb_loadAll_CheckedChanged);
             // 
             // StockOrderRequest
             // 
@@ -170,10 +184,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StockOrderRequest";
             this.Text = "StockOrderRequest";
+            this.Load += new System.EventHandler(this.StockOrderRequest_Load);
             this.pnl_title.ResumeLayout(false);
             this.pnl_title.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_requests)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -186,11 +201,12 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_requests;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_view_review_one;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmb_selected_requests;
+        private System.Windows.Forms.CheckBox cb_loadAll;
     }
 }

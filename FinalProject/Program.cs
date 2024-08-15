@@ -4,6 +4,7 @@ using FinalProject.three_tier_architecture.PL.Chef;
 using FinalProject.three_tier_architecture.PL.Customerr;
 using FinalProject.three_tier_architecture.PL.Manager;
 using FinalProject.three_tier_architecture.PL.Sales_Finance;
+using FinalProject.three_tier_architecture.PL.Supplier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace FinalProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new SalesAndFinanceHome());
+            Application.Run(new StockOrderRequest());
         }
     }
 }
