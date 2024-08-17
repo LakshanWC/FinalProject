@@ -181,7 +181,7 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
 
             BStockOrderRequest priceUpdate = new BStockOrderRequest();
-            int stat = priceUpdate.setStat(reqId, "Deliverd");
+            int stat = priceUpdate.setStat(reqId, "Delivered");
 
             if (stat == 0)
             {
@@ -231,6 +231,11 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
         private void pnl_title_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void dgv_requests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

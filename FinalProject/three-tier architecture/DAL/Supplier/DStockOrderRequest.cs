@@ -83,18 +83,43 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
         }
 
 
-        public int setPrice(string reqId,string reqStat)
+        public int setStatus(string reqId, string reqStat)
         {
-            string updateQuery = "UPDATE ingredientRequest SET RequestStatus = @reqStat WHERE ReqID = @reqId;";
+            // Step 1: Retrieve the current RequestStatus
+            string currentStatusQuery = "SELECT RequestStatus FROM ingredientRequest WHERE ReqID = @reqId;";
+            string currentStatus = string.Empty;
+
             try
             {
                 using (SqlConnection con = connection.openConnection())
                 {
-                    SqlCommand cmd = new SqlCommand(updateQuery, con);
-                    cmd.Parameters.AddWithValue("@reqStat", reqStat);
-                    cmd.Parameters.AddWithValue("@reqId", reqId);
+                    // Get the current RequestStatus
+                    SqlCommand getStatusCmd = new SqlCommand(currentStatusQuery, con);
+                    getStatusCmd.Parameters.AddWithValue("@reqId", reqId);
 
-                    int stat = cmd.ExecuteNonQuery();
+                    object result = getStatusCmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        currentStatus = result.ToString();
+                    }
+
+                    // Check and update the RequestStatus
+                    if (currentStatus == "Cash After Delivery")
+                    {
+                        reqStat += " (Pending Payment)";
+                    }
+                    else if (currentStatus == "Out for Delivery (Pending Payment)" && reqStat == "Delivered")
+                    {
+                        reqStat += " (Pending Payment)";
+                    }
+
+                    // Update the RequestStatus
+                    string updateQuery = "UPDATE ingredientRequest SET RequestStatus = @reqStat WHERE ReqID = @reqId;";
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, con);
+                    updateCmd.Parameters.AddWithValue("@reqStat", reqStat);
+                    updateCmd.Parameters.AddWithValue("@reqId", reqId);
+
+                    int stat = updateCmd.ExecuteNonQuery();
                     connection.closeConnection();
                     return stat;
                 }
@@ -105,6 +130,8 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
                 return -1;
             }
         }
+
+
 
 
 

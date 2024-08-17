@@ -84,6 +84,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
+    <Compile Include="three-tier architecture\BLL\Supplier\BTransaction.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DContact.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
+    <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DTransaction.cs" />
     <Compile Include="three-tier architecture\DAL\Supplier\DStockOrderRequest.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
@@ -280,6 +282,12 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.Designer.cs">
       <DependentUpon>StockUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\Transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\Transaction.Designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Supplier\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.resx">
       <DependentUpon>StockUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\Transaction.resx">
+      <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Supplier\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.MVC.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,13 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            Login logout = new Login();
+            logout.Show();
+            this.Hide();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace FinalProject.three_tier_architecture.BLL.Supplier
         public int setStat(string reqId, string reqStat)
         {
             DStockOrderRequest delivering = new DStockOrderRequest();
-            return delivering.setPrice(reqId, reqStat);
+            return delivering.setStatus(reqId, reqStat);
         }
     }
 }
