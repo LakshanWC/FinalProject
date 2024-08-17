@@ -20,12 +20,12 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
 
             if (allRequests)
             {
-                 selectQuery = "SELECT InName,ReqQuantity,Description,RequestStatus," +
+                 selectQuery = "SELECT ReqID,InName,ReqQuantity,Description,RequestStatus," +
                     "DeliverOnDate,price FROM ingredientRequest";
             }
             else
             {
-                selectQuery = "SELECT InName, ReqQuantity, Description, RequestStatus, " +
+                selectQuery = "SELECT ReqID,InName, ReqQuantity, Description, RequestStatus, " +
                               "DeliverOnDate, price FROM ingredientRequest WHERE DeliverOnDate =" +
                               " CAST(GETDATE() AS DATE)";
 
@@ -49,5 +49,64 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
                 return null;
             }
         }
+
+        public int setPrice(Decimal netPrice, string reqId)
+        {
+            string updateQuery = @"
+            UPDATE ingredientRequest 
+            SET price = @netPrice,
+                RequestStatus = CASE 
+                WHEN RequestStatus = 'Payment Before Delivery' THEN 'Pending Payment'
+                WHEN RequestStatus = 'Requested' THEN 'Pending Payment'
+                ELSE RequestStatus
+                END 
+            WHERE ReqID = @reqId;";
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@netPrice", netPrice);
+                    cmd.Parameters.AddWithValue("@reqId", reqId);
+
+                    int stat = cmd.ExecuteNonQuery();
+                    connection.closeConnection();
+                    return stat;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+
+
+        public int setPrice(string reqId,string reqStat)
+        {
+            string updateQuery = "UPDATE ingredientRequest SET RequestStatus = @reqStat WHERE ReqID = @reqId;";
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@reqStat", reqStat);
+                    cmd.Parameters.AddWithValue("@reqId", reqId);
+
+                    int stat = cmd.ExecuteNonQuery();
+                    connection.closeConnection();
+                    return stat;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+
+
+
     }
 }

@@ -33,5 +33,22 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void btn_sideBar_one_Click(object sender, EventArgs e)
+        {
+            StockOrderRequest requests = new StockOrderRequest();
+
+            if (!NewManagerHome.opendChildForms.Contains("StockOrderRequests") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+
+                requests.MdiParent = this;
+                requests.Show();
+                NewManagerHome.opendChildForms.Add("StockOrderRequests");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

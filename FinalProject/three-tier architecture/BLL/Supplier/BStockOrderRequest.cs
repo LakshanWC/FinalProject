@@ -16,5 +16,17 @@ namespace FinalProject.three_tier_architecture.BLL.Supplier
             return request.getRequests(allRequests);
 
         }
+
+        public int setPrice(Decimal netPrice, string reqId)
+        {
+            DStockOrderRequest price = new DStockOrderRequest();
+            return price.setPrice(netPrice, reqId);
+        }
+
+        public int setStat(string reqId, string reqStat)
+        {
+            DStockOrderRequest delivering = new DStockOrderRequest();
+            return delivering.setPrice(reqId, reqStat);
+        }
     }
 }

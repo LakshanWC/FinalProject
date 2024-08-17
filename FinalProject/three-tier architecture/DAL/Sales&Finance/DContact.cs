@@ -26,7 +26,7 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
                     reqId = (int)cmd.ExecuteScalar();
 
                     conn.closeConnection();
-                    return reqId;
+                    return reqId +1;
                 }
             }
             catch(SqlException ex)

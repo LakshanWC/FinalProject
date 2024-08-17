@@ -221,8 +221,9 @@
             this.btn_sideBar_one.Name = "btn_sideBar_one";
             this.btn_sideBar_one.Size = new System.Drawing.Size(172, 49);
             this.btn_sideBar_one.TabIndex = 2;
-            this.btn_sideBar_one.Text = "Add Stock";
+            this.btn_sideBar_one.Text = "Stock Requests ";
             this.btn_sideBar_one.UseVisualStyleBackColor = false;
+            this.btn_sideBar_one.Click += new System.EventHandler(this.btn_sideBar_one_Click);
             // 
             // pnl_userdetails_panle
             // 
