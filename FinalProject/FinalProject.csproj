@@ -264,6 +264,18 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\Contact.Designer.cs">
       <DependentUpon>Contact.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\FinancialExpenseReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinancialExpenseReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\FinancialReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\FinancialReview.Designer.cs">
+      <DependentUpon>FinancialReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +445,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\Contact.resx">
       <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\FinancialExpenseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FinancialExpenseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\FinancialReview.resx">
+      <DependentUpon>FinancialReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>

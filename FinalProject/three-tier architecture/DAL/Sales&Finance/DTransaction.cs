@@ -12,6 +12,9 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
     public class DTransaction
     {
         DMDBConnection connection = new DMDBConnection();
+        DateTime paidDate = new DateTime();
+
+
 
         public DataSet getPaymentPending(bool allRequests)
         {
@@ -43,9 +46,10 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
             }
         }
 
-        public int setAsPaid(string reqId)
+        public int setAsPaid(string reqId,string price)
         {
-            DateTime paidDate = DateTime.Now;
+            paidDate = DateTime.Now;
+            decimal convetedPrice = Convert.ToDecimal(price);
 
             // Define queries
             string selectQuery = "SELECT RequestStatus FROM ingredientRequest WHERE ReqID = @reqId;";
@@ -81,6 +85,12 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
                     updateCmd.Parameters.AddWithValue("@reqId", reqId);
 
                     int stat = updateCmd.ExecuteNonQuery();
+
+                    //log the transaction if its succsesfull
+                    if(stat > 0)
+                    {
+                        setTransactionLog(paidDate, convetedPrice, null);
+                    }
 
                     connection.closeConnection();
                     return stat;
@@ -134,6 +144,44 @@ namespace FinalProject.three_tier_architecture.DAL.Sales_Finance
             {
                 Console.WriteLine(ex.Message);
                 return null;
+            }
+        }
+
+        private void setTransactionLog(DateTime logDateTime, decimal price,string orderName)
+        {
+            DMDBConnection connt = new DMDBConnection();
+
+            // Break logDateTime into date and time 
+            DateTime logDate = logDateTime.Date;
+            TimeSpan logTime = new TimeSpan(logDateTime.Hour, logDateTime.Minute, logDateTime.Second);
+            string formattedLogTime = logTime.ToString(@"hh\:mm\:ss");
+
+            string insertQuery = @"
+                INSERT INTO TransactionLog (OrderId, LogDate, LogTime, Amount)
+                VALUES (@orderId, @logDate, @logTime, @amount);";
+
+            if(orderName == null)
+            {
+                orderName = "Purchased Stocks";
+            }
+
+            try
+            {
+                using (SqlConnection con = connt.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(insertQuery, con);
+                    cmd.Parameters.AddWithValue("@orderId", orderName); 
+                    cmd.Parameters.AddWithValue("@logDate", logDate);
+                    cmd.Parameters.AddWithValue("@logTime", formattedLogTime);
+                    cmd.Parameters.AddWithValue("@amount", price);
+
+                    cmd.ExecuteNonQuery();
+                    connt.closeConnection();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }

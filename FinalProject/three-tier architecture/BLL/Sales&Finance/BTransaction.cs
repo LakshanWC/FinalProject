@@ -16,10 +16,10 @@ namespace FinalProject.three_tier_architecture.BLL.Sales_Finance
             return transaction.getPaymentPending(loadAll);
         }
 
-        public int setAsPaid(string reqId)
+        public int setAsPaid(string reqId,string total)
         {
             DTransaction paid = new DTransaction();
-            return paid.setAsPaid(reqId);
+            return paid.setAsPaid(reqId,total);
         }
 
         public DataSet getAllPaid()

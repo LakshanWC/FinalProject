@@ -87,7 +87,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
                 string reqId = text.Split(' ')[1];
                 BTransaction markAsPaid = new BTransaction();
 
-                int stat = markAsPaid.setAsPaid(reqId);
+                int stat = markAsPaid.setAsPaid(reqId,txt_net_total.Text);
                 if (stat > 0)
                 {
                     BTransaction request = new BTransaction();
