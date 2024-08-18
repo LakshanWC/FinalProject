@@ -51,6 +51,22 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            if (!NewManagerHome.opendChildForms.Contains("Transaction") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                Transaction stock = new Transaction();
+                stock.MdiParent = this;
+                stock.Show();
+
+                NewManagerHome.opendChildForms.Add("Transaction");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void contactSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (!NewManagerHome.opendChildForms.Contains("Contact") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 Contact stock = new Contact();

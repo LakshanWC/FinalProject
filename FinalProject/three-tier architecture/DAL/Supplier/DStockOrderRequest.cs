@@ -55,11 +55,6 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
             string updateQuery = @"
             UPDATE ingredientRequest 
             SET price = @netPrice,
-                RequestStatus = CASE 
-                WHEN RequestStatus = 'Payment Before Delivery' THEN 'Pending Payment'
-                WHEN RequestStatus = 'Requested' THEN 'Pending Payment'
-                ELSE RequestStatus
-                END 
             WHERE ReqID = @reqId;";
 
             try
@@ -85,32 +80,31 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
 
         public int setStatus(string reqId, string reqStat)
         {
-            // Step 1: Retrieve the current RequestStatus
-            string currentStatusQuery = "SELECT RequestStatus FROM ingredientRequest WHERE ReqID = @reqId;";
-            string currentStatus = string.Empty;
+            // Step 1: Retrieve the PaidOn date
+            string paidOnQuery = "SELECT PaidOn FROM ingredientRequest WHERE ReqID = @reqId;";
+            DateTime? paidOnDate = null;
 
             try
             {
                 using (SqlConnection con = connection.openConnection())
                 {
-                    // Get the current RequestStatus
-                    SqlCommand getStatusCmd = new SqlCommand(currentStatusQuery, con);
-                    getStatusCmd.Parameters.AddWithValue("@reqId", reqId);
+                    // Get the PaidOn date
+                    SqlCommand getPaidOnCmd = new SqlCommand(paidOnQuery, con);
+                    getPaidOnCmd.Parameters.AddWithValue("@reqId", reqId);
 
-                    object result = getStatusCmd.ExecuteScalar();
-                    if (result != null)
+                    object result = getPaidOnCmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
                     {
-                        currentStatus = result.ToString();
+                        paidOnDate = (DateTime?)result;
                     }
 
                     // Check and update the RequestStatus
-                    if (currentStatus == "Cash After Delivery")
+                    if (paidOnDate == null) // No payment date found
                     {
-                        reqStat += " (Pending Payment)";
-                    }
-                    else if (currentStatus == "Out for Delivery (Pending Payment)" && reqStat == "Delivered")
-                    {
-                        reqStat += " (Pending Payment)";
+                        if (reqStat == "Cash After Delivery" || reqStat == "Out for Delivery" || reqStat == "Delivered")
+                        {
+                            reqStat += " (Pending Payment)";
+                        }
                     }
 
                     // Update the RequestStatus
@@ -130,10 +124,5 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
                 return -1;
             }
         }
-
-
-
-
-
     }
 }

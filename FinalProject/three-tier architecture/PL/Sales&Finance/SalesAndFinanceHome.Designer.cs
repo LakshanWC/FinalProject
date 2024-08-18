@@ -32,9 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attendentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overAllIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +47,7 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
+            this.contactSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
@@ -62,7 +60,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem,
             this.addToolStripMenuItem,
-            this.updateToolStripMenuItem,
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -73,6 +70,8 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactSupplierToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -80,32 +79,10 @@
             // 
             // addToolStripMenuItem
             // 
-            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuItemToolStripMenuItem,
-            this.eventToolStripMenuItem});
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
-            // 
-            // addMenuItemToolStripMenuItem
-            // 
-            this.addMenuItemToolStripMenuItem.Name = "addMenuItemToolStripMenuItem";
-            this.addMenuItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.addMenuItemToolStripMenuItem.Text = "Add Menu Item";
-            // 
-            // eventToolStripMenuItem
-            // 
-            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.eventToolStripMenuItem.Text = "Event";
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.updateToolStripMenuItem.Text = "Update";
             // 
             // reportsToolStripMenuItem
             // 
@@ -174,7 +151,7 @@
             this.btn_sideBar_thire.Name = "btn_sideBar_thire";
             this.btn_sideBar_thire.Size = new System.Drawing.Size(172, 49);
             this.btn_sideBar_thire.TabIndex = 4;
-            this.btn_sideBar_thire.Text = "Contact Suplier";
+            this.btn_sideBar_thire.Text = "Transaction";
             this.btn_sideBar_thire.UseVisualStyleBackColor = false;
             this.btn_sideBar_thire.Click += new System.EventHandler(this.btn_sideBar_thire_Click);
             // 
@@ -284,6 +261,13 @@
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = false;
             // 
+            // contactSupplierToolStripMenuItem
+            // 
+            this.contactSupplierToolStripMenuItem.Name = "contactSupplierToolStripMenuItem";
+            this.contactSupplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactSupplierToolStripMenuItem.Text = "Contact Supplier";
+            this.contactSupplierToolStripMenuItem.Click += new System.EventHandler(this.contactSupplierToolStripMenuItem_Click);
+            // 
             // SalesAndFinanceHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,9 +294,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addMenuItemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem attendentReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem overAllIncomeReportToolStripMenuItem;
@@ -328,5 +309,6 @@
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.ToolStripMenuItem contactSupplierToolStripMenuItem;
     }
 }
