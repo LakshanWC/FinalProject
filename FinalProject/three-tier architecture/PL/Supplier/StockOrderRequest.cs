@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Supplier;
+using FinalProject.three_tier_architecture.DAL.Supplier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FinalProject.three_tier_architecture.PL.Supplier
 {
@@ -74,6 +76,8 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
                 DataGridViewRow selectedRow = dgv_requests.Rows[e.RowIndex];
                 string reqId = selectedRow.Cells["ReqID"].Value.ToString();
                 int reqQuantity = Convert.ToInt32(selectedRow.Cells["ReqQuantity"].Value);
+
+                DStockOrderRequest.inName = selectedRow.Cells["InName"].ToString();
 
                 txt_selected_row.Text =  "Item "+reqId;
                 txt_requested_quantity.Text = reqQuantity.ToString();

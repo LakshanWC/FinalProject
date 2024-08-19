@@ -6,11 +6,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace FinalProject.three_tier_architecture.DAL.Supplier
 {
     public class DStockOrderRequest
     {
+        public static string inName;
         DMDBConnection connection = new DMDBConnection();
 
         public DataSet getRequests(bool allRequests)
@@ -107,6 +110,11 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
                         }
                     }
 
+                    if (paidOnDate != null ||  reqStat == "Delivered" ||  reqStat == "Delivered (Pending Payment)")
+                    {
+                        updateInventory(reqId);
+                    }
+
                     // Update the RequestStatus
                     string updateQuery = "UPDATE ingredientRequest SET RequestStatus = @reqStat WHERE ReqID = @reqId;";
                     SqlCommand updateCmd = new SqlCommand(updateQuery, con);
@@ -122,6 +130,39 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
             {
                 Console.WriteLine(ex.Message);
                 return -1;
+            }
+        }
+
+        private void updateInventory(string id)
+        {
+            string updateQuery =
+                "UPDATE ingredient " +
+                "SET Inquantity = Inquantity + ir.ReqQuantity " +
+                "FROM ingredient i " +
+                "JOIN ingredientRequest ir ON i.InId = ir.InId " +
+                "WHERE i.InId = @id;";
+
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    int rowsAffected = cmd.ExecuteNonQuery(); 
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Inventory updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows were updated. Please check the provided ID.");
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
     }
