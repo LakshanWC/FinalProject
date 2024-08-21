@@ -87,6 +87,10 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
                 txt_requested_quantity.Text ="0";
                 MessageBox.Show("Selected Row Is not Valid","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+            catch(System.ArgumentOutOfRangeException)
+            {
+                
+            }
 
 
         }

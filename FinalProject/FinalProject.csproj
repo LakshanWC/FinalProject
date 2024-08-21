@@ -228,11 +228,6 @@
       <DependentUpon>IncomeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Manager\IncomeReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IncomeReport.rpt</DependentUpon>
-    </Compile>
     <Compile Include="three-tier architecture\PL\Manager\NewManagerHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,7 +426,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\IncomeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>IncomeReport1.cs</LastGenOutput>
+      <LastGenOutput>IncomeReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\NewManagerHome.resx">
       <DependentUpon>NewManagerHome.cs</DependentUpon>

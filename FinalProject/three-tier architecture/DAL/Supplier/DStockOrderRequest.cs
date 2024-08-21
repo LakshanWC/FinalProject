@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,10 +56,7 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
 
         public int setPrice(Decimal netPrice, string reqId)
         {
-            string updateQuery = @"
-            UPDATE ingredientRequest 
-            SET price = @netPrice,
-            WHERE ReqID = @reqId;";
+            string updateQuery = "UPDATE ingredientRequest SET price = @netPrice WHERE ReqID = @reqId;";
 
             try
             {
@@ -133,22 +131,75 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
             }
         }
 
-        private void updateInventory(string id)
+        private DataSet getItemDetails(string id)
         {
-            string updateQuery =
-                "UPDATE ingredient " +
-                "SET Inquantity = Inquantity + ir.ReqQuantity " +
-                "FROM ingredient i " +
-                "JOIN ingredientRequest ir ON i.InId = ir.InId " +
-                "WHERE i.InId = @id;";
+            DMDBConnection coon = new DMDBConnection();
+
+            string selectQuery = @"
+                SELECT InName, ReqQuantity
+                FROM ingredientRequest
+                WHERE ReqID = @id
+                AND RequestStatus NOT IN ('Delivered', 'Delivered (Pending Payment)');";
+
+            DataSet dataSet = new DataSet();
 
             try
             {
-                using (SqlConnection con = connection.openConnection())
+                using (SqlConnection con = coon.openConnection())
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, con);
+                    adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+
+                    adapter.Fill(dataSet);
+
+                    if (dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
+                    {
+                        return dataSet;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No item found with the provided ID or item is already delivered.");
+                        return null;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return null;
+            }
+        }
+
+
+        private void updateInventory(string id)
+        {
+            DMDBConnection connt = new DMDBConnection();
+            DataSet data = new DataSet();
+            data = getItemDetails(id);
+
+            if (data == null || data.Tables.Count == 0 || data.Tables[0].Rows.Count == 0)
+            {
+                Console.WriteLine("Item details could not be found or item is already delivered. Update operation aborted.");
+                return;
+            }
+
+            DataTable tbl = data.Tables[0];
+            DataRow row = tbl.Rows[0];
+            string itemName = row["InName"].ToString();
+            int reqQuantity = Convert.ToInt32(row["ReqQuantity"]);
+
+
+            string updateQuery = "UPDATE [ingredient] SET Inquantity = Inquantity + @quantity WHERE InName = @name;";
+
+            try
+            {
+                using (SqlConnection con = connt.openConnection())
                 {
                     SqlCommand cmd = new SqlCommand(updateQuery, con);
-                    cmd.Parameters.AddWithValue("@id", id);
-                    int rowsAffected = cmd.ExecuteNonQuery(); 
+                    cmd.Parameters.AddWithValue("@quantity", reqQuantity);  // Use reqQuantity parameter
+                    cmd.Parameters.AddWithValue("@name", itemName);  // Use itemName parameter
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
@@ -156,8 +207,10 @@ namespace FinalProject.three_tier_architecture.DAL.Supplier
                     }
                     else
                     {
-                        Console.WriteLine("No rows were updated. Please check the provided ID.");
+                        Console.WriteLine("No rows were updated. Please check the provided item name.");
                     }
+
+                    connt.closeConnection();
                 }
             }
             catch (SqlException ex)
