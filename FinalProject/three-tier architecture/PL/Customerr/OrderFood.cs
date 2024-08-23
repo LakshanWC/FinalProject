@@ -245,8 +245,18 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            string deliveryStat;
+
             try
             {
+                if(cmb_delivery_option.SelectedIndex == 2 ||cmb_delivery_option.SelectedIndex == 4)
+                {
+                    deliveryStat = cmb_delivery_option.SelectedItem.ToString();
+                }
+                else
+                {
+                    deliveryStat = "non";
+                }
 
                 int orderQuntity = Convert.ToInt32(nud_item_quantity.Value);
             // createdDate has the date
@@ -279,7 +289,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             if(rbtn_loyal_no.Checked || rbtn_loyal_yes.Checked && cmb_payment_method.SelectedIndex != 0)
             {
                 BOrderFood foodOrder = new BOrderFood();
-                bool isOrdered = foodOrder.addOrder(orderQuntity, createdDate,orderStatus,cNo,itemName,uniqeKey,totPrice,Tid);
+                bool isOrdered = foodOrder.addOrder(orderQuntity, createdDate,orderStatus,cNo,itemName,uniqeKey,totPrice,Tid,deliveryStat);
                 if (isOrdered) 
                 {
                     

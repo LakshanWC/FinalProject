@@ -17,12 +17,12 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
 
         public int addSpecialOrder(int orderQuantity, DateTime createdDate, string orderStatus,
               string itemName, string uniqueKey, decimal totPrice, string extraItem1, string extraItem2,
-              string extraItem3, string SORdetails)
+              string extraItem3, string SORdetails, string deliverStat)
         {
 
             //query 
-            string insertQuery = "INSERT INTO specialOrderRequest (SORid, quantity, extraItem1, extraItem2, extraItem3, SORdetails, itemName, Price, orderStat, SpOrderDate) " +
-                                 "VALUES (@SORid, @quantity, @extraItem1, @extraItem2, @extraItem3, @SORdetails, @itemName, @Price, @orderStat, @SpOrderDate);";
+            string insertQuery = "INSERT INTO specialOrderRequest (SORid, quantity, extraItem1, extraItem2, extraItem3, SORdetails, itemName, Price, orderStat, SpOrderDate,DeliveryStat) " +
+                                 "VALUES (@SORid, @quantity, @extraItem1, @extraItem2, @extraItem3, @SORdetails, @itemName, @Price, @orderStat, @SpOrderDate, @DeliveryStat);";
 
             try
             {
@@ -41,6 +41,7 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
                     cmd.Parameters.AddWithValue("@Price", totPrice);
                     cmd.Parameters.AddWithValue("@orderStat", orderStatus);
                     cmd.Parameters.AddWithValue("@SpOrderDate", createdDate);
+                    cmd.Parameters.AddWithValue("@DeliveryStat",deliverStat);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 

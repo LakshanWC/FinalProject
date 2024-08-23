@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Chef;
+using FinalProject.three_tier_architecture.DAL.Supplier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,9 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 {
     public partial class ReceivedOrder : Form
     {
+        string reqId;
+        bool isItNormalOrder = true;
+
         public ReceivedOrder()
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             BReceivedOrder order = new BReceivedOrder();
             DataSet results = order.getOrders();
             loadToDataGrid(results);
+            cmb_Order_status.SelectedIndex = 0;
         }
 
         //load dataset to dataGrid view
@@ -67,6 +72,78 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             BReceivedOrder order = new BReceivedOrder();
             DataSet results = order.getOrders();
             loadToDataGrid(results);
+        }
+
+        private void dgv_orders_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow selectedRow = dgv_orders.Rows[e.RowIndex];
+                reqId = selectedRow.Cells["UniqeKey"].Value.ToString();
+                txt_selected_item.Text = reqId;
+                string reqStat = selectedRow.Cells["OrderStatus"].Value.ToString();
+
+                if (dgv_orders.Columns.Contains("SORdetails"))
+                {
+                    isItNormalOrder = false;
+                }
+                else
+                {
+                    isItNormalOrder = true;
+                }
+
+            }
+            catch (System.InvalidCastException)
+            { 
+                MessageBox.Show("Selected Row Is not Valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selected Row Is not Valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
+
+        private void btn_update_status_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_selected_item.Text))
+            {
+                BReceivedOrder update = new BReceivedOrder();
+                int stat = update.updateOrderDeliveryStat(reqId, isItNormalOrder, cmb_Order_status.SelectedItem.ToString());
+
+                if (stat == 0)
+                {
+                    TostMessage messFail = new TostMessage("Marking Faild!", "Warning", 1, 1);
+                    messFail.Show();
+                    clearUi();
+                }
+                else if (stat > 0)
+                {
+                    BReceivedOrder order = new BReceivedOrder();
+                    DataSet results = order.getOrders();
+                    loadToDataGrid(results);
+                    cmb_Order_status.SelectedIndex = 0;
+
+                    TostMessage mesSucc = new TostMessage("Marked Successfully", "Success", 3, 3);
+                    mesSucc.Show();
+                    clearUi();
+                }
+                else if (stat == -1)
+                {
+                    TostMessage messUnExpcted = new TostMessage("Unexpected Error", "Error", 2, 2);
+                    messUnExpcted.Show();
+                    clearUi();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select an Order first!","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void clearUi()
+        {
+            txt_selected_item.Clear();
         }
     }
 }

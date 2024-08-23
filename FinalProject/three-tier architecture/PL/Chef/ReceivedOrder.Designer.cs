@@ -33,14 +33,14 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_order = new System.Windows.Forms.Button();
             this.btn_update_status = new System.Windows.Forms.Button();
             this.cmb_Order_status = new System.Windows.Forms.ComboBox();
             this.dgv_orders = new System.Windows.Forms.DataGridView();
-            this.cmb_selected_item = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_order = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_selected_item = new System.Windows.Forms.TextBox();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
@@ -82,12 +82,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.txt_selected_item);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_order);
             this.panel1.Controls.Add(this.btn_update_status);
             this.panel1.Controls.Add(this.cmb_Order_status);
             this.panel1.Controls.Add(this.dgv_orders);
-            this.panel1.Controls.Add(this.cmb_selected_item);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 40);
@@ -95,6 +95,34 @@
             this.panel1.Size = new System.Drawing.Size(773, 425);
             this.panel1.TabIndex = 66;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button1.Location = new System.Drawing.Point(611, 307);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 46);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "Normal Orders";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_order
+            // 
+            this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_order.Location = new System.Drawing.Point(611, 363);
+            this.btn_order.Name = "btn_order";
+            this.btn_order.Size = new System.Drawing.Size(145, 46);
+            this.btn_order.TabIndex = 67;
+            this.btn_order.Text = "Special Requests";
+            this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // btn_update_status
             // 
@@ -108,12 +136,16 @@
             this.btn_update_status.TabIndex = 69;
             this.btn_update_status.Text = "Update Status";
             this.btn_update_status.UseVisualStyleBackColor = false;
+            this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
             // 
             // cmb_Order_status
             // 
             this.cmb_Order_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_Order_status.ForeColor = System.Drawing.SystemColors.Info;
             this.cmb_Order_status.FormattingEnabled = true;
+            this.cmb_Order_status.Items.AddRange(new object[] {
+            "Processing",
+            "Ready For Delivery"});
             this.cmb_Order_status.Location = new System.Drawing.Point(148, 376);
             this.cmb_Order_status.Name = "cmb_Order_status";
             this.cmb_Order_status.Size = new System.Drawing.Size(121, 21);
@@ -126,16 +158,7 @@
             this.dgv_orders.Name = "dgv_orders";
             this.dgv_orders.Size = new System.Drawing.Size(753, 280);
             this.dgv_orders.TabIndex = 0;
-            // 
-            // cmb_selected_item
-            // 
-            this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_selected_item.FormattingEnabled = true;
-            this.cmb_selected_item.Location = new System.Drawing.Point(148, 329);
-            this.cmb_selected_item.Name = "cmb_selected_item";
-            this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
-            this.cmb_selected_item.TabIndex = 60;
+            this.dgv_orders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_orders_CellClick);
             // 
             // label3
             // 
@@ -157,33 +180,16 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Select Order :";
             // 
-            // btn_order
+            // txt_selected_item
             // 
-            this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_order.Location = new System.Drawing.Point(611, 363);
-            this.btn_order.Name = "btn_order";
-            this.btn_order.Size = new System.Drawing.Size(145, 46);
-            this.btn_order.TabIndex = 67;
-            this.btn_order.Text = "Special Requests";
-            this.btn_order.UseVisualStyleBackColor = false;
-            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(611, 307);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 46);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Normal Orders";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txt_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_selected_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_selected_item.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_selected_item.Location = new System.Drawing.Point(148, 330);
+            this.txt_selected_item.Name = "txt_selected_item";
+            this.txt_selected_item.ReadOnly = true;
+            this.txt_selected_item.Size = new System.Drawing.Size(268, 20);
+            this.txt_selected_item.TabIndex = 70;
             // 
             // ReceivedOrder
             // 
@@ -214,11 +220,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmb_Order_status;
         private System.Windows.Forms.DataGridView dgv_orders;
-        private System.Windows.Forms.ComboBox cmb_selected_item;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_update_status;
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_selected_item;
     }
 }

@@ -10,11 +10,17 @@ namespace FinalProject.three_tier_architecture.BLL.Customer
 {
     public class BTrackDelivery
     {
-        public DataSet getDeliveryOrders(string oId)
+        public DataSet getDeliveryOrders(string oId,bool isNormal)
         {
 
             DTrackDelivery deliveryOrders = new DTrackDelivery();
-            return deliveryOrders.getDeliveryOrders(oId);
+            return deliveryOrders.getDeliveryOrders(oId,isNormal);
+        }
+
+        public string getOrderDeliverStat(string oId, bool isNormalOrder)
+        {
+            DTrackDelivery set = new DTrackDelivery();
+            return set.getOrderDeliverStat(oId, isNormalOrder);
         }
     }
 }

@@ -139,13 +139,13 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
         //add order
 
         public bool addOrder(int orderQuantity, DateTime createdDate, string orderStatus,string cNo,
-                          string itemName, string uniqueKey, decimal totPrice, string Tid)
+                          string itemName, string uniqueKey, decimal totPrice, string Tid,string deliveryStat)
         {
             int oid = getOid();
             DMDBConnection connDB = new DMDBConnection();
 
-            string insertQuery = "INSERT INTO tblorder (Oid, Oquantity, Odate, OrderStatus,cNo, ItemName, UniqeKey, Price,Tid) " +
-                                 "VALUES (@Oid, @Oquantity, @Odate, @OrderStatus,@cNo, @ItemName, @UniqeKey, @Price,@Tid);";
+            string insertQuery = "INSERT INTO tblorder (Oid, Oquantity, Odate, OrderStatus,cNo, ItemName, UniqeKey, Price,Tid,DeliveryStatus) " +
+                                 "VALUES (@Oid, @Oquantity, @Odate, @OrderStatus,@cNo, @ItemName, @UniqeKey, @Price,@Tid,@deliveryStatus);";
 
             try
             {
@@ -161,6 +161,7 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
                     cmd.Parameters.AddWithValue("@UniqeKey", uniqueKey);
                     cmd.Parameters.AddWithValue("@Price", totPrice);
                     cmd.Parameters.AddWithValue("@Tid", Tid);
+                    cmd.Parameters.AddWithValue("@deliveryStatus",deliveryStat);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 

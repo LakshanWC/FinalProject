@@ -23,34 +23,50 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void TrackDelivery_Load(object sender, EventArgs e)
         {
-
+            cmb_order_type.SelectedIndex = 0;
         }
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            BTrackDelivery deliveryOrders = new BTrackDelivery();
-            DataSet orders = deliveryOrders.getDeliveryOrders(txt_order_id.Text);
-
-            if (orders == null || orders.Tables.Count == 0 || orders.Tables[0].Rows.Count == 0)
+            if (!string.IsNullOrEmpty(txt_order_id.Text))
             {
-                // Show a message when no orders are found
-                TostMessage messFailed = new TostMessage("No Orders Were Found!", "Failed", 1, 1);
-                return;
-            }
+                BTrackDelivery deliveryOrders = new BTrackDelivery();
 
-            DataTable normalOrders = orders.Tables[0];
+                bool isNormal = false;
+                if (cmb_order_type.SelectedIndex == 0) { isNormal = true; }
+                else { isNormal = false; }
 
-            foreach (DataRow row in normalOrders.Rows)
-            {
-                // Check if the UniqeKey column exists & notNull
-                string hasOrder = row["OrderStatus"].ToString();
-                cmb_located_Order.Items.Add(row["UniqeKey"].ToString());
-                cmb_located_Order.SelectedIndex = 0;
+                DataSet orders = deliveryOrders.getDeliveryOrders(txt_order_id.Text, isNormal);
 
-                if (hasOrder != null)
+                if (orders == null || orders.Tables.Count == 0 || orders.Tables[0].Rows.Count == 0)
                 {
-                   setUiImages(hasOrder);
+                    // Show a message when no orders are found
+                    TostMessage messFailed = new TostMessage("No Orders Were Found!", "Failed", 1, 1);
+                    messFailed.Show();
+                    return;
                 }
+
+                DataTable normalOrders = orders.Tables[0];
+
+                foreach (DataRow row in normalOrders.Rows)
+                {
+                    // Check if the UniqeKey column exists & notNull
+                    string uniqueKey = row["UniqeKey"].ToString();
+                    string hasOrder = row["OrderStatus"].ToString();
+
+                    // Check if the ComboBox already contains the item
+                    if (!cmb_located_Order.Items.Contains(uniqueKey))
+                    {
+                        cmb_located_Order.Items.Add(uniqueKey);
+                    }
+
+                    cmb_located_Order.SelectedIndex = 0;
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("please enter Order id","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -71,6 +87,48 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 default:
                     //
                     break;
+            }
+        }
+
+        private void cmb_located_Order_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string oid = cmb_located_Order.SelectedItem.ToString();
+            BTrackDelivery delivery = new BTrackDelivery();
+            string orderStatus = "";
+
+            if (cmb_located_Order.SelectedIndex == 0)
+            {
+                 orderStatus = delivery.getOrderDeliverStat(oid,true);
+            }
+            else if(cmb_located_Order.SelectedIndex == 1)
+            {
+                 orderStatus = delivery.getOrderDeliverStat(oid, true);
+            }
+
+            setUi(orderStatus);
+        }
+
+        private void setUi(string status)
+        {
+            Image myImage = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\greenTick_logo.png");
+            Image secondImage = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\green_untick_logo.png");
+
+            if (status == null)
+            {
+                //faild not found
+                pb_processing.Image =secondImage;
+                pb_on_the_way.Image = secondImage;
+                pb_readyFor_delivery.Image = secondImage;
+                pb_delivered.Image = secondImage;
+            }
+            else if(status =="Processing")
+            {
+                pb_processing.Image = myImage;
+            }
+            else if(status =="Ready For Delivery")
+            {
+                pb_processing.Image = myImage;
+                pb_readyFor_delivery.Image = myImage;
             }
         }
     }

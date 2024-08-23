@@ -15,11 +15,17 @@ namespace FinalProject.three_tier_architecture.BLL.Chef
             DReceivedOrder order = new DReceivedOrder();
             return order.getOrders();
         }
-        
+
         public DataSet getSpecialOrders()
         {
             DReceivedOrder Specorder = new DReceivedOrder();
             return Specorder.getSpecialOrders();
+        }
+
+        public int updateOrderDeliveryStat(string reqId, bool orderTypeIsNormal, string type)
+        {
+            DReceivedOrder update = new DReceivedOrder();
+            return update.updateOrderDeliveryStat(reqId, orderTypeIsNormal, type);
         }
     }
 }

@@ -180,6 +180,17 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            string deliveryStat;
+
+            if(deliveryOption == "Take Out" || deliveryOption == "Dine in")
+            {
+                deliveryStat = "non";
+            }
+            else
+            {
+                deliveryStat = deliveryOption;
+            }
+
             if (cmb_selected_item.Items.Count != 0 && !string.IsNullOrEmpty(txt_item_name.Text))
             {
 
@@ -199,7 +210,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
                 BOrderCustomize orderCustomizeFood = new BOrderCustomize();
                 isOrdered = orderCustomizeFood.addSpecialOrder(orderQuantity, SpcreatDate, orderStatus, itemName
-                    , uniqueKey, totPrice, extraItem1, extraItem2, extraItem3, SORdetails);
+                    , uniqueKey, totPrice, extraItem1, extraItem2, extraItem3, SORdetails,deliveryStat);
 
                 if (isOrdered == 1)
                 {

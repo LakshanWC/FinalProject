@@ -24,9 +24,11 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
         {
             DataSet orders = new DataSet();
             // Updated query to include conditions for OrderStatus and Odate
-            string selectQuery = "SELECT OrderStatus, Oquantity, Odate, Cno, ItemName, UniqeKey ,Tid FROM tblorder " +
+            string selectQuery = "SELECT OrderStatus, Oquantity, Odate, Cno, ItemName, UniqeKey, Tid, DeliveryStatus " +
+                                 "FROM tblorder " +
                                  "WHERE CAST(Odate AS DATE) = CAST(GETDATE() AS DATE) " +
-                                 "AND OrderStatus IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery')";
+                                 "AND OrderStatus IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery') " +
+                                 "AND DeliveryStatus != 'Ready For Delivery';";
 
             try
             {
@@ -50,10 +52,12 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
         public DataSet getSpecialOrders()
         {
             DataSet orders = new DataSet();
-            string selectQuery = "SELECT SORid, quantity, extraItem1, extraItem2, extraItem3, SORdetails, itemName, orderStat " +
-                                 "FROM specialOrderRequest " +
-                                 "WHERE CAST(SpOrderDate AS DATE) = CAST(GETDATE() AS DATE)" + "" +
-                                 "AND orderStat IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery');";
+            string selectQuery = "SELECT SORid, quantity, extraItem1, extraItem2, extraItem3, SORdetails, itemName, orderStat, DeliveryStat " +
+                      "FROM specialOrderRequest " +
+                      "WHERE CAST(SpOrderDate AS DATE) = CAST(GETDATE() AS DATE) " +
+                      "AND orderStat IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery') " +
+                      "AND DeliveryStat != 'Ready For Delivery';";
+
             try
             {
                 using (SqlConnection con = connection.openConnection())
@@ -71,6 +75,40 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
                 return null;
             }
             return orders;
+        }
+
+        public int updateOrderDeliveryStat(string reqId,bool orderTypeIsNormal,string type)
+        {
+            string updateQuery;
+
+            try
+            {
+                if (orderTypeIsNormal)
+                {
+                    updateQuery = "UPDATE tblorder SET DeliveryStatus = @reType WHERE UniqeKey = @reqId;";
+                }
+                else
+                {
+                    updateQuery = "UPDATE specialOrderRequest SET DeliveryStat = @reType WHERE SORid = @reqId;";
+                }
+
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@reType", type);
+                    cmd.Parameters.AddWithValue("@reqId", reqId);
+
+                    int stat = cmd.ExecuteNonQuery();
+                    connection.closeConnection();
+
+                    return stat;
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
         }
     }
 }
