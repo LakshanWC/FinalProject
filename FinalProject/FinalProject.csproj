@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BAddNewStock.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BReceivedOrder.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BTransaction.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
+    <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
@@ -137,6 +139,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Cashier\CheckInventory.Designer.cs">
       <DependentUpon>CheckInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\MenuUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\MenuUpdate.Designer.cs">
+      <DependentUpon>MenuUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.cs">
       <SubType>Form</SubType>
@@ -392,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Cashier\CheckInventory.resx">
       <DependentUpon>CheckInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Cashier\MenuUpdate.resx">
+      <DependentUpon>MenuUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ReceivedOrder.resx">
       <DependentUpon>ReceivedOrder.cs</DependentUpon>
