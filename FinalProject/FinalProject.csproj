@@ -126,6 +126,18 @@
     <Compile Include="three-tier architecture\PL\back up form.Designer.cs">
       <DependentUpon>back up form.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\CahierHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\CahierHome.Designer.cs">
+      <DependentUpon>CahierHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\CheckInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\CheckInventory.Designer.cs">
+      <DependentUpon>CheckInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +387,12 @@
     <EmbeddedResource Include="three-tier architecture\PL\back up form.resx">
       <DependentUpon>back up form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Cashier\CahierHome.resx">
+      <DependentUpon>CahierHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Cashier\CheckInventory.resx">
+      <DependentUpon>CheckInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ReceivedOrder.resx">
       <DependentUpon>ReceivedOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,7 +543,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="three-tier architecture\PL\Cashier\" />
     <Folder Include="three-tier architecture\PL\Delivery Team\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
