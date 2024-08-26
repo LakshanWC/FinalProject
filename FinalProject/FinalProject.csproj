@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
+    <Compile Include="three-tier architecture\BLL\Delivery Team\BDelivery.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BAddNewStock.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BReceivedOrder.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerHome.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="three-tier architecture\DAL\Customer\DOrderFood.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DReview.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DTrackDelivery.cs" />
+    <Compile Include="three-tier architecture\DAL\Delivery Team\DDelivery.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddItem.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DEvent.cs" />
@@ -235,6 +237,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\TrackDelivery.Designer.cs">
       <DependentUpon>TrackDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Delivery Team\Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Delivery Team\Delivery.Designer.cs">
+      <DependentUpon>Delivery.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\Event.cs">
       <SubType>Form</SubType>
@@ -450,6 +458,9 @@
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\TrackDelivery.resx">
       <DependentUpon>TrackDelivery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Delivery Team\Delivery.resx">
+      <DependentUpon>Delivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\Event.resx">
       <DependentUpon>Event.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,8 +564,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="three-tier architecture\PL\Delivery Team\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
