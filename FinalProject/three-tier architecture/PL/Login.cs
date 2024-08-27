@@ -1,7 +1,10 @@
 ﻿using FinalProject.MVC.Control;
 using FinalProject.three_tier_architecture.PL;
+using FinalProject.three_tier_architecture.PL.Cashier;
 using FinalProject.three_tier_architecture.PL.Customerr;
+using FinalProject.three_tier_architecture.PL.Delivery_Team;
 using FinalProject.three_tier_architecture.PL.Sales_Finance;
+using FinalProject.three_tier_architecture.PL.Supplier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,17 +73,20 @@ namespace FinalProject.MVC.View
                     case 4:
                         //cashier
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("casheir GUI");
+                        CahierHome cashHo = new CahierHome();
+                        this.Hide();
+                        cashHo.Show();
                         break;
                     case 5:
                         //delivery
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("delivery GUI");
+                        DeliveryTeamHome dTHome = new DeliveryTeamHome();
+                        this.Hide(); 
+                        dTHome.Show();
                         break;
                     case 6:
                         //sales
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("sales & finan GUI");
                         SalesAndFinanceHome saleHome = new SalesAndFinanceHome();
                         this.Hide();
                         saleHome.Show();
@@ -98,6 +104,10 @@ namespace FinalProject.MVC.View
                         break;
                     case 9:
                         //supplier
+                        mylogin.markAttendant(userName);
+                        SupplierHome supHome = new SupplierHome();
+                        this.Hide();
+                        supHome.Show();
                         break;
                     default:
                         MessageBox.Show("User Does not Exist", "User not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
