@@ -1,6 +1,7 @@
 ﻿using FinalProject.MVC.Control;
 using FinalProject.three_tier_architecture.PL;
 using FinalProject.three_tier_architecture.PL.Customerr;
+using FinalProject.three_tier_architecture.PL.Sales_Finance;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,38 +51,53 @@ namespace FinalProject.MVC.View
                 switch (myCheck)
                 {
                     case 1:
+                        //test account
                         mylogin.markAttendant(userName);
                         MessageBox.Show("welcome admin");
                         break;
                     case 2:
+                        //manager
                         mylogin.markAttendant(userName);
                         NewManagerHome mHome = new NewManagerHome();
                         this.Hide();
                         mHome.Show();
-                        // MessageBox.Show("manager GUI");
                         break;
                     case 3:
+                        //chef
                         mylogin.markAttendant(userName);
                         MessageBox.Show("chef GUI");
                         break;
                     case 4:
+                        //cashier
                         mylogin.markAttendant(userName);
                         MessageBox.Show("casheir GUI");
                         break;
                     case 5:
+                        //delivery
                         mylogin.markAttendant(userName);
                         MessageBox.Show("delivery GUI");
                         break;
                     case 6:
+                        //sales
                         mylogin.markAttendant(userName);
                         MessageBox.Show("sales & finan GUI");
+                        SalesAndFinanceHome saleHome = new SalesAndFinanceHome();
+                        this.Hide();
+                        saleHome.Show();
                         break;
                     case 7:
+                        //customer
                         mylogin.markAttendant(userName);
                         CustomerHome cusHome = new CustomerHome();
                         cusHome.setUserName(userName);
                         this.Hide();
                         cusHome.Show();
+                        break;
+                    case 8:
+                        //waiter
+                        break;
+                    case 9:
+                        //supplier
                         break;
                     default:
                         MessageBox.Show("User Does not Exist", "User not found", MessageBoxButtons.OK, MessageBoxIcon.Error);

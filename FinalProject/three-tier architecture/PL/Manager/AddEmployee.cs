@@ -45,6 +45,32 @@ namespace FinalProject.MVC.View
 
         }
 
+        private void loadthisAgain()
+        {
+            Control.BAddEmployee caddEmp = new Control.BAddEmployee();
+
+            Control.BAddEmployee cAddEmployee = new Control.BAddEmployee();
+            string newEid = cAddEmployee.getNewEid();
+
+            txt_eno.Text = newEid;
+            txt_user_name.Text = newEid;
+
+            cmb_employee_type.SelectedIndex = 0;
+        }
+        private void clearUi()
+        {
+            cmb_employee_type.SelectedIndex = 0;
+            txt_name.Clear();
+            txt_nic_no.Clear();
+            txt_address.Clear();
+            dtp_date_of_birth.Value = DateTime.Now;
+            txt_tel_no.Clear();
+            txt_user_name.Clear();
+            txt_password.Clear();
+            nud_ot_hours.Value = 0;
+            nud_salary.Value = 0;
+        }
+
         private void btn_clear_Click(object sender, EventArgs e)
         {
             cmb_employee_type.SelectedIndex = 0;
@@ -59,11 +85,9 @@ namespace FinalProject.MVC.View
             nud_salary.Value = 0; 
         }
 
-        private int getSelectedEmployeeValue()
+        private int getSelectedEmployeeValue(int selectedValue)
         {
-            int numForSelectedName = cmb_employee_type.SelectedIndex;
-
-            switch(numForSelectedName)
+            switch(selectedValue)
             {
                 case 1:
                     return 2; //manager type =2
@@ -80,6 +104,10 @@ namespace FinalProject.MVC.View
                 case 5:
                     return 6; //sales & finance = 6
                     break;
+                case 6:
+                    return 8;//waiter = 8
+                case 7:
+                    return 9;//supplier = 9
                 default:
                     return -1;
                     break;
@@ -90,14 +118,14 @@ namespace FinalProject.MVC.View
         private void btn_add_Click(object sender, EventArgs e)
         {
             AddEmployee addNewEmp = new AddEmployee();
-            Control.BAddEmployee caddEmp = new Control.BAddEmployee();
+            BAddEmployee caddEmp = new BAddEmployee();
 
-            int selectedValue = -1;
+            int selectedValue = cmb_employee_type.SelectedIndex;
 
-            if (string.IsNullOrEmpty(txt_name.Text) && string.IsNullOrEmpty(txt_nic_no.Text)
-                && string.IsNullOrEmpty(dtp_date_of_birth.Text) && string.IsNullOrEmpty(txt_tel_no.Text) 
-                && string.IsNullOrEmpty(txt_address.Text) && string.IsNullOrEmpty(txt_user_name.Text)
-                && string.IsNullOrEmpty(txt_password.Text) && selectedValue != addNewEmp.getSelectedEmployeeValue())
+            if (!string.IsNullOrEmpty(txt_name.Text) && !string.IsNullOrEmpty(txt_nic_no.Text)
+                && !string.IsNullOrEmpty(dtp_date_of_birth.Text) && !string.IsNullOrEmpty(txt_tel_no.Text) 
+                && !string.IsNullOrEmpty(txt_address.Text) && !string.IsNullOrEmpty(txt_user_name.Text)
+                && !string.IsNullOrEmpty(txt_password.Text) && selectedValue != addNewEmp.getSelectedEmployeeValue(selectedValue))
             {
                 if(nud_ot_hours.Value > 0 && nud_salary.Value > 0)
                 { 
@@ -119,10 +147,25 @@ namespace FinalProject.MVC.View
                         string Epassword = txt_password.Text;
                         double OtHours = Convert.ToDouble(nud_ot_hours.Value);
                         double salary = Convert.ToDouble(nud_salary.Value);
-                        int Etype = addNewEmp.getSelectedEmployeeValue();
+                        int Etype = addNewEmp.getSelectedEmployeeValue(selectedValue);
 
-                        caddEmp.addEmployee(Eid, Ename, Enic, Eaddress, Edob,Etel,Eusername, 
+                        bool stat =caddEmp.addEmployee(Eid, Ename, Enic, Eaddress, Edob,Etel,Eusername, 
                             Epassword,OtHours,salary,Etype);
+
+                        if (stat)
+                        {
+                            TostMessage succ = new TostMessage("Employee Added","Success",3,3);
+                            succ.Show();
+                            clearUi();
+                            loadthisAgain();
+                        }
+                        else
+                        {
+                            TostMessage error = new TostMessage("Employee Adding Faild","Faild",2,1); 
+                            error.Show();
+                            clearUi();
+                            loadthisAgain();
+                        }
 
                     }
 

@@ -37,7 +37,7 @@ namespace FinalProject.MVC.Model
         {
             SqlConnection con = myConnection.openConnection();
             string addEmpQuery = "INSERT INTO employee VALUES (@Eid,@Ename,@Enic,@Eaddress,@Edob" +
-                ",@Etel,@Euername,@Epassword,@OtHours,@Etype,@salary);";
+                ",@Etel,@Eusername,@Epassword,@OtHours,@Etype,@accountStatus,@salary);";
 
             SqlCommand com = new SqlCommand(addEmpQuery, con);
             com.Parameters.AddWithValue("@Eid", Eid);
@@ -49,6 +49,8 @@ namespace FinalProject.MVC.Model
             com.Parameters.AddWithValue("@Eusername", Eusername);
             com.Parameters.AddWithValue("@Epassword",Epassword);
             com.Parameters.AddWithValue("@OtHours",OtHours);
+            com.Parameters.AddWithValue("@Etype", Etype);
+            com.Parameters.AddWithValue("@accountStatus", 1);
             com.Parameters.AddWithValue("@salary",salary);
 
             com.ExecuteNonQuery();

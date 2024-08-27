@@ -97,6 +97,8 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
                     int result = cmd.ExecuteNonQuery();
                     connection.closeConnection();
 
+                    if(result > 0) { setDeliveryLog(oid,itemName,deliveryStat,orderType); }
+
                     return result;
                 }
             }
@@ -105,6 +107,14 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
                 Console.WriteLine(ex.Message);
                 return -1;
             }
+        }
+
+        private void setDeliveryLog(string oid,string itemName,string deliveryStatus,bool isNormalOrder)
+        {
+        //    DateTime deliverystart = DateTime.Now;
+
+       //     string insertQuery = "INSERT INTO delivery (delivedBy,orderId,itemName,DeliveryStarted,DeliveryEnded,receivedPayments,orderType)"
+
         }
     }
 }

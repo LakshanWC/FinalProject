@@ -58,8 +58,8 @@
             this.nud_ot_hours = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_title = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_salary)).BeginInit();
@@ -144,7 +144,9 @@
             "Chef",
             "Cashier",
             "Delivery",
-            "Sales & Finance"});
+            "Sales & Finance",
+            "Waiter",
+            "Supplier"});
             this.cmb_employee_type.Location = new System.Drawing.Point(127, 86);
             this.cmb_employee_type.Name = "cmb_employee_type";
             this.cmb_employee_type.Size = new System.Drawing.Size(121, 21);
@@ -346,6 +348,11 @@
             0,
             131072});
             this.nud_salary.Location = new System.Drawing.Point(116, 25);
+            this.nud_salary.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.nud_salary.Name = "nud_salary";
             this.nud_salary.Size = new System.Drawing.Size(100, 20);
             this.nud_salary.TabIndex = 49;
@@ -412,17 +419,6 @@
             this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
             this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label6.Location = new System.Drawing.Point(12, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 15);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Add Employee";
-            // 
             // btn_close
             // 
             this.btn_close.FlatAppearance.BorderSize = 0;
@@ -434,6 +430,17 @@
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 15);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Add Employee";
             // 
             // AddEmployee
             // 
