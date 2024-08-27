@@ -15,6 +15,8 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
     public partial class Delivery : Form
     {
         bool isItNormalOrder = false;
+        string reqId;
+        string itemName;
 
         public Delivery()
         {
@@ -77,9 +79,6 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void dgv_orders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string reqId;
-            string reqStat;
-
             try
             {
                 DataGridViewRow selectedRow = dgv_orders.Rows[e.RowIndex];
@@ -91,7 +90,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                     
                     reqId = selectedRow.Cells["SORid"].Value.ToString();
                     txt_selected_item.Text = reqId;
-                    reqStat = selectedRow.Cells["orderStat"].Value.ToString();
+                    itemName = selectedRow.Cells["itemName"].Value.ToString();
                 }
                 else
                 {
@@ -99,7 +98,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
                     reqId = selectedRow.Cells["UniqeKey"].Value.ToString();
                     txt_selected_item.Text = reqId;
-                    reqStat = selectedRow.Cells["OrderStatus"].Value.ToString();
+                    itemName = selectedRow.Cells["ItemName"].Value.ToString();
                 }
 
             }
@@ -115,6 +114,39 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
             {
                 MessageBox.Show("Not a Valid Order", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btn_update_status_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txt_selected_item.Text))
+            {
+                BDelivery delivery = new BDelivery();
+                int stat = delivery.updateDeliveryStatus(reqId,itemName,isItNormalOrder,cmb_Order_status.SelectedItem.ToString());
+
+                if (stat == 0)
+                {
+                    TostMessage messFail = new TostMessage("Marking Faild!", "Warning", 1, 1);
+                    messFail.Show();
+                    clearUi();
+                }
+                else if(stat > 0)
+                {
+                    TostMessage mesSucc = new TostMessage("Marked Successfully", "Success", 3, 3);
+                    mesSucc.Show();
+                    clearUi();
+                }
+                else if(stat == -1)
+                {
+                    TostMessage messUnExpcted = new TostMessage("Unexpected Error", "Error", 2, 2);
+                    messUnExpcted.Show();
+                    clearUi();
+                }
+            }
+        }
+
+        private void clearUi()
+        {
+            txt_selected_item.Clear();
         }
     }
 }

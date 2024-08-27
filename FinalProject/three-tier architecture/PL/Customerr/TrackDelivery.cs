@@ -130,6 +130,19 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 pb_processing.Image = myImage;
                 pb_readyFor_delivery.Image = myImage;
             }
+            else if(status =="On the Way")
+            {
+                pb_processing.Image = myImage;
+                pb_readyFor_delivery.Image = myImage;
+                pb_on_the_way.Image = myImage;
+            }
+            else if(status =="Delivered" || status == "Delivered(Payment Received)")
+            {
+                pb_processing.Image = myImage;
+                pb_readyFor_delivery.Image = myImage;
+                pb_on_the_way.Image = myImage;
+                pb_delivered.Image = myImage;
+            }
         }
     }
 }

@@ -10,15 +10,20 @@ namespace FinalProject.three_tier_architecture.BLL.Delivery_Team
 {
     public class BDelivery
     {
+        DDelivery delivery = new DDelivery();
+
         public DataSet getOrders()
         {
-            DDelivery delivery = new DDelivery();
             return delivery.getOrders();
         }
         public DataSet getSpecialOrders()
         {
-            DDelivery delivery = new DDelivery();
             return delivery.getSpecialOrders();
+        }
+
+        public int updateDeliveryStatus(string oid, string itemName, bool orderType, string deliveryStat)
+        {
+            return delivery.updateDeliveryStatus(oid,itemName, orderType, deliveryStat);
         }
     }
 }

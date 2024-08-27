@@ -128,6 +128,7 @@
             this.btn_update_status.TabIndex = 69;
             this.btn_update_status.Text = "Update Status";
             this.btn_update_status.UseVisualStyleBackColor = false;
+            this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
             // 
             // cmb_Order_status
             // 
@@ -135,7 +136,7 @@
             this.cmb_Order_status.ForeColor = System.Drawing.SystemColors.Info;
             this.cmb_Order_status.FormattingEnabled = true;
             this.cmb_Order_status.Items.AddRange(new object[] {
-            "Delivering",
+            "On the Way",
             "Delivered"});
             this.cmb_Order_status.Location = new System.Drawing.Point(148, 376);
             this.cmb_Order_status.Name = "cmb_Order_status";

@@ -69,5 +69,42 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
             }
             return orders;
         }
+
+        public int updateDeliveryStatus(string oid,string itemName,bool orderType,string deliveryStat)
+        {
+            string updateQuery;
+
+            if (orderType)
+            {
+                //normal order
+                updateQuery = "UPDATE tblorder SET DeliveryStatus = @deliveryStat WHERE UniqeKey = @oid AND ItemName =@name;";
+            }
+            else
+            {
+                //special order
+                updateQuery = "UPDATE specialOrderRequest SET DeliveryStat = @deliveryStat WHERE SORid = @oid itemName =@name;";
+            }
+
+            try
+            {
+                using(SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@deliveryStat", deliveryStat);
+                    cmd.Parameters.AddWithValue("@oid", oid);
+                    cmd.Parameters.AddWithValue("@name", itemName);
+
+                    int result = cmd.ExecuteNonQuery();
+                    connection.closeConnection();
+
+                    return result;
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
     }
 }
