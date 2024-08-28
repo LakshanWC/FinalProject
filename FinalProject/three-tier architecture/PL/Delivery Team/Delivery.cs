@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Delivery_Team;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,9 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
     {
         bool isItNormalOrder = false;
         string reqId;
+        bool acceptedOrder = false;
         string itemName;
+        string orderType;
 
         public Delivery()
         {
@@ -34,6 +37,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_special_Order_delivery_Click(object sender, EventArgs e)
         {
+            acceptedOrder = false ;
             dgv_orders.DataSource = null;
 
             BDelivery deliverSpcOrder = new BDelivery();
@@ -45,6 +49,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_normal_orders_Click(object sender, EventArgs e)
         {
+            acceptedOrder = false ;
             dgv_orders.DataSource = null;
 
             BDelivery deliverSpcOrder = new BDelivery();
@@ -91,6 +96,28 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                     reqId = selectedRow.Cells["SORid"].Value.ToString();
                     txt_selected_item.Text = reqId;
                     itemName = selectedRow.Cells["itemName"].Value.ToString();
+
+
+                    cmb_Order_status.SelectedIndex = 0;
+                }
+                else if(dgv_orders.Columns.Contains("orderId"))
+                {
+                    reqId = selectedRow.Cells["orderId"].Value.ToString();
+                    txt_selected_item.Text = reqId;
+                    itemName = selectedRow.Cells["itemName"].Value.ToString();
+
+                    orderType = selectedRow.Cells["orderType"].Value.ToString();
+
+                    if (orderType == "Normal")
+                    {
+                        isItNormalOrder = true;
+                    }
+                    else
+                    {
+                        isItNormalOrder = false;
+                    }
+
+                    cmb_Order_status.SelectedIndex = 1;
                 }
                 else
                 {
@@ -99,6 +126,9 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                     reqId = selectedRow.Cells["UniqeKey"].Value.ToString();
                     txt_selected_item.Text = reqId;
                     itemName = selectedRow.Cells["ItemName"].Value.ToString();
+
+
+                    cmb_Order_status.SelectedIndex = 0;
                 }
 
             }
@@ -121,25 +151,48 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
             if(!string.IsNullOrEmpty(txt_selected_item.Text))
             {
                 BDelivery delivery = new BDelivery();
-                int stat = delivery.updateDeliveryStatus(reqId,itemName,isItNormalOrder,cmb_Order_status.SelectedItem.ToString());
 
-                if (stat == 0)
+                if (acceptedOrder == true)
                 {
-                    TostMessage messFail = new TostMessage("Marking Faild!", "Warning", 1, 1);
-                    messFail.Show();
+                    bool stat = delivery.setDeliveryLog(DeliveryTeamHome.userNameDelivery,reqId,itemName,cmb_Order_status.SelectedItem.ToString(),isItNormalOrder);
                     clearUi();
+
+                    if (stat)
+                    {
+                        TostMessage mesSucc = new TostMessage("Marked Successfully", "Success", 3, 3);
+                        mesSucc.Show();
+                        clearUi();
+                    }
+                    else
+                    {
+                        TostMessage messFail = new TostMessage("Marking Faild!", "Warning", 1, 1);
+                        messFail.Show();
+                        clearUi();
+                    }
                 }
-                else if(stat > 0)
+                else
                 {
-                    TostMessage mesSucc = new TostMessage("Marked Successfully", "Success", 3, 3);
-                    mesSucc.Show();
-                    clearUi();
-                }
-                else if(stat == -1)
-                {
-                    TostMessage messUnExpcted = new TostMessage("Unexpected Error", "Error", 2, 2);
-                    messUnExpcted.Show();
-                    clearUi();
+
+                    int stat = delivery.updateDeliveryStatus(reqId, itemName, isItNormalOrder, cmb_Order_status.SelectedItem.ToString());
+
+                    if (stat == 0)
+                    {
+                        TostMessage messFail = new TostMessage("Marking Faild!", "Warning", 1, 1);
+                        messFail.Show();
+                        clearUi();
+                    }
+                    else if (stat > 0)
+                    {
+                        TostMessage mesSucc = new TostMessage("Marked Successfully", "Success", 3, 3);
+                        mesSucc.Show();
+                        clearUi();
+                    }
+                    else if (stat == -1)
+                    {
+                        TostMessage messUnExpcted = new TostMessage("Unexpected Error", "Error", 2, 2);
+                        messUnExpcted.Show();
+                        clearUi();
+                    }
                 }
             }
         }
@@ -147,6 +200,19 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
         private void clearUi()
         {
             txt_selected_item.Clear();
+        }
+
+        private void btn_accsepted_orders_Click(object sender, EventArgs e)
+        {
+            acceptedOrder = true;
+            BDelivery deliverTeam = new BDelivery();
+            loadToDataGrid(deliverTeam.getAcceptedDelivery());
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Add("Delivery");
+            this.Dispose();
         }
     }
 }

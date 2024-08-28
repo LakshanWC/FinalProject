@@ -115,6 +115,7 @@
             this.btn_accsepted_orders.TabIndex = 67;
             this.btn_accsepted_orders.Text = "Accepted Orders";
             this.btn_accsepted_orders.UseVisualStyleBackColor = false;
+            this.btn_accsepted_orders.Click += new System.EventHandler(this.btn_accsepted_orders_Click);
             // 
             // btn_update_status
             // 
@@ -193,6 +194,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label14
             // 

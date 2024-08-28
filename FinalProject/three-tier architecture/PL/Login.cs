@@ -81,6 +81,7 @@ namespace FinalProject.MVC.View
                         //delivery
                         mylogin.markAttendant(userName);
                         DeliveryTeamHome dTHome = new DeliveryTeamHome();
+                        dTHome.setUserName(userName);
                         this.Hide(); 
                         dTHome.Show();
                         break;

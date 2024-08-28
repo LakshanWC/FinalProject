@@ -23,7 +23,17 @@ namespace FinalProject.three_tier_architecture.BLL.Delivery_Team
 
         public int updateDeliveryStatus(string oid, string itemName, bool orderType, string deliveryStat)
         {
-            return delivery.updateDeliveryStatus(oid,itemName, orderType, deliveryStat);
+            return delivery.updateDeliveryStatus(oid, itemName, orderType, deliveryStat);
+        }
+
+        public bool setDeliveryLog(string userName, string oid, string itemName, string deliveryStatus, bool isNormalOrder)
+        {
+            return delivery.setDeliveryLog(userName, oid, itemName, deliveryStatus, isNormalOrder);
+        }
+
+        public DataSet getAcceptedDelivery()
+        {
+           return delivery.getAcceptedDelivery();
         }
     }
 }

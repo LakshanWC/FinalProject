@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinalProject.three_tier_architecture.PL.Delivery_Team;
 
 namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
 {
@@ -73,6 +74,7 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
         public int updateDeliveryStatus(string oid,string itemName,bool orderType,string deliveryStat)
         {
             string updateQuery;
+            DMDBConnection conn = new DMDBConnection();
 
             if (orderType)
             {
@@ -87,7 +89,7 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
 
             try
             {
-                using(SqlConnection con = connection.openConnection())
+                using(SqlConnection con = conn.openConnection())
                 {
                     SqlCommand cmd = new SqlCommand(updateQuery, con);
                     cmd.Parameters.AddWithValue("@deliveryStat", deliveryStat);
@@ -95,9 +97,7 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
                     cmd.Parameters.AddWithValue("@name", itemName);
 
                     int result = cmd.ExecuteNonQuery();
-                    connection.closeConnection();
-
-                    if(result > 0) { setDeliveryLog(oid,itemName,deliveryStat,orderType); }
+                    conn.closeConnection();
 
                     return result;
                 }
@@ -109,12 +109,85 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
             }
         }
 
-        private void setDeliveryLog(string oid,string itemName,string deliveryStatus,bool isNormalOrder)
+        public bool setDeliveryLog(string userName, string oid, string itemName, string deliveryStatus, bool isNormalOrder)
         {
-        //    DateTime deliverystart = DateTime.Now;
+            string query = "";
+            DateTime deliveryTime = DateTime.Now;
+            string orderType = isNormalOrder ? "Normal" : "Special";
 
-       //     string insertQuery = "INSERT INTO delivery (delivedBy,orderId,itemName,DeliveryStarted,DeliveryEnded,receivedPayments,orderType)"
+            if (deliveryStatus == "On the Way")
+            {
+                query = "INSERT INTO delivery (delivedBy, orderId, itemName, DeliveryStarted, orderType) " +
+                        "VALUES(@delivedBy, @orderId, @itemName, @deliveryStart, @orderType);";
+            }
+            else if (deliveryStatus == "Delivered")
+            {
+                query = "UPDATE delivery " +
+                        "SET delivedBy = @delivedBy, " +
+                        "itemName = @itemName, " +
+                        "DeliveryEnded = @deliveryEnd, " +
+                        "orderType = @orderType " +
+                        "WHERE orderId = @orderId;";
+            }
 
+            try
+            {
+                using (SqlConnection con = connection.openConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@delivedBy", userName);
+                        cmd.Parameters.AddWithValue("@orderId", oid);
+                        cmd.Parameters.AddWithValue("@itemName", itemName);
+                        cmd.Parameters.AddWithValue("@deliveryStart", deliveryTime);
+                        cmd.Parameters.AddWithValue("@deliveryEnd", deliveryTime);
+                        cmd.Parameters.AddWithValue("@orderType", orderType);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        connection.closeConnection();
+
+                        // Return true if at least one row was affected
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
+    
+
+    public DataSet getAcceptedDelivery()
+        {
+            DataSet result = new DataSet();
+
+            try
+            {
+                string selectQuery = "SELECT delivedBy, orderId, itemName, DeliveryStarted, orderType " +
+                                     "FROM delivery WHERE delivedBy = @uid " +
+                                     "AND DeliveryEnded IS NULL;";
+
+
+                using (SqlConnection con = connection.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+                    cmd.Parameters.AddWithValue("@uid", DeliveryTeamHome.userNameDelivery);
+
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(result);
+
+                    connection.closeConnection();
+                    return result;
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
     }
 }

@@ -222,6 +222,7 @@
             this.btn_sideBar_one.TabIndex = 2;
             this.btn_sideBar_one.Text = "Delivery ";
             this.btn_sideBar_one.UseVisualStyleBackColor = false;
+            this.btn_sideBar_one.Click += new System.EventHandler(this.btn_sideBar_one_Click);
             // 
             // pnl_userdetails_panle
             // 
