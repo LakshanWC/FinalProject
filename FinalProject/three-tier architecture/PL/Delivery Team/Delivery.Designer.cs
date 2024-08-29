@@ -138,7 +138,8 @@
             this.cmb_Order_status.FormattingEnabled = true;
             this.cmb_Order_status.Items.AddRange(new object[] {
             "On the Way",
-            "Delivered"});
+            "Delivered",
+            "Delivered(Payment Received)"});
             this.cmb_Order_status.Location = new System.Drawing.Point(148, 376);
             this.cmb_Order_status.Name = "cmb_Order_status";
             this.cmb_Order_status.Size = new System.Drawing.Size(121, 21);

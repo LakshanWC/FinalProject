@@ -155,6 +155,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                 if (acceptedOrder == true)
                 {
                     bool stat = delivery.setDeliveryLog(DeliveryTeamHome.userNameDelivery,reqId,itemName,cmb_Order_status.SelectedItem.ToString(),isItNormalOrder);
+                    delivery.updateDeliveryTemp(reqId, itemName, isItNormalOrder, cmb_Order_status.SelectedItem.ToString());
                     clearUi();
 
                     if (stat)

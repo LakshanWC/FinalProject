@@ -40,6 +40,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         {
             txt_loyal_card_tel_no.Enabled = false;
             cmb_delivery_option.SelectedIndex = 0;
+            cmb_delivery_option.Items.Add("COD");
             cmb_payment_method.SelectedIndex = 0;
 
             cmb_selected_table.Visible = false;

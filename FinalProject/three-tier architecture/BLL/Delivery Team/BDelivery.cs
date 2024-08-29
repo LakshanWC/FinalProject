@@ -31,6 +31,12 @@ namespace FinalProject.three_tier_architecture.BLL.Delivery_Team
             return delivery.setDeliveryLog(userName, oid, itemName, deliveryStatus, isNormalOrder);
         }
 
+        public int updateDeliveryTemp(string oid, string itemName, bool orderType, string deliveryStat)
+        {
+            return delivery.updateDeliveryTemp(oid, itemName, orderType, deliveryStat);
+        }
+
+
         public DataSet getAcceptedDelivery()
         {
            return delivery.getAcceptedDelivery();

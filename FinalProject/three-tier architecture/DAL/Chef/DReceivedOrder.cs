@@ -27,7 +27,7 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
             string selectQuery = "SELECT OrderStatus, Oquantity, Odate, Cno, ItemName, UniqeKey, Tid, DeliveryStatus " +
                                  "FROM tblorder " +
                                  "WHERE CAST(Odate AS DATE) = CAST(GETDATE() AS DATE) " +
-                                 "AND OrderStatus IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery') " +
+                                 "AND OrderStatus IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery','COD') " +
                                  "AND DeliveryStatus != 'Ready For Delivery';";
 
             try
@@ -55,7 +55,7 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
             string selectQuery = "SELECT SORid, quantity, extraItem1, extraItem2, extraItem3, SORdetails, itemName, orderStat, DeliveryStat " +
                       "FROM specialOrderRequest " +
                       "WHERE CAST(SpOrderDate AS DATE) = CAST(GETDATE() AS DATE) " +
-                      "AND orderStat IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery') " +
+                      "AND orderStat IN ('Express Delivery', 'Take Out', 'Dine in', 'Standard Delivery''COD') " +
                       "AND DeliveryStat != 'Ready For Delivery';";
 
             try
