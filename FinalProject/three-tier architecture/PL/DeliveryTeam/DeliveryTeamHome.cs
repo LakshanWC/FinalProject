@@ -42,5 +42,22 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void btn_sideBar_two_Click(object sender, EventArgs e)
+        {
+            Performance menu = new Performance();
+
+            if (!NewManagerHome.opendChildForms.Contains("Perfomence") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+
+                menu.MdiParent = this;
+                menu.Show();
+                NewManagerHome.opendChildForms.Add("Perfomence");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

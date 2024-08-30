@@ -238,17 +238,29 @@
     <Compile Include="three-tier architecture\PL\Customerr\TrackDelivery.Designer.cs">
       <DependentUpon>TrackDelivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Delivery Team\Delivery.cs">
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\Delivery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Delivery Team\Delivery.Designer.cs">
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\Delivery.Designer.cs">
       <DependentUpon>Delivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Delivery Team\DeliveryTeamHome.cs">
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\DeliveryTeamHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="three-tier architecture\PL\Delivery Team\DeliveryTeamHome.Designer.cs">
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\DeliveryTeamHome.Designer.cs">
       <DependentUpon>DeliveryTeamHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\DliveryPerformance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DliveryPerformance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\Performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\DeliveryTeam\Performance.Designer.cs">
+      <DependentUpon>Performance.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\Event.cs">
       <SubType>Form</SubType>
@@ -464,11 +476,18 @@
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\TrackDelivery.resx">
       <DependentUpon>TrackDelivery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Delivery Team\Delivery.resx">
+    <EmbeddedResource Include="three-tier architecture\PL\DeliveryTeam\Delivery.resx">
       <DependentUpon>Delivery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Delivery Team\DeliveryTeamHome.resx">
+    <EmbeddedResource Include="three-tier architecture\PL\DeliveryTeam\DeliveryTeamHome.resx">
       <DependentUpon>DeliveryTeamHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\DeliveryTeam\DliveryPerformance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DliveryPerformance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\DeliveryTeam\Performance.resx">
+      <DependentUpon>Performance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\Event.resx">
       <DependentUpon>Event.cs</DependentUpon>

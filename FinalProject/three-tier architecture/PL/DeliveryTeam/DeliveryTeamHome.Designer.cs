@@ -207,6 +207,7 @@
             this.btn_sideBar_two.TabIndex = 3;
             this.btn_sideBar_two.Text = "Perfomence";
             this.btn_sideBar_two.UseVisualStyleBackColor = false;
+            this.btn_sideBar_two.Click += new System.EventHandler(this.btn_sideBar_two_Click);
             // 
             // btn_sideBar_one
             // 
