@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.three_tier_architecture.PL.Customerr;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,6 +80,39 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void attendentReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FinancialReview finRew = new FinancialReview();
+            finRew.MdiParent = this;
+            finRew.Show();
+            
+        }
+
+        private void removeStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveStock rmStock = new RemoveStock();
+
+            if (!NewManagerHome.opendChildForms.Contains("RemoveStock") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+
+                rmStock.MdiParent = this;
+                rmStock.Show();
+                NewManagerHome.opendChildForms.Add("RemoveStock");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void generateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReportUi reports = new GenerateReportUi();
+            GenerateReportUi.reportType = 1;
+            reports.MdiParent = this;
+            reports.Show();
         }
     }
 }

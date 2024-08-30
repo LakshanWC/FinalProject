@@ -49,6 +49,20 @@ namespace FinalProject.three_tier_architecture.PL
                     return location;
                     break;
 
+                case 2:
+                    location ="D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Sales&Finance\\FinancialExpenseReport.rpt";
+                    txt_current_report.Text = "FinancialExpense Report";
+                    cmb_reports.SelectedIndex = 2;
+                    return location;
+                    break;
+
+                case 3:
+                    location ="D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Sales&Finance\\InventoyItemReport.rpt";
+                    txt_current_report.Text = "InventoyItem Report";
+                    cmb_reports.SelectedIndex = 3;
+                    return location;
+                    break;
+
                 default:
                     location = string.Empty;
                     return location;

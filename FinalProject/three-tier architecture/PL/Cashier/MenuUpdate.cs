@@ -147,5 +147,11 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             }
 
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("MenuUpdate");
+            this.Dispose();
+        }
     }
 }

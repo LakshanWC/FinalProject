@@ -35,7 +35,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_nav = new System.Windows.Forms.Panel();
             this.btn_menu = new System.Windows.Forms.Button();
-            this.btn_order = new System.Windows.Forms.Button();
             this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
             this.lbl_user_id = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_order = new System.Windows.Forms.Button();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -132,22 +132,6 @@
             this.btn_menu.Text = "Menu";
             this.btn_menu.UseVisualStyleBackColor = false;
             this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
-            // 
-            // btn_order
-            // 
-            this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_order.FlatAppearance.BorderSize = 0;
-            this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_order.Location = new System.Drawing.Point(10, 205);
-            this.btn_order.Name = "btn_order";
-            this.btn_order.Size = new System.Drawing.Size(172, 49);
-            this.btn_order.TabIndex = 2;
-            this.btn_order.Text = "Order";
-            this.btn_order.UseVisualStyleBackColor = false;
-            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // pnl_userdetails_panle
             // 
@@ -260,6 +244,22 @@
             this.registerForLoyaltyCardToolStripMenuItem.Text = "Register For Loyalty Card";
             this.registerForLoyaltyCardToolStripMenuItem.Click += new System.EventHandler(this.registerForLoyaltyCardToolStripMenuItem_Click);
             // 
+            // btn_order
+            // 
+            this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_order.FlatAppearance.BorderSize = 0;
+            this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_order.Location = new System.Drawing.Point(10, 205);
+            this.btn_order.Name = "btn_order";
+            this.btn_order.Size = new System.Drawing.Size(172, 49);
+            this.btn_order.TabIndex = 2;
+            this.btn_order.Text = "Order";
+            this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
+            // 
             // CustomerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,7 +289,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_nav;
         private System.Windows.Forms.Button btn_menu;
-        private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Panel pnl_userdetails_panle;
         private System.Windows.Forms.Label lbl_user_id;
         private System.Windows.Forms.Label lbl_userName;
@@ -301,5 +300,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addReivewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerForLoyaltyCardToolStripMenuItem;
+        private System.Windows.Forms.Button btn_order;
     }
 }

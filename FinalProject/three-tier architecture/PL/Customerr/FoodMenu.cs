@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 {
     public partial class FoodMenu : Form
     {
+
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
 
@@ -193,6 +195,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void btn_close_Click(object sender, EventArgs e)
         {
             NewManagerHome.opendChildForms.Remove("FoodMenu");
+            CahierHome.isCahierOpen = false;
             this.Close();
         }
 
@@ -210,20 +213,43 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 this.Hide();
                 if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
                 {
-                    CustomerHome customerHome = this.MdiParent as CustomerHome;
-
-                    if (customerHome != null)
+                    if(CahierHome.isCahierOpen = true)
                     {
-                        order.MdiParent = customerHome;
-                        order.setSelectedItemsToCB(selectedItems);
-                        selectedItems.Clear();
-                        order.Show();
-                        NewManagerHome.opendChildForms.Add("OrderFood");
+                        CahierHome customerHome = this.MdiParent as CahierHome;
+
+                        if (customerHome != null)
+                        {
+                            order.MdiParent = customerHome;
+                            order.setSelectedItemsToCB(selectedItems);
+                            selectedItems.Clear();
+                            order.Show();
+                            NewManagerHome.opendChildForms.Add("OrderFood");
+                        }
+                        else
+                        {
+                            MessageBox.Show("MDI Parent is not set correctly.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("MDI Parent is not set correctly.");
+                        CustomerHome customerHome = this.MdiParent as CustomerHome;
+
+                        if (customerHome != null)
+                        {
+                            order.MdiParent = customerHome;
+                            order.setSelectedItemsToCB(selectedItems);
+                            selectedItems.Clear();
+                            order.Show();
+                            NewManagerHome.opendChildForms.Add("OrderFood");
+                        }
+                        else
+                        {
+                            MessageBox.Show("MDI Parent is not set correctly.");
+                        }
                     }
+
+
+                   
                 }
                 else
                 {

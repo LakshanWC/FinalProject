@@ -165,7 +165,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            NewManagerHome.opendChildForms.Remove("Remove Stock");
+            NewManagerHome.opendChildForms.Remove("RemoveStock");
             this.Close();
         }
 

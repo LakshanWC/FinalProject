@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -251,6 +252,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void btn_close_Click(object sender, EventArgs e)
         {
             NewManagerHome.opendChildForms.Remove("OrderCustomize");
+            CahierHome.isCahierOpen = false;
             this.Close();
         }
 

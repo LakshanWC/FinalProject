@@ -176,6 +176,7 @@
             this.btn_sideBar_thire.TabIndex = 4;
             this.btn_sideBar_thire.Text = "Update Menu";
             this.btn_sideBar_thire.UseVisualStyleBackColor = false;
+            this.btn_sideBar_thire.Click += new System.EventHandler(this.btn_sideBar_thire_Click);
             // 
             // panel7
             // 
@@ -221,8 +222,9 @@
             this.btn_sideBar_one.Name = "btn_sideBar_one";
             this.btn_sideBar_one.Size = new System.Drawing.Size(172, 49);
             this.btn_sideBar_one.TabIndex = 2;
-            this.btn_sideBar_one.Text = "Order ";
+            this.btn_sideBar_one.Text = "Menu";
             this.btn_sideBar_one.UseVisualStyleBackColor = false;
+            this.btn_sideBar_one.Click += new System.EventHandler(this.btn_sideBar_one_Click);
             // 
             // pnl_userdetails_panle
             // 

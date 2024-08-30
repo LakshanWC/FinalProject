@@ -322,6 +322,12 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\FinancialReview.Designer.cs">
       <DependentUpon>FinancialReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\InventoyItemReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoyItemReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +526,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\FinancialReview.resx">
       <DependentUpon>FinancialReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\InventoyItemReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventoyItemReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\RemoveStock.resx">
       <DependentUpon>RemoveStock.cs</DependentUpon>

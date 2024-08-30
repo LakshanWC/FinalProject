@@ -2,6 +2,7 @@
 using CrystalDecisions.Windows.Forms;
 using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -397,6 +398,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         //check if the usre wants a bill for the order
         private void getClickedButton(DialogResult result)
         {
+            CahierHome.isCahierOpen = false;
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("bill--   ~(OvO)~  --bill ");
@@ -492,18 +494,37 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
             if (!NewManagerHome.opendChildForms.Contains("OrderCustomize") && NewManagerHome.opendChildForms.Count <= 2)
             {
-                CustomerHome customerHome = this.MdiParent as CustomerHome;
-
-                if (customerHome != null)
+                if(CahierHome.isCahierOpen = true)
                 {
-                    customize.MdiParent = customerHome;
-                    clearUi();
-                    customize.Show();
-                    NewManagerHome.opendChildForms.Add("OrderCustomize");
+                    CahierHome custom = this.MdiParent as CahierHome;
+
+                    if (custom != null)
+                    {
+                        customize.MdiParent = custom;
+                        clearUi();
+                        customize.Show();
+                        NewManagerHome.opendChildForms.Add("OrderCustomize");
+                    }
+                    else
+                    {
+                        MessageBox.Show("MDI Parent is not set correctly.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("MDI Parent is not set correctly.");
+                    CustomerHome customerHome = this.MdiParent as CustomerHome;
+
+                    if (customerHome != null)
+                    {
+                        customize.MdiParent = customerHome;
+                        clearUi();
+                        customize.Show();
+                        NewManagerHome.opendChildForms.Add("OrderCustomize");
+                    }
+                    else
+                    {
+                        MessageBox.Show("MDI Parent is not set correctly.");
+                    }
                 }
             }
             else

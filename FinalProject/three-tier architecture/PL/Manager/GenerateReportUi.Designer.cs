@@ -56,7 +56,9 @@
             this.cmb_reports.FormattingEnabled = true;
             this.cmb_reports.Items.AddRange(new object[] {
             "Attendent Report",
-            "Income Report"});
+            "Income Report",
+            "FinancialExpense Report",
+            "InventoyItem Report"});
             this.cmb_reports.Location = new System.Drawing.Point(554, 19);
             this.cmb_reports.Name = "cmb_reports";
             this.cmb_reports.Size = new System.Drawing.Size(121, 21);
@@ -91,7 +93,7 @@
             this.txt_current_report.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_current_report.Location = new System.Drawing.Point(127, 20);
             this.txt_current_report.Name = "txt_current_report";
-            this.txt_current_report.Size = new System.Drawing.Size(113, 20);
+            this.txt_current_report.Size = new System.Drawing.Size(136, 20);
             this.txt_current_report.TabIndex = 5;
             // 
             // GenerateReportUi
