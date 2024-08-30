@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.PL.Customerr;
+﻿using FinalProject.MVC.View;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace FinalProject.three_tier_architecture.PL.Delivery_Team
@@ -58,6 +60,13 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            MVC.View.Login login = new MVC.View.Login();
+            this.Hide();
+            login.Show();
         }
     }
 }

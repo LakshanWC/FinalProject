@@ -30,17 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryTeamHome));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.attendentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.overAllIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.btn_sideBar_thire = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_nav = new System.Windows.Forms.Panel();
             this.btn_sideBar_two = new System.Windows.Forms.Button();
@@ -50,7 +41,6 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -59,11 +49,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem,
-            this.addToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -71,69 +56,10 @@
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuItemToolStripMenuItem,
-            this.eventToolStripMenuItem});
-            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // addMenuItemToolStripMenuItem
-            // 
-            this.addMenuItemToolStripMenuItem.Name = "addMenuItemToolStripMenuItem";
-            this.addMenuItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.addMenuItemToolStripMenuItem.Text = "Add Menu Item";
-            // 
-            // eventToolStripMenuItem
-            // 
-            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.eventToolStripMenuItem.Text = "Event";
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.updateToolStripMenuItem.Text = "Update";
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.attendentReportToolStripMenuItem,
-            this.overAllIncomeReportToolStripMenuItem});
-            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // attendentReportToolStripMenuItem
-            // 
-            this.attendentReportToolStripMenuItem.Name = "attendentReportToolStripMenuItem";
-            this.attendentReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.attendentReportToolStripMenuItem.Text = "Attendent Report";
-            // 
-            // overAllIncomeReportToolStripMenuItem
-            // 
-            this.overAllIncomeReportToolStripMenuItem.Name = "overAllIncomeReportToolStripMenuItem";
-            this.overAllIncomeReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.overAllIncomeReportToolStripMenuItem.Text = "OverAll Income Report";
-            // 
             // pnl_side_panle
             // 
             this.pnl_side_panle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnl_side_panle.Controls.Add(this.btn_logout);
-            this.pnl_side_panle.Controls.Add(this.btn_sideBar_thire);
             this.pnl_side_panle.Controls.Add(this.panel7);
             this.pnl_side_panle.Controls.Add(this.pnl_nav);
             this.pnl_side_panle.Controls.Add(this.btn_sideBar_two);
@@ -161,21 +87,7 @@
             this.btn_logout.TabIndex = 5;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = false;
-            // 
-            // btn_sideBar_thire
-            // 
-            this.btn_sideBar_thire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_sideBar_thire.FlatAppearance.BorderSize = 0;
-            this.btn_sideBar_thire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sideBar_thire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sideBar_thire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_sideBar_thire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sideBar_thire.Location = new System.Drawing.Point(10, 322);
-            this.btn_sideBar_thire.Name = "btn_sideBar_thire";
-            this.btn_sideBar_thire.Size = new System.Drawing.Size(172, 49);
-            this.btn_sideBar_thire.TabIndex = 4;
-            this.btn_sideBar_thire.Text = "Contact Suplier";
-            this.btn_sideBar_thire.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // panel7
             // 
@@ -293,8 +205,6 @@
             this.IsMdiContainer = true;
             this.Name = "DeliveryTeamHome";
             this.Text = "DeliveryTeamHome";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
@@ -307,17 +217,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addMenuItemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem attendentReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem overAllIncomeReportToolStripMenuItem;
         private System.Windows.Forms.Panel pnl_side_panle;
         private System.Windows.Forms.Button btn_logout;
-        private System.Windows.Forms.Button btn_sideBar_thire;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_nav;
         private System.Windows.Forms.Button btn_sideBar_two;
