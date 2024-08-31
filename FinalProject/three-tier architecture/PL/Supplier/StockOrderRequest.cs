@@ -194,14 +194,14 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             if (stat == 0)
             {
                 clearUi();
-                TostMessage mesFaild = new TostMessage("Price Updating Faild!", "Faild", 1, 1);
+                TostMessage mesFaild = new TostMessage("Marking Faild!", "Faild", 1, 1);
                 mesFaild.Show();
             }
             else if (stat > 0)
             {
                 loadGridViewData(priceUpdate.getRequests(cb_loadAll.Checked));
                 clearUi();
-                TostMessage messSucc = new TostMessage("Price Updated Successfully", "Successful", 3, 3);
+                TostMessage messSucc = new TostMessage("Marked Successfully", "Successful", 3, 3);
                 messSucc.Show();
             }
             else if (stat == -1)

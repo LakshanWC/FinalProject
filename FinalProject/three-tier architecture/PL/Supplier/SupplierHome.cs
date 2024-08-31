@@ -58,5 +58,12 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             logout.Show();
             this.Hide();
         }
+
+        private void btn_sideBar_thire_Click(object sender, EventArgs e)
+        {
+            CurrentSupplies currntSup = new CurrentSupplies();
+            currntSup.MdiParent = this;
+            currntSup.Show();
+        }
     }
 }
