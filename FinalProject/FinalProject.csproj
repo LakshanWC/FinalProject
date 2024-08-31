@@ -88,6 +88,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BRemoveStock.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BStockUi.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BTransaction.cs" />
+    <Compile Include="three-tier architecture\BLL\Supplier\BAddOt.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="three-tier architecture\DAL\Manager\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddNewStock.cs" />
+    <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddOt.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DContact.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
@@ -307,6 +309,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\GenerateReportUi.Designer.cs">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddOT.Designer.cs">
+      <DependentUpon>AddOT.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddStock.cs">
       <SubType>Form</SubType>
@@ -526,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\GenerateReportUi.resx">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddOT.resx">
+      <DependentUpon>AddOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>

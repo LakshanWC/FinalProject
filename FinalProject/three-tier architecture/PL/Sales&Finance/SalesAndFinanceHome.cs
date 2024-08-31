@@ -114,5 +114,37 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             reports.MdiParent = this;
             reports.Show();
         }
+
+        private void addStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!NewManagerHome.opendChildForms.Contains("Add Stock") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                AddStock addStock = new AddStock();
+                addStock.MdiParent = this;
+                addStock.Show();
+
+                NewManagerHome.opendChildForms.Add("Add Stock");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void addOTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!NewManagerHome.opendChildForms.Contains("Add OT") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                AddOT addStock = new AddOT();
+                addStock.MdiParent = this;
+                addStock.Show();
+
+                NewManagerHome.opendChildForms.Add("Add OT");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

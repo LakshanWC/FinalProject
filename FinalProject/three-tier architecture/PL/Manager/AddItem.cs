@@ -17,6 +17,7 @@ namespace FinalProject.MVC.View
     {
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
+
         private ItemImage foodIcon = new ItemImage();
         private Image icon;
         private int imageNo = 0;
