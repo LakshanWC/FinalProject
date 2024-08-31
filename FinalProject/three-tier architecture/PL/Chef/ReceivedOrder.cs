@@ -19,6 +19,9 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 {
     public partial class ReceivedOrder : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         string reqId;
         bool isItNormalOrder = true;
 
@@ -144,6 +147,35 @@ namespace FinalProject.three_tier_architecture.PL.Chef
         private void clearUi()
         {
             txt_selected_item.Clear();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("ReceivedOrder");
+            this.Dispose();
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

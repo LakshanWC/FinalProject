@@ -33,15 +33,15 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
+            this.nud_quntity = new System.Windows.Forms.NumericUpDown();
             this.txt_quantity = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_selected_item = new System.Windows.Forms.ComboBox();
             this.btn_update_status = new System.Windows.Forms.Button();
-            this.nud_quntity = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_status = new System.Windows.Forms.ComboBox();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).BeginInit();
@@ -57,6 +57,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(335, 34);
             this.pnl_title.TabIndex = 66;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -96,6 +99,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 166);
             this.panel1.TabIndex = 67;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.Location = new System.Drawing.Point(48, 139);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 80;
+            this.label5.Text = "Status :";
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Items.AddRange(new object[] {
+            "Awaiting Restock",
+            "Out of Stock",
+            "Low Stock",
+            "In Stock"});
+            this.cmb_status.Location = new System.Drawing.Point(123, 131);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(121, 21);
+            this.cmb_status.TabIndex = 79;
+            // 
+            // nud_quntity
+            // 
+            this.nud_quntity.Location = new System.Drawing.Point(126, 90);
+            this.nud_quntity.Name = "nud_quntity";
+            this.nud_quntity.Size = new System.Drawing.Size(102, 20);
+            this.nud_quntity.TabIndex = 75;
+            this.nud_quntity.ValueChanged += new System.EventHandler(this.nud_quntity_ValueChanged);
             // 
             // txt_quantity
             // 
@@ -162,39 +198,6 @@
             this.btn_update_status.Text = "Update Status";
             this.btn_update_status.UseVisualStyleBackColor = false;
             this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
-            // 
-            // nud_quntity
-            // 
-            this.nud_quntity.Location = new System.Drawing.Point(126, 90);
-            this.nud_quntity.Name = "nud_quntity";
-            this.nud_quntity.Size = new System.Drawing.Size(102, 20);
-            this.nud_quntity.TabIndex = 75;
-            this.nud_quntity.ValueChanged += new System.EventHandler(this.nud_quntity_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(48, 139);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 80;
-            this.label5.Text = "Status :";
-            // 
-            // cmb_status
-            // 
-            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_status.FormattingEnabled = true;
-            this.cmb_status.Items.AddRange(new object[] {
-            "Awaiting Restock",
-            "Out of Stock",
-            "Low Stock",
-            "In Stock"});
-            this.cmb_status.Location = new System.Drawing.Point(123, 131);
-            this.cmb_status.Name = "cmb_status";
-            this.cmb_status.Size = new System.Drawing.Size(121, 21);
-            this.cmb_status.TabIndex = 79;
             // 
             // UpdateInventory
             // 

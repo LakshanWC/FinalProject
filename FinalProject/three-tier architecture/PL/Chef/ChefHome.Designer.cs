@@ -1,6 +1,6 @@
-﻿namespace FinalProject.three_tier_architecture.PL.Supplier
+﻿namespace FinalProject.three_tier_architecture.PL.Chef
 {
-    partial class SupplierHome
+    partial class ChefHome
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierHome));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChefHome));
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_sideBar_thire = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_nav = new System.Windows.Forms.Panel();
             this.btn_sideBar_two = new System.Windows.Forms.Button();
@@ -41,27 +41,17 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
-            this.btn_sideBar_thire = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(980, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // pnl_side_panle
             // 
             this.pnl_side_panle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pnl_side_panle.Controls.Add(this.btn_sideBar_thire);
             this.pnl_side_panle.Controls.Add(this.btn_logout);
+            this.pnl_side_panle.Controls.Add(this.btn_sideBar_thire);
             this.pnl_side_panle.Controls.Add(this.panel7);
             this.pnl_side_panle.Controls.Add(this.pnl_nav);
             this.pnl_side_panle.Controls.Add(this.btn_sideBar_two);
@@ -72,7 +62,7 @@
             this.pnl_side_panle.Location = new System.Drawing.Point(0, 24);
             this.pnl_side_panle.Name = "pnl_side_panle";
             this.pnl_side_panle.Size = new System.Drawing.Size(184, 472);
-            this.pnl_side_panle.TabIndex = 11;
+            this.pnl_side_panle.TabIndex = 13;
             // 
             // btn_logout
             // 
@@ -90,6 +80,21 @@
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_sideBar_thire
+            // 
+            this.btn_sideBar_thire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_sideBar_thire.FlatAppearance.BorderSize = 0;
+            this.btn_sideBar_thire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sideBar_thire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sideBar_thire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_sideBar_thire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideBar_thire.Location = new System.Drawing.Point(10, 322);
+            this.btn_sideBar_thire.Name = "btn_sideBar_thire";
+            this.btn_sideBar_thire.Size = new System.Drawing.Size(172, 49);
+            this.btn_sideBar_thire.TabIndex = 4;
+            this.btn_sideBar_thire.Text = "FeedBack";
+            this.btn_sideBar_thire.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -119,7 +124,7 @@
             this.btn_sideBar_two.Name = "btn_sideBar_two";
             this.btn_sideBar_two.Size = new System.Drawing.Size(172, 49);
             this.btn_sideBar_two.TabIndex = 3;
-            this.btn_sideBar_two.Text = "Inventory";
+            this.btn_sideBar_two.Text = "Update Inventory";
             this.btn_sideBar_two.UseVisualStyleBackColor = false;
             this.btn_sideBar_two.Click += new System.EventHandler(this.btn_sideBar_two_Click);
             // 
@@ -135,7 +140,7 @@
             this.btn_sideBar_one.Name = "btn_sideBar_one";
             this.btn_sideBar_one.Size = new System.Drawing.Size(172, 49);
             this.btn_sideBar_one.TabIndex = 2;
-            this.btn_sideBar_one.Text = "Stock Requests ";
+            this.btn_sideBar_one.Text = "Recevied Orders";
             this.btn_sideBar_one.UseVisualStyleBackColor = false;
             this.btn_sideBar_one.Click += new System.EventHandler(this.btn_sideBar_one_Click);
             // 
@@ -197,23 +202,17 @@
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = false;
             // 
-            // btn_sideBar_thire
+            // menuStrip1
             // 
-            this.btn_sideBar_thire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_sideBar_thire.FlatAppearance.BorderSize = 0;
-            this.btn_sideBar_thire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sideBar_thire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sideBar_thire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_sideBar_thire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sideBar_thire.Location = new System.Drawing.Point(12, 318);
-            this.btn_sideBar_thire.Name = "btn_sideBar_thire";
-            this.btn_sideBar_thire.Size = new System.Drawing.Size(172, 49);
-            this.btn_sideBar_thire.TabIndex = 6;
-            this.btn_sideBar_thire.Text = "Current Supplies";
-            this.btn_sideBar_thire.UseVisualStyleBackColor = false;
-            this.btn_sideBar_thire.Click += new System.EventHandler(this.btn_sideBar_thire_Click_1);
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(980, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // SupplierHome
+            // ChefHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,8 +220,8 @@
             this.Controls.Add(this.pnl_side_panle);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.Name = "SupplierHome";
-            this.Text = "SupplierHome";
+            this.Name = "ChefHome";
+            this.Text = "ChefHome";
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
@@ -234,7 +233,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel pnl_side_panle;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Panel panel7;
@@ -246,6 +244,7 @@
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btn_sideBar_thire;
     }
 }

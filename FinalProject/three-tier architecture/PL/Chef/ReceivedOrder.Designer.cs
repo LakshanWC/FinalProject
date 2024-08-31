@@ -33,6 +33,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_selected_item = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_order = new System.Windows.Forms.Button();
             this.btn_update_status = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.dgv_orders = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_selected_item = new System.Windows.Forms.TextBox();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orders)).BeginInit();
@@ -56,6 +56,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(800, 34);
             this.pnl_title.TabIndex = 65;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -67,6 +70,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label14
             // 
@@ -95,6 +99,17 @@
             this.panel1.Size = new System.Drawing.Size(773, 425);
             this.panel1.TabIndex = 66;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txt_selected_item
+            // 
+            this.txt_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_selected_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_selected_item.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_selected_item.Location = new System.Drawing.Point(148, 330);
+            this.txt_selected_item.Name = "txt_selected_item";
+            this.txt_selected_item.ReadOnly = true;
+            this.txt_selected_item.Size = new System.Drawing.Size(268, 20);
+            this.txt_selected_item.TabIndex = 70;
             // 
             // button1
             // 
@@ -145,6 +160,7 @@
             this.cmb_Order_status.FormattingEnabled = true;
             this.cmb_Order_status.Items.AddRange(new object[] {
             "Processing",
+            "OrderPrep Request",
             "Ready For Delivery"});
             this.cmb_Order_status.Location = new System.Drawing.Point(148, 376);
             this.cmb_Order_status.Name = "cmb_Order_status";
@@ -179,17 +195,6 @@
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 61;
             this.label1.Text = "Select Order :";
-            // 
-            // txt_selected_item
-            // 
-            this.txt_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_selected_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_selected_item.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_selected_item.Location = new System.Drawing.Point(148, 330);
-            this.txt_selected_item.Name = "txt_selected_item";
-            this.txt_selected_item.ReadOnly = true;
-            this.txt_selected_item.Size = new System.Drawing.Size(268, 20);
-            this.txt_selected_item.TabIndex = 70;
             // 
             // ReceivedOrder
             // 

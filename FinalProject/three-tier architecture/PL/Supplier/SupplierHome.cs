@@ -61,6 +61,11 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            //dont remove or use this
+        }
+
+        private void btn_sideBar_thire_Click_1(object sender, EventArgs e)
+        {
             CurrentSupplies currntSup = new CurrentSupplies();
             currntSup.MdiParent = this;
             currntSup.Show();

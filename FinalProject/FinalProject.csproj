@@ -154,6 +154,12 @@
     <Compile Include="three-tier architecture\PL\Cashier\MenuUpdate.Designer.cs">
       <DependentUpon>MenuUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\ChefHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\ChefHome.Designer.cs">
+      <DependentUpon>ChefHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,6 +465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Cashier\MenuUpdate.resx">
       <DependentUpon>MenuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Chef\ChefHome.resx">
+      <DependentUpon>ChefHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ReceivedOrder.resx">
       <DependentUpon>ReceivedOrder.cs</DependentUpon>
