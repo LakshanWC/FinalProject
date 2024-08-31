@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.PL.Customerr;
+﻿using FinalProject.MVC.View;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -145,6 +146,13 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            Login logIn = new Login();
+            this.Hide();
+            logIn.Show();
         }
     }
 }
