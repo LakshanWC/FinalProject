@@ -64,6 +64,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
+            //done
             MVC.View.Login login = new MVC.View.Login();
             this.Hide();
             login.Show();
