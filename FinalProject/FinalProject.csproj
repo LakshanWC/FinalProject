@@ -63,6 +63,7 @@
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
     <Compile Include="three-tier architecture\BLL\Delivery Team\BDelivery.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BAttendents.cs" />
+    <Compile Include="three-tier architecture\BLL\Manager\BRemoveMenuItem.cs" />
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BAddNewStock.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BReceivedOrder.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BCustomerHome.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="three-tier architecture\DAL\Manager\DPassResetRequests.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DRegisterForLoyaltyCard.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DRemoveEmployee.cs" />
+    <Compile Include="three-tier architecture\DAL\Manager\DRemoveMenuItem.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DResetPassword.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DUpdateEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DAddNewStock.cs" />

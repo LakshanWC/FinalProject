@@ -263,5 +263,56 @@ namespace FinalProject.three_tier_architecture.PL
             GenerateReportUi.reportType = 1;
             reports.Show();
         }
+
+        private void attendentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!opendChildForms.Contains("Attendents") && opendChildForms.Count <= 2)
+            {
+                this.tlp_dash_board.Visible = false;
+                Attendents emp = new Attendents();
+                emp.MdiParent = this;
+                emp.Show();
+
+                opendChildForms.Add("Attendents");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void removeEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!opendChildForms.Contains("RemoveEmployee") && opendChildForms.Count <= 2)
+            {
+                this.tlp_dash_board.Visible = false;
+                RemoveEmployee emp = new RemoveEmployee();
+                emp.MdiParent = this;
+                emp.Show();
+
+                opendChildForms.Add("RemoveEmployee");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void removeMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!opendChildForms.Contains("RemoveMenuItem") && opendChildForms.Count <= 2)
+            {
+                this.tlp_dash_board.Visible = false;
+                RemoveMenuItem emp = new RemoveMenuItem();
+                emp.MdiParent = this;
+                emp.Show();
+
+                opendChildForms.Add("RemoveMenuItem");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

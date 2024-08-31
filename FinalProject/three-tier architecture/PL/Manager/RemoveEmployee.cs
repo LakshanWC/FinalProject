@@ -105,7 +105,6 @@ namespace FinalProject.MVC.View
                     {
                         results = removeEmp.removeEmployee(txt_search_eno.Text, 0);
 
-
                     }
                 }
                 else
@@ -166,6 +165,12 @@ namespace FinalProject.MVC.View
         private void cb_diable_account_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("RemoveEmployee");
+            this.Dispose();
         }
     }
 }

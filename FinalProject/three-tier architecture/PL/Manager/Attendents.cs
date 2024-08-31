@@ -76,5 +76,11 @@ namespace FinalProject.three_tier_architecture.PL.Manager
         {
             dragging = false;
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("Attendents");
+            this.Dispose();
+        }
     }
 }
