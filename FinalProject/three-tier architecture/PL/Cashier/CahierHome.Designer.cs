@@ -50,6 +50,7 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
+            this.checkReviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
@@ -73,6 +74,8 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkReviewsToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -284,6 +287,13 @@
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = false;
             // 
+            // checkReviewsToolStripMenuItem
+            // 
+            this.checkReviewsToolStripMenuItem.Name = "checkReviewsToolStripMenuItem";
+            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkReviewsToolStripMenuItem.Text = "Check Reviews";
+            this.checkReviewsToolStripMenuItem.Click += new System.EventHandler(this.checkReviewsToolStripMenuItem_Click);
+            // 
             // CahierHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,5 +338,6 @@
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.ToolStripMenuItem checkReviewsToolStripMenuItem;
     }
 }

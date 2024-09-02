@@ -1,4 +1,5 @@
 ﻿using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,6 +119,22 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
         private void btn_order_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void reviewsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Review update = new Review();
+
+            if (!NewManagerHome.opendChildForms.Contains("Review") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("Review");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
         }
     }
 }

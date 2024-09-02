@@ -148,7 +148,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            NewManagerHome.opendChildForms.Remove("Reivew");
+            NewManagerHome.opendChildForms.Remove("Review");
             this.Close();
         }
 

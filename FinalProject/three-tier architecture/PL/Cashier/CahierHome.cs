@@ -72,5 +72,21 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void checkReviewsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Review update = new Review();
+
+            if (!NewManagerHome.opendChildForms.Contains("Review") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("Review");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }
