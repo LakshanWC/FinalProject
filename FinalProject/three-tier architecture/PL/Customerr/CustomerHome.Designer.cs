@@ -44,11 +44,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resevationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestAssistantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -235,16 +236,24 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // reviewsToolStripMenuItem
+            // 
+            this.reviewsToolStripMenuItem.Name = "reviewsToolStripMenuItem";
+            this.reviewsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.reviewsToolStripMenuItem.Text = "Reviews";
+            this.reviewsToolStripMenuItem.Click += new System.EventHandler(this.reviewsToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addReivewToolStripMenuItem,
             this.registerForLoyaltyCardToolStripMenuItem,
-            this.resevationToolStripMenuItem});
+            this.resevationToolStripMenuItem,
+            this.requestAssistantToolStripMenuItem});
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
@@ -264,19 +273,19 @@
             this.registerForLoyaltyCardToolStripMenuItem.Text = "Register For Loyalty Card";
             this.registerForLoyaltyCardToolStripMenuItem.Click += new System.EventHandler(this.registerForLoyaltyCardToolStripMenuItem_Click);
             // 
-            // reviewsToolStripMenuItem
-            // 
-            this.reviewsToolStripMenuItem.Name = "reviewsToolStripMenuItem";
-            this.reviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reviewsToolStripMenuItem.Text = "Reviews";
-            this.reviewsToolStripMenuItem.Click += new System.EventHandler(this.reviewsToolStripMenuItem_Click);
-            // 
             // resevationToolStripMenuItem
             // 
             this.resevationToolStripMenuItem.Name = "resevationToolStripMenuItem";
             this.resevationToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.resevationToolStripMenuItem.Text = "Resevation";
             this.resevationToolStripMenuItem.Click += new System.EventHandler(this.resevationToolStripMenuItem_Click);
+            // 
+            // requestAssistantToolStripMenuItem
+            // 
+            this.requestAssistantToolStripMenuItem.Name = "requestAssistantToolStripMenuItem";
+            this.requestAssistantToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.requestAssistantToolStripMenuItem.Text = "Request Assistant";
+            this.requestAssistantToolStripMenuItem.Click += new System.EventHandler(this.requestAssistantToolStripMenuItem_Click);
             // 
             // CustomerHome
             // 
@@ -321,5 +330,6 @@
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.ToolStripMenuItem reviewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resevationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem requestAssistantToolStripMenuItem;
     }
 }

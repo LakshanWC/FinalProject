@@ -1,6 +1,6 @@
 ﻿namespace FinalProject.three_tier_architecture.PL.Customerr
 {
-    partial class AssistantRequest
+    partial class RequestAssistant
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssistantRequest));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestAssistant));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_request_type = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_no_of_letters = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_description = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_selected_item = new System.Windows.Forms.ComboBox();
+            this.cmb_tbl_names = new System.Windows.Forms.ComboBox();
             this.btn_order = new System.Windows.Forms.Button();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
@@ -48,27 +48,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmb_request_type);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbl_no_of_letters);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txt_description);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cmb_selected_item);
+            this.panel1.Controls.Add(this.cmb_tbl_names);
             this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 319);
             this.panel1.TabIndex = 62;
             // 
-            // comboBox1
+            // cmb_request_type
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 66;
+            this.cmb_request_type.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_request_type.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_request_type.FormattingEnabled = true;
+            this.cmb_request_type.Items.AddRange(new object[] {
+            "--Select---",
+            "Order Assistance",
+            "Dietary Requests",
+            "Accessibility Needs",
+            "Complaint"});
+            this.cmb_request_type.Location = new System.Drawing.Point(126, 62);
+            this.cmb_request_type.Name = "cmb_request_type";
+            this.cmb_request_type.Size = new System.Drawing.Size(121, 21);
+            this.cmb_request_type.TabIndex = 66;
             // 
             // label3
             // 
@@ -122,15 +128,15 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Table No :";
             // 
-            // cmb_selected_item
+            // cmb_tbl_names
             // 
-            this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_selected_item.FormattingEnabled = true;
-            this.cmb_selected_item.Location = new System.Drawing.Point(126, 15);
-            this.cmb_selected_item.Name = "cmb_selected_item";
-            this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
-            this.cmb_selected_item.TabIndex = 60;
+            this.cmb_tbl_names.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_tbl_names.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_tbl_names.FormattingEnabled = true;
+            this.cmb_tbl_names.Location = new System.Drawing.Point(126, 15);
+            this.cmb_tbl_names.Name = "cmb_tbl_names";
+            this.cmb_tbl_names.Size = new System.Drawing.Size(121, 21);
+            this.cmb_tbl_names.TabIndex = 60;
             // 
             // btn_order
             // 
@@ -145,6 +151,7 @@
             this.btn_order.TabIndex = 63;
             this.btn_order.Text = "Request";
             this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // pnl_title
             // 
@@ -167,6 +174,10 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            this.btn_close.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseDown);
+            this.btn_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseMove);
+            this.btn_close.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_close_MouseUp);
             // 
             // label14
             // 
@@ -179,7 +190,7 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Request Assistants";
             // 
-            // AssistantRequest
+            // RequestAssistant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,8 +200,9 @@
             this.Controls.Add(this.btn_order);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AssistantRequest";
+            this.Name = "RequestAssistant";
             this.Text = "AssistantRequest";
+            this.Load += new System.EventHandler(this.RequestAssistant_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl_title.ResumeLayout(false);
@@ -207,8 +219,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_description;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_selected_item;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_tbl_names;
+        private System.Windows.Forms.ComboBox cmb_request_type;
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Panel pnl_title;
         private System.Windows.Forms.Button btn_close;

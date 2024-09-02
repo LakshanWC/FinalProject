@@ -152,5 +152,21 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void requestAssistantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RequestAssistant update = new RequestAssistant();
+
+            if (!NewManagerHome.opendChildForms.Contains("RequestAssistant") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("RequestAssistant");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }
