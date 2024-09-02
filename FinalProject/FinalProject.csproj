@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
+    <Compile Include="three-tier architecture\BLL\Customer\BReservation.cs" />
     <Compile Include="three-tier architecture\BLL\Delivery Team\BDelivery.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BAttendents.cs" />
     <Compile Include="three-tier architecture\BLL\Manager\BRemoveMenuItem.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="three-tier architecture\DAL\Customer\DFoodMenu.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DIssueLoyaltyCard.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderFood.cs" />
+    <Compile Include="three-tier architecture\DAL\Customer\DReservation.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DReview.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DTrackDelivery.cs" />
     <Compile Include="three-tier architecture\DAL\Delivery Team\DDelivery.cs" />

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssistantRequest));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_no_of_letters = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_description = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_selected_item = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_order = new System.Windows.Forms.Button();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
@@ -59,6 +59,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 319);
             this.panel1.TabIndex = 62;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(126, 62);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 66;
             // 
             // label3
             // 
@@ -122,16 +132,6 @@
             this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
             this.cmb_selected_item.TabIndex = 60;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 66;
-            // 
             // btn_order
             // 
             this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -175,9 +175,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label14.Location = new System.Drawing.Point(12, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 15);
+            this.label14.Size = new System.Drawing.Size(128, 15);
             this.label14.TabIndex = 42;
-            this.label14.Text = "Order Food";
+            this.label14.Text = "Request Assistants";
             // 
             // AssistantRequest
             // 

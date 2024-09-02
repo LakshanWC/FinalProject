@@ -48,6 +48,7 @@
             this.addReivewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resevationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -242,7 +243,8 @@
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addReivewToolStripMenuItem,
-            this.registerForLoyaltyCardToolStripMenuItem});
+            this.registerForLoyaltyCardToolStripMenuItem,
+            this.resevationToolStripMenuItem});
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
@@ -268,6 +270,13 @@
             this.reviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reviewsToolStripMenuItem.Text = "Reviews";
             this.reviewsToolStripMenuItem.Click += new System.EventHandler(this.reviewsToolStripMenuItem_Click);
+            // 
+            // resevationToolStripMenuItem
+            // 
+            this.resevationToolStripMenuItem.Name = "resevationToolStripMenuItem";
+            this.resevationToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.resevationToolStripMenuItem.Text = "Resevation";
+            this.resevationToolStripMenuItem.Click += new System.EventHandler(this.resevationToolStripMenuItem_Click);
             // 
             // CustomerHome
             // 
@@ -311,5 +320,6 @@
         private System.Windows.Forms.ToolStripMenuItem registerForLoyaltyCardToolStripMenuItem;
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.ToolStripMenuItem reviewsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resevationToolStripMenuItem;
     }
 }

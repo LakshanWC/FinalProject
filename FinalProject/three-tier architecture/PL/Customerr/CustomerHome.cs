@@ -136,5 +136,21 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void resevationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reservation update = new Reservation();
+
+            if (!NewManagerHome.opendChildForms.Contains("Reservation") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("Reservation");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }
