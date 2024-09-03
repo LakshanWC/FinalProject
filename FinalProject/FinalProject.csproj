@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="three-tier architecture\BLL\Cashier\BComplaints.cs" />
     <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BReservation.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BTransaction.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BAddOt.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
+    <Compile Include="three-tier architecture\DAL\Cashier\DComplaints.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
@@ -151,6 +153,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Cashier\CheckInventory.Designer.cs">
       <DependentUpon>CheckInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\Complaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\Complaints.Designer.cs">
+      <DependentUpon>Complaints.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Cashier\MenuUpdate.cs">
       <SubType>Form</SubType>
@@ -478,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Cashier\CheckInventory.resx">
       <DependentUpon>CheckInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Cashier\Complaints.resx">
+      <DependentUpon>Complaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Cashier\MenuUpdate.resx">
       <DependentUpon>MenuUpdate.cs</DependentUpon>

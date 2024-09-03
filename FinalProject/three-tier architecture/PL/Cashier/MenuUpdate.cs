@@ -16,6 +16,8 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 {
     public partial class MenuUpdate : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
 
 
         private DataSet menuData;
@@ -152,6 +154,29 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
         {
             NewManagerHome.opendChildForms.Remove("MenuUpdate");
             this.Dispose();
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

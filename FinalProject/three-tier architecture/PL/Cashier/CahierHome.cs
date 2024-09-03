@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.PL.Customerr;
+﻿using FinalProject.three_tier_architecture.PL.Chef;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using FinalProject.three_tier_architecture.PL.Supplier;
 using System;
 using System.Collections.Generic;
@@ -82,6 +83,38 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
                 update.MdiParent = this;
                 update.Show();
                 NewManagerHome.opendChildForms.Add("Review");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void receivedOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReceivedOrder update = new ReceivedOrder();
+
+            if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("ReceivedOrder");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void checkComplatinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Complaints update = new Complaints();
+
+            if (!NewManagerHome.opendChildForms.Contains("Complaints") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("Complaints");
             }
             else
             {
