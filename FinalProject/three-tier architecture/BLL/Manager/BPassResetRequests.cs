@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace FinalProject.MVC.Control
 {
-    public  class BPassResetRequests
+    public class BPassResetRequests
     {
-        public DataSet getPassRequests() 
+        public DataSet getPassRequests()
         {
             Model.DPassResetRequests passRequestObj = new Model.DPassResetRequests();
             return passRequestObj.getPassRequests();
         }
 
-        public int updateSelectedRows(List<int> selectedRowIds)
+        public bool setNewPassword(string eid)
         {
-            Model.DPassResetRequests myRequest = new Model.DPassResetRequests();
-            return myRequest.updateSelectedRows(selectedRowIds);
+            DPassResetRequests pass = new DPassResetRequests();
+            return pass.setNewPassword(eid);
         }
     }
 }

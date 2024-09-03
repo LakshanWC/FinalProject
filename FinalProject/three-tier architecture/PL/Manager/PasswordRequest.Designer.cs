@@ -36,7 +36,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_no_of_checked_box = new System.Windows.Forms.TextBox();
-            this.chbx_check_all = new System.Windows.Forms.CheckBox();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_enable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pass_requests)).BeginInit();
@@ -51,6 +50,7 @@
             this.dgv_pass_requests.Name = "dgv_pass_requests";
             this.dgv_pass_requests.Size = new System.Drawing.Size(339, 258);
             this.dgv_pass_requests.TabIndex = 0;
+            this.dgv_pass_requests.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pass_requests_CellClick);
             this.dgv_pass_requests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pass_requests_CellContentClick);
             this.dgv_pass_requests.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pass_requests_CellValueChanged);
             this.dgv_pass_requests.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgv_pass_requests_CurrentCellDirtyStateChanged);
@@ -97,7 +97,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_no_of_checked_box);
-            this.panel1.Controls.Add(this.chbx_check_all);
             this.panel1.Location = new System.Drawing.Point(15, 339);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 64);
@@ -107,11 +106,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Checked Checkboxes :";
+            this.label1.Text = "Selected User";
             // 
             // txt_no_of_checked_box
             // 
@@ -120,19 +119,8 @@
             this.txt_no_of_checked_box.Location = new System.Drawing.Point(132, 22);
             this.txt_no_of_checked_box.Name = "txt_no_of_checked_box";
             this.txt_no_of_checked_box.ReadOnly = true;
-            this.txt_no_of_checked_box.Size = new System.Drawing.Size(100, 20);
+            this.txt_no_of_checked_box.Size = new System.Drawing.Size(153, 20);
             this.txt_no_of_checked_box.TabIndex = 55;
-            // 
-            // chbx_check_all
-            // 
-            this.chbx_check_all.AutoSize = true;
-            this.chbx_check_all.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.chbx_check_all.Location = new System.Drawing.Point(255, 25);
-            this.chbx_check_all.Name = "chbx_check_all";
-            this.chbx_check_all.Size = new System.Drawing.Size(71, 17);
-            this.chbx_check_all.TabIndex = 56;
-            this.chbx_check_all.Text = "Check All";
-            this.chbx_check_all.UseVisualStyleBackColor = true;
             // 
             // btn_refresh
             // 
@@ -147,6 +135,7 @@
             this.btn_refresh.TabIndex = 59;
             this.btn_refresh.Text = "Refresh";
             this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click_1);
             // 
             // btn_enable
             // 
@@ -161,6 +150,7 @@
             this.btn_enable.TabIndex = 57;
             this.btn_enable.Text = "Enable";
             this.btn_enable.UseVisualStyleBackColor = false;
+            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click_1);
             // 
             // PasswordRequest
             // 
@@ -196,7 +186,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_no_of_checked_box;
-        private System.Windows.Forms.CheckBox chbx_check_all;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.Button btn_enable;
     }

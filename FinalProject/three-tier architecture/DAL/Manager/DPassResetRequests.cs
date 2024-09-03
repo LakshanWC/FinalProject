@@ -21,7 +21,7 @@ namespace FinalProject.MVC.Model
             {
                 SqlConnection con = myConnection.openConnection();
 
-                string getPassQuery = "SELECT URid,PasswordReset,requestedUser FROM userRequest;";
+                string getPassQuery = "SELECT Eid,PasswordReset,requestedUser FROM userRequest;";
                 SqlCommand comm = new SqlCommand(getPassQuery, con);
 
                 SqlDataAdapter dap = new SqlDataAdapter(comm);
@@ -37,48 +37,56 @@ namespace FinalProject.MVC.Model
             }                    
         }
 
-        public int updateSelectedRows(List<int> selectedRowIds)
+        public bool setNewPassword(string eid)
         {
-            DPassResetRequests myPass = new DPassResetRequests();
             DMDBConnection myConnection = new DMDBConnection();
-            int affectedRowCount = 0;
-            SqlConnection con = myConnection.openConnection();
-
-
-
-            foreach (int id in selectedRowIds)
+            try
             {
-                // Update database command
-                string updateQuery = "UPDATE userRequest SET PasswordReset = 1 WHERE URid = @ID";
-
-                using (SqlCommand command = new SqlCommand(updateQuery, con))
+                using (SqlConnection con = myConnection.openConnection())
                 {
-                    command.Parameters.AddWithValue("@ID", id);
-                    affectedRowCount += command.ExecuteNonQuery();
+                    // Define the queries
+                    string selectQuery = "SELECT newpassword FROM userRequest WHERE Eid = @eid;";
+                    string updateQuery = "UPDATE employee SET Epassword = @pass WHERE Eid = @eid;";
+                    string secondUpdateQ = "UPDATE userRequest SET PasswordReset = 1 WHERE Eid = @eid;";
+
+                    // Retrieve the new password
+                    SqlCommand selectCommand = new SqlCommand(selectQuery, con);
+                    selectCommand.Parameters.AddWithValue("@eid", eid);
+                    string newPassword = (string)selectCommand.ExecuteScalar();
+
+                    if (string.IsNullOrEmpty(newPassword))
+                    {
+                        // New password not found
+                        return false;
+                    }
+
+                    // Update the employee password
+                    SqlCommand updateCommand = new SqlCommand(updateQuery, con);
+                    updateCommand.Parameters.AddWithValue("@pass", newPassword);
+                    updateCommand.Parameters.AddWithValue("@eid", eid);
+                    int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        // Update the user request status
+                        SqlCommand secondUpdateCommand = new SqlCommand(secondUpdateQ, con);
+                        secondUpdateCommand.Parameters.AddWithValue("@eid", eid);
+                        secondUpdateCommand.ExecuteNonQuery();
+                    }
+
+                    return rowsAffected > 0;
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            finally
+            {
                 myConnection.closeConnection();
             }
-            return affectedRowCount;
         }
-        private bool setNewPassword()
-        {
-            DMDBConnection myConnection = new DMDBConnection();
-            using (SqlConnection con = myConnection.openConnection())
-            {
-                string setNewPassQuery = @"
-            UPDATE employee 
-            SET Epassword = (SELECT newpassword FROM userRequest UR WHERE Eusername = UR.requestedUser AND PasswordReset = 1)
-            WHERE EXISTS (SELECT 1 FROM userRequest UR WHERE Eusername = UR.requestedUser AND PasswordReset = 1);";
-
-                using (SqlCommand comm = new SqlCommand(setNewPassQuery, con))
-                {
-                    comm.ExecuteNonQuery();
-                }
-            }
-            myConnection.closeConnection();
-            return true;
-        }
-
     }
 
 }

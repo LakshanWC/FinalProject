@@ -25,42 +25,34 @@ namespace FinalProject.MVC.View
 
         private void PasswordRequest_Load(object sender, EventArgs e)
         {
-            BPassResetRequests passRsetObj = new BPassResetRequests();
-            InitializeCheckedRowsCount();
-            DataSet ds = passRsetObj.getPassRequests();
+            BPassResetRequests pass = new BPassResetRequests();
+            loadToDataGrid(pass.getPassRequests());
+        }
 
-            if(ds.Tables.Count > 0 )
+        //load dataset to dataGrid view
+        private void loadToDataGrid(DataSet results)
+        {
+            // Make sure dataSet is not null
+            if (results != null && results.Tables.Count > 0)
             {
-                dgv_pass_requests.DataSource = ds.Tables[0];
+                // Set the DataSource of the DataGridView to the first DataTable in the DataSet
+                dgv_pass_requests.DataSource = results.Tables[0];
+
+                // set Auto-generate as true
+                dgv_pass_requests.AutoGenerateColumns = true;
             }
-           
+            else
+            {
+                dgv_pass_requests.DataSource = null;
+                TostMessage messFaild = new TostMessage("No Orders Were Found", "Faild", 1, 1);
+                messFaild.Show();
+            }
         }
 
         private void dgv_pass_requests_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-                int checkedRows = 0; // Moved declaration inside the event handler
-
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0 &&
-                    dgv_pass_requests.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewCheckBoxCell)
-                {
-                    bool isChecked = (bool)dgv_pass_requests.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-
-                    if (isChecked)
-                    {
-                        checkedRows--;
-                    }
-                    else
-                    {
-                        checkedRows++;
-                    }
-
-                    txt_no_of_checked_box.Text = Convert.ToString(checkedRows);
-                }*/
+           
         }
-
-        // TostMessage tostMessage = new TostMessage("Empty Rows Can not be Selected", "Warrning", 1, 1);
-        //tostMessage.Show();
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -71,126 +63,18 @@ namespace FinalProject.MVC.View
 
         private void chbx_check_all_CheckedChanged(object sender, EventArgs e)
         {
-            bool isChecked = chbx_check_all.Checked;
-
-            foreach (DataGridViewRow row in dgv_pass_requests.Rows)
-            {
-                DataGridViewCheckBoxCell checkBoxCell = row.Cells["PasswordReset"] as DataGridViewCheckBoxCell;
-                if (checkBoxCell != null)
-                {
-                    checkBoxCell.Value = isChecked;
-                }
-            }
         }
-
-        private int checkedRows = 0;
 
         private void dgv_pass_requests_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 &&
-                dgv_pass_requests.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewCheckBoxCell)
-            {
-                bool isChecked = (bool)dgv_pass_requests.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-
-                if (isChecked)
-                {
-                    checkedRows++;
-                }
-                else
-                {
-                    checkedRows--;
-                }
-
-                txt_no_of_checked_box.Text = Convert.ToString(checkedRows);
-            }
         }
 
         private void dgv_pass_requests_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            if (dgv_pass_requests.IsCurrentCellDirty)
-            {
-                dgv_pass_requests.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            }
-        }
-
-        private void InitializeCheckedRowsCount()
-        {
-            checkedRows = 0;
-            foreach (DataGridViewRow row in dgv_pass_requests.Rows)
-            {
-                if (row.Cells["PasswordReset"] is DataGridViewCheckBoxCell checkBoxCell &&
-                    checkBoxCell.Value != null && (bool)checkBoxCell.Value)
-                {
-                    checkedRows++;
-                }
-            }
-            txt_no_of_checked_box.Text = checkedRows.ToString();
         }
 
         private void btn_enable_Click(object sender, EventArgs e)
         {
-            BPassResetRequests myPass = new BPassResetRequests();
-            List<int> selectedValues = new List<int>();
-            try
-            {
-                foreach (DataGridViewRow row in dgv_pass_requests.Rows)
-                {
-                    bool isChecked = Convert.ToBoolean(row.Cells["PasswordReset"].Value);
-
-                    if (isChecked)
-                    {
-                        int uridValue = Convert.ToInt32(row.Cells["URid"].Value);
-                        selectedValues.Add(uridValue);
-                    }
-                }
-            } catch (InvalidCastException ex)
-            {
-                foreach (DataGridViewRow row in dgv_pass_requests.Rows)
-                {
-                    row.Cells["PasswordReset"].Value = false;
-
-                }
-                checkedRows = 0;
-                txt_no_of_checked_box.Text = checkedRows.ToString();
-            }
-
-            DResetPassword rePass = new DResetPassword();
-
-           // if (chbx_check_all.Checked == true) rePass.setNewPasssword(selectedValues, 1);
-           // else rePass.setNewPasssword(selectedValues, 0);
-
-
-
-
-            /*
-
-            List<int> selectedRowIds = new List<int>();
-            foreach (DataGridViewRow row in dgv_pass_requests.Rows)
-            {
-                if (row.Selected)
-                {
-                    selectedRowIds.Add(Convert.ToInt32(row.Cells["URid"].Value));
-                }
-            }
-
-            int affectedRowCount = myPass.updateSelectedRows(selectedRowIds);
-
-            if (affectedRowCount > 0)
-            {
-                int selectedRowCountChange = selectedRowIds.Count - affectedRowCount;
-
-                checkedRows += selectedRowCountChange;
-
-                txt_no_of_checked_box.Text = checkedRows.ToString();
-
-                TostMessage myToast = new TostMessage("New Passwords Activated", "Success", 3, 3);
-                myToast.Show();
-            }
-            else
-            {
-                TostMessage myToast = new TostMessage("Failed to activate passwords", "Error", 3, 3);
-                myToast.Show();
-            }*/
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -200,19 +84,18 @@ namespace FinalProject.MVC.View
 
         private void InitializeForm()
         {
-            PasswordRequest myReq = new PasswordRequest();
-            myReq.PasswordRequest_Load(null, EventArgs.Empty);
         }
 
         private void PasswordRequest_FormClosed(object sender, FormClosedEventArgs e)
         {
             NewManagerHome.opendChildForms.Remove("passRequest");
-            Console.WriteLine("triggered");
+            this.Dispose();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            NewManagerHome.opendChildForms.Remove("passRequest");
+            this.Dispose();
         }
 
         private void pnl_title_MouseDown(object sender, MouseEventArgs e)
@@ -236,6 +119,52 @@ namespace FinalProject.MVC.View
         private void pnl_title_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void dgv_pass_requests_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow selectedRow = dgv_pass_requests.Rows[e.RowIndex];
+                string reqId = selectedRow.Cells["Eid"].Value.ToString();
+                txt_no_of_checked_box.Text= reqId;
+                
+
+            }
+            catch (System.InvalidCastException)
+            {
+                MessageBox.Show("Selected Row Is not Valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selected Row Is not Valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_enable_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_no_of_checked_box.Text))
+            {
+                BPassResetRequests passReq = new BPassResetRequests();
+                bool isDone = passReq.setNewPassword(txt_no_of_checked_box.Text);
+
+                if (isDone)
+                {
+                    TostMessage mesSuc = new TostMessage("Password Changed", "Successful",3,3);
+                    mesSuc.Show();
+                }
+                else
+                {
+                    TostMessage messFail = new TostMessage("Changing Faild", "Warning", 1, 2);
+                    messFail.Show();
+                }
+            }
+        }
+
+        private void btn_refresh_Click_1(object sender, EventArgs e)
+        {
+            BPassResetRequests pass = new BPassResetRequests();
+            loadToDataGrid(pass.getPassRequests());
         }
     }
 }
