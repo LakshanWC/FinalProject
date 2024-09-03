@@ -16,14 +16,14 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class DliveryPerformance : ReportClass {
+    public class DeliveryReport : ReportClass {
         
-        public DliveryPerformance() {
+        public DeliveryReport() {
         }
         
         public override string ResourceName {
             get {
-                return "DliveryPerformance.rpt";
+                return "DeliveryReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
         
         public override string FullResourceName {
             get {
-                return "FinalProject.three-tier architecture.PL.DeliveryTeam.DliveryPerformance.rpt";
+                return "FinalProject.three-tier architecture.PL.DeliveryTeam.DeliveryReport.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDliveryPerformance : Component, ICachedReport {
+    public class CachedDeliveryReport : Component, ICachedReport {
         
-        public CachedDliveryPerformance() {
+        public CachedDeliveryReport() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace FinalProject.three_tier_architecture.PL.DeliveryTeam {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DliveryPerformance rpt = new DliveryPerformance();
+            DeliveryReport rpt = new DeliveryReport();
             rpt.Site = this.Site;
             return rpt;
         }
