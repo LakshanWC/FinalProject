@@ -213,7 +213,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 this.Hide();
                 if (!NewManagerHome.opendChildForms.Contains("OrderFood") && NewManagerHome.opendChildForms.Count <= 2)
                 {
-                    if(CahierHome.isCahierOpen = true)
+                    if(CahierHome.isCahierOpen == true)
                     {
                         CahierHome customerHome = this.MdiParent as CahierHome;
 

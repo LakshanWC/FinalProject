@@ -401,9 +401,12 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             CahierHome.isCahierOpen = false;
             if (result == DialogResult.Yes)
             {
-                MessageBox.Show("bill--   ~(OvO)~  --bill ");
+                OrderConfirmation.currentOrderId = txt_order_id.Text;
+                OrderConfirmation bill = new OrderConfirmation();
+
                 NewManagerHome.opendChildForms.Remove("OrderFood");
-                this.Close();
+                this.Hide();
+                bill.Show();
             }
             else if (result == DialogResult.No)
             {

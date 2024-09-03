@@ -51,9 +51,9 @@
             // 
             this.txt_current_report.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_current_report.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_current_report.Location = new System.Drawing.Point(142, 22);
+            this.txt_current_report.Location = new System.Drawing.Point(100, 21);
             this.txt_current_report.Name = "txt_current_report";
-            this.txt_current_report.Size = new System.Drawing.Size(153, 20);
+            this.txt_current_report.Size = new System.Drawing.Size(237, 20);
             this.txt_current_report.TabIndex = 7;
             // 
             // label2
@@ -63,9 +63,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label2.Location = new System.Drawing.Point(27, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 15);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Current Report :";
+            this.label2.Text = "Order Id :";
             // 
             // btn_update_details
             // 
@@ -74,12 +74,13 @@
             this.btn_update_details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update_details.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_update_details.Location = new System.Drawing.Point(330, 13);
+            this.btn_update_details.Location = new System.Drawing.Point(343, 12);
             this.btn_update_details.Name = "btn_update_details";
             this.btn_update_details.Size = new System.Drawing.Size(150, 36);
             this.btn_update_details.TabIndex = 77;
-            this.btn_update_details.Text = "Update Details";
+            this.btn_update_details.Text = "Load";
             this.btn_update_details.UseVisualStyleBackColor = false;
+            this.btn_update_details.Click += new System.EventHandler(this.btn_update_details_Click);
             // 
             // OrderConfirmation
             // 

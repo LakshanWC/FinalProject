@@ -148,7 +148,7 @@
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(172, 49);
             this.btn_order.TabIndex = 2;
-            this.btn_order.Text = "Order";
+            this.btn_order.Text = "Order Confirmation";
             this.btn_order.UseVisualStyleBackColor = false;
             this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 

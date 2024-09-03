@@ -16,14 +16,14 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BillReport : ReportClass {
+    public class NormalOnly : ReportClass {
         
-        public BillReport() {
+        public NormalOnly() {
         }
         
         public override string ResourceName {
             get {
-                return "BillReport.rpt";
+                return "NormalOnly.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
         
         public override string FullResourceName {
             get {
-                return "FinalProject.three-tier architecture.PL.Customerr.BillReport.rpt";
+                return "FinalProject.three-tier architecture.PL.Customerr.NormalOnly.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBillReport : Component, ICachedReport {
+    public class CachedNormalOnly : Component, ICachedReport {
         
-        public CachedBillReport() {
+        public CachedNormalOnly() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BillReport rpt = new BillReport();
+            NormalOnly rpt = new NormalOnly();
             rpt.Site = this.Site;
             return rpt;
         }

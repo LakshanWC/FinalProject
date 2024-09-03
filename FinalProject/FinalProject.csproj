@@ -176,17 +176,23 @@
     <Compile Include="three-tier architecture\PL\Chef\UpdateInventory.Designer.cs">
       <DependentUpon>UpdateInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\NormalOnly.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NormalOnly.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\RequestAssistant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\RequestAssistant.Designer.cs">
       <DependentUpon>RequestAssistant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="three-tier architecture\PL\Customerr\BillReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\CustomerHome.cs">
       <SubType>Form</SubType>
@@ -247,6 +253,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\Review.Designer.cs">
       <DependentUpon>Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Customerr\SpecialOnly.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialOnly.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="three-tier architecture\PL\Customerr\TrackDelivery.cs">
       <SubType>Form</SubType>
@@ -479,12 +491,16 @@
     <EmbeddedResource Include="three-tier architecture\PL\Chef\UpdateInventory.resx">
       <DependentUpon>UpdateInventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\NormalOnly.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NormalOnly.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\RequestAssistant.resx">
       <DependentUpon>RequestAssistant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="three-tier architecture\PL\Customerr\BillReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BillReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\CustomerHome.resx">
       <DependentUpon>CustomerHome.cs</DependentUpon>
@@ -515,6 +531,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\Review.resx">
       <DependentUpon>Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Customerr\SpecialOnly.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SpecialOnly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Customerr\TrackDelivery.resx">
       <DependentUpon>TrackDelivery.cs</DependentUpon>

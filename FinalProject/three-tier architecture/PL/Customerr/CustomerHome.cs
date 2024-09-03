@@ -118,7 +118,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-
+            OrderConfirmation orderConf = new OrderConfirmation();
+            orderConf.MdiParent = this;
+            orderConf.Show();
         }
 
         private void reviewsToolStripMenuItem_Click(object sender, EventArgs e)
