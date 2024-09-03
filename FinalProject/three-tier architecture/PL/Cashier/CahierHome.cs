@@ -22,6 +22,11 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             InitializeComponent();
         }
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
             CheckInventory inventory = new CheckInventory();
@@ -119,6 +124,14 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             else
             {
                 MessageBox.Show("instens already exisit");
+            }
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); // Close each child form
             }
         }
     }

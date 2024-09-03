@@ -32,6 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkReviewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.receivedOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkComplatinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
-            this.receivedOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkComplatinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
@@ -80,9 +80,23 @@
             // checkReviewsToolStripMenuItem
             // 
             this.checkReviewsToolStripMenuItem.Name = "checkReviewsToolStripMenuItem";
-            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.checkReviewsToolStripMenuItem.Text = "Check Reviews";
             this.checkReviewsToolStripMenuItem.Click += new System.EventHandler(this.checkReviewsToolStripMenuItem_Click);
+            // 
+            // receivedOrdersToolStripMenuItem
+            // 
+            this.receivedOrdersToolStripMenuItem.Name = "receivedOrdersToolStripMenuItem";
+            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.receivedOrdersToolStripMenuItem.Text = "Received Orders";
+            this.receivedOrdersToolStripMenuItem.Click += new System.EventHandler(this.receivedOrdersToolStripMenuItem_Click);
+            // 
+            // checkComplatinsToolStripMenuItem
+            // 
+            this.checkComplatinsToolStripMenuItem.Name = "checkComplatinsToolStripMenuItem";
+            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.checkComplatinsToolStripMenuItem.Text = "Check Complatins";
+            this.checkComplatinsToolStripMenuItem.Click += new System.EventHandler(this.checkComplatinsToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -245,20 +259,7 @@
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = false;
-            // 
-            // receivedOrdersToolStripMenuItem
-            // 
-            this.receivedOrdersToolStripMenuItem.Name = "receivedOrdersToolStripMenuItem";
-            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.receivedOrdersToolStripMenuItem.Text = "Received Orders";
-            this.receivedOrdersToolStripMenuItem.Click += new System.EventHandler(this.receivedOrdersToolStripMenuItem_Click);
-            // 
-            // checkComplatinsToolStripMenuItem
-            // 
-            this.checkComplatinsToolStripMenuItem.Name = "checkComplatinsToolStripMenuItem";
-            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.checkComplatinsToolStripMenuItem.Text = "Check Complatins";
-            this.checkComplatinsToolStripMenuItem.Click += new System.EventHandler(this.checkComplatinsToolStripMenuItem_Click);
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // CahierHome
             // 

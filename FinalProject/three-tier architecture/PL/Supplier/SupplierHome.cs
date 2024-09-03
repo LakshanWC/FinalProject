@@ -18,6 +18,11 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             InitializeComponent();
         }
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
             Inventory inventory = new Inventory();

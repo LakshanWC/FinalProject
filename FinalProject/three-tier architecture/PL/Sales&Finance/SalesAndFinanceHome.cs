@@ -19,6 +19,11 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             InitializeComponent();
         }
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
             if (!NewManagerHome.opendChildForms.Contains("Add Stock") && NewManagerHome.opendChildForms.Count <= 2)

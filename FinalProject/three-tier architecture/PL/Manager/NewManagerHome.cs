@@ -29,6 +29,11 @@ namespace FinalProject.three_tier_architecture.PL
         public static List<string> opendChildForms = new List<string>();
 
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void myInit()
         {
             timer.Interval = 10;

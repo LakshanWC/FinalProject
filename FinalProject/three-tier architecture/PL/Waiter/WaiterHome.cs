@@ -20,6 +20,11 @@ namespace FinalProject.three_tier_architecture.PL.Waiter
             InitializeComponent();
         }
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
             ReceivedOrder requests = new ReceivedOrder();

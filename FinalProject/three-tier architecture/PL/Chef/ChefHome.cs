@@ -19,6 +19,11 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             InitializeComponent();
         }
 
+        public void setUserName(string userName)
+        {
+            lbl_userName.Text = userName;
+        }
+
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
             if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
@@ -56,6 +61,14 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             Login loGIn = new Login();
             this.Hide();
             loGIn.Show();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); // Close each child form
+            }
         }
     }
 }

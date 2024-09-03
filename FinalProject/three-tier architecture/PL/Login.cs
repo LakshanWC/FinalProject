@@ -1,10 +1,12 @@
 ﻿using FinalProject.MVC.Control;
 using FinalProject.three_tier_architecture.PL;
 using FinalProject.three_tier_architecture.PL.Cashier;
+using FinalProject.three_tier_architecture.PL.Chef;
 using FinalProject.three_tier_architecture.PL.Customerr;
 using FinalProject.three_tier_architecture.PL.Delivery_Team;
 using FinalProject.three_tier_architecture.PL.Sales_Finance;
 using FinalProject.three_tier_architecture.PL.Supplier;
+using FinalProject.three_tier_architecture.PL.Waiter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,18 +64,23 @@ namespace FinalProject.MVC.View
                         //manager
                         mylogin.markAttendant(userName);
                         NewManagerHome mHome = new NewManagerHome();
+                        mHome.setUserName(userName);
                         this.Hide();
                         mHome.Show();
                         break;
                     case 3:
                         //chef
                         mylogin.markAttendant(userName);
-                        MessageBox.Show("chef GUI");
+                        ChefHome chfHom = new ChefHome();
+                        chfHom.setUserName(userName);
+                        this.Hide();
+                        chfHom.Show();
                         break;
                     case 4:
                         //cashier
                         mylogin.markAttendant(userName);
                         CahierHome cashHo = new CahierHome();
+                        cashHo.setUserName(userName);
                         this.Hide();
                         cashHo.Show();
                         break;
@@ -89,6 +96,7 @@ namespace FinalProject.MVC.View
                         //sales
                         mylogin.markAttendant(userName);
                         SalesAndFinanceHome saleHome = new SalesAndFinanceHome();
+                        saleHome.setUserName(userName);
                         this.Hide();
                         saleHome.Show();
                         break;
@@ -102,11 +110,17 @@ namespace FinalProject.MVC.View
                         break;
                     case 8:
                         //waiter
+                        mylogin.markAttendant(userName);
+                        WaiterHome waitHome = new WaiterHome();
+                        waitHome.setUserName(userName);
+                        this.Hide();
+                        waitHome.Show();
                         break;
                     case 9:
                         //supplier
                         mylogin.markAttendant(userName);
                         SupplierHome supHome = new SupplierHome();
+                        supHome.setUserName(userName);
                         this.Hide();
                         supHome.Show();
                         break;
