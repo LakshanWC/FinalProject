@@ -37,7 +37,6 @@
             this.btn_sideBar_two = new System.Windows.Forms.Button();
             this.btn_sideBar_one = new System.Windows.Forms.Button();
             this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
-            this.lbl_user_details = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
@@ -146,7 +145,6 @@
             // 
             // pnl_userdetails_panle
             // 
-            this.pnl_userdetails_panle.Controls.Add(this.lbl_user_details);
             this.pnl_userdetails_panle.Controls.Add(this.lbl_userName);
             this.pnl_userdetails_panle.Controls.Add(this.pb_user_icon);
             this.pnl_userdetails_panle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -155,22 +153,12 @@
             this.pnl_userdetails_panle.Size = new System.Drawing.Size(184, 140);
             this.pnl_userdetails_panle.TabIndex = 1;
             // 
-            // lbl_user_details
-            // 
-            this.lbl_user_details.AutoSize = true;
-            this.lbl_user_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_user_details.Location = new System.Drawing.Point(61, 108);
-            this.lbl_user_details.Name = "lbl_user_details";
-            this.lbl_user_details.Size = new System.Drawing.Size(62, 13);
-            this.lbl_user_details.TabIndex = 2;
-            this.lbl_user_details.Text = "user Details";
-            // 
             // lbl_userName
             // 
             this.lbl_userName.AutoSize = true;
             this.lbl_userName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_userName.Location = new System.Drawing.Point(48, 79);
+            this.lbl_userName.Location = new System.Drawing.Point(48, 95);
             this.lbl_userName.Name = "lbl_userName";
             this.lbl_userName.Size = new System.Drawing.Size(86, 16);
             this.lbl_userName.TabIndex = 1;
@@ -241,7 +229,6 @@
         private System.Windows.Forms.Button btn_sideBar_two;
         private System.Windows.Forms.Button btn_sideBar_one;
         private System.Windows.Forms.Panel pnl_userdetails_panle;
-        private System.Windows.Forms.Label lbl_user_details;
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;

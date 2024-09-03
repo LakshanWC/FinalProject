@@ -37,7 +37,6 @@
             this.btn_menu = new System.Windows.Forms.Button();
             this.btn_order = new System.Windows.Forms.Button();
             this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
-            this.lbl_user_id = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resevationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requestAssistantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_user_id = new System.Windows.Forms.Label();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -162,16 +162,6 @@
             this.pnl_userdetails_panle.Name = "pnl_userdetails_panle";
             this.pnl_userdetails_panle.Size = new System.Drawing.Size(184, 140);
             this.pnl_userdetails_panle.TabIndex = 1;
-            // 
-            // lbl_user_id
-            // 
-            this.lbl_user_id.AutoSize = true;
-            this.lbl_user_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_user_id.Location = new System.Drawing.Point(69, 108);
-            this.lbl_user_id.Name = "lbl_user_id";
-            this.lbl_user_id.Size = new System.Drawing.Size(38, 13);
-            this.lbl_user_id.TabIndex = 2;
-            this.lbl_user_id.Text = "user id";
             // 
             // lbl_userName
             // 
@@ -287,6 +277,16 @@
             this.requestAssistantToolStripMenuItem.Text = "Request Assistant";
             this.requestAssistantToolStripMenuItem.Click += new System.EventHandler(this.requestAssistantToolStripMenuItem_Click);
             // 
+            // lbl_user_id
+            // 
+            this.lbl_user_id.AutoSize = true;
+            this.lbl_user_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_user_id.Location = new System.Drawing.Point(69, 108);
+            this.lbl_user_id.Name = "lbl_user_id";
+            this.lbl_user_id.Size = new System.Drawing.Size(38, 13);
+            this.lbl_user_id.TabIndex = 2;
+            this.lbl_user_id.Text = "user id";
+            // 
             // CustomerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,7 +317,6 @@
         private System.Windows.Forms.Panel pnl_nav;
         private System.Windows.Forms.Button btn_menu;
         private System.Windows.Forms.Panel pnl_userdetails_panle;
-        private System.Windows.Forms.Label lbl_user_id;
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
@@ -331,5 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem reviewsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resevationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem requestAssistantToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_user_id;
     }
 }

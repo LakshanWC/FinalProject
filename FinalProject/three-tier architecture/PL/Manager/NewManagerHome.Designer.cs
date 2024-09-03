@@ -37,16 +37,18 @@
             this.btn_add_employee = new System.Windows.Forms.Button();
             this.btn_enable_password = new System.Windows.Forms.Button();
             this.pnl_userdetails_panle = new System.Windows.Forms.Panel();
-            this.lbl_user_details = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attendentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attendentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overAllIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,9 +84,6 @@
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.attendentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeMenuItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -206,7 +205,6 @@
             // 
             // pnl_userdetails_panle
             // 
-            this.pnl_userdetails_panle.Controls.Add(this.lbl_user_details);
             this.pnl_userdetails_panle.Controls.Add(this.lbl_userName);
             this.pnl_userdetails_panle.Controls.Add(this.pb_user_icon);
             this.pnl_userdetails_panle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -215,22 +213,12 @@
             this.pnl_userdetails_panle.Size = new System.Drawing.Size(184, 140);
             this.pnl_userdetails_panle.TabIndex = 1;
             // 
-            // lbl_user_details
-            // 
-            this.lbl_user_details.AutoSize = true;
-            this.lbl_user_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_user_details.Location = new System.Drawing.Point(61, 108);
-            this.lbl_user_details.Name = "lbl_user_details";
-            this.lbl_user_details.Size = new System.Drawing.Size(62, 13);
-            this.lbl_user_details.TabIndex = 2;
-            this.lbl_user_details.Text = "user Details";
-            // 
             // lbl_userName
             // 
             this.lbl_userName.AutoSize = true;
             this.lbl_userName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_userName.Location = new System.Drawing.Point(48, 79);
+            this.lbl_userName.Location = new System.Drawing.Point(48, 93);
             this.lbl_userName.Name = "lbl_userName";
             this.lbl_userName.Size = new System.Drawing.Size(86, 16);
             this.lbl_userName.TabIndex = 1;
@@ -288,6 +276,13 @@
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
+            // attendentsToolStripMenuItem
+            // 
+            this.attendentsToolStripMenuItem.Name = "attendentsToolStripMenuItem";
+            this.attendentsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.attendentsToolStripMenuItem.Text = "Attendents";
+            this.attendentsToolStripMenuItem.Click += new System.EventHandler(this.attendentsToolStripMenuItem_Click);
+            // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -322,6 +317,20 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.updateToolStripMenuItem.Text = "Remove";
             // 
+            // removeEmployeeToolStripMenuItem
+            // 
+            this.removeEmployeeToolStripMenuItem.Name = "removeEmployeeToolStripMenuItem";
+            this.removeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.removeEmployeeToolStripMenuItem.Text = "Remove Employee";
+            this.removeEmployeeToolStripMenuItem.Click += new System.EventHandler(this.removeEmployeeToolStripMenuItem_Click);
+            // 
+            // removeMenuItemToolStripMenuItem
+            // 
+            this.removeMenuItemToolStripMenuItem.Name = "removeMenuItemToolStripMenuItem";
+            this.removeMenuItemToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.removeMenuItemToolStripMenuItem.Text = "Remove Menu Item";
+            this.removeMenuItemToolStripMenuItem.Click += new System.EventHandler(this.removeMenuItemToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -355,7 +364,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 315F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -384,9 +393,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(382, 3);
+            this.panel1.Location = new System.Drawing.Point(381, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 193);
+            this.panel1.Size = new System.Drawing.Size(310, 193);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -427,7 +436,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(169, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(170, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 99);
             this.pictureBox1.TabIndex = 2;
@@ -443,7 +452,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(373, 193);
+            this.panel6.Size = new System.Drawing.Size(372, 193);
             this.panel6.TabIndex = 25;
             // 
             // label12
@@ -477,9 +486,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(382, 202);
+            this.panel5.Location = new System.Drawing.Point(381, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 70);
+            this.panel5.Size = new System.Drawing.Size(310, 70);
             this.panel5.TabIndex = 28;
             // 
             // label5
@@ -499,7 +508,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label10.Location = new System.Drawing.Point(43, 46);
+            this.label10.Location = new System.Drawing.Point(44, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 15);
             this.label10.TabIndex = 1;
@@ -526,9 +535,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(382, 278);
+            this.panel2.Location = new System.Drawing.Point(381, 278);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 120);
+            this.panel2.Size = new System.Drawing.Size(310, 120);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -594,9 +603,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(382, 404);
+            this.panel4.Location = new System.Drawing.Point(381, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 67);
+            this.panel4.Size = new System.Drawing.Size(310, 67);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -653,7 +662,7 @@
             this.panel8.Location = new System.Drawing.Point(182, 202);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(194, 269);
+            this.panel8.Size = new System.Drawing.Size(193, 269);
             this.panel8.TabIndex = 31;
             // 
             // cpb_cutomer_satisfaction
@@ -667,7 +676,7 @@
             this.cpb_cutomer_satisfaction.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.cpb_cutomer_satisfaction.InnerMargin = 2;
             this.cpb_cutomer_satisfaction.InnerWidth = -1;
-            this.cpb_cutomer_satisfaction.Location = new System.Drawing.Point(27, 66);
+            this.cpb_cutomer_satisfaction.Location = new System.Drawing.Point(26, 66);
             this.cpb_cutomer_satisfaction.MarqueeAnimationSpeed = 2000;
             this.cpb_cutomer_satisfaction.Name = "cpb_cutomer_satisfaction";
             this.cpb_cutomer_satisfaction.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -695,7 +704,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(2, 17);
+            this.label7.Location = new System.Drawing.Point(1, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(193, 25);
             this.label7.TabIndex = 0;
@@ -707,7 +716,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label15.Location = new System.Drawing.Point(39, 229);
+            this.label15.Location = new System.Drawing.Point(38, 229);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 15);
             this.label15.TabIndex = 1;
@@ -784,27 +793,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Details of last 28 days";
             // 
-            // attendentsToolStripMenuItem
-            // 
-            this.attendentsToolStripMenuItem.Name = "attendentsToolStripMenuItem";
-            this.attendentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.attendentsToolStripMenuItem.Text = "Attendents";
-            this.attendentsToolStripMenuItem.Click += new System.EventHandler(this.attendentsToolStripMenuItem_Click);
-            // 
-            // removeEmployeeToolStripMenuItem
-            // 
-            this.removeEmployeeToolStripMenuItem.Name = "removeEmployeeToolStripMenuItem";
-            this.removeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeEmployeeToolStripMenuItem.Text = "Remove Employee";
-            this.removeEmployeeToolStripMenuItem.Click += new System.EventHandler(this.removeEmployeeToolStripMenuItem_Click);
-            // 
-            // removeMenuItemToolStripMenuItem
-            // 
-            this.removeMenuItemToolStripMenuItem.Name = "removeMenuItemToolStripMenuItem";
-            this.removeMenuItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeMenuItemToolStripMenuItem.Text = "Remove Menu Item";
-            this.removeMenuItemToolStripMenuItem.Click += new System.EventHandler(this.removeMenuItemToolStripMenuItem_Click);
-            // 
             // NewManagerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,7 +847,6 @@
         private System.Windows.Forms.Button btn_enable_password;
         private System.Windows.Forms.Panel pnl_nav;
         private System.Windows.Forms.Button btn_home;
-        private System.Windows.Forms.Label lbl_user_details;
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btn_logout;
