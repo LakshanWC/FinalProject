@@ -93,6 +93,8 @@
     <Compile Include="three-tier architecture\BLL\Sales&amp;Finance\BTransaction.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BAddOt.cs" />
     <Compile Include="three-tier architecture\BLL\Supplier\BStockOrderRequest.cs" />
+    <Compile Include="three-tier architecture\BLL\Waiter\BCustomerRequests.cs" />
+    <Compile Include="three-tier architecture\BLL\Waiter\BReservedTables.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DComplaints.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
@@ -129,6 +131,8 @@
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DTransaction.cs" />
     <Compile Include="three-tier architecture\DAL\Supplier\DStockOrderRequest.cs" />
+    <Compile Include="three-tier architecture\DAL\Waiter\DCustomerRequests.cs" />
+    <Compile Include="three-tier architecture\DAL\Waiter\DReservedTables.cs" />
     <Compile Include="three-tier architecture\ItemImage.cs" />
     <Compile Include="three-tier architecture\PL\AttendentReport.cs">
       <AutoGen>True</AutoGen>
@@ -424,6 +428,24 @@
     <Compile Include="three-tier architecture\PL\Supplier\SupplierHome.Designer.cs">
       <DependentUpon>SupplierHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\CustomerRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\CustomerRequests.Designer.cs">
+      <DependentUpon>CustomerRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\ReservedTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\ReservedTables.Designer.cs">
+      <DependentUpon>ReservedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\WaiterHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Waiter\WaiterHome.Designer.cs">
+      <DependentUpon>WaiterHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="three-tier architecture\TostMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -628,6 +650,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Supplier\SupplierHome.resx">
       <DependentUpon>SupplierHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Waiter\CustomerRequests.resx">
+      <DependentUpon>CustomerRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Waiter\ReservedTables.resx">
+      <DependentUpon>ReservedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Waiter\WaiterHome.resx">
+      <DependentUpon>WaiterHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\TostMessage.resx">
       <DependentUpon>TostMessage.cs</DependentUpon>
