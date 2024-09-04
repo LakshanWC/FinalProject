@@ -75,5 +75,13 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             currntSup.MdiParent = this;
             currntSup.Show();
         }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); // Close each child form
+            }
+        }
     }
 }
