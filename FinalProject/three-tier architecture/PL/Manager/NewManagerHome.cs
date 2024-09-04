@@ -14,6 +14,10 @@ using FinalProject.MVC.Control;
 using FinalProject.MVC;
 using FinalProject.three_tier_architecture.PL.Manager;
 using CrystalDecisions.Windows.Forms;
+using FinalProject.three_tier_architecture.BLL.Sales_Finance;
+using System.Windows.Forms.DataVisualization.Charting;
+using FinalProject.three_tier_architecture.DAL.Sales_Finance;
+using System.Drawing.Printing;
 
 namespace FinalProject.three_tier_architecture.PL
 {
@@ -40,12 +44,37 @@ namespace FinalProject.three_tier_architecture.PL
             timer.Tick += new EventHandler(this.Timer_Tick);
 
             // target values for progress bars
-            cusSatisfactionTarget = 60; // target value
-            stockTarget = 50; // target value
+          //  cusSatisfactionTarget = 60; // target value
 
             // progress bar Start values
             cpb_cutomer_satisfaction.Value = 0;
             cpb_stock_prisentage.Value = 0;
+
+            DStockUi stocks = new DStockUi();
+            BManagerHome_All mang = new BManagerHome_All();
+            double score = stocks.getPresentage("All");
+            int cusScore = mang.getCustomerSatis();
+
+            if (score > 0 && cusScore > 0)
+            {
+                stockTarget = (int)score; // Assign progressScore
+                cusSatisfactionTarget =(int)cusScore;
+                timer.Interval = 10; // Set interval 
+                timer.Tick += new EventHandler(this.Timer_Tick);
+                timer.Start(); // Start the timer
+            }
+            else if (score == -1 && cusScore == -1)
+            {
+                // exception
+                cpb_stock_prisentage.Text = "N/A";
+                cpb_cutomer_satisfaction.Text = "N/A";
+            }
+            else if (score == 0 && cusScore == 0)
+            {
+                // Not found
+                cpb_stock_prisentage.Value = 0;
+                cpb_cutomer_satisfaction.Value = 0;
+            }
 
             // Start the timer
             timer.Start();
@@ -86,10 +115,88 @@ namespace FinalProject.three_tier_architecture.PL
             }
         }
 
+        private void chart()
+        {
+            BStockUi stocks = new BStockUi();
+            DataSet names = stocks.getStockData();
+
+            if (names != null && names.Tables.Count > 0)
+            {
+                DataTable tbl = names.Tables[0];
+
+                if (tbl.Rows.Count > 0)
+                {
+                    // Clear existing series 
+                    ch_stocks.Series.Clear();
+
+                    int counter = 1; // Initialize a counter
+
+                    foreach (DataRow row in tbl.Rows)
+                    {
+                        // Create a new series with the counter as the name
+                        var series = new Series(row["InName"].ToString())
+                        {
+                            ChartType = SeriesChartType.Column // Use Column chart for vertical bars
+                        };
+
+                        // Add a data point to the series
+                        series.Points.AddXY(counter, Convert.ToDouble(row["Inquantity"]));
+
+                        // Add the series to the chart
+                        ch_stocks.Series.Add(series);
+
+                        counter++; // Increment the counter
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data available to display.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Failed to retrieve data.");
+            }
+        }
+
+        private void setManagerHomeData()
+        {
+            BManagerHome_All manHome = new BManagerHome_All();
+            lbl_no_of_employee.Text = Convert.ToString(manHome.noOfEmployees());
+            lbl_total_earning.Text = "LRK."+Convert.ToString(manHome.getIncome());
+            chart();
+            setEvents(manHome.getEvents());
+        }
+
+        private void setEvents(DataSet ds)
+        {
+            if(ds != null)
+            {
+                DataTable dataTable = ds.Tables[0];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    lbl_event_title.Text = row["Ename"].ToString();
+                    int eventStat = Convert.ToInt32(row["Estatus"]);
+                    if (eventStat == 0)
+                    {
+                        lbl_event_status.Text = "Scheduled";
+                    }
+                    else if (eventStat == 1)
+                    {
+                        lbl_event_status.Text ="Ongoing";
+                    }
+
+
+                    lbl_event_start_time.Text = row["EstartTime"].ToString();
+                }
+            }
+        }
+
         private void NewManagerHome_Load(object sender, EventArgs e)
         {
             btn_home.PerformClick();
             myInit();
+            setManagerHomeData();
         }
 
         private void pnl_side_panle_Paint(object sender, PaintEventArgs e)

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewManagerHome));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_add_menu_item = new System.Windows.Forms.Button();
@@ -59,10 +62,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_no_of_employee = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -84,6 +86,7 @@
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -99,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_side_panle
@@ -364,7 +368,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 315F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -393,9 +397,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(381, 3);
+            this.panel1.Location = new System.Drawing.Point(380, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 193);
+            this.panel1.Size = new System.Drawing.Size(311, 193);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -447,60 +451,48 @@
             this.panel6.AutoSize = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.tlp_dash_board.SetColumnSpan(this.panel6, 2);
-            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.ch_stocks);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(372, 193);
+            this.panel6.Size = new System.Drawing.Size(371, 193);
             this.panel6.TabIndex = 25;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label12.Location = new System.Drawing.Point(25, 165);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(119, 15);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Details of last 28 days";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(38, 14);
+            this.label13.Location = new System.Drawing.Point(33, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 25);
+            this.label13.Size = new System.Drawing.Size(64, 25);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Earning";
+            this.label13.Text = "Stocks";
             // 
             // panel5
             // 
             this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lbl_no_of_employee);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(381, 202);
+            this.panel5.Location = new System.Drawing.Point(380, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(310, 70);
+            this.panel5.Size = new System.Drawing.Size(311, 70);
             this.panel5.TabIndex = 28;
             // 
-            // label5
+            // lbl_no_of_employee
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label5.Location = new System.Drawing.Point(184, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "0";
+            this.lbl_no_of_employee.AutoSize = true;
+            this.lbl_no_of_employee.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_no_of_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.lbl_no_of_employee.Location = new System.Drawing.Point(184, 14);
+            this.lbl_no_of_employee.Name = "lbl_no_of_employee";
+            this.lbl_no_of_employee.Size = new System.Drawing.Size(13, 15);
+            this.lbl_no_of_employee.TabIndex = 2;
+            this.lbl_no_of_employee.Text = "0";
             // 
             // label10
             // 
@@ -535,9 +527,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(381, 278);
+            this.panel2.Location = new System.Drawing.Point(380, 278);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 120);
+            this.panel2.Size = new System.Drawing.Size(311, 120);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -603,9 +595,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(381, 404);
+            this.panel4.Location = new System.Drawing.Point(380, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(310, 67);
+            this.panel4.Size = new System.Drawing.Size(311, 67);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -659,7 +651,7 @@
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.label15);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(182, 202);
+            this.panel8.Location = new System.Drawing.Point(181, 202);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
             this.panel8.Size = new System.Drawing.Size(193, 269);
@@ -733,7 +725,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 202);
             this.panel3.Name = "panel3";
             this.tlp_dash_board.SetRowSpan(this.panel3, 3);
-            this.panel3.Size = new System.Drawing.Size(173, 269);
+            this.panel3.Size = new System.Drawing.Size(172, 269);
             this.panel3.TabIndex = 32;
             // 
             // cpb_stock_prisentage
@@ -775,11 +767,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(54, 18);
+            this.label1.Location = new System.Drawing.Point(26, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Stocks";
+            this.label1.Text = "Over All Stocks";
             // 
             // label2
             // 
@@ -792,6 +784,22 @@
             this.label2.Size = new System.Drawing.Size(119, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Details of last 28 days";
+            // 
+            // ch_stocks
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend1);
+            this.ch_stocks.Location = new System.Drawing.Point(17, 42);
+            this.ch_stocks.Name = "ch_stocks";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ch_stocks.Series.Add(series1);
+            this.ch_stocks.Size = new System.Drawing.Size(328, 138);
+            this.ch_stocks.TabIndex = 3;
+            this.ch_stocks.Text = "chart1";
             // 
             // NewManagerHome
             // 
@@ -833,6 +841,7 @@
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -873,7 +882,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_total_earning;
@@ -885,7 +893,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_no_of_employee;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripMenuItem addMenuItemToolStripMenuItem;
@@ -895,5 +903,6 @@
         private System.Windows.Forms.ToolStripMenuItem attendentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeMenuItemToolStripMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ch_stocks;
     }
 }
