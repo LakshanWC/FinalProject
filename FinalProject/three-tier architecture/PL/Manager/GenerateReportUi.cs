@@ -1,8 +1,10 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using FinalProject.MVC.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,7 +66,7 @@ namespace FinalProject.three_tier_architecture.PL
                     break;
 
                 default:
-                    location = string.Empty;
+                    location = null;
                     return location;
                     break;
            }
@@ -74,8 +76,64 @@ namespace FinalProject.three_tier_architecture.PL
         {
             ReportDocument rpDoc = new ReportDocument();
             string source = seletedReport(cmb_reports.SelectedIndex);
-            rpDoc.Load(source);
-            crystalReportViewer1.ReportSource = rpDoc;
+            if (source == null)
+            {
+                foundBoth();
+            }
+            else
+            {
+                rpDoc.Load(source);
+                crystalReportViewer1.ReportSource = rpDoc;
+            }
         }
+
+        private void foundBoth()
+        {
+            
+            
+                DMDBConnection connection = new DMDBConnection();
+
+                // Query for tblorder
+                string orderQuery = @"
+                    SELECT UniqeKey, Cno, ItemName,Oquantity, Odate, OrderStatus,Price
+                    FROM tblorder ";
+
+                // Query for specialOrderRequest
+                string specialOrderQuery = @"
+                    SELECT SORid, quantity, itemName, Price, orderStat, SpOrderDate
+                    FROM specialOrderRequest";
+
+                // Create and fill datasets
+                DataSet ds = new DataSet();
+
+                using (SqlConnection conn = connection.openConnection())
+                {
+                    // Fill tblorder data
+                    SqlCommand cmdOrder = new SqlCommand(orderQuery, conn);
+                    SqlDataAdapter daOrder = new SqlDataAdapter(cmdOrder);
+                    daOrder.Fill(ds, "OrderDetails");
+
+                    // Fill specialOrderRequest data
+                    SqlCommand cmdSpecialOrder = new SqlCommand(specialOrderQuery, conn);
+                // Use appropriate parameter
+                    SqlDataAdapter daSpecialOrder = new SqlDataAdapter(cmdSpecialOrder);
+                    daSpecialOrder.Fill(ds, "SpecialOrderDetails");
+                }
+
+                // Load the report
+                ReportDocument rpd = new ReportDocument();
+                string source = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\ReportIncome.rpt";
+                rpd.Load(source);
+
+                // Set datasets as data sources for the report
+                rpd.SetDataSource(ds.Tables["OrderDetails"]);
+                // Optionally add another data source or use subreports for SpecialOrderDetails
+
+                // Set the report source for the viewer
+                crystalReportViewer1.ReportSource = rpd;
+                crystalReportViewer1.Refresh();
+            
+        }
+
     }
 }

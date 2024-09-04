@@ -58,7 +58,8 @@
             "Attendent Report",
             "Income Report",
             "FinancialExpense Report",
-            "InventoyItem Report"});
+            "InventoyItem Report",
+            "reportIncome"});
             this.cmb_reports.Location = new System.Drawing.Point(554, 19);
             this.cmb_reports.Name = "cmb_reports";
             this.cmb_reports.Size = new System.Drawing.Size(121, 21);

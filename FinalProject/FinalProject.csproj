@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="three-tier architecture\BLL\BRegister.cs" />
     <Compile Include="three-tier architecture\BLL\Cashier\BComplaints.cs" />
     <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="three-tier architecture\DAL\Customer\DReview.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DTrackDelivery.cs" />
     <Compile Include="three-tier architecture\DAL\Delivery Team\DDelivery.cs" />
+    <Compile Include="three-tier architecture\DAL\DRegister.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddItem.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAddEmployee.cs" />
     <Compile Include="three-tier architecture\DAL\Manager\DAttendents.cs" />
@@ -332,6 +334,12 @@
     <Compile Include="three-tier architecture\PL\Manager\RemoveMenuItem.Designer.cs">
       <DependentUpon>RemoveMenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Manager\ReportIncome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportIncome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +351,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Manager\GenerateReportUi.Designer.cs">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\AddOT.cs">
       <SubType>Form</SubType>
@@ -601,11 +615,18 @@
     <EmbeddedResource Include="three-tier architecture\PL\Manager\RemoveMenuItem.resx">
       <DependentUpon>RemoveMenuItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Manager\ReportIncome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportIncome.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.resx">
       <DependentUpon>UpdateEmployeeDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\GenerateReportUi.resx">
       <DependentUpon>GenerateReportUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\AddOT.resx">
       <DependentUpon>AddOT.cs</DependentUpon>

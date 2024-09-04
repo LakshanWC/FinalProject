@@ -62,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_no_of_employee = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ch_stocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
@@ -95,6 +95,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -102,7 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_side_panle
@@ -368,7 +368,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -397,9 +397,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(380, 3);
+            this.panel1.Location = new System.Drawing.Point(379, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 193);
+            this.panel1.Size = new System.Drawing.Size(312, 193);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -440,7 +440,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(170, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(171, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 99);
             this.pictureBox1.TabIndex = 2;
@@ -456,8 +456,27 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(371, 193);
+            this.panel6.Size = new System.Drawing.Size(370, 193);
             this.panel6.TabIndex = 25;
+            // 
+            // ch_stocks
+            // 
+            this.ch_stocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend1);
+            this.ch_stocks.Location = new System.Drawing.Point(17, 42);
+            this.ch_stocks.Name = "ch_stocks";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ch_stocks.Series.Add(series1);
+            this.ch_stocks.Size = new System.Drawing.Size(328, 138);
+            this.ch_stocks.TabIndex = 3;
+            this.ch_stocks.Text = "chart1";
             // 
             // label13
             // 
@@ -478,9 +497,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(380, 202);
+            this.panel5.Location = new System.Drawing.Point(379, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 70);
+            this.panel5.Size = new System.Drawing.Size(312, 70);
             this.panel5.TabIndex = 28;
             // 
             // lbl_no_of_employee
@@ -500,7 +519,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label10.Location = new System.Drawing.Point(44, 46);
+            this.label10.Location = new System.Drawing.Point(45, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 15);
             this.label10.TabIndex = 1;
@@ -527,9 +546,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(380, 278);
+            this.panel2.Location = new System.Drawing.Point(379, 278);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 120);
+            this.panel2.Size = new System.Drawing.Size(312, 120);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -595,9 +614,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(380, 404);
+            this.panel4.Location = new System.Drawing.Point(379, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(311, 67);
+            this.panel4.Size = new System.Drawing.Size(312, 67);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -654,7 +673,7 @@
             this.panel8.Location = new System.Drawing.Point(181, 202);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(193, 269);
+            this.panel8.Size = new System.Drawing.Size(192, 269);
             this.panel8.TabIndex = 31;
             // 
             // cpb_cutomer_satisfaction
@@ -785,22 +804,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Details of last 28 days";
             // 
-            // ch_stocks
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.ch_stocks.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ch_stocks.Legends.Add(legend1);
-            this.ch_stocks.Location = new System.Drawing.Point(17, 42);
-            this.ch_stocks.Name = "ch_stocks";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ch_stocks.Series.Add(series1);
-            this.ch_stocks.Size = new System.Drawing.Size(328, 138);
-            this.ch_stocks.TabIndex = 3;
-            this.ch_stocks.Text = "chart1";
-            // 
             // NewManagerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,6 +832,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -841,7 +845,6 @@
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

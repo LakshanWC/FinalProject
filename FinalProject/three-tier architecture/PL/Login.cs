@@ -138,7 +138,8 @@ namespace FinalProject.MVC.View
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-
+            Register reg = new Register();
+            reg.Show();
         }
 
         private void chk_view_CheckedChanged_1(object sender, EventArgs e)
@@ -166,5 +167,37 @@ namespace FinalProject.MVC.View
         {
 
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Check for Ctrl + Space key combination
+            if (keyData == (Keys.Space | Keys.Control))
+            {
+                // Display a confirmation message box
+                DialogResult result = MessageBox.Show(
+                    "Developer Mode Activated!\n\n" +
+                    "You are about to bypass the login screen to access the developer options form. " +
+                    "This feature is intended for demonstration or debugging purposes only. " +
+                    "Do you want to continue?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                // Check if the user pressed "Yes"
+                if (result == DialogResult.Yes)
+                {
+                    back_up_form devOption = new back_up_form();
+                    this.Hide();
+                    devOption.Show();
+                }
+
+                // Return true to indicate the key event was handled
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
+
