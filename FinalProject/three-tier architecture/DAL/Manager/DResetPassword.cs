@@ -6,42 +6,56 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace FinalProject.MVC.Model
 {
     public class DResetPassword
     {
-  
+
 
         public bool resetPassword(string username, string password)
         {
             DMDBConnection myConnection = new DMDBConnection();
             SqlConnection con = myConnection.openConnection();
-            
-                string userQuery = "SELECT COUNT(*) FROM employee WHERE Eusername = @username;";
-                SqlCommand cmd = new SqlCommand(userQuery, con);
-                cmd.Parameters.AddWithValue("@username", username);
+            string eid = null;
 
-                int count = (int)cmd.ExecuteScalar();
+            string userQuery = "SELECT Eid FROM employee WHERE Eusername = @username;";
+            SqlCommand cmd = new SqlCommand(userQuery, con);
+            cmd.Parameters.AddWithValue("@username", username);
 
-                if (count == 1)
-                {
+            object result = cmd.ExecuteScalar();
 
-                    string requestQuery = "INSERT INTO userRequest (requestedUser, newpassword) VALUES (@username, @newpassword)";
+            // Check if the result is not null and not DBNull
+            if (result != null && result != DBNull.Value)
+            {
+                eid = result.ToString();
+            }
+            else
+            {
+                eid = null;
+            }
 
-                    SqlCommand mycmd = new SqlCommand(requestQuery, con);
-                    mycmd.Parameters.AddWithValue("@username", username);
-                    mycmd.Parameters.AddWithValue("@newpassword", password);
+            if (eid != null)
+            {
 
-                    mycmd.ExecuteNonQuery();
-                    
+                string requestQuery = "INSERT INTO userRequest (requestedUser, newpassword,Eid) VALUES (@username, @newpassword,@eid)";
 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                SqlCommand mycmd = new SqlCommand(requestQuery, con);
+                mycmd.Parameters.AddWithValue("@username", username);
+                mycmd.Parameters.AddWithValue("@newpassword", password);
+                mycmd.Parameters.AddWithValue("@eid", eid);
+
+                mycmd.ExecuteNonQuery();
+
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        
             
         }
         public bool requestExist(string username)
