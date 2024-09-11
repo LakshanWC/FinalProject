@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_current_report = new System.Windows.Forms.TextBox();
+            this.cmb_seleted_filter = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -97,12 +98,26 @@
             this.txt_current_report.Size = new System.Drawing.Size(136, 20);
             this.txt_current_report.TabIndex = 5;
             // 
+            // cmb_seleted_filter
+            // 
+            this.cmb_seleted_filter.FormattingEnabled = true;
+            this.cmb_seleted_filter.Items.AddRange(new object[] {
+            "All",
+            "Monthly",
+            "Yearly"});
+            this.cmb_seleted_filter.Location = new System.Drawing.Point(286, 20);
+            this.cmb_seleted_filter.Name = "cmb_seleted_filter";
+            this.cmb_seleted_filter.Size = new System.Drawing.Size(121, 21);
+            this.cmb_seleted_filter.TabIndex = 6;
+            this.cmb_seleted_filter.SelectedIndexChanged += new System.EventHandler(this.cmb_seleted_filter_SelectedIndexChanged);
+            // 
             // GenerateReportUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(782, 450);
+            this.Controls.Add(this.cmb_seleted_filter);
             this.Controls.Add(this.txt_current_report);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -124,5 +139,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_current_report;
+        private System.Windows.Forms.ComboBox cmb_seleted_filter;
     }
 }

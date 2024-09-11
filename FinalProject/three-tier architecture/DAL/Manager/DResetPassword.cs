@@ -60,5 +60,33 @@ namespace FinalProject.MVC.Model
                 }
             }
         }
+
+        public int updatePassword(string username, string password)
+        {
+            DMDBConnection connt = new DMDBConnection();
+            string updateQuery = "UPDATE customer SET Cpassword =@password WHERE Cusername = @userName;";
+
+            try
+            {
+                using(SqlConnection con = connt.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@userName", username);
+
+                    int stat = cmd.ExecuteNonQuery();
+                    return stat;
+                }
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                connt.closeConnection();
+            }
+        }
     }
 }

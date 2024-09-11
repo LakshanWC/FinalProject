@@ -42,6 +42,8 @@
             this.btn_go_to_login = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +103,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(40, 395);
+            this.btn_clear.Location = new System.Drawing.Point(40, 435);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 23);
             this.btn_clear.TabIndex = 6;
@@ -111,7 +113,7 @@
             // 
             // btn_pass_request
             // 
-            this.btn_pass_request.Location = new System.Drawing.Point(228, 395);
+            this.btn_pass_request.Location = new System.Drawing.Point(228, 435);
             this.btn_pass_request.Name = "btn_pass_request";
             this.btn_pass_request.Size = new System.Drawing.Size(91, 23);
             this.btn_pass_request.TabIndex = 7;
@@ -147,7 +149,7 @@
             // 
             // btn_go_to_login
             // 
-            this.btn_go_to_login.Location = new System.Drawing.Point(134, 395);
+            this.btn_go_to_login.Location = new System.Drawing.Point(134, 435);
             this.btn_go_to_login.Name = "btn_go_to_login";
             this.btn_go_to_login.Size = new System.Drawing.Size(75, 23);
             this.btn_go_to_login.TabIndex = 10;
@@ -166,7 +168,7 @@
             this.panel1.Controls.Add(this.txt_re_password);
             this.panel1.Controls.Add(this.txt_new_password);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(12, 217);
+            this.panel1.Location = new System.Drawing.Point(12, 257);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(307, 160);
             this.panel1.TabIndex = 12;
@@ -181,23 +183,50 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.Location = new System.Drawing.Point(43, 224);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "UserType :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Customer",
+            "Employee"});
+            this.comboBox1.Location = new System.Drawing.Point(124, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(343, 442);
+            this.ClientSize = new System.Drawing.Size(343, 477);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_go_to_login);
             this.Controls.Add(this.btn_pass_request);
             this.Controls.Add(this.btn_clear);
             this.Name = "ResetPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPassword";
+            this.Load += new System.EventHandler(this.ResetPassword_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -216,5 +245,7 @@
         private System.Windows.Forms.Button btn_go_to_login;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

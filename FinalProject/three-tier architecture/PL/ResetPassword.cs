@@ -36,44 +36,88 @@ namespace FinalProject.MVC.View
                 !string.IsNullOrEmpty(txt_username.Text) &&
                 !string.IsNullOrEmpty(txt_re_password.Text))
             {
-                if (txt_new_password.Text == txt_re_password.Text)
-                {
-                    string username = txt_username.Text;
-                    string newPass = txt_new_password.Text;
-                    Control.BResetPassword rePass = new Control.BResetPassword();
-                    Boolean mycheck = rePass.requestExist(username);
 
-                    if (mycheck == true) {
-                        MessageBox.Show("Request already exists. Please wait until the manager accepts your request.",
-                        "Request exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txt_username.Clear();
-                        txt_new_password.Clear();
-                        txt_re_password.Clear();
+                if (comboBox1.SelectedIndex == 1)
+                {
+
+                    if (txt_new_password.Text == txt_re_password.Text)
+                    {
+                        string username = txt_username.Text;
+                        string newPass = txt_new_password.Text;
+                        Control.BResetPassword rePass = new Control.BResetPassword();
+                        Boolean mycheck = rePass.requestExist(username);
+
+                        if (mycheck == true)
+                        {
+                            MessageBox.Show("Request already exists. Please wait until the manager accepts your request.",
+                            "Request exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txt_username.Clear();
+                            txt_new_password.Clear();
+                            txt_re_password.Clear();
+                        }
+                        else
+                        {
+                            Boolean checkPass = rePass.resetPassword(username, newPass);
+
+                            if (checkPass == true)
+                            {
+                                MessageBox.Show("Password Reset Request send seccsessfuly ", "Success", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                this.Hide();
+                                objLog.Show();
+
+
+                            }
+                            else MessageBox.Show("UserName does not exist", "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txt_username.Clear();
+                            txt_new_password.Clear();
+                            txt_re_password.Clear();
+                        }
+
                     }
                     else
                     {
-                        Boolean checkPass = rePass.resetPassword(username, newPass);
-
-                        if (checkPass == true)
-                        {
-                            MessageBox.Show("Password Reset Request send seccsessfuly ", "Success", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            this.Hide();                         
-                            objLog.Show();
-                            
-
-                        }
-                        else MessageBox.Show("UserName does not exist", "UserName Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txt_username.Clear();
-                        txt_new_password.Clear();
-                        txt_re_password.Clear();
+                        MessageBox.Show("Password & Retype Password must be the same", "Password Error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
                     }
-                                         
                 }
-                else
+                else if (comboBox1.SelectedIndex == 0)
                 {
-                    MessageBox.Show("Password & Retype Password must be the same", "Password Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    if (txt_new_password.Text == txt_re_password.Text)
+                    {
+                        BResetPassword customReset = new BResetPassword();
+                        int stat = customReset.updatePassword(txt_username.Text, txt_new_password.Text);
+
+                        if(stat == 0)
+                        {
+                            TostMessage messFail = new TostMessage("Password Chagne Faild","Faild",1,2);
+                            messFail.Show();
+                            txt_username.Clear();
+                            txt_new_password.Clear();
+                            txt_re_password.Clear();
+                        }
+                        else if(stat >0)
+                        {
+                            TostMessage messSucc = new TostMessage("Password Chaged Successfully", "Successfull", 3, 3);
+                            messSucc.Show();
+                            txt_username.Clear();
+                            txt_new_password.Clear();
+                            txt_re_password.Clear();
+                        }
+                        else if(stat == -1)
+                        {
+                            TostMessage messUnex = new TostMessage("UnExpected Error", "Error", 2, 2);
+                            messUnex.Show();
+                            txt_username.Clear();
+                            txt_new_password.Clear();
+                            txt_re_password.Clear();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password & Retype Password must be the same", "Password Error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
                 }
             }
             else
@@ -114,6 +158,23 @@ namespace FinalProject.MVC.View
         {
             this.Hide();
             objLog.Show();
+        }
+
+        private void ResetPassword_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == 0)
+            {
+                btn_pass_request.Text = "Update";
+            }
+            else
+            {
+                btn_pass_request.Text = "Send Request";
+            }
         }
     }
 }

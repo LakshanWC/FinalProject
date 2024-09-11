@@ -74,6 +74,16 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void cmb_reports_SelectedIndexChanged(object sender, EventArgs e)
         {
+          if(cmb_reports.SelectedIndex == 4)
+            {
+                cmb_seleted_filter.Visible = true;
+                cmb_seleted_filter.SelectedIndex = 0;
+            }
+            else
+            {
+                cmb_seleted_filter.Visible = false;
+            }
+
             ReportDocument rpDoc = new ReportDocument();
             string source = seletedReport(cmb_reports.SelectedIndex);
             if (source == null)
@@ -93,13 +103,26 @@ namespace FinalProject.three_tier_architecture.PL
             
                 DMDBConnection connection = new DMDBConnection();
 
-                // Query for tblorder
-                string orderQuery = @"
-                    SELECT UniqeKey, Cno, ItemName,Oquantity, Odate, OrderStatus,Price
-                    FROM tblorder ";
+            // Query for tblorder
+            /*
+            string orderQuery = @"
+                SELECT UniqeKey, Cno, ItemName,Oquantity, Odate, OrderStatus,Price
+                FROM tblorder ";*/
 
-                // Query for specialOrderRequest
-                string specialOrderQuery = @"
+            string orderQuery = @"
+    SELECT UniqeKey, 
+           Cno, 
+           ItemName, 
+           SUM(Oquantity) AS TotalQuantity, 
+           Odate, 
+           OrderStatus, 
+           SUM(Price * Oquantity) AS TotalPrice
+    FROM tblorder
+    GROUP BY UniqeKey, Cno, ItemName, Odate, OrderStatus";
+
+
+            // Query for specialOrderRequest
+            string specialOrderQuery = @"
                     SELECT SORid, quantity, itemName, Price, orderStat, SpOrderDate
                     FROM specialOrderRequest";
 
@@ -113,16 +136,17 @@ namespace FinalProject.three_tier_architecture.PL
                     SqlDataAdapter daOrder = new SqlDataAdapter(cmdOrder);
                     daOrder.Fill(ds, "OrderDetails");
 
+                /*
                     // Fill specialOrderRequest data
                     SqlCommand cmdSpecialOrder = new SqlCommand(specialOrderQuery, conn);
                 // Use appropriate parameter
                     SqlDataAdapter daSpecialOrder = new SqlDataAdapter(cmdSpecialOrder);
-                    daSpecialOrder.Fill(ds, "SpecialOrderDetails");
+                    daSpecialOrder.Fill(ds, "SpecialOrderDetails");*/
                 }
 
                 // Load the report
                 ReportDocument rpd = new ReportDocument();
-                string source = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\ReportIncome.rpt";
+                string source = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\OverAll_Income.rpt";
                 rpd.Load(source);
 
                 // Set datasets as data sources for the report
@@ -135,5 +159,54 @@ namespace FinalProject.three_tier_architecture.PL
             
         }
 
+        private void cmb_seleted_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadReportWithCustomQuery(cmb_seleted_filter.SelectedIndex);
+        }
+
+        private void LoadReportWithCustomQuery(int filterType)
+        {
+            DMDBConnection connection = new DMDBConnection();
+
+            // Define SQL query for filterType
+            string sqlQuery = GetSQLQuery(filterType);
+
+            DataSet ds = new DataSet();
+            using (SqlConnection con = connection.openConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlQuery, con);
+                da.Fill(ds, "TransactionLog"); // Fill the DataSet with query result
+            }
+
+            // Load the Crystal Report
+            ReportDocument reportDocument = new ReportDocument();
+            reportDocument.Load("D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Sales&Finance\\FinancialExpenseReport.rpt");
+
+            // Set the data source 
+            reportDocument.SetDataSource(ds.Tables["TransactionLog"]);
+
+            // Display the report 
+            crystalReportViewer1.ReportSource = reportDocument;
+        }
+
+        private string GetSQLQuery(int filterType)
+        {
+            string query = string.Empty;
+
+            switch (filterType)
+            {
+                case 0: // All data
+                    query = "SELECT * FROM TransactionLog WHERE OrderId = 'Purchased Stocks'";
+                    break;
+                case 1: // Monthly data
+                    query = "SELECT * FROM TransactionLog WHERE MONTH(LogDate) = MONTH(GETDATE()) AND OrderId = 'Purchased Stocks'";
+                    break;
+                case 2: // Yearly data
+                    query = "SELECT * FROM TransactionLog WHERE YEAR(LogDate) = YEAR(GETDATE()) AND OrderId = 'Purchased Stocks'";
+                    break;
+                    // Add more cases as needed
+            }
+            return query;
+        }
     }
 }
