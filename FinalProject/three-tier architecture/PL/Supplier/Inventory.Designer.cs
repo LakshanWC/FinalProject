@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label9.ForeColor = System.Drawing.Color.Yellow;
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 15);
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(14, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 15);
@@ -121,16 +121,16 @@
             // 
             // ch_stocks
             // 
-            chartArea6.Name = "ChartArea1";
-            this.ch_stocks.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.ch_stocks.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend1);
             this.ch_stocks.Location = new System.Drawing.Point(19, 48);
             this.ch_stocks.Name = "ch_stocks";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.ch_stocks.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ch_stocks.Series.Add(series1);
             this.ch_stocks.Size = new System.Drawing.Size(513, 235);
             this.ch_stocks.TabIndex = 2;
             this.ch_stocks.Text = "chart1";
@@ -174,7 +174,7 @@
             this.cpb_stock_prisentage.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.cpb_stock_prisentage.OuterMargin = -23;
             this.cpb_stock_prisentage.OuterWidth = 20;
-            this.cpb_stock_prisentage.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.cpb_stock_prisentage.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
             this.cpb_stock_prisentage.ProgressWidth = 15;
             this.cpb_stock_prisentage.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.cpb_stock_prisentage.Size = new System.Drawing.Size(138, 132);

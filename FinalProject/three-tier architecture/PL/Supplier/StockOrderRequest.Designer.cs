@@ -84,7 +84,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 15);
@@ -135,7 +135,7 @@
             this.btn_set_net_price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_set_net_price.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_set_net_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_set_net_price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_set_net_price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btn_set_net_price.Location = new System.Drawing.Point(18, 187);
             this.btn_set_net_price.Name = "btn_set_net_price";
             this.btn_set_net_price.Size = new System.Drawing.Size(103, 36);
@@ -157,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(20, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
@@ -177,7 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(20, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
@@ -187,7 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(19, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
@@ -219,7 +219,7 @@
             // cb_loadAll
             // 
             this.cb_loadAll.AutoSize = true;
-            this.cb_loadAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.cb_loadAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.cb_loadAll.Location = new System.Drawing.Point(186, 197);
             this.cb_loadAll.Name = "cb_loadAll";
             this.cb_loadAll.Size = new System.Drawing.Size(67, 17);
@@ -233,7 +233,7 @@
             this.btn_delivering.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_delivering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delivering.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delivering.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_delivering.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btn_delivering.Location = new System.Drawing.Point(19, 236);
             this.btn_delivering.Name = "btn_delivering";
             this.btn_delivering.Size = new System.Drawing.Size(103, 36);
@@ -247,7 +247,7 @@
             this.btn_delivered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_delivered.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delivered.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delivered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_delivered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btn_delivered.Location = new System.Drawing.Point(146, 236);
             this.btn_delivered.Name = "btn_delivered";
             this.btn_delivered.Size = new System.Drawing.Size(120, 36);
@@ -259,7 +259,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(19, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
