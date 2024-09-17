@@ -34,6 +34,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_post = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_cutomer_id = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.nud_review_score = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_no_of_letters = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_selected_item = new System.Windows.Forms.ComboBox();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_cutomer_id = new System.Windows.Forms.TextBox();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_review_score)).BeginInit();
@@ -76,7 +76,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 15);
@@ -89,7 +89,7 @@
             this.btn_post.FlatAppearance.BorderSize = 0;
             this.btn_post.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_post.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_post.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_post.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_post.Location = new System.Drawing.Point(383, 386);
             this.btn_post.Name = "btn_post";
             this.btn_post.Size = new System.Drawing.Size(75, 36);
@@ -114,6 +114,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(449, 329);
             this.panel1.TabIndex = 61;
+            // 
+            // txt_cutomer_id
+            // 
+            this.txt_cutomer_id.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_cutomer_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cutomer_id.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_cutomer_id.Location = new System.Drawing.Point(126, 17);
+            this.txt_cutomer_id.Name = "txt_cutomer_id";
+            this.txt_cutomer_id.ReadOnly = true;
+            this.txt_cutomer_id.Size = new System.Drawing.Size(102, 20);
+            this.txt_cutomer_id.TabIndex = 68;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(15, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Cutomer Id :";
             // 
             // nud_review_score
             // 
@@ -144,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(15, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
@@ -154,7 +175,7 @@
             // lbl_no_of_letters
             // 
             this.lbl_no_of_letters.AutoSize = true;
-            this.lbl_no_of_letters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_no_of_letters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.lbl_no_of_letters.Location = new System.Drawing.Point(391, 305);
             this.lbl_no_of_letters.Name = "lbl_no_of_letters";
             this.lbl_no_of_letters.Size = new System.Drawing.Size(36, 13);
@@ -164,7 +185,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(15, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 13);
@@ -187,7 +208,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(15, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -210,7 +231,7 @@
             this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btn_clear.Location = new System.Drawing.Point(292, 386);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 36);
@@ -218,27 +239,6 @@
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(15, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Cutomer Id :";
-            // 
-            // txt_cutomer_id
-            // 
-            this.txt_cutomer_id.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_cutomer_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_cutomer_id.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_cutomer_id.Location = new System.Drawing.Point(126, 17);
-            this.txt_cutomer_id.Name = "txt_cutomer_id";
-            this.txt_cutomer_id.ReadOnly = true;
-            this.txt_cutomer_id.Size = new System.Drawing.Size(102, 20);
-            this.txt_cutomer_id.TabIndex = 68;
             // 
             // CustomerReview
             // 
