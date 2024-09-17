@@ -109,6 +109,7 @@ namespace FinalProject.three_tier_architecture.PL
                 SELECT UniqeKey, Cno, ItemName,Oquantity, Odate, OrderStatus,Price
                 FROM tblorder ";*/
 
+
             string orderQuery = @"
     SELECT UniqeKey, 
            Cno, 
@@ -120,6 +121,7 @@ namespace FinalProject.three_tier_architecture.PL
     FROM tblorder
     GROUP BY UniqeKey, Cno, ItemName, Odate, OrderStatus";
 
+            /*
 
             // Query for specialOrderRequest
             string specialOrderQuery = @"
@@ -128,13 +130,13 @@ namespace FinalProject.three_tier_architecture.PL
 
                 // Create and fill datasets
                 DataSet ds = new DataSet();
-
+            */
                 using (SqlConnection conn = connection.openConnection())
                 {
                     // Fill tblorder data
                     SqlCommand cmdOrder = new SqlCommand(orderQuery, conn);
                     SqlDataAdapter daOrder = new SqlDataAdapter(cmdOrder);
-                    daOrder.Fill(ds, "OrderDetails");
+                   // daOrder.Fill(ds, "OrderDetails");
 
                 /*
                     // Fill specialOrderRequest data
@@ -144,13 +146,14 @@ namespace FinalProject.three_tier_architecture.PL
                     daSpecialOrder.Fill(ds, "SpecialOrderDetails");*/
                 }
 
+
                 // Load the report
                 ReportDocument rpd = new ReportDocument();
-                string source = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\OverAll_Income.rpt";
+                string source = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\NormalReportIncome.rpt";
                 rpd.Load(source);
 
                 // Set datasets as data sources for the report
-                rpd.SetDataSource(ds.Tables["OrderDetails"]);
+               // rpd.SetDataSource(ds.Tables["OrderDetails"]);
                 // Optionally add another data source or use subreports for SpecialOrderDetails
 
                 // Set the report source for the viewer
@@ -158,10 +161,10 @@ namespace FinalProject.three_tier_architecture.PL
                 crystalReportViewer1.Refresh();
             
         }
-
+        
         private void cmb_seleted_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadReportWithCustomQuery(cmb_seleted_filter.SelectedIndex);
+         //   LoadReportWithCustomQuery(cmb_seleted_filter.SelectedIndex);
         }
 
         private void LoadReportWithCustomQuery(int filterType)
