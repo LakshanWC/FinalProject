@@ -34,6 +34,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btn_update_details = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.nud_otHours = new System.Windows.Forms.NumericUpDown();
             this.txt_empType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_user_name = new System.Windows.Forms.TextBox();
-            this.nud_otHours = new System.Windows.Forms.NumericUpDown();
             this.pnl_title.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_otHours)).BeginInit();
@@ -77,7 +77,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label9.ForeColor = System.Drawing.Color.Yellow;
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 15);
@@ -90,7 +90,7 @@
             this.btn_update_details.FlatAppearance.BorderSize = 0;
             this.btn_update_details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update_details.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_update_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_update_details.Location = new System.Drawing.Point(331, 40);
             this.btn_update_details.Name = "btn_update_details";
             this.btn_update_details.Size = new System.Drawing.Size(150, 36);
@@ -116,6 +116,14 @@
             this.panel6.Size = new System.Drawing.Size(318, 173);
             this.panel6.TabIndex = 78;
             // 
+            // nud_otHours
+            // 
+            this.nud_otHours.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nud_otHours.Location = new System.Drawing.Point(146, 141);
+            this.nud_otHours.Name = "nud_otHours";
+            this.nud_otHours.Size = new System.Drawing.Size(120, 20);
+            this.nud_otHours.TabIndex = 80;
+            // 
             // txt_empType
             // 
             this.txt_empType.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -130,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(67, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
@@ -140,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(34, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
@@ -163,7 +171,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(40, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
@@ -173,7 +181,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(85, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
@@ -190,14 +198,6 @@
             this.txt_user_name.ReadOnly = true;
             this.txt_user_name.Size = new System.Drawing.Size(121, 20);
             this.txt_user_name.TabIndex = 71;
-            // 
-            // nud_otHours
-            // 
-            this.nud_otHours.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.nud_otHours.Location = new System.Drawing.Point(146, 141);
-            this.nud_otHours.Name = "nud_otHours";
-            this.nud_otHours.Size = new System.Drawing.Size(120, 20);
-            this.nud_otHours.TabIndex = 80;
             // 
             // AddOT
             // 

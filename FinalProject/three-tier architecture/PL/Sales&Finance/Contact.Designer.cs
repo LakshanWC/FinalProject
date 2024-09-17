@@ -33,6 +33,8 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
             this.dtp_deliver_on_date = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_requset_description = new System.Windows.Forms.TextBox();
             this.btn_add_new_stock = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_status = new System.Windows.Forms.ComboBox();
             this.pnl_title.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).BeginInit();
@@ -79,7 +79,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label9.ForeColor = System.Drawing.Color.Yellow;
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 15);
@@ -105,6 +105,30 @@
             this.panel6.Size = new System.Drawing.Size(480, 355);
             this.panel6.TabIndex = 57;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(39, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "Payment Terms :\r\n";
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Items.AddRange(new object[] {
+            "Requested",
+            "Cash After Delivery",
+            "Payment Before Delivery"});
+            this.cmb_status.Location = new System.Drawing.Point(146, 116);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(121, 21);
+            this.cmb_status.TabIndex = 80;
+            // 
             // dtp_deliver_on_date
             // 
             this.dtp_deliver_on_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -116,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(62, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -126,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(54, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
@@ -155,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(82, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
@@ -165,7 +189,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(37, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
@@ -188,7 +212,7 @@
             this.btn_add_new_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_add_new_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_new_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_new_stock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_add_new_stock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_add_new_stock.Location = new System.Drawing.Point(492, 41);
             this.btn_add_new_stock.Name = "btn_add_new_stock";
             this.btn_add_new_stock.Size = new System.Drawing.Size(150, 36);
@@ -196,30 +220,6 @@
             this.btn_add_new_stock.Text = "Request ";
             this.btn_add_new_stock.UseVisualStyleBackColor = false;
             this.btn_add_new_stock.Click += new System.EventHandler(this.btn_add_new_stock_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(39, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 81;
-            this.label5.Text = "Payment Terms :\r\n";
-            // 
-            // cmb_status
-            // 
-            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_status.FormattingEnabled = true;
-            this.cmb_status.Items.AddRange(new object[] {
-            "Requested",
-            "Cash After Delivery",
-            "Payment Before Delivery"});
-            this.cmb_status.Location = new System.Drawing.Point(146, 116);
-            this.cmb_status.Name = "cmb_status";
-            this.cmb_status.Size = new System.Drawing.Size(121, 21);
-            this.cmb_status.TabIndex = 80;
             // 
             // Contact
             // 
