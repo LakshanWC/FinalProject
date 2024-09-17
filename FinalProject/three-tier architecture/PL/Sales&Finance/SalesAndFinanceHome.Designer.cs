@@ -84,7 +84,7 @@
             // contactSupplierToolStripMenuItem
             // 
             this.contactSupplierToolStripMenuItem.Name = "contactSupplierToolStripMenuItem";
-            this.contactSupplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactSupplierToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.contactSupplierToolStripMenuItem.Text = "Contact Supplier";
             this.contactSupplierToolStripMenuItem.Click += new System.EventHandler(this.contactSupplierToolStripMenuItem_Click);
             // 
@@ -101,14 +101,14 @@
             // addStockToolStripMenuItem
             // 
             this.addStockToolStripMenuItem.Name = "addStockToolStripMenuItem";
-            this.addStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addStockToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.addStockToolStripMenuItem.Text = "Add Stock";
             this.addStockToolStripMenuItem.Click += new System.EventHandler(this.addStockToolStripMenuItem_Click);
             // 
             // addOTToolStripMenuItem
             // 
             this.addOTToolStripMenuItem.Name = "addOTToolStripMenuItem";
-            this.addOTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addOTToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.addOTToolStripMenuItem.Text = "Add OT";
             this.addOTToolStripMenuItem.Click += new System.EventHandler(this.addOTToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             // removeStockToolStripMenuItem
             // 
             this.removeStockToolStripMenuItem.Name = "removeStockToolStripMenuItem";
-            this.removeStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeStockToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.removeStockToolStripMenuItem.Text = "RemoveStock";
             this.removeStockToolStripMenuItem.Click += new System.EventHandler(this.removeStockToolStripMenuItem_Click);
             // 
@@ -141,14 +141,14 @@
             // attendentReportToolStripMenuItem
             // 
             this.attendentReportToolStripMenuItem.Name = "attendentReportToolStripMenuItem";
-            this.attendentReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.attendentReportToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.attendentReportToolStripMenuItem.Text = "FinancialReview";
             this.attendentReportToolStripMenuItem.Click += new System.EventHandler(this.attendentReportToolStripMenuItem_Click);
             // 
             // generateToolStripMenuItem
             // 
             this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
-            this.generateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generateToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.generateToolStripMenuItem.Text = "GenerateReport";
             this.generateToolStripMenuItem.Click += new System.EventHandler(this.generateToolStripMenuItem_Click);
             // 

@@ -77,21 +77,21 @@
             // checkReviewsToolStripMenuItem
             // 
             this.checkReviewsToolStripMenuItem.Name = "checkReviewsToolStripMenuItem";
-            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.checkReviewsToolStripMenuItem.Text = "Check Reviews";
             this.checkReviewsToolStripMenuItem.Click += new System.EventHandler(this.checkReviewsToolStripMenuItem_Click);
             // 
             // receivedOrdersToolStripMenuItem
             // 
             this.receivedOrdersToolStripMenuItem.Name = "receivedOrdersToolStripMenuItem";
-            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.receivedOrdersToolStripMenuItem.Text = "Received Orders";
             this.receivedOrdersToolStripMenuItem.Click += new System.EventHandler(this.receivedOrdersToolStripMenuItem_Click);
             // 
             // checkComplatinsToolStripMenuItem
             // 
             this.checkComplatinsToolStripMenuItem.Name = "checkComplatinsToolStripMenuItem";
-            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.checkComplatinsToolStripMenuItem.Text = "Check Complatins";
             this.checkComplatinsToolStripMenuItem.Click += new System.EventHandler(this.checkComplatinsToolStripMenuItem_Click);
             // 

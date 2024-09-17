@@ -165,7 +165,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "back_up_form";
-            this.Text = "back_up_form";
+            this.Text = "Developer";
             this.ResumeLayout(false);
 
         }
