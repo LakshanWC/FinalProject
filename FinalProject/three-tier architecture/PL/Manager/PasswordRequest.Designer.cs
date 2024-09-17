@@ -59,7 +59,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 15);
@@ -105,7 +105,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
@@ -125,10 +125,9 @@
             // btn_refresh
             // 
             this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_refresh.FlatAppearance.BorderSize = 0;
             this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btn_refresh.Location = new System.Drawing.Point(150, 424);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(90, 41);
@@ -140,10 +139,9 @@
             // btn_enable
             // 
             this.btn_enable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_enable.FlatAppearance.BorderSize = 0;
             this.btn_enable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_enable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_enable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_enable.Location = new System.Drawing.Point(259, 424);
             this.btn_enable.Name = "btn_enable";
             this.btn_enable.Size = new System.Drawing.Size(86, 41);

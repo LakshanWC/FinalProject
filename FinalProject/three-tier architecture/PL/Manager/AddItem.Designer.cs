@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(43, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
@@ -92,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(42, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(20, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
@@ -148,10 +148,9 @@
             // btn_add_item
             // 
             this.btn_add_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_add_item.FlatAppearance.BorderSize = 0;
             this.btn_add_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_add_item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_add_item.Location = new System.Drawing.Point(734, 328);
             this.btn_add_item.Name = "btn_add_item";
             this.btn_add_item.Size = new System.Drawing.Size(82, 42);
@@ -163,10 +162,9 @@
             // btn_clear
             // 
             this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btn_clear.Location = new System.Drawing.Point(647, 328);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(81, 42);
@@ -191,7 +189,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(17, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
@@ -201,7 +199,7 @@
             // lbl_word_count
             // 
             this.lbl_word_count.AutoSize = true;
-            this.lbl_word_count.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_word_count.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.lbl_word_count.Location = new System.Drawing.Point(369, 243);
             this.lbl_word_count.Name = "lbl_word_count";
             this.lbl_word_count.Size = new System.Drawing.Size(36, 13);
@@ -238,7 +236,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 15);
@@ -272,7 +270,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label7.Location = new System.Drawing.Point(42, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
@@ -311,7 +309,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(20, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);

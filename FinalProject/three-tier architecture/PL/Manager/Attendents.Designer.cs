@@ -33,9 +33,9 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgv_attendents = new System.Windows.Forms.DataGridView();
             this.cmb_filter_type = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.dgv_attendents = new System.Windows.Forms.DataGridView();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_attendents)).BeginInit();
@@ -71,7 +71,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 15);
@@ -88,14 +88,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(389, 372);
             this.panel1.TabIndex = 54;
-            // 
-            // dgv_attendents
-            // 
-            this.dgv_attendents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_attendents.Location = new System.Drawing.Point(7, 10);
-            this.dgv_attendents.Name = "dgv_attendents";
-            this.dgv_attendents.Size = new System.Drawing.Size(361, 287);
-            this.dgv_attendents.TabIndex = 0;
             // 
             // cmb_filter_type
             // 
@@ -115,12 +107,20 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(58, 321);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 25;
             this.label11.Text = "Filter Type  :";
+            // 
+            // dgv_attendents
+            // 
+            this.dgv_attendents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_attendents.Location = new System.Drawing.Point(7, 10);
+            this.dgv_attendents.Name = "dgv_attendents";
+            this.dgv_attendents.Size = new System.Drawing.Size(361, 287);
+            this.dgv_attendents.TabIndex = 0;
             // 
             // Attendents
             // 
