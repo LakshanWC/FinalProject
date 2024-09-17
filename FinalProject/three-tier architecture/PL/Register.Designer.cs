@@ -51,11 +51,11 @@
             this.txt_tel_no = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.lbl_email = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.pnl_title = new System.Windows.Forms.Panel();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.lbl_email = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_title.SuspendLayout();
@@ -64,7 +64,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label13.Location = new System.Drawing.Point(40, 85);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
@@ -74,7 +74,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label12.Location = new System.Drawing.Point(40, 44);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
@@ -137,7 +137,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(23, 94);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
@@ -168,7 +168,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label9.Location = new System.Drawing.Point(23, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
@@ -188,7 +188,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(21, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
@@ -198,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(21, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
@@ -208,7 +208,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(21, 305);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
@@ -218,7 +218,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(20, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
@@ -229,7 +229,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(12, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 15);
@@ -239,7 +239,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(20, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
@@ -313,11 +313,32 @@
             this.panel1.Size = new System.Drawing.Size(332, 409);
             this.panel1.TabIndex = 55;
             // 
+            // txt_email
+            // 
+            this.txt_email.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_email.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_email.Location = new System.Drawing.Point(124, 190);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(117, 20);
+            this.txt_email.TabIndex = 43;
+            // 
+            // lbl_email
+            // 
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.lbl_email.Location = new System.Drawing.Point(19, 197);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(38, 13);
+            this.lbl_email.TabIndex = 42;
+            this.lbl_email.Text = "Email :";
+            // 
             // btn_clear
             // 
             this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btn_clear.Location = new System.Drawing.Point(345, 383);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(118, 57);
@@ -330,7 +351,8 @@
             // 
             this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_add.Location = new System.Drawing.Point(474, 383);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(113, 57);
@@ -352,26 +374,6 @@
             this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
             this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
             this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
-            // 
-            // txt_email
-            // 
-            this.txt_email.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_email.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_email.Location = new System.Drawing.Point(124, 190);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(117, 20);
-            this.txt_email.TabIndex = 43;
-            // 
-            // lbl_email
-            // 
-            this.lbl_email.AutoSize = true;
-            this.lbl_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lbl_email.Location = new System.Drawing.Point(19, 197);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(38, 13);
-            this.lbl_email.TabIndex = 42;
-            this.lbl_email.Text = "Email :";
             // 
             // Register
             // 
