@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.BLL.Customer;
+﻿using FinalProject.MVC.View;
+using FinalProject.three_tier_architecture.BLL.Customer;
 using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
@@ -185,6 +186,13 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            MVC.View.Login logout = new MVC.View.Login();
+            this.Hide();
+            logout.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FinalProject.three_tier_architecture.PL.Chef;
+﻿using FinalProject.MVC.View;
+using FinalProject.three_tier_architecture.PL.Chef;
 using FinalProject.three_tier_architecture.PL.Customerr;
 using FinalProject.three_tier_architecture.PL.Supplier;
 using System;
@@ -133,6 +134,13 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             {
                 childForm.Close(); // Close each child form
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            Login logout = new Login();
+            this.Hide();
+            logout.Show();
         }
     }
 }
