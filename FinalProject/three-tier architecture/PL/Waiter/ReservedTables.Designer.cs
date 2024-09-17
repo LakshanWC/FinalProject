@@ -33,12 +33,12 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dgv_reservedTables = new System.Windows.Forms.DataGridView();
+            this.btn_update_status = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_selected_item = new System.Windows.Forms.TextBox();
             this.cmb_Order_status = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_update_status = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dgv_reservedTables = new System.Windows.Forms.DataGridView();
             this.pnl_title.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservedTables)).BeginInit();
@@ -74,7 +74,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label14.ForeColor = System.Drawing.Color.Yellow;
             this.label14.Location = new System.Drawing.Point(12, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(114, 15);
@@ -95,24 +95,29 @@
             this.panel1.Size = new System.Drawing.Size(389, 398);
             this.panel1.TabIndex = 73;
             // 
-            // label11
+            // btn_update_status
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label11.Location = new System.Drawing.Point(14, 317);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Selected Table  :";
+            this.btn_update_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_update_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btn_update_status.Location = new System.Drawing.Point(263, 345);
+            this.btn_update_status.Name = "btn_update_status";
+            this.btn_update_status.Size = new System.Drawing.Size(105, 29);
+            this.btn_update_status.TabIndex = 74;
+            this.btn_update_status.Text = "Update Status";
+            this.btn_update_status.UseVisualStyleBackColor = false;
+            this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
             // 
-            // dgv_reservedTables
+            // label1
             // 
-            this.dgv_reservedTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_reservedTables.Location = new System.Drawing.Point(7, 10);
-            this.dgv_reservedTables.Name = "dgv_reservedTables";
-            this.dgv_reservedTables.Size = new System.Drawing.Size(361, 287);
-            this.dgv_reservedTables.TabIndex = 0;
-            this.dgv_reservedTables.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_reservedTables_CellClick);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(14, 353);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "Mark As :";
             // 
             // txt_selected_item
             // 
@@ -139,29 +144,24 @@
             this.cmb_Order_status.Size = new System.Drawing.Size(129, 21);
             this.cmb_Order_status.TabIndex = 71;
             // 
-            // label1
+            // label11
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(14, 353);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "Mark As :";
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(14, 317);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Selected Table  :";
             // 
-            // btn_update_status
+            // dgv_reservedTables
             // 
-            this.btn_update_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn_update_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_update_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn_update_status.Location = new System.Drawing.Point(263, 345);
-            this.btn_update_status.Name = "btn_update_status";
-            this.btn_update_status.Size = new System.Drawing.Size(105, 29);
-            this.btn_update_status.TabIndex = 74;
-            this.btn_update_status.Text = "Update Status";
-            this.btn_update_status.UseVisualStyleBackColor = false;
-            this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
+            this.dgv_reservedTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_reservedTables.Location = new System.Drawing.Point(7, 10);
+            this.dgv_reservedTables.Name = "dgv_reservedTables";
+            this.dgv_reservedTables.Size = new System.Drawing.Size(361, 287);
+            this.dgv_reservedTables.TabIndex = 0;
+            this.dgv_reservedTables.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_reservedTables_CellClick);
             // 
             // ReservedTables
             // 
