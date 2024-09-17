@@ -170,5 +170,21 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 MessageBox.Show("instens already exisit");
             }
         }
+
+        private void btn_track_delivery_Click(object sender, EventArgs e)
+        {
+            TrackDelivery update = new TrackDelivery();
+
+            if (!NewManagerHome.opendChildForms.Contains("TrackDelivery") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                update.MdiParent = this;
+                update.Show();
+                NewManagerHome.opendChildForms.Add("TrackDelivery");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

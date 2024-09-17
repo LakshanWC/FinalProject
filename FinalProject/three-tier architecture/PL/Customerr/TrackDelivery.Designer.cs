@@ -48,13 +48,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmb_order_type = new System.Windows.Forms.ComboBox();
             this.btn_load = new System.Windows.Forms.Button();
             this.txt_order_id = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_located_Order = new System.Windows.Forms.ComboBox();
             this.ttp_order_id = new System.Windows.Forms.ToolTip(this.components);
-            this.cmb_order_type = new System.Windows.Forms.ComboBox();
             this.pnl_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,6 +89,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label6
             // 
@@ -271,6 +272,19 @@
             this.panel2.Size = new System.Drawing.Size(540, 131);
             this.panel2.TabIndex = 63;
             // 
+            // cmb_order_type
+            // 
+            this.cmb_order_type.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_order_type.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_order_type.FormattingEnabled = true;
+            this.cmb_order_type.Items.AddRange(new object[] {
+            "Normal Order",
+            "Special Order"});
+            this.cmb_order_type.Location = new System.Drawing.Point(377, 32);
+            this.cmb_order_type.Name = "cmb_order_type";
+            this.cmb_order_type.Size = new System.Drawing.Size(137, 21);
+            this.cmb_order_type.TabIndex = 68;
+            // 
             // btn_load
             // 
             this.btn_load.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -325,19 +339,6 @@
             this.cmb_located_Order.Size = new System.Drawing.Size(219, 21);
             this.cmb_located_Order.TabIndex = 62;
             this.cmb_located_Order.SelectedIndexChanged += new System.EventHandler(this.cmb_located_Order_SelectedIndexChanged);
-            // 
-            // cmb_order_type
-            // 
-            this.cmb_order_type.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cmb_order_type.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmb_order_type.FormattingEnabled = true;
-            this.cmb_order_type.Items.AddRange(new object[] {
-            "Normal Order",
-            "Special Order"});
-            this.cmb_order_type.Location = new System.Drawing.Point(377, 32);
-            this.cmb_order_type.Name = "cmb_order_type";
-            this.cmb_order_type.Size = new System.Drawing.Size(137, 21);
-            this.cmb_order_type.TabIndex = 68;
             // 
             // TrackDelivery
             // 

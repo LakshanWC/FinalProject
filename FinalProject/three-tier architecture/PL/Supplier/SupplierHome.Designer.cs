@@ -75,11 +75,11 @@
             // 
             // btn_sideBar_thire
             // 
-            this.btn_sideBar_thire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_sideBar_thire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(115)))), ((int)(((byte)(51)))));
             this.btn_sideBar_thire.FlatAppearance.BorderSize = 0;
             this.btn_sideBar_thire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sideBar_thire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sideBar_thire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_sideBar_thire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_sideBar_thire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sideBar_thire.Location = new System.Drawing.Point(12, 318);
             this.btn_sideBar_thire.Name = "btn_sideBar_thire";
@@ -91,12 +91,12 @@
             // 
             // btn_logout
             // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(71)))));
             this.btn_logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_logout.FlatAppearance.BorderSize = 0;
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_logout.Location = new System.Drawing.Point(0, 423);
             this.btn_logout.Name = "btn_logout";
@@ -108,7 +108,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.panel7.Location = new System.Drawing.Point(8, 139);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(170, 3);
@@ -116,7 +116,7 @@
             // 
             // pnl_nav
             // 
-            this.pnl_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pnl_nav.BackColor = System.Drawing.Color.Yellow;
             this.pnl_nav.Location = new System.Drawing.Point(3, 148);
             this.pnl_nav.Name = "pnl_nav";
             this.pnl_nav.Size = new System.Drawing.Size(5, 100);
@@ -124,11 +124,11 @@
             // 
             // btn_sideBar_two
             // 
-            this.btn_sideBar_two.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_sideBar_two.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(115)))), ((int)(((byte)(51)))));
             this.btn_sideBar_two.FlatAppearance.BorderSize = 0;
             this.btn_sideBar_two.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sideBar_two.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sideBar_two.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_sideBar_two.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_sideBar_two.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sideBar_two.Location = new System.Drawing.Point(10, 263);
             this.btn_sideBar_two.Name = "btn_sideBar_two";
@@ -140,11 +140,11 @@
             // 
             // btn_sideBar_one
             // 
-            this.btn_sideBar_one.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_sideBar_one.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(115)))), ((int)(((byte)(51)))));
             this.btn_sideBar_one.FlatAppearance.BorderSize = 0;
             this.btn_sideBar_one.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sideBar_one.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sideBar_one.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_sideBar_one.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_sideBar_one.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sideBar_one.Location = new System.Drawing.Point(10, 205);
             this.btn_sideBar_one.Name = "btn_sideBar_one";
@@ -168,7 +168,7 @@
             // 
             this.lbl_userName.AutoSize = true;
             this.lbl_userName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lbl_userName.ForeColor = System.Drawing.Color.Yellow;
             this.lbl_userName.Location = new System.Drawing.Point(48, 92);
             this.lbl_userName.Name = "lbl_userName";
             this.lbl_userName.Size = new System.Drawing.Size(86, 16);
@@ -187,12 +187,12 @@
             // 
             // btn_home
             // 
-            this.btn_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(115)))), ((int)(((byte)(51)))));
             this.btn_home.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.Location = new System.Drawing.Point(10, 148);
             this.btn_home.Name = "btn_home";

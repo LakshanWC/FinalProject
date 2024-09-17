@@ -92,7 +92,7 @@ namespace FinalProject.three_tier_architecture.PL
             //customer
 
             CustomerHome cusHome = new CustomerHome();
-            cusHome.setUserName("c001");
+            cusHome.setUserName("customer");
            // this.Hide();
             cusHome.Show();
         }

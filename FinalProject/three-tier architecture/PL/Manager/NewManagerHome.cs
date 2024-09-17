@@ -209,7 +209,7 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Height = btn_home.Height;
             pnl_nav.Top = btn_home.Top;
             pnl_nav.Left = btn_home.Left;
-            btn_home.BackColor = Color.FromArgb(30,30,30);
+           // btn_home.BackColor = Color.FromArgb(30,30,30);
 
             foreach (var child in this.MdiChildren)
             {
@@ -222,7 +222,7 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void btn_dashboard_Leave(object sender, EventArgs e)
         {
-            btn_home.BackColor = Color.FromArgb(42,42,42);
+          //  btn_home.BackColor = Color.FromArgb(42,42,42);
         }
 
         private void cpb_stock_prisentage_Click(object sender, EventArgs e)
@@ -241,7 +241,7 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Height =  btn_enable_password.Height;
             pnl_nav.Top =  btn_enable_password.Top;
             pnl_nav.Left =  btn_enable_password.Left;
-            btn_enable_password.BackColor = Color.FromArgb(30, 30, 30);
+           // btn_enable_password.BackColor = Color.FromArgb(30, 30, 30);
             PasswordRequest request = new PasswordRequest();
 
             if (!opendChildForms.Contains("passRequest") && opendChildForms.Count <= 2)
@@ -265,7 +265,7 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Height =  btn_add_employee.Height;
             pnl_nav.Top =  btn_add_employee.Top;
             pnl_nav.Left =  btn_add_employee.Left;
-            btn_add_employee.BackColor = Color.FromArgb(30, 30, 30);
+            //btn_add_employee.BackColor = Color.FromArgb(30, 30, 30);
 
             if (!opendChildForms.Contains("addEmployee") && opendChildForms.Count <= 2)
             {
@@ -287,7 +287,8 @@ namespace FinalProject.three_tier_architecture.PL
             pnl_nav.Height =  btn_add_menu_item.Height;
             pnl_nav.Top =  btn_add_menu_item.Top;
             pnl_nav.Left =  btn_add_menu_item.Left;
-            btn_add_menu_item.BackColor = Color.FromArgb(30, 30, 30);
+            pnl_nav.Visible = true;
+           // btn_add_menu_item.BackColor = Color.FromArgb(30, 30, 30);
 
             if (!opendChildForms.Contains("addItem") && opendChildForms.Count <= 2)
             {
@@ -315,17 +316,17 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void btn_enable_password_Leave(object sender, EventArgs e)
         {
-            btn_enable_password.BackColor = Color.FromArgb(42, 42, 42);
+           // btn_enable_password.BackColor = Color.FromArgb(42, 42, 42);
         }
 
         private void btn_add_employee_Leave(object sender, EventArgs e)
         {
-            btn_add_employee.BackColor = Color.FromArgb(42, 42, 42);
+           // btn_add_employee.BackColor = Color.FromArgb(42, 42, 42);
         }
 
         private void btn_add_menu_item_Leave(object sender, EventArgs e)
         {
-            btn_add_menu_item.BackColor = Color.FromArgb(42, 42, 42);
+           // btn_add_menu_item.BackColor = Color.FromArgb(42, 42, 42);
         }
 
         private void addMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -425,6 +426,11 @@ namespace FinalProject.three_tier_architecture.PL
             {
                 MessageBox.Show("instens already exisit");
             }
+        }
+
+        private void pnl_nav_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

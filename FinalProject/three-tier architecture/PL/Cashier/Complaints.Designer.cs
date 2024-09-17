@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Complaints));
             this.btn_next = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_tableNO = new System.Windows.Forms.TextBox();
+            this.txt_reqType = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_description = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@
             this.pnl_title = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_reqType = new System.Windows.Forms.TextBox();
-            this.txt_tableNO = new System.Windows.Forms.TextBox();
             this.btn_pervios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_title.SuspendLayout();
@@ -51,7 +51,7 @@
             this.btn_next.FlatAppearance.BorderSize = 0;
             this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btn_next.Location = new System.Drawing.Point(390, 375);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(75, 36);
@@ -74,10 +74,32 @@
             this.panel1.Size = new System.Drawing.Size(453, 319);
             this.panel1.TabIndex = 64;
             // 
+            // txt_tableNO
+            // 
+            this.txt_tableNO.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_tableNO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tableNO.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_tableNO.Location = new System.Drawing.Point(126, 23);
+            this.txt_tableNO.Name = "txt_tableNO";
+            this.txt_tableNO.ReadOnly = true;
+            this.txt_tableNO.Size = new System.Drawing.Size(102, 20);
+            this.txt_tableNO.TabIndex = 67;
+            // 
+            // txt_reqType
+            // 
+            this.txt_reqType.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_reqType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_reqType.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_reqType.Location = new System.Drawing.Point(126, 63);
+            this.txt_reqType.Name = "txt_reqType";
+            this.txt_reqType.ReadOnly = true;
+            this.txt_reqType.Size = new System.Drawing.Size(102, 20);
+            this.txt_reqType.TabIndex = 66;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(32, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
@@ -87,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(15, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -108,7 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
@@ -145,34 +167,12 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label14.ForeColor = System.Drawing.Color.Yellow;
             this.label14.Location = new System.Drawing.Point(12, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(122, 15);
             this.label14.TabIndex = 42;
             this.label14.Text = "Check Complaints";
-            // 
-            // txt_reqType
-            // 
-            this.txt_reqType.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_reqType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_reqType.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_reqType.Location = new System.Drawing.Point(126, 63);
-            this.txt_reqType.Name = "txt_reqType";
-            this.txt_reqType.ReadOnly = true;
-            this.txt_reqType.Size = new System.Drawing.Size(102, 20);
-            this.txt_reqType.TabIndex = 66;
-            // 
-            // txt_tableNO
-            // 
-            this.txt_tableNO.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_tableNO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_tableNO.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_tableNO.Location = new System.Drawing.Point(126, 23);
-            this.txt_tableNO.Name = "txt_tableNO";
-            this.txt_tableNO.ReadOnly = true;
-            this.txt_tableNO.Size = new System.Drawing.Size(102, 20);
-            this.txt_tableNO.TabIndex = 67;
             // 
             // btn_pervios
             // 
@@ -180,7 +180,7 @@
             this.btn_pervios.FlatAppearance.BorderSize = 0;
             this.btn_pervios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pervios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pervios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_pervios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btn_pervios.Location = new System.Drawing.Point(299, 375);
             this.btn_pervios.Name = "btn_pervios";
             this.btn_pervios.Size = new System.Drawing.Size(75, 36);

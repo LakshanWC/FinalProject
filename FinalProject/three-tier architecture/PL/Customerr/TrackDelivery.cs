@@ -144,5 +144,11 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 pb_delivered.Image = myImage;
             }
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("TrackDelivery");
+            this.Dispose();
+        }
     }
 }
