@@ -38,7 +38,8 @@ namespace FinalProject.three_tier_architecture.PL
            switch (type)
            {
                 case 0:
-                    location = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\AttendentReport.rpt";
+                    // location = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\AttendentReport.rpt";
+                    location = "D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\AttendentsLog.rpt";
                     txt_current_report.Text = "Attendent Report";
                     cmb_reports.SelectedIndex = 0;
                     return location;
@@ -101,36 +102,20 @@ namespace FinalProject.three_tier_architecture.PL
         {
             
             
-                DMDBConnection connection = new DMDBConnection();
-
-            // Query for tblorder
-            /*
-            string orderQuery = @"
-                SELECT UniqeKey, Cno, ItemName,Oquantity, Odate, OrderStatus,Price
-                FROM tblorder ";*/
-
+            DMDBConnection connection = new DMDBConnection();
 
             string orderQuery = @"
-    SELECT UniqeKey, 
-           Cno, 
-           ItemName, 
-           SUM(Oquantity) AS TotalQuantity, 
-           Odate, 
-           OrderStatus, 
-           SUM(Price * Oquantity) AS TotalPrice
-    FROM tblorder
-    GROUP BY UniqeKey, Cno, ItemName, Odate, OrderStatus";
+            SELECT UniqeKey, 
+                Cno, 
+                ItemName, 
+                SUM(Oquantity) AS TotalQuantity, 
+                Odate, 
+                OrderStatus, 
+                SUM(Price * Oquantity) AS TotalPrice
+            FROM tblorder
+            GROUP BY UniqeKey, Cno, ItemName, Odate, OrderStatus";
 
-            /*
 
-            // Query for specialOrderRequest
-            string specialOrderQuery = @"
-                    SELECT SORid, quantity, itemName, Price, orderStat, SpOrderDate
-                    FROM specialOrderRequest";
-
-                // Create and fill datasets
-                DataSet ds = new DataSet();
-            */
                 using (SqlConnection conn = connection.openConnection())
                 {
                     // Fill tblorder data

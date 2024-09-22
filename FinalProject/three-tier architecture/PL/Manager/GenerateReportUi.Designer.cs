@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.AttendentReport1 = new FinalProject.three_tier_architecture.PL.AttendentReport();
+          //  this.AttendentReport1 = new FinalProject.three_tier_architecture.PL.AttendentReport();
             this.cmb_reports = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -134,7 +134,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private AttendentReport AttendentReport1;
+        //private AttendentReport AttendentReport1;
         private System.Windows.Forms.ComboBox cmb_reports;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
