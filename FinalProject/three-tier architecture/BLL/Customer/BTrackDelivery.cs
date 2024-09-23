@@ -22,5 +22,6 @@ namespace FinalProject.three_tier_architecture.BLL.Customer
             DTrackDelivery set = new DTrackDelivery();
             return set.getOrderDeliverStat(oId, isNormalOrder);
         }
+
     }
 }

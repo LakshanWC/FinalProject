@@ -150,5 +150,15 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             NewManagerHome.opendChildForms.Remove("TrackDelivery");
             this.Dispose();
         }
+
+        private void cmb_order_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ch_load_all_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

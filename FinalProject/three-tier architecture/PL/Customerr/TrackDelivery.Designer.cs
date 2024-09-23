@@ -280,10 +280,11 @@
             this.cmb_order_type.Items.AddRange(new object[] {
             "Normal Order",
             "Special Order"});
-            this.cmb_order_type.Location = new System.Drawing.Point(377, 32);
+            this.cmb_order_type.Location = new System.Drawing.Point(377, 19);
             this.cmb_order_type.Name = "cmb_order_type";
             this.cmb_order_type.Size = new System.Drawing.Size(137, 21);
             this.cmb_order_type.TabIndex = 68;
+            this.cmb_order_type.SelectedIndexChanged += new System.EventHandler(this.cmb_order_type_SelectedIndexChanged);
             // 
             // btn_load
             // 
@@ -291,7 +292,7 @@
             this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_load.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btn_load.Location = new System.Drawing.Point(419, 78);
+            this.btn_load.Location = new System.Drawing.Point(404, 78);
             this.btn_load.Name = "btn_load";
             this.btn_load.Size = new System.Drawing.Size(74, 30);
             this.btn_load.TabIndex = 67;
@@ -321,7 +322,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(34, 38);
+            this.label1.Location = new System.Drawing.Point(34, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 63;
@@ -334,7 +335,7 @@
             this.cmb_located_Order.FormattingEnabled = true;
             this.cmb_located_Order.Items.AddRange(new object[] {
             "---Select---"});
-            this.cmb_located_Order.Location = new System.Drawing.Point(152, 32);
+            this.cmb_located_Order.Location = new System.Drawing.Point(152, 19);
             this.cmb_located_Order.Name = "cmb_located_Order";
             this.cmb_located_Order.Size = new System.Drawing.Size(219, 21);
             this.cmb_located_Order.TabIndex = 62;
