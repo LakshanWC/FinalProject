@@ -76,6 +76,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
             {
                 childForm.Close(); // Close each child form
             }
+            NewManagerHome.opendChildForms.Clear();
         }
     }
 }

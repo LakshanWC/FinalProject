@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewManagerHome));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnl_side_panle = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_add_menu_item = new System.Windows.Forms.Button();
@@ -370,7 +370,7 @@
             this.tlp_dash_board.ColumnCount = 3;
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.32824F));
             this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.67176F));
-            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
+            this.tlp_dash_board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
             this.tlp_dash_board.Controls.Add(this.panel1, 2, 0);
             this.tlp_dash_board.Controls.Add(this.panel6, 0, 0);
             this.tlp_dash_board.Controls.Add(this.panel5, 2, 1);
@@ -399,9 +399,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(377, 3);
+            this.panel1.Location = new System.Drawing.Point(376, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 193);
+            this.panel1.Size = new System.Drawing.Size(315, 193);
             this.panel1.TabIndex = 23;
             // 
             // lbl_total_earning
@@ -445,6 +445,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(172, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -458,7 +459,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(368, 193);
+            this.panel6.Size = new System.Drawing.Size(367, 193);
             this.panel6.TabIndex = 25;
             // 
             // ch_stocks
@@ -466,17 +467,17 @@
             this.ch_stocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.ch_stocks.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ch_stocks.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.ch_stocks.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ch_stocks.Legends.Add(legend2);
             this.ch_stocks.Location = new System.Drawing.Point(17, 42);
             this.ch_stocks.Name = "ch_stocks";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ch_stocks.Series.Add(series1);
-            this.ch_stocks.Size = new System.Drawing.Size(326, 138);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ch_stocks.Series.Add(series2);
+            this.ch_stocks.Size = new System.Drawing.Size(325, 138);
             this.ch_stocks.TabIndex = 3;
             this.ch_stocks.Text = "chart1";
             // 
@@ -499,9 +500,9 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(377, 202);
+            this.panel5.Location = new System.Drawing.Point(376, 202);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(314, 70);
+            this.panel5.Size = new System.Drawing.Size(315, 70);
             this.panel5.TabIndex = 28;
             // 
             // lbl_no_of_employee
@@ -548,9 +549,9 @@
             this.panel2.Controls.Add(this.lbl_event_start_time);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(377, 278);
+            this.panel2.Location = new System.Drawing.Point(376, 278);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(314, 120);
+            this.panel2.Size = new System.Drawing.Size(315, 120);
             this.panel2.TabIndex = 29;
             // 
             // lbl_event_status
@@ -616,9 +617,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(377, 404);
+            this.panel4.Location = new System.Drawing.Point(376, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(314, 67);
+            this.panel4.Size = new System.Drawing.Size(315, 67);
             this.panel4.TabIndex = 30;
             // 
             // pictureBox3
@@ -675,7 +676,7 @@
             this.panel8.Location = new System.Drawing.Point(180, 202);
             this.panel8.Name = "panel8";
             this.tlp_dash_board.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(191, 269);
+            this.panel8.Size = new System.Drawing.Size(190, 269);
             this.panel8.TabIndex = 31;
             // 
             // cpb_cutomer_satisfaction

@@ -368,6 +368,12 @@
     <Compile Include="three-tier architecture\PL\Manager\RemoveMenuItem.Designer.cs">
       <DependentUpon>RemoveMenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Manager\SpecialOrderRevenue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialOrderRevenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,6 +652,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\RemoveMenuItem.resx">
       <DependentUpon>RemoveMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Manager\SpecialOrderRevenue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SpecialOrderRevenue.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Manager\UpdateEmployeeDetails.resx">
       <DependentUpon>UpdateEmployeeDetails.cs</DependentUpon>

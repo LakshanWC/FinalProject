@@ -134,6 +134,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             {
                 childForm.Close(); // Close each child form
             }
+            NewManagerHome.opendChildForms.Clear();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)

@@ -69,6 +69,7 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             {
                 childForm.Close(); // Close each child form
             }
+            NewManagerHome.opendChildForms.Clear();
         }
     }
 }

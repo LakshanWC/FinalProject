@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-          //  this.AttendentReport1 = new FinalProject.three_tier_architecture.PL.AttendentReport();
             this.cmb_reports = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +59,8 @@
             "Income Report",
             "FinancialExpense Report",
             "InventoyItem Report",
-            "reportIncome"});
+            "reportIncome",
+            "SpecialOrderRevenue"});
             this.cmb_reports.Location = new System.Drawing.Point(554, 19);
             this.cmb_reports.Name = "cmb_reports";
             this.cmb_reports.Size = new System.Drawing.Size(121, 21);

@@ -66,6 +66,14 @@ namespace FinalProject.three_tier_architecture.PL
                     return location;
                     break;
 
+                case 5:
+                    location ="D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Manager\\SpecialOrderRevenue.rpt";
+                    txt_current_report.Text = "specialOrder Income";
+                    cmb_reports.SelectedIndex = 3;
+                    return location;
+                    break;
+
+
                 default:
                     location = null;
                     return location;
@@ -75,7 +83,7 @@ namespace FinalProject.three_tier_architecture.PL
 
         private void cmb_reports_SelectedIndexChanged(object sender, EventArgs e)
         {
-          if(cmb_reports.SelectedIndex == 4)
+          if(cmb_reports.SelectedIndex == 2)
             {
                 cmb_seleted_filter.Visible = true;
                 cmb_seleted_filter.SelectedIndex = 0;
@@ -149,7 +157,7 @@ namespace FinalProject.three_tier_architecture.PL
         
         private void cmb_seleted_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
-         //   LoadReportWithCustomQuery(cmb_seleted_filter.SelectedIndex);
+            LoadReportWithCustomQuery(cmb_seleted_filter.SelectedIndex);
         }
 
         private void LoadReportWithCustomQuery(int filterType)

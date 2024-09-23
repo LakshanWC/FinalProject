@@ -82,6 +82,7 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             {
                 childForm.Close(); // Close each child form
             }
+            NewManagerHome.opendChildForms.Clear();
         }
     }
 }

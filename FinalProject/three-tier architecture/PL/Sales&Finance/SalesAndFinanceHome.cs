@@ -159,5 +159,14 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
             this.Hide();
             logIn.Show();
         }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); // Close each child form
+            }
+            NewManagerHome.opendChildForms.Clear();
+        }
     }
 }
