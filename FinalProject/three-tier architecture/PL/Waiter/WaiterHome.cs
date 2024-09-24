@@ -27,6 +27,7 @@ namespace FinalProject.three_tier_architecture.PL.Waiter
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             ReceivedOrder requests = new ReceivedOrder();
 
             if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
@@ -44,6 +45,7 @@ namespace FinalProject.three_tier_architecture.PL.Waiter
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             CustomerRequests requests = new CustomerRequests();
 
             if (!NewManagerHome.opendChildForms.Contains("CustomerRequests") && NewManagerHome.opendChildForms.Count <= 2)
@@ -61,6 +63,7 @@ namespace FinalProject.three_tier_architecture.PL.Waiter
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             ReservedTables requests = new ReservedTables();
 
             if (!NewManagerHome.opendChildForms.Contains("ReservedTables") && NewManagerHome.opendChildForms.Count <= 2)
@@ -83,6 +86,7 @@ namespace FinalProject.three_tier_architecture.PL.Waiter
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
