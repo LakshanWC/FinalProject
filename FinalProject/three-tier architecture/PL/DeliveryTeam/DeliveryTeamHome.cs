@@ -30,6 +30,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Delivery menu = new Delivery();
 
             if (!NewManagerHome.opendChildForms.Contains("Delivery") && NewManagerHome.opendChildForms.Count <= 2)
@@ -47,6 +48,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Performance menu = new Performance();
 
             if (!NewManagerHome.opendChildForms.Contains("Perfomence") && NewManagerHome.opendChildForms.Count <= 2)
@@ -77,6 +79,7 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
         }
     }
 }
