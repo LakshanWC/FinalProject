@@ -26,6 +26,8 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
+
             if (!NewManagerHome.opendChildForms.Contains("Add Stock") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 AddStock addStock = new AddStock();
@@ -42,6 +44,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("Stocks") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 StockUi stock = new StockUi();
@@ -58,6 +61,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("Transaction") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 Transaction stock = new Transaction();
@@ -74,6 +78,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void contactSupplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("Contact") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 Contact stock = new Contact();
@@ -90,6 +95,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void attendentReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             FinancialReview finRew = new FinancialReview();
             finRew.MdiParent = this;
             finRew.Show();
@@ -98,6 +104,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void removeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             RemoveStock rmStock = new RemoveStock();
 
             if (!NewManagerHome.opendChildForms.Contains("RemoveStock") && NewManagerHome.opendChildForms.Count <= 2)
@@ -115,6 +122,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void generateToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             GenerateReportUi reports = new GenerateReportUi();
             GenerateReportUi.reportType = 1;
             reports.MdiParent = this;
@@ -123,6 +131,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void addStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("Add Stock") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 AddStock addStock = new AddStock();
@@ -139,6 +148,7 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
 
         private void addOTToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("Add OT") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 AddOT addStock = new AddOT();
@@ -167,6 +177,8 @@ namespace FinalProject.three_tier_architecture.PL.Sales_Finance
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+
+            tbl_home.Visible = true;
         }
     }
 }
