@@ -41,9 +41,13 @@
             this.lbl_userName = new System.Windows.Forms.Label();
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
+            this.pb_homeImage = new System.Windows.Forms.PictureBox();
+            this.tbl_home = new System.Windows.Forms.TableLayoutPanel();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).BeginInit();
+            this.tbl_home.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -202,20 +206,47 @@
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
+            // pb_homeImage
+            // 
+            this.pb_homeImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_homeImage.Image = ((System.Drawing.Image)(resources.GetObject("pb_homeImage.Image")));
+            this.pb_homeImage.Location = new System.Drawing.Point(3, 3);
+            this.pb_homeImage.Name = "pb_homeImage";
+            this.pb_homeImage.Size = new System.Drawing.Size(762, 442);
+            this.pb_homeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_homeImage.TabIndex = 13;
+            this.pb_homeImage.TabStop = false;
+            // 
+            // tbl_home
+            // 
+            this.tbl_home.ColumnCount = 1;
+            this.tbl_home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_home.Controls.Add(this.pb_homeImage, 0, 0);
+            this.tbl_home.Location = new System.Drawing.Point(200, 36);
+            this.tbl_home.Name = "tbl_home";
+            this.tbl_home.RowCount = 1;
+            this.tbl_home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_home.Size = new System.Drawing.Size(768, 448);
+            this.tbl_home.TabIndex = 14;
+            // 
             // SupplierHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 496);
+            this.Controls.Add(this.tbl_home);
             this.Controls.Add(this.pnl_side_panle);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "SupplierHome";
             this.Text = "SupplierHome";
+            this.Load += new System.EventHandler(this.SupplierHome_Load);
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).EndInit();
+            this.tbl_home.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +266,7 @@
         private System.Windows.Forms.PictureBox pb_user_icon;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_sideBar_thire;
+        private System.Windows.Forms.PictureBox pb_homeImage;
+        private System.Windows.Forms.TableLayoutPanel tbl_home;
     }
 }

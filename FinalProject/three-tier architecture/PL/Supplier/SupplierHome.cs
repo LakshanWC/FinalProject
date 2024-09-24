@@ -25,6 +25,7 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Inventory inventory = new Inventory();
 
             if (!NewManagerHome.opendChildForms.Contains("Inventory") && NewManagerHome.opendChildForms.Count <= 2)
@@ -42,6 +43,7 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             StockOrderRequest requests = new StockOrderRequest();
 
             if (!NewManagerHome.opendChildForms.Contains("StockOrderRequests") && NewManagerHome.opendChildForms.Count <= 2)
@@ -71,6 +73,7 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_thire_Click_1(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             CurrentSupplies currntSup = new CurrentSupplies();
             currntSup.MdiParent = this;
             currntSup.Show();
@@ -83,6 +86,12 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
+        }
+
+        private void SupplierHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
