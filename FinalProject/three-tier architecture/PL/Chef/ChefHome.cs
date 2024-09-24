@@ -26,6 +26,7 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 ReceivedOrder addStock = new ReceivedOrder();
@@ -42,6 +43,7 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("UpdateInventory") && NewManagerHome.opendChildForms.Count <= 2)
             {
                 UpdateInventory addStock = new UpdateInventory();
@@ -70,6 +72,12 @@ namespace FinalProject.three_tier_architecture.PL.Chef
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
+        }
+
+        private void btn_sideBar_thire_Click(object sender, EventArgs e)
+        {
+            tbl_home.Visible = false;
         }
     }
 }
