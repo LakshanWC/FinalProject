@@ -30,6 +30,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             CheckInventory inventory = new CheckInventory();
 
             if (!NewManagerHome.opendChildForms.Contains("CheckInventory") && NewManagerHome.opendChildForms.Count <= 2)
@@ -47,6 +48,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             isCahierOpen=true;
             FoodMenu menu = new FoodMenu();
 
@@ -66,6 +68,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             MenuUpdate update = new MenuUpdate();
 
             if (!NewManagerHome.opendChildForms.Contains("MenuUpdate") && NewManagerHome.opendChildForms.Count <= 2)
@@ -82,6 +85,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void checkReviewsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Review update = new Review();
 
             if (!NewManagerHome.opendChildForms.Contains("Review") && NewManagerHome.opendChildForms.Count <= 2)
@@ -98,6 +102,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void receivedOrdersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             ReceivedOrder update = new ReceivedOrder();
 
             if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
@@ -114,6 +119,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void checkComplatinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Complaints update = new Complaints();
 
             if (!NewManagerHome.opendChildForms.Contains("Complaints") && NewManagerHome.opendChildForms.Count <= 2)
@@ -135,6 +141,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
