@@ -26,6 +26,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_menu_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             FoodMenu menu = new FoodMenu();
 
             if (!NewManagerHome.opendChildForms.Contains("FoodMenu") && NewManagerHome.opendChildForms.Count <= 2)
@@ -67,6 +68,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void addReivewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             CustomerReview review = new CustomerReview();
 
             if (!NewManagerHome.opendChildForms.Contains("CustomerReview") && NewManagerHome.opendChildForms.Count <= 2)
@@ -85,6 +87,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             FoodMenu menu = new FoodMenu();
 
             if (!NewManagerHome.opendChildForms.Contains("FoodMenu") && NewManagerHome.opendChildForms.Count <= 2)
@@ -103,6 +106,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void registerForLoyaltyCardToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             RegisterForLoyaltyCard loyaltyCard = new RegisterForLoyaltyCard();
 
             if (!NewManagerHome.opendChildForms.Contains("RegisterForLoyaltyCard") && NewManagerHome.opendChildForms.Count <= 2)
@@ -119,6 +123,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             OrderConfirmation orderConf = new OrderConfirmation();
             orderConf.MdiParent = this;
             orderConf.Show();
@@ -126,6 +131,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void reviewsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Review update = new Review();
 
             if (!NewManagerHome.opendChildForms.Contains("Review") && NewManagerHome.opendChildForms.Count <= 2)
@@ -142,6 +148,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void resevationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             Reservation update = new Reservation();
 
             if (!NewManagerHome.opendChildForms.Contains("Reservation") && NewManagerHome.opendChildForms.Count <= 2)
@@ -158,6 +165,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void requestAssistantToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             RequestAssistant update = new RequestAssistant();
 
             if (!NewManagerHome.opendChildForms.Contains("RequestAssistant") && NewManagerHome.opendChildForms.Count <= 2)
@@ -174,6 +182,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_track_delivery_Click(object sender, EventArgs e)
         {
+            tbl_home.Visible = false;
             TrackDelivery update = new TrackDelivery();
 
             if (!NewManagerHome.opendChildForms.Contains("TrackDelivery") && NewManagerHome.opendChildForms.Count <= 2)
@@ -202,6 +211,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
+            tbl_home.Visible = true;
         }
     }
 }

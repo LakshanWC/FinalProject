@@ -50,10 +50,14 @@
             this.registerForLoyaltyCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resevationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requestAssistantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbl_home = new System.Windows.Forms.TableLayoutPanel();
+            this.pb_homeImage = new System.Windows.Forms.PictureBox();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.tbl_home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_side_panle
@@ -290,11 +294,35 @@
             this.requestAssistantToolStripMenuItem.Text = "Request Assistant";
             this.requestAssistantToolStripMenuItem.Click += new System.EventHandler(this.requestAssistantToolStripMenuItem_Click);
             // 
+            // tbl_home
+            // 
+            this.tbl_home.ColumnCount = 1;
+            this.tbl_home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_home.Controls.Add(this.pb_homeImage, 0, 0);
+            this.tbl_home.Location = new System.Drawing.Point(199, 35);
+            this.tbl_home.Name = "tbl_home";
+            this.tbl_home.RowCount = 1;
+            this.tbl_home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_home.Size = new System.Drawing.Size(768, 448);
+            this.tbl_home.TabIndex = 18;
+            // 
+            // pb_homeImage
+            // 
+            this.pb_homeImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_homeImage.Image = ((System.Drawing.Image)(resources.GetObject("pb_homeImage.Image")));
+            this.pb_homeImage.Location = new System.Drawing.Point(3, 3);
+            this.pb_homeImage.Name = "pb_homeImage";
+            this.pb_homeImage.Size = new System.Drawing.Size(762, 442);
+            this.pb_homeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_homeImage.TabIndex = 13;
+            this.pb_homeImage.TabStop = false;
+            // 
             // CustomerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 496);
+            this.Controls.Add(this.tbl_home);
             this.Controls.Add(this.pnl_side_panle);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -307,6 +335,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tbl_home.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +364,7 @@
         private System.Windows.Forms.ToolStripMenuItem resevationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem requestAssistantToolStripMenuItem;
         private System.Windows.Forms.Label lbl_user_id;
+        private System.Windows.Forms.TableLayoutPanel tbl_home;
+        private System.Windows.Forms.PictureBox pb_homeImage;
     }
 }
