@@ -225,6 +225,7 @@
             this.IsMdiContainer = true;
             this.Name = "DeliveryTeamHome";
             this.Text = "DeliveryTeamHome";
+            this.Load += new System.EventHandler(this.DeliveryTeamHome_Load);
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();

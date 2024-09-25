@@ -30,6 +30,10 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_two.Height;
+            pnl_nav.Top = btn_sideBar_two.Top;
+            pnl_nav.Left = btn_sideBar_two.Left;
+
             tbl_home.Visible = false;
             CheckInventory inventory = new CheckInventory();
 
@@ -48,6 +52,10 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_one.Height;
+            pnl_nav.Top = btn_sideBar_one.Top;
+            pnl_nav.Left = btn_sideBar_one.Left;
+
             tbl_home.Visible = false;
             isCahierOpen=true;
             FoodMenu menu = new FoodMenu();
@@ -68,6 +76,10 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_thire.Height;
+            pnl_nav.Top = btn_sideBar_thire.Top;
+            pnl_nav.Left = btn_sideBar_thire.Left;
+
             tbl_home.Visible = false;
             MenuUpdate update = new MenuUpdate();
 
@@ -136,6 +148,10 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close(); // Close each child form
@@ -149,6 +165,13 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             Login logout = new Login();
             this.Hide();
             logout.Show();
+        }
+
+        private void CahierHome_Load(object sender, EventArgs e)
+        {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
         }
     }
 }

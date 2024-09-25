@@ -30,6 +30,10 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_one.Height;
+            pnl_nav.Top = btn_sideBar_one.Top;
+            pnl_nav.Left = btn_sideBar_one.Left;
+
             tbl_home.Visible = false;
             Delivery menu = new Delivery();
 
@@ -48,6 +52,10 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_two.Height;
+            pnl_nav.Top = btn_sideBar_two.Top;
+            pnl_nav.Left = btn_sideBar_two.Left;
+
             tbl_home.Visible = false;
             Performance menu = new Performance();
 
@@ -74,12 +82,23 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close(); // Close each child form
             }
             NewManagerHome.opendChildForms.Clear();
             tbl_home.Visible = true;
+        }
+
+        private void DeliveryTeamHome_Load(object sender, EventArgs e)
+        {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
         }
     }
 }

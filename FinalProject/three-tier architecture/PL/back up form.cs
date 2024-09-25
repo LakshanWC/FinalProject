@@ -30,6 +30,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button1_Click(object sender, EventArgs e)
         {
             // manager
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button1.Height;
+            pnl_nav.Top = button1.Top;
+            pnl_nav.Left = button1.Left;
 
             NewManagerHome mHome = new NewManagerHome();
             mHome.setUserName("e000002");
@@ -40,6 +44,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button2_Click(object sender, EventArgs e)
         {
             //sales
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button2.Height;
+            pnl_nav.Top = button2.Top;
+            pnl_nav.Left = button2.Left;
 
             SalesAndFinanceHome saleHome = new SalesAndFinanceHome();
             saleHome.setUserName("e000006");
@@ -50,6 +58,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button6_Click(object sender, EventArgs e)
         {
             //Cahirer
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button6.Height;
+            pnl_nav.Top = button6.Top;
+            pnl_nav.Left = button6.Left;
 
             CahierHome cashHo = new CahierHome();
             cashHo.setUserName("e000004");
@@ -60,6 +72,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button4_Click(object sender, EventArgs e)
         {
             //Chef
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button4.Height;
+            pnl_nav.Top = button4.Top;
+            pnl_nav.Left = button4.Left;
 
             ChefHome chfHom = new ChefHome();
             chfHom.setUserName("e000003");
@@ -70,6 +86,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button7_Click(object sender, EventArgs e)
         {
             //waiter
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button7.Height;
+            pnl_nav.Top = button7.Top;
+            pnl_nav.Left = button7.Left;
 
             WaiterHome waitHome = new WaiterHome();
             waitHome.setUserName("e000007");
@@ -80,6 +100,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button3_Click(object sender, EventArgs e)
         {
             //delivery
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button3.Height;
+            pnl_nav.Top = button3.Top;
+            pnl_nav.Left = button3.Left;
 
             DeliveryTeamHome dTHome = new DeliveryTeamHome();
             dTHome.setUserName("e000005");
@@ -90,6 +114,10 @@ namespace FinalProject.three_tier_architecture.PL
         private void button5_Click(object sender, EventArgs e)
         {
             //customer
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button5.Height;
+            pnl_nav.Top = button5.Top;
+            pnl_nav.Left = button5.Left;
 
             CustomerHome cusHome = new CustomerHome();
             cusHome.setUserName("customer");
@@ -100,11 +128,20 @@ namespace FinalProject.three_tier_architecture.PL
         private void button8_Click(object sender, EventArgs e)
         {
             //supplier
+            pnl_nav.Visible = true;
+            pnl_nav.Height = button8.Height;
+            pnl_nav.Top = button8.Top;
+            pnl_nav.Left = button8.Left;
 
             SupplierHome supHome = new SupplierHome();
             supHome.setUserName("e000008");
            // this.Hide();
             supHome.Show();
+        }
+
+        private void back_up_form_Load(object sender, EventArgs e)
+        {
+            pnl_nav.Visible = false;
         }
     }
 }

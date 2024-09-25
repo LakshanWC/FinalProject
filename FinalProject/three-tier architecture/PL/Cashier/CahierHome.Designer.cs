@@ -282,6 +282,7 @@
             this.IsMdiContainer = true;
             this.Name = "CahierHome";
             this.Text = "CahierHome";
+            this.Load += new System.EventHandler(this.CahierHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_side_panle.ResumeLayout(false);

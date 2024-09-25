@@ -243,6 +243,7 @@
             this.IsMdiContainer = true;
             this.Name = "ChefHome";
             this.Text = "ChefHome";
+            this.Load += new System.EventHandler(this.ChefHome_Load);
             this.pnl_side_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();

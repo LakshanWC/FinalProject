@@ -26,6 +26,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_menu_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_menu.Height;
+            pnl_nav.Top = btn_menu.Top;
+            pnl_nav.Left = btn_menu.Left;
+
             tbl_home.Visible = false;
             FoodMenu menu = new FoodMenu();
 
@@ -63,7 +67,9 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void CustomerHome_Load(object sender, EventArgs e)
         {
-
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
         }
 
         private void addReivewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,6 +129,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_order.Height;
+            pnl_nav.Top = btn_order.Top;
+            pnl_nav.Left = btn_order.Left;
+
             tbl_home.Visible = false;
             OrderConfirmation orderConf = new OrderConfirmation();
             orderConf.MdiParent = this;
@@ -182,6 +192,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_track_delivery_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_track_delivery.Height;
+            pnl_nav.Top = btn_track_delivery.Top;
+            pnl_nav.Left = btn_track_delivery.Left;
+
             tbl_home.Visible = false;
             TrackDelivery update = new TrackDelivery();
 
@@ -206,6 +220,10 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close(); // Close each child form

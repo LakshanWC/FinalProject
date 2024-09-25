@@ -36,6 +36,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.pnl_nav = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -150,12 +151,21 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // pnl_nav
+            // 
+            this.pnl_nav.BackColor = System.Drawing.Color.Yellow;
+            this.pnl_nav.Location = new System.Drawing.Point(13, 15);
+            this.pnl_nav.Name = "pnl_nav";
+            this.pnl_nav.Size = new System.Drawing.Size(5, 100);
+            this.pnl_nav.TabIndex = 8;
+            // 
             // back_up_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(224, 520);
+            this.Controls.Add(this.pnl_nav);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -166,6 +176,7 @@
             this.Controls.Add(this.button1);
             this.Name = "back_up_form";
             this.Text = "Developer";
+            this.Load += new System.EventHandler(this.back_up_form_Load);
             this.ResumeLayout(false);
 
         }
@@ -180,5 +191,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel pnl_nav;
     }
 }

@@ -25,6 +25,10 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_two.Height;
+            pnl_nav.Top = btn_sideBar_two.Top;
+            pnl_nav.Left = btn_sideBar_two.Left;
+
             tbl_home.Visible = false;
             Inventory inventory = new Inventory();
 
@@ -43,6 +47,10 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_one.Height;
+            pnl_nav.Top = btn_sideBar_one.Top;
+            pnl_nav.Left = btn_sideBar_one.Left;
+
             tbl_home.Visible = false;
             StockOrderRequest requests = new StockOrderRequest();
 
@@ -73,6 +81,10 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_sideBar_thire_Click_1(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_thire.Height;
+            pnl_nav.Top = btn_sideBar_thire.Top;
+            pnl_nav.Left = btn_sideBar_thire.Left;
+
             tbl_home.Visible = false;
             CurrentSupplies currntSup = new CurrentSupplies();
             currntSup.MdiParent = this;
@@ -81,6 +93,10 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close(); // Close each child form
@@ -91,7 +107,9 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
 
         private void SupplierHome_Load(object sender, EventArgs e)
         {
-
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
         }
     }
 }

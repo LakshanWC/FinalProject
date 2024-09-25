@@ -26,6 +26,10 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_sideBar_one_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_one.Height;
+            pnl_nav.Top = btn_sideBar_one.Top;
+            pnl_nav.Left = btn_sideBar_one.Left;
+
             tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("ReceivedOrder") && NewManagerHome.opendChildForms.Count <= 2)
             {
@@ -43,6 +47,10 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_sideBar_two_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_sideBar_two.Height;
+            pnl_nav.Top = btn_sideBar_two.Top;
+            pnl_nav.Left = btn_sideBar_two.Left;
+
             tbl_home.Visible = false;
             if (!NewManagerHome.opendChildForms.Contains("UpdateInventory") && NewManagerHome.opendChildForms.Count <= 2)
             {
@@ -67,6 +75,10 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close(); // Close each child form
@@ -77,7 +89,18 @@ namespace FinalProject.three_tier_architecture.PL.Chef
 
         private void btn_sideBar_thire_Click(object sender, EventArgs e)
         {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
+
             tbl_home.Visible = false;
+        }
+
+        private void ChefHome_Load(object sender, EventArgs e)
+        {
+            pnl_nav.Height = btn_home.Height;
+            pnl_nav.Top = btn_home.Top;
+            pnl_nav.Left = btn_home.Left;
         }
     }
 }

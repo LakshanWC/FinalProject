@@ -339,6 +339,7 @@
             this.IsMdiContainer = true;
             this.Name = "SalesAndFinanceHome";
             this.Text = "SalesAndFinanceHome";
+            this.Load += new System.EventHandler(this.SalesAndFinanceHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_side_panle.ResumeLayout(false);
