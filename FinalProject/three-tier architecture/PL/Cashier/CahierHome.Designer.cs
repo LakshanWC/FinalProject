@@ -247,6 +247,9 @@
             // 
             // tbl_home
             // 
+            this.tbl_home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbl_home.ColumnCount = 1;
             this.tbl_home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tbl_home.Controls.Add(this.pb_homeImage, 0, 0);
