@@ -94,6 +94,19 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             pnl_nav.Left = btn_home.Left;
 
             tbl_home.Visible = false;
+
+            if (!NewManagerHome.opendChildForms.Contains("FeedBack") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                FeedBack addStock = new FeedBack();
+                addStock.MdiParent = this;
+                addStock.Show();
+
+                NewManagerHome.opendChildForms.Add("FeedBack");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
         }
 
         private void ChefHome_Load(object sender, EventArgs e)

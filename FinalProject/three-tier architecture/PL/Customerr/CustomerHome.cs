@@ -1,5 +1,6 @@
 ﻿using FinalProject.MVC.View;
 using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.DAL.Chef;
 using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,24 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             pnl_nav.Height = btn_home.Height;
             pnl_nav.Top = btn_home.Top;
             pnl_nav.Left = btn_home.Left;
+
+            DataSet dataSet = new DataSet();
+            DFeedBack feed = new DFeedBack();
+
+            dataSet = feed.getFeedBack();
+            if(dataSet != null)
+            {
+                DataTable dt = dataSet.Tables[0];
+                foreach (DataRow row in dt.Rows) // Iterate through each row in the DataTable
+                {
+                    // Retrieve data
+                    string feedbackType = row["feedbackType"].ToString();
+                    string feedback = row["feedback"].ToString();
+
+                    txt_feedbackType.Text = feedbackType;
+                    txt_message.Text = feedback;
+                }
+            }
         }
 
         private void addReivewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -230,6 +249,11 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
             }
             NewManagerHome.opendChildForms.Clear();
             tbl_home.Visible = true;
+        }
+
+        private void txt_feedbackType_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

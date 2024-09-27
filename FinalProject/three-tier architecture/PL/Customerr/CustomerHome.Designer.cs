@@ -52,12 +52,16 @@
             this.requestAssistantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbl_home = new System.Windows.Forms.TableLayoutPanel();
             this.pb_homeImage = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_feedbackType = new System.Windows.Forms.TextBox();
+            this.txt_message = new System.Windows.Forms.TextBox();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tbl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_side_panle
@@ -302,10 +306,12 @@
             this.tbl_home.ColumnCount = 1;
             this.tbl_home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tbl_home.Controls.Add(this.pb_homeImage, 0, 0);
+            this.tbl_home.Controls.Add(this.panel1, 0, 1);
             this.tbl_home.Location = new System.Drawing.Point(199, 35);
             this.tbl_home.Name = "tbl_home";
-            this.tbl_home.RowCount = 1;
+            this.tbl_home.RowCount = 2;
             this.tbl_home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tbl_home.Size = new System.Drawing.Size(768, 448);
             this.tbl_home.TabIndex = 18;
             // 
@@ -315,10 +321,51 @@
             this.pb_homeImage.Image = ((System.Drawing.Image)(resources.GetObject("pb_homeImage.Image")));
             this.pb_homeImage.Location = new System.Drawing.Point(3, 3);
             this.pb_homeImage.Name = "pb_homeImage";
-            this.pb_homeImage.Size = new System.Drawing.Size(762, 442);
+            this.pb_homeImage.Size = new System.Drawing.Size(762, 369);
             this.pb_homeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_homeImage.TabIndex = 13;
             this.pb_homeImage.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.txt_feedbackType);
+            this.panel1.Controls.Add(this.txt_message);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 378);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(762, 67);
+            this.panel1.TabIndex = 69;
+            // 
+            // txt_feedbackType
+            // 
+            this.txt_feedbackType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_feedbackType.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_feedbackType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_feedbackType.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_feedbackType.Location = new System.Drawing.Point(8, 9);
+            this.txt_feedbackType.Multiline = true;
+            this.txt_feedbackType.Name = "txt_feedbackType";
+            this.txt_feedbackType.ReadOnly = true;
+            this.txt_feedbackType.Size = new System.Drawing.Size(184, 43);
+            this.txt_feedbackType.TabIndex = 82;
+            this.txt_feedbackType.TextChanged += new System.EventHandler(this.txt_feedbackType_TextChanged);
+            // 
+            // txt_message
+            // 
+            this.txt_message.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_message.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_message.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_message.ForeColor = System.Drawing.Color.White;
+            this.txt_message.Location = new System.Drawing.Point(199, 9);
+            this.txt_message.Multiline = true;
+            this.txt_message.Name = "txt_message";
+            this.txt_message.ReadOnly = true;
+            this.txt_message.Size = new System.Drawing.Size(553, 43);
+            this.txt_message.TabIndex = 81;
             // 
             // CustomerHome
             // 
@@ -340,6 +387,8 @@
             this.menuStrip1.PerformLayout();
             this.tbl_home.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +418,8 @@
         private System.Windows.Forms.Label lbl_user_id;
         private System.Windows.Forms.TableLayoutPanel tbl_home;
         private System.Windows.Forms.PictureBox pb_homeImage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txt_feedbackType;
+        private System.Windows.Forms.TextBox txt_message;
     }
 }

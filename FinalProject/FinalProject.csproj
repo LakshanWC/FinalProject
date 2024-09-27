@@ -126,6 +126,7 @@
     <Compile Include="three-tier architecture\BLL\Waiter\BReservedTables.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DComplaints.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
+    <Compile Include="three-tier architecture\DAL\Chef\DFeedBack.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Customer\DOrderCustomize.cs" />
@@ -205,6 +206,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ChefHome.Designer.cs">
       <DependentUpon>ChefHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\FeedBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Chef\FeedBack.Designer.cs">
+      <DependentUpon>FeedBack.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ReceivedOrder.cs">
       <SubType>Form</SubType>
@@ -565,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ChefHome.resx">
       <DependentUpon>ChefHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Chef\FeedBack.resx">
+      <DependentUpon>FeedBack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ReceivedOrder.resx">
       <DependentUpon>ReceivedOrder.cs</DependentUpon>
