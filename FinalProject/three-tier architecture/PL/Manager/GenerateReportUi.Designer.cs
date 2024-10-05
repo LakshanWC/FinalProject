@@ -124,7 +124,7 @@
             this.Controls.Add(this.cmb_reports);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "GenerateReportUi";
-            this.Text = "ReportUi";
+            this.Text = "GenerateReport";
             this.Load += new System.EventHandler(this.ReportUi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
