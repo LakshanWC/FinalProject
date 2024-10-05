@@ -140,9 +140,10 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(23, 94);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 40;
-            this.label11.Text = "Employee Type :";
+            this.label11.Text = "Type :";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dtp_date_of_birth
             // 

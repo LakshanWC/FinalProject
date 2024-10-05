@@ -497,7 +497,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
             if (!NewManagerHome.opendChildForms.Contains("OrderCustomize") && NewManagerHome.opendChildForms.Count <= 2)
             {
-                if(CahierHome.isCahierOpen = true)
+                if(CahierHome.isCahierOpen == true)
                 {
                     CahierHome custom = this.MdiParent as CahierHome;
 

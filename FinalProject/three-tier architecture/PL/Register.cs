@@ -188,5 +188,10 @@ namespace FinalProject.three_tier_architecture.PL
         {
             dragging = false;
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
