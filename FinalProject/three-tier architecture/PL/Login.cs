@@ -198,6 +198,11 @@ namespace FinalProject.MVC.View
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
