@@ -432,5 +432,13 @@ namespace FinalProject.three_tier_architecture.PL
         {
 
         }
+
+        private void updateEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.tlp_dash_board.Visible = false;
+            UpdateEmployeeDetails emp = new UpdateEmployeeDetails();
+            emp.MdiParent = this;
+            emp.Show();
+        }
     }
 }
