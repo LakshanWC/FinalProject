@@ -41,11 +41,14 @@
             this.pb_user_icon = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.updateShowCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbl_home = new System.Windows.Forms.TableLayoutPanel();
             this.pb_homeImage = new System.Windows.Forms.PictureBox();
+            this.updateShowCaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.tbl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).BeginInit();
             this.SuspendLayout();
@@ -199,12 +202,24 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateShowCaseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(980, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // updateShowCaseToolStripMenuItem
+            // 
+            this.updateShowCaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateShowCaseToolStripMenuItem1});
+            this.updateShowCaseToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.updateShowCaseToolStripMenuItem.Name = "updateShowCaseToolStripMenuItem";
+            this.updateShowCaseToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.updateShowCaseToolStripMenuItem.Text = "Update";
+            this.updateShowCaseToolStripMenuItem.Click += new System.EventHandler(this.updateShowCaseToolStripMenuItem_Click);
             // 
             // tbl_home
             // 
@@ -232,6 +247,14 @@
             this.pb_homeImage.TabIndex = 13;
             this.pb_homeImage.TabStop = false;
             // 
+            // updateShowCaseToolStripMenuItem1
+            // 
+            this.updateShowCaseToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.updateShowCaseToolStripMenuItem1.Name = "updateShowCaseToolStripMenuItem1";
+            this.updateShowCaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.updateShowCaseToolStripMenuItem1.Text = "Update ShowCase";
+            this.updateShowCaseToolStripMenuItem1.Click += new System.EventHandler(this.updateShowCaseToolStripMenuItem1_Click);
+            // 
             // ChefHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +271,8 @@
             this.pnl_userdetails_panle.ResumeLayout(false);
             this.pnl_userdetails_panle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_icon)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tbl_home.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_homeImage)).EndInit();
             this.ResumeLayout(false);
@@ -271,5 +296,7 @@
         private System.Windows.Forms.Button btn_sideBar_thire;
         private System.Windows.Forms.TableLayoutPanel tbl_home;
         private System.Windows.Forms.PictureBox pb_homeImage;
+        private System.Windows.Forms.ToolStripMenuItem updateShowCaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateShowCaseToolStripMenuItem1;
     }
 }

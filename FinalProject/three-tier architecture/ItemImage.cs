@@ -18,6 +18,13 @@ namespace FinalProject.three_tier_architecture
         private Image Burger = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\burger.jpg");
         private Image Sushi = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\sushi.jpg");
 
+        //shortes
+        private Image Shortcakes = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Shortcakes.jpg");
+        private Image Donuts = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Donuts.jpg");
+        private Image Brownies = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Brownies.jpg");
+        private Image Croissants = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Croissants.jpg");
+        private Image Muffins = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Muffins.jpg");
+
         //drinks
         private Image Latte = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Lattejpg.jpg");
         private Image IcedCoffee = Image.FromFile("D:\\Nibm\\C# projects\\FinalProject\\icons & images\\Ui-icons\\Food Items\\Iced_coffee.jpg");
@@ -53,8 +60,23 @@ namespace FinalProject.three_tier_architecture
                 case 9:
                     return Smoothie;
                     break;
-                default:
+                case 10:
                     return frideRice;
+                    break;
+                case 11:
+                    return Shortcakes;
+                    break;
+                case 12:
+                    return Donuts;
+                    break;
+                case 13:
+                    return Brownies;
+                    break;
+                case 14:
+                    return Croissants;
+                    break;
+                default:
+                    return Muffins;
                     break;
             }   
         

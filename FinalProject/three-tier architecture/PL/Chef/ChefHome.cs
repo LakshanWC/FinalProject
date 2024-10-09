@@ -115,5 +115,28 @@ namespace FinalProject.three_tier_architecture.PL.Chef
             pnl_nav.Top = btn_home.Top;
             pnl_nav.Left = btn_home.Left;
         }
+
+        private void updateShowCaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void updateShowCaseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            tbl_home.Visible = false;
+
+            if (!NewManagerHome.opendChildForms.Contains("UpdateShowCase") && NewManagerHome.opendChildForms.Count <= 2)
+            {
+                UpdateShowcase caseshow = new UpdateShowcase();
+                caseshow.MdiParent = this;
+                caseshow.Show();
+
+                NewManagerHome.opendChildForms.Add("UpdateShowCase");
+            }
+            else
+            {
+                MessageBox.Show("instens already exisit");
+            }
+        }
     }
 }

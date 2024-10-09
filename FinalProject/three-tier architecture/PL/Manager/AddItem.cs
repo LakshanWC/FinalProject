@@ -20,7 +20,7 @@ namespace FinalProject.MVC.View
 
         private ItemImage foodIcon = new ItemImage();
         private Image icon;
-        private int imageNo = 0;
+        private int imageNo = 1;
      
 
         //data from the ui
@@ -135,10 +135,10 @@ namespace FinalProject.MVC.View
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
-        {
-            if (imageNo >=9) 
+        {//imageNo >= 9
+            if (imageNo >=15) 
             {
-                imageNo = 0;
+                imageNo = 1;
                 icon = foodIcon.getItemImage(imageNo);
                 pb_item_image.Image = icon;
                 cmb_item_type.SelectedIndex = 0;  
