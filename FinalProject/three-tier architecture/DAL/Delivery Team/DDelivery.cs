@@ -128,11 +128,20 @@ namespace FinalProject.three_tier_architecture.DAL.Delivery_Team
             }
             else if (deliveryStatus == "Delivered")
             {
-                if (addToLogIfCOD(oid, itemName, isNormalOrder) == true)
+                /* if (addToLogIfCOD(oid, itemName, isNormalOrder) == true)
+
+                     MessageBox.Show("Payment not received. Select 'Delivered (Payment Received)' after payment.","Warning"
+                         ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                     return false;
+                 */
+                if((deliveryStatus == "Delivered"))
                 {
-                    MessageBox.Show("Payment not received. Select 'Delivered (Payment Received)' after payment.","Warning"
-                        ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    return false;
+                    query = "UPDATE delivery " +
+                           "SET delivedBy = @delivedBy, " +
+                           "itemName = @itemName, " +
+                           "DeliveryEnded = @deliveryEnd, " +
+                           "orderType = @orderType " +
+                           "WHERE orderId = @orderId;";
                 }
                 else
                 {

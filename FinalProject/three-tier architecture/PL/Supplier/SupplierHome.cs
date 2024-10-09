@@ -110,6 +110,8 @@ namespace FinalProject.three_tier_architecture.PL.Supplier
             pnl_nav.Height = btn_home.Height;
             pnl_nav.Top = btn_home.Top;
             pnl_nav.Left = btn_home.Left;
+
+            btn_sideBar_thire.Visible = false;
         }
     }
 }

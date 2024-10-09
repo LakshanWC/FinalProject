@@ -144,6 +144,7 @@
             this.cmb_Order_status.Name = "cmb_Order_status";
             this.cmb_Order_status.Size = new System.Drawing.Size(121, 21);
             this.cmb_Order_status.TabIndex = 66;
+            this.cmb_Order_status.SelectedIndexChanged += new System.EventHandler(this.cmb_Order_status_SelectedIndexChanged);
             // 
             // dgv_orders
             // 

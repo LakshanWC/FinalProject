@@ -215,5 +215,10 @@ namespace FinalProject.three_tier_architecture.PL.Delivery_Team
             NewManagerHome.opendChildForms.Add("Delivery");
             this.Dispose();
         }
+
+        private void cmb_Order_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
