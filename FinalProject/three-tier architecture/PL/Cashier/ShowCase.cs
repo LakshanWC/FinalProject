@@ -16,6 +16,9 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
 {
     public partial class ShowCase : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         private List<string> ShowCaseItemNames = new List<string>();
         private List<int> ShowCaseItemImageNo = new List<int>();
         private List<int> ShowCaseItemQuantity = new List<int>();
@@ -123,6 +126,35 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             else
             {
             }
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            NewManagerHome.opendChildForms.Remove("ShowCase");
+            this.Close();
+        }
+
+        private void pnl_title_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void pnl_title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_title_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

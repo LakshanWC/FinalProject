@@ -40,13 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pb_item_one = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nud_quntity = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_page_no = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_previous = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
-            this.nud_quntity = new System.Windows.Forms.NumericUpDown();
             this.pnl_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_one)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,6 +63,9 @@
             this.pnl_title.Name = "pnl_title";
             this.pnl_title.Size = new System.Drawing.Size(456, 34);
             this.pnl_title.TabIndex = 72;
+            this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
+            this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
+            this.pnl_title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseUp);
             // 
             // btn_close
             // 
@@ -74,6 +77,7 @@
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label9
             // 
@@ -175,6 +179,15 @@
             this.panel1.Size = new System.Drawing.Size(275, 329);
             this.panel1.TabIndex = 73;
             // 
+            // nud_quntity
+            // 
+            this.nud_quntity.Enabled = false;
+            this.nud_quntity.Location = new System.Drawing.Point(137, 286);
+            this.nud_quntity.Name = "nud_quntity";
+            this.nud_quntity.ReadOnly = true;
+            this.nud_quntity.Size = new System.Drawing.Size(102, 20);
+            this.nud_quntity.TabIndex = 76;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -248,15 +261,6 @@
             this.btn_next.Text = "Next";
             this.btn_next.UseVisualStyleBackColor = false;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
-            // 
-            // nud_quntity
-            // 
-            this.nud_quntity.Enabled = false;
-            this.nud_quntity.Location = new System.Drawing.Point(137, 286);
-            this.nud_quntity.Name = "nud_quntity";
-            this.nud_quntity.ReadOnly = true;
-            this.nud_quntity.Size = new System.Drawing.Size(102, 20);
-            this.nud_quntity.TabIndex = 76;
             // 
             // ShowCase
             // 
