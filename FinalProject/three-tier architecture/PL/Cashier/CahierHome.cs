@@ -173,5 +173,22 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             pnl_nav.Top = btn_home.Top;
             pnl_nav.Left = btn_home.Left;
         }
+
+        private void showCaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbl_home.Visible =false;
+            if (!NewManagerHome.opendChildForms.Contains("ShowCase"))
+            {
+                ShowCase showCase = new ShowCase();
+                showCase.MdiParent =  this;
+                showCase.Show();
+
+                NewManagerHome.opendChildForms.Add("ShowCase");
+            }
+            else
+            {
+                MessageBox.Show("Showcase not closed properly or already open","Instance exists");
+            }
+        }
     }
 }

@@ -90,6 +90,7 @@
     <Compile Include="three-tier architecture\BLL\BRegister.cs" />
     <Compile Include="three-tier architecture\BLL\Cashier\BComplaints.cs" />
     <Compile Include="three-tier architecture\BLL\Cashier\BMenuUpdate.cs" />
+    <Compile Include="three-tier architecture\BLL\Cashier\BShowCase.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateInventory.cs" />
     <Compile Include="three-tier architecture\BLL\Chef\BUpdateShowcase.cs" />
     <Compile Include="three-tier architecture\BLL\Customer\BReservation.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="three-tier architecture\BLL\Waiter\BReservedTables.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DComplaints.cs" />
     <Compile Include="three-tier architecture\DAL\Cashier\DMenuUpdate.cs" />
+    <Compile Include="three-tier architecture\DAL\Cashier\DShowCase.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DFeedBack.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DReceivedOrder.cs" />
     <Compile Include="three-tier architecture\DAL\Chef\DUpdateInventory.cs" />
@@ -202,6 +204,12 @@
     </Compile>
     <Compile Include="three-tier architecture\PL\Cashier\MenuUpdate.Designer.cs">
       <DependentUpon>MenuUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\ShowCase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="three-tier architecture\PL\Cashier\ShowCase.Designer.cs">
+      <DependentUpon>ShowCase.cs</DependentUpon>
     </Compile>
     <Compile Include="three-tier architecture\PL\Chef\ChefHome.cs">
       <SubType>Form</SubType>
@@ -577,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Cashier\MenuUpdate.resx">
       <DependentUpon>MenuUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Cashier\ShowCase.resx">
+      <DependentUpon>ShowCase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Chef\ChefHome.resx">
       <DependentUpon>ChefHome.cs</DependentUpon>

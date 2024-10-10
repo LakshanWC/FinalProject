@@ -47,6 +47,7 @@
             this.btn_home = new System.Windows.Forms.Button();
             this.tbl_home = new System.Windows.Forms.TableLayoutPanel();
             this.pb_homeImage = new System.Windows.Forms.PictureBox();
+            this.showCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_side_panle.SuspendLayout();
             this.pnl_userdetails_panle.SuspendLayout();
@@ -72,7 +73,8 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkReviewsToolStripMenuItem,
             this.receivedOrdersToolStripMenuItem,
-            this.checkComplatinsToolStripMenuItem});
+            this.checkComplatinsToolStripMenuItem,
+            this.showCaseToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -81,21 +83,21 @@
             // checkReviewsToolStripMenuItem
             // 
             this.checkReviewsToolStripMenuItem.Name = "checkReviewsToolStripMenuItem";
-            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.checkReviewsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkReviewsToolStripMenuItem.Text = "Check Reviews";
             this.checkReviewsToolStripMenuItem.Click += new System.EventHandler(this.checkReviewsToolStripMenuItem_Click);
             // 
             // receivedOrdersToolStripMenuItem
             // 
             this.receivedOrdersToolStripMenuItem.Name = "receivedOrdersToolStripMenuItem";
-            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.receivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.receivedOrdersToolStripMenuItem.Text = "Received Orders";
             this.receivedOrdersToolStripMenuItem.Click += new System.EventHandler(this.receivedOrdersToolStripMenuItem_Click);
             // 
             // checkComplatinsToolStripMenuItem
             // 
             this.checkComplatinsToolStripMenuItem.Name = "checkComplatinsToolStripMenuItem";
-            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.checkComplatinsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkComplatinsToolStripMenuItem.Text = "Check Complatins";
             this.checkComplatinsToolStripMenuItem.Click += new System.EventHandler(this.checkComplatinsToolStripMenuItem_Click);
             // 
@@ -271,6 +273,13 @@
             this.pb_homeImage.TabIndex = 13;
             this.pb_homeImage.TabStop = false;
             // 
+            // showCaseToolStripMenuItem
+            // 
+            this.showCaseToolStripMenuItem.Name = "showCaseToolStripMenuItem";
+            this.showCaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showCaseToolStripMenuItem.Text = "Show Case";
+            this.showCaseToolStripMenuItem.Click += new System.EventHandler(this.showCaseToolStripMenuItem_Click);
+            // 
             // CahierHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +325,6 @@
         private System.Windows.Forms.ToolStripMenuItem checkComplatinsToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tbl_home;
         private System.Windows.Forms.PictureBox pb_homeImage;
+        private System.Windows.Forms.ToolStripMenuItem showCaseToolStripMenuItem;
     }
 }
