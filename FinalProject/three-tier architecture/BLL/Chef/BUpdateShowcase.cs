@@ -14,36 +14,19 @@ namespace FinalProject.three_tier_architecture.BLL.Chef
     {
         DUpdateShowcase showCase = new DUpdateShowcase();
 
-        public DataSet getAvailableItems(bool defaultSearch, string itName)
+        public DataSet getItems()
         {
-            DataSet rst = new DataSet();
-            rst = showCase.getAvailableItems(defaultSearch,itName);
-            if(rst == null)
-            {
-                TostMessage tostFail = new TostMessage("No items found in Showcase", "Loaded", 1, 1);
-                tostFail.Show();
-                return null;
-            }
-            else
-            {
-                return rst;
-            }
+            return showCase.getItems();
         }
 
-        public DataSet checkShowCase(string item)
+        public DataSet getAllDetails(string name)
         {
-            DataSet rstt = new DataSet();
-            rstt = showCase.checkShowCase(item);
-            if (rstt == null)
-            {
-                TostMessage tostFail = new TostMessage("No items found in Showcase", "Loaded", 1, 1);
-                tostFail.Show();
-                return null;
-            }
-            else
-            {
-                return rstt;
-            }
+            return showCase.getAllDetails(name);
+        }
+
+        public int updateItems(string name, int quantity)
+        {
+            return showCase.updateItems(name, quantity);
         }
     }
 }

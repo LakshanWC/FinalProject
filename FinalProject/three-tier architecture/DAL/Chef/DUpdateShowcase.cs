@@ -12,39 +12,24 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
     public class DUpdateShowcase
     {
         DMDBConnection connection = new DMDBConnection();
-
-        public DataSet checkShowCase(string item)
+        
+        public DataSet getItems()
         {
-            string selectQuery = "SELECT * FROM showCase WHERE ItemName = @itemName;";
+            string selectAll = "SELECT itemName FROM Items;";
+            DataSet ds = new DataSet();
 
             try
             {
-                using (SqlConnection con = connection.openConnection())
+                using(SqlConnection con = connection.openConnection())
                 {
-                    using (SqlCommand cmd = new SqlCommand(selectQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@itemName", item);
+                    SqlCommand cmd = new SqlCommand(selectAll, con);
+                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                    dap.Fill(ds);
 
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            DataSet ds = new DataSet();
-                            adapter.Fill(ds); // Fill the DataSet with the result of the query
-
-                            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                            {
-                                // If the dataset contains tables and rows
-                                return ds;
-                            }
-                            else
-                            {
-                                // If no rows were found
-                                return null;
-                            }
-                        }
-                    }
+                    return ds;
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
                 return null;
@@ -55,41 +40,26 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
             }
         }
 
-
-        public DataSet getAvailableItems(bool defaultSearch,string itName)
+        public DataSet getAllDetails(string name)
         {
-            // Base query
-            string selectQuery = "SELECT itemName, itemImageNo FROM Items";
-
-            // if defaultSearch is false
-            if (!defaultSearch)
-            {
-                selectQuery += " WHERE itemName =@itName"; 
-            }
-
-            DataSet result = new DataSet();
+            string selectQuery = "SELECT itemImageNo,showcaseItem FROM Items WHERE itemName =@name;";
+            DataSet ds = new DataSet();
 
             try
             {
                 using (SqlConnection con = connection.openConnection())
                 {
                     SqlCommand cmd = new SqlCommand(selectQuery, con);
-
-                    // Add parameter if needed
-                    if (!defaultSearch && !string.IsNullOrEmpty(itName))
-                    {
-                        cmd.Parameters.AddWithValue("@itName", itName); 
-                    }
-
+                    cmd.Parameters.AddWithValue("@name", name);
                     SqlDataAdapter dap = new SqlDataAdapter(cmd);
-                    dap.Fill(result);
+                    dap.Fill(ds);
 
-                    return result;
+                    return ds;
                 }
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
                 return null;
             }
             finally
@@ -98,59 +68,27 @@ namespace FinalProject.three_tier_architecture.DAL.Chef
             }
         }
 
-
-        public int setShowCaseItem(string itemName, int imageNo, int quantity)
+        public int updateItems(string name,int quantity)
         {
-            string selectQuery = "SELECT COUNT(*) FROM showCase WHERE ItemName = @itemName;";
-            string insertQuery = "INSERT INTO showCase (ItemName, Quantity, ImageNo) VALUES (@itemName, @quantity, @imageNo);";
-            string updateQuery = "UPDATE showCase SET Quantity = @quantity, ImageNo = @imageNo WHERE ItemName = @itemName;";
+            string updateQuery = "UPDATE Items SET showcaseItem = @quantity WHERE itemName = @name;";
+            int stat = 0;
 
             try
             {
                 using (SqlConnection con = connection.openConnection())
                 {
-                    // Check if the item exists 
-                    using (SqlCommand cmd = new SqlCommand(selectQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@itemName", itemName);
+                    SqlCommand cmd = new SqlCommand(updateQuery, con);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@quantity",quantity);
+                    
+                    stat = cmd.ExecuteNonQuery();
 
-                        int count = (int)cmd.ExecuteScalar(); 
-
-                        int rowsAffected = 0;
-
-                        if (count > 0)
-                        {
-                            // If the item exists, update it
-                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, con))
-                            {
-                                updateCmd.Parameters.AddWithValue("@itemName", itemName);
-                                updateCmd.Parameters.AddWithValue("@imageNo", imageNo);
-                                updateCmd.Parameters.AddWithValue("@quantity", quantity);
-
-                                rowsAffected = updateCmd.ExecuteNonQuery(); 
-                            }
-                        }
-                        else
-                        {
-                            // If the item does not exist, insert it
-                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, con))
-                            {
-                                insertCmd.Parameters.AddWithValue("@itemName", itemName);
-                                insertCmd.Parameters.AddWithValue("@quantity", quantity);
-                                insertCmd.Parameters.AddWithValue("@imageNo", imageNo);
-
-                                rowsAffected = insertCmd.ExecuteNonQuery(); 
-                            }
-                        }
-
-                        // Return 1 OR return 0 
-                        return rowsAffected > 0 ? 1 : 0;
-                    }
+                    return stat > 0 ? 1 : 0;
                 }
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
                 return -1;
             }
             finally
