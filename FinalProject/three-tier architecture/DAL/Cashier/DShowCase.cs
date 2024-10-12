@@ -15,7 +15,7 @@ namespace FinalProject.three_tier_architecture.DAL.Cashier
 
         public DataSet getShowCaseItemNames()
         {
-            string select = "SELECT * FROM ShowCase ;";
+            string select = "SELECT itemName,itemPrice,itemCalories,showcaseItem,itemImageNo FROM Items;";
             DataSet ds = new DataSet();
 
             try
@@ -30,34 +30,6 @@ namespace FinalProject.three_tier_architecture.DAL.Cashier
                 }
             }
             catch(SqlException e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-            finally
-            {
-                connection.closeConnection();
-            }
-        }
-
-        public DataSet getMenuItemPriceAndCalories(string name)
-        {
-            string select = "SELECT itemPrice ,itemCalories FROM Items WHERE itemName = @name;";
-            DataSet ds = new DataSet();
-
-            try
-            {
-                using (SqlConnection con = connection.openConnection())
-                {
-                    SqlCommand cmd = new SqlCommand(select, con);
-                    cmd.Parameters.AddWithValue("@name",name);
-                    SqlDataAdapter dap = new SqlDataAdapter(cmd);
-                    dap.Fill(ds);
-
-                    return ds;
-                }
-            }
-            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
                 return null;

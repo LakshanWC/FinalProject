@@ -15,14 +15,7 @@ namespace FinalProject.three_tier_architecture.BLL.Cashier
 
         public DataSet getShowCaseItemNames()
         {
-            DataSet ds = new DataSet();
-            ds = showCaseItem.getShowCaseItemNames();
-            return ds;
-        }
-
-        public DataSet getMenuItemPriceAndCalories(string name)
-        {
-            return showCaseItem.getMenuItemPriceAndCalories(name);
+            return showCaseItem.getShowCaseItemNames();
         }
     }
 }

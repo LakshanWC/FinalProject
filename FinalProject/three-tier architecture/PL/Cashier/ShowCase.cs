@@ -19,9 +19,11 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
 
-        private List<string> ShowCaseItemNames = new List<string>();
-        private List<int> ShowCaseItemImageNo = new List<int>();
-        private List<int> ShowCaseItemQuantity = new List<int>();
+        private List<string> showCaseItemNames = new List<string>();
+        private List<string> showCaseItemPrice = new List<string>();
+        private List<string> showCaseItemCal = new List<string>();
+        private List<int> showCaseItemImageNo = new List<int>();
+        private List<int> showCaseItemQuantity = new List<int>();
         private int loadThis = 0;
 
         private int pageCount = 0;
@@ -69,64 +71,43 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
         //add the showcase item to lists
         private void initLists()
         {
-            BShowCase bShowCase = new BShowCase();
-            DataSet ds = new DataSet();
-            ds = bShowCase.getShowCaseItemNames();
+            BShowCase myShowCase = new BShowCase();
+            DataSet data = new DataSet();
+            data = myShowCase.getShowCaseItemNames();
 
-            
-            if(ds != null)
+            if(data != null)
             {
-                DataTable dt = ds.Tables[0];
-                foreach (DataRow dr in dt.Rows)
+                DataTable dt = data.Tables[0];
+                foreach(DataRow dr in dt.Rows)
                 {
-                    ShowCaseItemNames.Add(dr["ItemName"].ToString());
-                    ShowCaseItemImageNo.Add(Convert.ToInt32(dr["ImageNo"]));
-                    ShowCaseItemQuantity.Add(Convert.ToInt32(dr["Quantity"]));
+                    showCaseItemNames.Add(dr["itemName"].ToString());
+                    showCaseItemPrice.Add(dr["itemPrice"].ToString());
+                    showCaseItemCal.Add(dr["itemCalories"].ToString());
+                    showCaseItemQuantity.Add(Convert.ToInt32(dr["showcaseItem"]));
+                    showCaseItemImageNo.Add(Convert.ToInt32(dr["itemImageNo"]));
 
                     pageCount++;
                 }
             }
-            else
-            {
-                TostMessage failMess = new TostMessage("No Show Case Items were found!","Not Found",1,1);
-                failMess.Show();
-            }
-
         }
 
         //show the data in the lists in to ui
         private void loadFromListsToUi(int loadItem)
         {
-            if (ShowCaseItemNames.Count != 0)
-            {
+            txt_item_name_one.Text = showCaseItemNames[loadItem].ToString();
+            txt_item_price_one.Text = showCaseItemPrice[loadItem].ToString();
+            txt_item_cal_one.Text = showCaseItemCal[loadItem].ToString();
+            nud_quntity.Value = Convert.ToDecimal(showCaseItemQuantity[loadItem]);
 
-                ItemImage myImage = new ItemImage();
-                BShowCase bShowcase = new BShowCase();
-                DataSet ds = new DataSet();
+            //loadImage
+            ItemImage myImages = new ItemImage();
+            pb_item_one.Image = myImages.getItemImage(Convert.ToInt32(showCaseItemImageNo[loadThis]));
 
-
-                txt_item_name_one.Text = ShowCaseItemNames[loadItem].ToString();
-                pb_item_one.Image = myImage.getItemImage(ShowCaseItemImageNo[loadItem]);
-                nud_quntity.Value = Convert.ToDecimal(ShowCaseItemQuantity[loadItem]);
-
-                lbl_page_no.Text = (loadThis + 1) + "/" + pageCount;
-
-
-                //call the item table and get missing data from there
-                ds = bShowcase.getMenuItemPriceAndCalories(txt_item_name_one.Text);
-                if (ds != null)
-                {
-                    DataTable dt = ds.Tables[0];
-                    DataRow dtrow = dt.Rows[0];
-
-                    txt_item_price_one.Text = dtrow["itemPrice"].ToString();
-                    txt_item_cal_one.Text = dtrow["itemCalories"].ToString();
-                }
-            }
-            else
-            {
-            }
+            //set page count in ui
+            lbl_page_no.Text = (loadThis+1)+"/"+pageCount;
         }
+
+        //dont change
 
         private void btn_close_Click(object sender, EventArgs e)
         {
