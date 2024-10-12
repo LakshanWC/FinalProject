@@ -2,6 +2,7 @@
 using CrystalDecisions.Windows.Forms;
 using FinalProject.MVC;
 using FinalProject.three_tier_architecture.BLL.Customer;
+using FinalProject.three_tier_architecture.DAL.Customer;
 using FinalProject.three_tier_architecture.PL.Cashier;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,11 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
             BOrderFood genId = new BOrderFood();
             txt_order_id.Text = genId.generateUniqueString();
+        }
+
+        public void limitQuantitiy(int num)
+        {
+            nud_item_quantity.Maximum = num;
         }
 
         public void setSelectedItemsToCB (List<string> selectedItems)
@@ -261,9 +267,24 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
                 }
 
                 int orderQuntity = Convert.ToInt32(nud_item_quantity.Value);
-            // createdDate has the date
+                // createdDate has the date
 
-            string orderStatus = cmb_delivery_option.SelectedItem.ToString();
+                //testing code
+
+                string orderStatus = "";
+                if (nud_item_quantity.Maximum == 100)
+                {
+                    orderStatus = cmb_delivery_option.SelectedItem.ToString();
+                }
+                else
+                {
+                    orderStatus = "Showcase Purchase";
+                    DOrderFood showCaseOrder = new DOrderFood();
+                    // this will update showcase item quantitiy
+                    int tempInt = Convert.ToInt32(cmb_selected_item.SelectedItem);
+                    showCaseOrder.updateShowcaseItems(Convert.ToInt32(nud_item_quantity.Value), tempInt);
+                }
+
             string cNo;
             string Tid;
             if (CustomerHome.curruntCusId == null)
@@ -352,6 +373,7 @@ namespace FinalProject.three_tier_architecture.PL.Customerr
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            nud_item_quantity.Maximum = 100;
 
             if (NewManagerHome.opendChildForms.Contains("OrderCustomize"))
             {

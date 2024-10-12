@@ -60,7 +60,7 @@ namespace FinalProject.three_tier_architecture.PL
                     break;
 
                 case 3:
-                    location ="D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Sales&Finance\\InventoyItemReport.rpt";
+                    location ="D:\\Nibm\\C# projects\\FinalProject\\FinalProject\\three-tier architecture\\PL\\Sales&Finance\\TestingReport.rpt";
                     txt_current_report.Text = "InventoyItem Report";
                     cmb_reports.SelectedIndex = 3;
                     return location;

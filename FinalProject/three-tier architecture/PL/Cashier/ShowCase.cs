@@ -2,6 +2,7 @@
 using FinalProject.three_tier_architecture.BLL.Cashier;
 using FinalProject.three_tier_architecture.BLL.Customer;
 using FinalProject.three_tier_architecture.DAL.Cashier;
+using FinalProject.three_tier_architecture.PL.Customerr;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,9 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
         private List<string> showCaseItemCal = new List<string>();
         private List<int> showCaseItemImageNo = new List<int>();
         private List<int> showCaseItemQuantity = new List<int>();
+        private List<string> showCaseItemId = new List<string>();
         private int loadThis = 0;
+        private string currentItemId = "";
 
         private int pageCount = 0;
 
@@ -85,6 +88,7 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
                     showCaseItemCal.Add(dr["itemCalories"].ToString());
                     showCaseItemQuantity.Add(Convert.ToInt32(dr["showcaseItem"]));
                     showCaseItemImageNo.Add(Convert.ToInt32(dr["itemImageNo"]));
+                    showCaseItemId.Add(dr["itemID"].ToString());
 
                     pageCount++;
                 }
@@ -98,6 +102,10 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
             txt_item_price_one.Text = showCaseItemPrice[loadItem].ToString();
             txt_item_cal_one.Text = showCaseItemCal[loadItem].ToString();
             nud_quntity.Value = Convert.ToDecimal(showCaseItemQuantity[loadItem]);
+
+            //set current itemId
+            currentItemId = showCaseItemId[loadItem];
+
 
             //loadImage
             ItemImage myImages = new ItemImage();
@@ -136,6 +144,27 @@ namespace FinalProject.three_tier_architecture.PL.Cashier
         private void pnl_title_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if(nud_quntity.Value > 0)
+            {
+                OrderFood orderFood = new OrderFood();
+                List<string> tempList = new List<string>();
+                tempList.Add(currentItemId.ToString());
+
+                orderFood.setSelectedItemsToCB(tempList);
+                orderFood.limitQuantitiy(Convert.ToInt32(nud_quntity.Value));
+
+                orderFood.Show();
+
+            }
+            else
+            {
+                TostMessage failmess = new TostMessage("No items available for purchase", "Out of Stock", 1, 1);
+                failmess.Show();
+            }
         }
     }
 }

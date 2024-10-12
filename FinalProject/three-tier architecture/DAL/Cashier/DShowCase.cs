@@ -15,7 +15,7 @@ namespace FinalProject.three_tier_architecture.DAL.Cashier
 
         public DataSet getShowCaseItemNames()
         {
-            string select = "SELECT itemName,itemPrice,itemCalories,showcaseItem,itemImageNo FROM Items;";
+            string select = "SELECT itemName,itemPrice,itemCalories,showcaseItem,itemImageNo,itemID FROM Items;";
             DataSet ds = new DataSet();
 
             try

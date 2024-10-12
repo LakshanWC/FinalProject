@@ -259,6 +259,34 @@ namespace FinalProject.three_tier_architecture.DAL.Customer
                 return null;
             }
             return noOfSeats;
+     
+        }
+
+        public void updateShowcaseItems(int quant,int id)
+        {
+            DMDBConnection connt = new DMDBConnection();
+
+            string updateQuery = "UPDATE Items SET showcaseItem = @quantitiy WHERE itemID = @id;";
+
+            try
+            {
+                using(SqlConnection coon = connt.openConnection())
+                {
+                    SqlCommand cmd = new SqlCommand(updateQuery, coon);
+                    cmd.Parameters.AddWithValue("@quantitiy", quant);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                connt.closeConnection();
+            }
         }
     }
 }

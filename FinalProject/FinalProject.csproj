@@ -469,6 +469,12 @@
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.Designer.cs">
       <DependentUpon>StockUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="three-tier architecture\PL\Sales&amp;Finance\TestingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="three-tier architecture\PL\Sales&amp;Finance\Transaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -726,6 +732,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\StockUi.resx">
       <DependentUpon>StockUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\TestingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestingReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="three-tier architecture\PL\Sales&amp;Finance\Transaction.resx">
       <DependentUpon>Transaction.cs</DependentUpon>

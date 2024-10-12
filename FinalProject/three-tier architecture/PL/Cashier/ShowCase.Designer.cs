@@ -231,6 +231,7 @@
             this.btn_update.TabIndex = 76;
             this.btn_update.Text = "Buy";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_previous
             // 
