@@ -43,10 +43,26 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cpb_stock_prisentage = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
+            this.nud_quntity = new System.Windows.Forms.NumericUpDown();
+            this.txt_quantity = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmb_selected_item = new System.Windows.Forms.ComboBox();
+            this.btn_update_status = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_item_Name = new System.Windows.Forms.TextBox();
             this.pnl_title.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_title
@@ -57,7 +73,7 @@
             this.pnl_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_title.Location = new System.Drawing.Point(0, 0);
             this.pnl_title.Name = "pnl_title";
-            this.pnl_title.Size = new System.Drawing.Size(784, 34);
+            this.pnl_title.Size = new System.Drawing.Size(835, 34);
             this.pnl_title.TabIndex = 53;
             this.pnl_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseDown);
             this.pnl_title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_title_MouseMove);
@@ -68,7 +84,7 @@
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.Location = new System.Drawing.Point(749, 3);
+            this.btn_close.Location = new System.Drawing.Point(792, 6);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(23, 23);
             this.btn_close.TabIndex = 43;
@@ -152,9 +168,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel3.Controls.Add(this.cpb_stock_prisentage);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(576, 107);
+            this.panel3.Location = new System.Drawing.Point(576, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(183, 246);
+            this.panel3.Size = new System.Drawing.Size(218, 144);
             this.panel3.TabIndex = 60;
             // 
             // cpb_stock_prisentage
@@ -168,7 +184,7 @@
             this.cpb_stock_prisentage.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.cpb_stock_prisentage.InnerMargin = 2;
             this.cpb_stock_prisentage.InnerWidth = -1;
-            this.cpb_stock_prisentage.Location = new System.Drawing.Point(24, 72);
+            this.cpb_stock_prisentage.Location = new System.Drawing.Point(53, 38);
             this.cpb_stock_prisentage.MarqueeAnimationSpeed = 2000;
             this.cpb_stock_prisentage.Name = "cpb_stock_prisentage";
             this.cpb_stock_prisentage.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -177,7 +193,7 @@
             this.cpb_stock_prisentage.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
             this.cpb_stock_prisentage.ProgressWidth = 15;
             this.cpb_stock_prisentage.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.cpb_stock_prisentage.Size = new System.Drawing.Size(138, 132);
+            this.cpb_stock_prisentage.Size = new System.Drawing.Size(109, 101);
             this.cpb_stock_prisentage.StartAngle = 270;
             this.cpb_stock_prisentage.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.cpb_stock_prisentage.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -196,18 +212,191 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(58, 19);
+            this.label1.Location = new System.Drawing.Point(78, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Stocks";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.txt_item_Name);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.cmb_status);
+            this.panel1.Controls.Add(this.nud_quntity);
+            this.panel1.Controls.Add(this.txt_quantity);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.cmb_selected_item);
+            this.panel1.Location = new System.Drawing.Point(576, 210);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 178);
+            this.panel1.TabIndex = 72;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(40, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 80;
+            this.label5.Text = "Status :";
+            // 
+            // cmb_status
+            // 
+            this.cmb_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_status.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Items.AddRange(new object[] {
+            "Awaiting Restock",
+            "Out of Stock",
+            "Low Stock",
+            "In Stock"});
+            this.cmb_status.Location = new System.Drawing.Point(115, 129);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(121, 21);
+            this.cmb_status.TabIndex = 79;
+            // 
+            // nud_quntity
+            // 
+            this.nud_quntity.Location = new System.Drawing.Point(118, 100);
+            this.nud_quntity.Name = "nud_quntity";
+            this.nud_quntity.Size = new System.Drawing.Size(102, 20);
+            this.nud_quntity.TabIndex = 75;
+            this.nud_quntity.ValueChanged += new System.EventHandler(this.nud_quntity_ValueChanged);
+            // 
+            // txt_quantity
+            // 
+            this.txt_quantity.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_quantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_quantity.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_quantity.Location = new System.Drawing.Point(118, 70);
+            this.txt_quantity.Name = "txt_quantity";
+            this.txt_quantity.ReadOnly = true;
+            this.txt_quantity.Size = new System.Drawing.Size(100, 20);
+            this.txt_quantity.TabIndex = 68;
+            this.txt_quantity.TextChanged += new System.EventHandler(this.txt_quantity_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(40, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Quantity :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(25, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Stocks Left :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(7, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Inventory Items :";
+            // 
+            // cmb_selected_item
+            // 
+            this.cmb_selected_item.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cmb_selected_item.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmb_selected_item.FormattingEnabled = true;
+            this.cmb_selected_item.Location = new System.Drawing.Point(118, 4);
+            this.cmb_selected_item.Name = "cmb_selected_item";
+            this.cmb_selected_item.Size = new System.Drawing.Size(121, 21);
+            this.cmb_selected_item.TabIndex = 60;
+            this.cmb_selected_item.SelectedIndexChanged += new System.EventHandler(this.cmb_selected_item_SelectedIndexChanged);
+            // 
+            // btn_update_status
+            // 
+            this.btn_update_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_update_status.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btn_update_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btn_update_status.Location = new System.Drawing.Point(749, 398);
+            this.btn_update_status.Name = "btn_update_status";
+            this.btn_update_status.Size = new System.Drawing.Size(74, 29);
+            this.btn_update_status.TabIndex = 73;
+            this.btn_update_status.Text = "Update Status";
+            this.btn_update_status.UseVisualStyleBackColor = false;
+            this.btn_update_status.Click += new System.EventHandler(this.btn_update_status_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btn_add.Location = new System.Drawing.Point(681, 398);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(62, 29);
+            this.btn_add.TabIndex = 74;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.ForeColor = System.Drawing.Color.Red;
+            this.btn_delete.Location = new System.Drawing.Point(576, 398);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(62, 29);
+            this.btn_delete.TabIndex = 75;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(40, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 81;
+            this.label7.Text = "Name :";
+            // 
+            // txt_item_Name
+            // 
+            this.txt_item_Name.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_item_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_item_Name.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_item_Name.Location = new System.Drawing.Point(118, 40);
+            this.txt_item_Name.Name = "txt_item_Name";
+            this.txt_item_Name.Size = new System.Drawing.Size(100, 20);
+            this.txt_item_Name.TabIndex = 82;
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(784, 402);
+            this.ClientSize = new System.Drawing.Size(835, 444);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_add);
+            this.Controls.Add(this.btn_update_status);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_stock_names);
             this.Controls.Add(this.panel6);
@@ -224,6 +413,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ch_stocks)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quntity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +434,19 @@
         private System.Windows.Forms.Panel panel3;
         private CircularProgressBar.CircularProgressBar cpb_stock_prisentage;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmb_status;
+        private System.Windows.Forms.NumericUpDown nud_quntity;
+        private System.Windows.Forms.TextBox txt_quantity;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmb_selected_item;
+        private System.Windows.Forms.Button btn_update_status;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.TextBox txt_item_Name;
+        private System.Windows.Forms.Label label7;
     }
 }

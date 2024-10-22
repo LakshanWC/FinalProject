@@ -165,6 +165,7 @@
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DRemoveStock.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DStockUi.cs" />
     <Compile Include="three-tier architecture\DAL\Sales&amp;Finance\DTransaction.cs" />
+    <Compile Include="three-tier architecture\DAL\Supplier\DInventory.cs" />
     <Compile Include="three-tier architecture\DAL\Supplier\DStockOrderRequest.cs" />
     <Compile Include="three-tier architecture\DAL\Waiter\DCustomerRequests.cs" />
     <Compile Include="three-tier architecture\DAL\Waiter\DReservedTables.cs" />
