@@ -203,6 +203,13 @@ namespace FinalProject.MVC.View
         {
             Application.Exit();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ResetPassword obj = new ResetPassword();
+            this.Hide();
+            obj.Show();
+        }
     }
 }
 

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_register = new System.Windows.Forms.Button();
             this.chk_view = new System.Windows.Forms.CheckBox();
             this.lnklbl_reset_pass = new System.Windows.Forms.LinkLabel();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.btn_register);
             this.panel1.Controls.Add(this.chk_view);
             this.panel1.Controls.Add(this.lnklbl_reset_pass);
@@ -66,8 +68,20 @@
             this.panel1.Controls.Add(this.btn_login);
             this.panel1.Location = new System.Drawing.Point(21, 221);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 198);
+            this.panel1.Size = new System.Drawing.Size(295, 212);
             this.panel1.TabIndex = 9;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.linkLabel1.Location = new System.Drawing.Point(89, 188);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(96, 13);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Change Password ";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btn_register
             // 
@@ -183,5 +197,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
